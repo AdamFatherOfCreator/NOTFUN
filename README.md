@@ -1,2 +1,0 @@
-# NOTFUN
-suicine
