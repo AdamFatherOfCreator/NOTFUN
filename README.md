@@ -1,0 +1,2 @@
+# NOTFUN
+suicine
