@@ -19,7 +19,7 @@ local Options = Fluent.Options
 
 
 do
-local farmingsector = Tabs.Main:AddSection("Farming")
+local farmingsection = Tabs.Main:AddSection("Farming Section")
 end
 
 
