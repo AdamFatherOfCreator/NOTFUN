@@ -34,6 +34,26 @@ local YoruSpeed = Tabs.Main:AddSlider("Slider", {
 YoruSpeed:SetValue(50)
 
 local YoruToggle = Tabs.Main:AddToggle("Yoruss", {Title = "Yoru Spaming", Default = false })
+_G.Yoru = Options.Yoruss.Value
+while _G.Yoru do
+wait()
+    local Players = game:GetService("Players")
+    local Plr = Players.LocalPlayer
+    local Character = Plr.Character
+    local Yoru = Character:FindFirstChild("Yoru")
+    local Environment
+wait()
+pcall(function()
+for i,v in pairs(getconnections(Yoru["RequestAnimation"].OnClientEvent)) do 
+    Environment = getsenv(Yoru["AnimationController"])
+end
+    wait()
+for i = 1, Speeds do
+Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
+end
+end)
+wait()
+end
 end
 
 
