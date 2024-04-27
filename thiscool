@@ -37,7 +37,7 @@ YoruSpeed:SetValue(50)
 local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Yoru Spamming", Default = false })
 
 Toggle:OnChanged(function()
-_G.Yoru = Options.MyToggle.Value
+_G.Yoru = ..Options.MyToggle.Value
 end)
 
     Options.MyToggle:SetValue(false)
