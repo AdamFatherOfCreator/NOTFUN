@@ -37,11 +37,11 @@ YoruSpeed:SetValue(50)
 local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Yoru Spamming", Default = false })
 
 Toggle:OnChanged(function()
-_G.Yoru = ..Options.MyToggle.Value
+getgenv().yoruspam = Options.MyToggle.Value
 end)
 
     Options.MyToggle:SetValue(false)
-while _G.Yoru do
+while getgenv().yoruspam do
 wait()
     local Players = game:GetService("Players")
     local Plr = Players.LocalPlayer
