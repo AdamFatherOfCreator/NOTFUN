@@ -643,8 +643,32 @@ function hakiauto()
         hakiauto()
 end
 end)
+local HakiSection2 = Tabs.Main:AddSection("Auto Haki Farming")
+local hakitargett = Tabs.Main:AddSlider("Slider", {
+    Title = "Haki Target (%)",
+    Description = "Change this for adjusting haki's target",
+    Default = 25,
+    Min = 1,
+    Max = 99,
+    Rounding = 0,
+    Callback = function(gmm)
+            hakitarget = gmm
+        end
+    })
+hakitargett:SetValue(25)
 
-
+local hakispeedt = Tabs.Main:AddSlider("Slider", {
+    Title = "Haki Speed",
+    Description = "Change this for adjusting haki's speed",
+    Default = 5,
+    Min = 1,
+    Max = 99,
+    Rounding = 0,
+    Callback = function(gttmm)
+            hakispeed = gttmm
+        end
+    })
+hakispeedt:SetValue(5)
 
 
 local cc = Tabs.Main:AddSection("                                                -----")
