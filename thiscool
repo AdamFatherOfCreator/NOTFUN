@@ -2,7 +2,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A4)",
+    Title = "SALUNA HUB (A5)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -46,24 +46,7 @@ _G.yoruspam = true
 end)
 while _G.yoruspam do
 wait()
-    local Players = game:GetService("Players")
-    local Plr = Players.LocalPlayer
-    local Character = Plr.Character
-    local Yoru = Character:FindFirstChild("Yoru")
-    local Environment
-wait()
-pcall(function()
-for i,v in pairs(getconnections(Yoru["RequestAnimation"].OnClientEvent)) do 
-    Environment = getsenv(Yoru["AnimationController"])
-end
-    wait()
-for i = 1, Speeds do
-Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
-end
-end)
-wait()
-end
-    Options.MyToggle:SetValue(false)
+print("con cac")
 end
 
 
