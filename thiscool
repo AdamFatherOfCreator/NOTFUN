@@ -231,11 +231,32 @@ SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
 
 Fluent:Notify({
-    Title = "Fluent",
-    Content = "The script has been loaded.",
+    Title = "Saluna With Love",
+    Content = "The script is loaded, enjoy!",
     Duration = 8
 })
 
 -- You can use the SaveManager:LoadAutoloadConfig() to load a config
 -- which has been marked to be one that auto loads!
 SaveManager:LoadAutoloadConfig()
+--------
+local BBB= Instance.new("ScreenGui")
+BBB.Name = "BBB"
+BBB.Parent = game.CoreGui
+local hideUI = Instance.new("TextButton")
+hideUI.Name = "hideUI"
+hideUI.Parent = BBB
+hideUI.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+hideUI.ClipsDescendants = true
+hideUI.Position = UDim2.new(0, 0, 0, 0)
+hideUI.Size = UDim2.new(0, 100, 0, 43)
+hideUI.AutoButtonColor = false
+hideUI.Font = Enum.Font.SourceSans
+hideUI.Text = "HIDE/SHOW UI"
+hideUI.TextColor3 = Color3.fromRGB(255, 255, 255)
+hideUI.TextSize = 14
+hideUI.MouseButton1Up:Connect(function()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+wait(0.1)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end)
