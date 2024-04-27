@@ -14,7 +14,7 @@ local Window = Fluent:CreateWindow({
 
 --Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "rbxassetid://7539983780" }),
+    Main = Window:AddTab({ Title = "Main", Icon = "rbxassetid://7539983773" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 
@@ -246,7 +246,7 @@ BBB.Parent = game.CoreGui
 local hideUI = Instance.new("TextButton")
 hideUI.Name = "hideUI"
 hideUI.Parent = BBB
-hideUI.BackgroundColor3 = Color3.fromRGB(31, 41, 43)
+hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 hideUI.ClipsDescendants = true
 hideUI.Position = UDim2.new(0, 0, 0, 0)
 hideUI.Size = UDim2.new(0, 100, 0, 43)
