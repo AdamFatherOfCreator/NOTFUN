@@ -26,7 +26,7 @@ local YoruSpeed = Tabs.Main:AddSlider("Slider", {
     Default = 50,
     Min = 1,
     Max = 200,
-    Rounding = 10,
+    Rounding = 0,
     Callback = function(to)
             Speeds = to
         end
@@ -55,8 +55,44 @@ end)
 wait()
 end
 end)
+Options.MyToggle:SetValue(false)
 
-    Options.MyToggle:SetValue(false)
+local CestusSpeed = Tabs.Main:AddSlider("Slider", {
+    Title = "Cestus Speed",
+    Description = "Change this for adjusting Seastone Cestus's speed",
+    Default = 50,
+    Min = 1,
+    Max = 200,
+    Rounding = 0,
+    Callback = function(too)
+            Speedss = too
+        end
+    })
+CestusSpeed:SetValue(50)
+
+local CestusToggle = Tabs.Main:AddToggle("CestussToggle", {Title = "Toggle", Default = false })
+    CestusToggle:OnChanged(function()
+while Options.CestussToggle.Value do
+wait()
+    local Players = game:GetService("Players")
+    local Plr = Players.LocalPlayer
+    local Character = Plr.Character
+    local Cestus = Character:FindFirstChild("Seastone Cestus")
+    local Environment
+wait()
+pcall(function()
+for i,v in pairs(getconnections(Cestus["RequestAnimation"].OnClientEvent)) do 
+    Environment = getsenv(Cestus["AnimationController"])
+end
+    wait()
+for i = 1, Speedss do
+Cestus["RequestAnimation"]:FireServer(Environment.PlaceId)
+end
+end)
+wait()
+end
+end)
+Options.CestussToggle:SetValue(false)
 end
 
 
