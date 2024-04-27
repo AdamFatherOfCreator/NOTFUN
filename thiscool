@@ -44,9 +44,11 @@ _G.yoruspam = true
         end
     end
 end)
+
 while _G.yoruspam do
 wait()
 print("con cac")
+end
 end
 
 
