@@ -1,4 +1,53 @@
-    local Players = game:GetService("Players")
+local Pedo = {
+    1135910299, -- Havelic
+    1619950875, -- Pixel_SkillzSPIN2
+    1581720092, -- Pixel_SkillzSPIN
+    1661505948, -- Pixel_SkillzBARRIER
+    679804290, -- Pixel_Skillz
+    520944, -- Oblivic
+    43247021, -- BowTiedPony
+    2350183594, -- icydragonwingsis
+    1338963426, -- happypandamagic2
+    1276541545, -- VanitasThePlague
+    587649463, -- happypandamagic
+    245586741, -- Tiptop98
+    174941504, -- FoxKingFab
+    136099207,-- CudlessTheCat
+    94825741, -- NATSUDRAGN331
+    358051152, -- VortexFragmented
+    529455640, -- vlonedd
+    281482099, -- Quixotize
+    355207559, -- Elianmc1s
+    5084487, -- Americanflag
+    928623624, -- TrashPanda2361
+    30049170, -- Farquanetta
+    474452017 -- Bige0n
+    }
+
+for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+    for _, v1 in pairs(Pedo) do
+        if v.UserId == v1 then
+            game:GetService("Players").LocalPlayer:Kick("Admin is in the server")
+        end
+    end
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(r)
+    for _, v in pairs(Pedo) do
+        if r.UserId == v then
+            game:GetService("Players").LocalPlayer:Kick("Admin or Staff has joined the server")
+        end
+    end
+end)  
+
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+       vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+       wait(1)
+       vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end)
+
+local Players = game:GetService("Players")
     local cache = {}
     function lol(name)
         if cache[name] then return cache[name] end
@@ -19,6 +68,131 @@
     local Final = lol(ehh)
     getgenv().firstfruit = game.Workspace.UserData["User_"..Final].Data["DevilFruit"].Value
     getgenv().secondfruit = game.Workspace.UserData["User_"..Final].Data["DevilFruit2"].Value
+   do  
+    local fishingplace =  game:GetService("Workspace"):FindFirstChild("fishingplace")  
+    if fishingplace then 
+    fishingplace:Destroy() 
+    end 
+    end
+    local fishingplace = Instance.new("Part",game.Workspace)
+    fishingplace.Name = "fishingplace"
+    fishingplace.Size = Vector3.new(2,1,2)
+    fishingplace.Position = Vector3.new(19784, 210,5000)
+    fishingplace.Anchored = true
+    
+    do  
+    local safezonedestroyspace =  game:GetService("Workspace"):FindFirstChild("SafeZoneOuterSpacePart")  
+    if safezonedestroyspace then 
+    safezonedestroyspace:Destroy() 
+    end 
+    end
+    local SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
+    SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
+    SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
+    SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
+    SafeZoneOuterSpace.Anchored = true
+local mta = getrawmetatable(game)
+local namecall = mta.__namecall
+local setreadonly = setreadonly or make_writable
+
+
+setreadonly(mta, false)
+
+mta.__namecall = newcclosure(function(self, ...)
+    local args = {...}
+    local arguments = args
+    local a = {}
+    for i = 1, #arguments - 1 do
+        a[i] = arguments[i]
+    end
+    local method = getnamecallmethod() 
+
+    if method == 'FireServer' or method == "InvokeServer" then
+        if self.Name == 'Drown' and _G.nowaterdamage then
+            if args[1] then
+                return nil
+            end
+        end
+    end
+    
+    return namecall(self, ...)    
+end)
+
+local attackremote = {}    
+
+local a
+a=hookmetamethod(game,"__namecall",function(self,...)
+    local args = {...}
+    local method = getnamecallmethod()
+    if method == "FireServer" or method == "InvokeServer" then
+        if self.Name == "RequestAnimation" and game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
+            attackremote[self.Name] = args[1]
+            return a(self,unpack(args))
+        elseif self.Name == "RequestAnimation" and game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+            attackremote[self.Name] = ""
+        end
+    end
+      return a(self,...)
+end)
+
+aaxc = hookmetamethod(game, "__namecall", function(self, ...)
+    local args = {...}
+    local method = getnamecallmethod()
+    if method == "FireServer" or method == "InvokeServer" then
+        if self.Name == "RemoteEvent" and args[3] == "StopCharging" and _G.auto100rate then
+            args[6] = 100
+            return aaxc(self, unpack(args))
+        end
+    end
+    return aaxc(self, ...)
+end)
+
+local remotes = {}
+    local azc
+    azc=hookmetamethod(game,"__namecall",function(self,...)
+        local args = {...}
+        local method = getnamecallmethod()
+        if method == "FireServer" or method == "InvokeServer" then
+            if self.Name == "RemoteEvent" and args[3] == "StopCharging" or args[3] == "Create" then
+                remotes[self.Name] = args[1]
+                return azc(self,unpack(args))
+            end
+        end
+          return azc(self,...)
+    end)
+    
+    function serializeTable(val, name, skipnewlines, depth)
+    skipnewlines = skipnewlines or false
+    depth = depth or 0
+ 
+    local tmp = string.rep("", depth)
+ 
+    if name then tmp = tmp end
+ 
+    if type(val) == "table" then
+        tmp = tmp .. (not skipnewlines and "" or "")
+ 
+        for k, v in pairs(val) do
+            tmp =  tmp .. serializeTable(v, k, skipnewlines, depth + 1) .. (not skipnewlines and "" or "")
+        end
+ 
+        tmp = tmp .. string.rep("", depth) 
+    elseif type(val) == "number" then
+        tmp = tmp .. tostring(val)
+    elseif type(val) == "string" then
+        tmp = tmp .. string.format("%q", val)
+    elseif type(val) == "boolean" then
+        tmp = tmp .. (val and "true" or "false")
+    elseif type(val) == "function" then
+        tmp = tmp  .. "func: " .. debug.getinfo(val).name
+    else
+        tmp = tmp .. tostring(val)
+    end
+ 
+    return tmp
+ end
+
+
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
