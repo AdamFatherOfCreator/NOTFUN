@@ -26,7 +26,7 @@ local YoruSpeed = Tabs.Main:AddSlider("Slider", {
     Default = 50,
     Min = 1,
     Max = 200,
-    Rounding = 10,
+    Rounding = 0,
     Callback = function(to)
             Speeds = to
         end
@@ -36,9 +36,9 @@ local YoruSpeed = Tabs.Main:AddSlider("Slider", {
         print("Slider changed:", Value)
     end)
 YoruSpeed:SetValue(50)
-local YoruToggle = Tabs.Main:AddToggle("MyToggle", {Title = "Yoru Spaming", Default = false })
-YoruToggle:OnChanged(function(yoru)
-_G.Yoru = yoru
+local YoruToggle = Tabs.Main:AddToggle("Yoruss", {Title = "Yoru Spaming", Default = false })
+YoruToggle:OnChanged(function()
+_G.Yoru = Yoruss
 end)
             spawn(function()
             while wait() do
@@ -61,7 +61,7 @@ end)
 end
 end
 end)
-Options.MyToggle:SetValue(false)
+Options.Yoruss:SetValue(false)
 end
 
 
