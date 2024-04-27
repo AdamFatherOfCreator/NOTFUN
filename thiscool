@@ -26,40 +26,16 @@ local YoruSpeed = Tabs.Main:AddSlider("Slider", {
     Default = 50,
     Min = 1,
     Max = 200,
-    Rounding = 0,
+    Rounding = 10,
     Callback = function(to)
             Speeds = to
         end
     })
-Speeds = 50
+
+    Slider:OnChanged(function(Value)
+        print("Slider changed:", Value)
+    end)
 YoruSpeed:SetValue(50)
-
-local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Yoru Spamming", Default = false })
-
-Toggle:OnChanged(function()
-getgenv().yoruspam = Options.MyToggle.Value
-end)
-
-    Options.MyToggle:SetValue(false)
-while getgenv().yoruspam do
-wait()
-    local Players = game:GetService("Players")
-    local Plr = Players.LocalPlayer
-    local Character = Plr.Character
-    local Yoru = Character:FindFirstChild("Yoru")
-    local Environment
-wait()
-pcall(function()
-for i,v in pairs(getconnections(Yoru["RequestAnimation"].OnClientEvent)) do 
-    Environment = getsenv(Yoru["AnimationController"])
-end
-    wait()
-for i = 1, Speeds do
-Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
-end
-end)
-wait()
-end
 end
 
 
@@ -120,3 +96,4 @@ hideUI.MouseButton1Up:Connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 wait(0.1)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"F2",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end)
