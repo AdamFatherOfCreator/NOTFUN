@@ -701,7 +701,7 @@ end
 
 local ehh = game.Players.LocalPlayer.Name
 local Final = lol(ehh)
-for i = 1,hakispeed do
+for i = 1, hakispeed do
     local args = {
         [1] = "Off",
         [2] = 1
@@ -725,7 +725,6 @@ elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and Options.
 repeat task.wait()
 until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv
 _G.concu = true
-end
 elseif Options.hakifarm.Value == false then
 _G.concu = false
         local args = {
