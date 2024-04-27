@@ -866,10 +866,10 @@ local hakispeedt = Tabs.Main:AddSlider("Slider", {
 hakispeedt:SetValue(5)
 
 local farmhaki = Tabs.Main:AddToggle("hakifarm", {Title = "Auto Farm Haki", Default = false })
+farmhaki:OnChanged(function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 _G.concu = true
-farmhaki:OnChanged(function()
 while _G.concu do wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*hakitarget
