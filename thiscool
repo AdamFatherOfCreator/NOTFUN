@@ -93,6 +93,18 @@ wait()
 end
 end)
 Options.CestussToggle:SetValue(false)
+
+
+local HakiSection = Tabs.Main:AddSection("Haki Farming")
+local gethaki = Tabs.Main:AddToggle("hakiget", {Title = "Toggle", Default = false })
+    gethaki:OnChanged(function()
+while Options.hakiget.Value do wait()
+pcall(function()
+workspace:WaitForChild("Merchants"):WaitForChild("QuestHakiMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+wait(2)
+end)
+end
+end)
 end
 
 
