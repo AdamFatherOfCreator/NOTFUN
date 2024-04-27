@@ -111,9 +111,9 @@ end)
 
 
 
-local cc = Tabs.Main:AddSection("")
-local ccc = Tabs.Main:AddSection("")
-local cccc = Tabs.Main:AddSection("")
+local cc = Tabs.Main:AddSection("-----")
+local ccc = Tabs.Main:AddSection("-----")
+local cccc = Tabs.Main:AddSection("-----")
 
 end
 
@@ -141,6 +141,10 @@ SaveManager:SetFolder("FluentScriptHub/specific-game")
 
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
+
+local q = Tabs.Settings:AddSection("-----")
+local qq = Tabs.Settings:AddSection("-----")
+local qqq = Tabs.Settings:AddSection("-----")
 
 
 Window:SelectTab(1)
