@@ -12,14 +12,56 @@ local Window = Fluent:CreateWindow({
 })
 --Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "rbxassetid://7539983773" }),
+    Main = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://7539983773" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 local Options = Fluent.Options
 
 
 do
-local farmingsection = Tabs.Main:AddSection("Farming Section")
+local InstantWeapon = Tabs.Main:AddSection("Instant Weapon")
+local YoruSpeed = Tabs.Main:AddSlider("Slider", {
+    Title = "Yoru Speed",
+    Description = "Change this for adjusting yoru speed",
+    Default = 50,
+    Min = 1,
+    Max = 200,
+    Rounding = 10,
+    Callback = function(to)
+            Speeds = to
+        end
+    })
+
+    Slider:OnChanged(function(Value)
+        print("Slider changed:", Value)
+    end)
+YoruSpeed:SetValue(50)
+local YoruToggle = Tabs.Main:AddToggle("MyToggle", {Title = "Yoru Spaming", Default = false })
+YoruToggle:OnChanged(function(yoru)
+_G.Yoru = yoru
+end)
+            spawn(function()
+            while wait() do
+                if _G.Yoru then
+                    pcall(function()
+    local Players = game:GetService("Players")
+    local Plr = Players.LocalPlayer
+    local Character = Plr.Character
+    local Yoru = Character:FindFirstChild("Yoru")
+    local Environment
+wait()
+for i,v in pairs(getconnections(Yoru["RequestAnimation"].OnClientEvent)) do 
+    Environment = getsenv(Yoru["AnimationController"])
+end
+    wait()
+for i = 1, Speeds do
+Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
+end
+end)
+end
+end
+end)
+Options.MyToggle:SetValue(false)
 end
 
 
