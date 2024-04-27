@@ -2,7 +2,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A3)",
+    Title = "SALUNA HUB (A4)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -35,12 +35,16 @@ YoruSpeed:SetValue(50)
 
 local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
-Toggle:OnChanged(function()
-if Options.MyToggle.Value == true then _G.yoruspam = true
-else _G.yoruspam = false
-end
+spawn(function()
+    while wait() do
+        if Options.MyToggle.Value then
+            pcall(function()
+_G.yoruspam = true
+            end)
+        end
+    end
 end)
-while _G.yoruspam do wait()
+while _G.yoruspam do
 wait()
     local Players = game:GetService("Players")
     local Plr = Players.LocalPlayer
