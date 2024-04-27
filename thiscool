@@ -844,7 +844,7 @@ local hakitargett = Tabs.Main:AddSlider("Slider", {
     Description = "Change this for adjusting haki's target",
     Default = 25,
     Min = 1,
-    Max = 99,
+    Max = 90,
     Rounding = 0,
     Callback = function(gmm)
             hakitarget = gmm
@@ -873,6 +873,7 @@ _G.concu = true
 while _G.concu do wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*hakitarget
+local sll =  slv/100*90
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and Options.hakifarm.Value == true then
 local Players = game:GetService("Players")
 local cache = {}
@@ -918,7 +919,7 @@ elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and Options.
     
     workspace.UserData["User_"..Final].III:FireServer(unpack(args))
 repeat task.wait()
-until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= sll
 _G.concu = true
 elseif Options.hakifarm.Value == false then
 _G.concu = false
