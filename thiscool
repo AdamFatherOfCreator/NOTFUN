@@ -36,10 +36,28 @@ YoruSpeed:SetValue(50)
 local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
 Toggle:OnChanged(function()
-_G.yoruspam = Options.MyToggle.Value
+if Options.MyToggle.Value == true then _G.yoruspam = true
+else _G.yoruspam = false
+end
 end)
 while _G.yoruspam do wait()
-print("con cac")
+wait()
+    local Players = game:GetService("Players")
+    local Plr = Players.LocalPlayer
+    local Character = Plr.Character
+    local Yoru = Character:FindFirstChild("Yoru")
+    local Environment
+wait()
+pcall(function()
+for i,v in pairs(getconnections(Yoru["RequestAnimation"].OnClientEvent)) do 
+    Environment = getsenv(Yoru["AnimationController"])
+end
+    wait()
+for i = 1, Speeds do
+Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
+end
+end)
+wait()
 end
     Options.MyToggle:SetValue(false)
 end
