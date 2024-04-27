@@ -36,6 +36,16 @@ local YoruSpeed = Tabs.Main:AddSlider("Slider", {
         print("Slider changed:", Value)
     end)
 YoruSpeed:SetValue(50)
+
+local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+
+Toggle:OnChanged(function()
+_G.yoruspam = Options.MyToggle.Value
+end)
+while _G.yoruspam do wait()
+print("con cac")
+end
+Options.MyToggle:SetValue(false)
 end
 
 
