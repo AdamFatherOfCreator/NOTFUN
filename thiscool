@@ -34,10 +34,13 @@ local YoruSpeed = Tabs.Main:AddSlider("Slider", {
 Speeds = 50
 YoruSpeed:SetValue(50)
 
-local YoruToggle = Tabs.Main:AddToggle("Yoruss", {Title = "Yoru Spaming", Default = false })
-YoruToggle:OnChanged(function()
-_G.Yoru = Options.Yoruss.Value
+local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+
+Toggle:OnChanged(function()
+print("Toggle changed:", Options.MyToggle.Value)
 end)
+
+    Options.MyToggle:SetValue(false)
 while _G.Yoru do
 wait()
     local Players = game:GetService("Players")
