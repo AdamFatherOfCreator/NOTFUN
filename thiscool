@@ -97,7 +97,7 @@ Options.CestussToggle:SetValue(false)
 
 local HakiSection = Tabs.Main:AddSection("Haki Farming")
 local gethaki = Tabs.Main:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
-    gethaki:OnChanged(function()
+gethaki:OnChanged(function()
 while Options.hakiget.Value do wait()
 pcall(function()
 workspace:WaitForChild("Merchants"):WaitForChild("QuestHakiMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
@@ -105,8 +105,544 @@ wait(2)
 end)
 end
 end)
+Options.hakiget:SetValue(false)
 
 
+local drainhaki = Tabs.Main:AddToggle("hakidrain", {Title = "Drain Haki", Default = false })
+drainhaki:OnChanged(function()
+function hakiauto()
+       local Players = game:GetService("Players")
+    local cache = {}
+    function lol(name)
+        if cache[name] then return cache[name] end
+        local player = Players:FindFirstChild(name)
+        if player then
+            cache[name] = player.UserId
+            return player.UserId
+        end 
+    
+        local id
+        pcall(function ()
+            id = Players:lol(name)
+        end)
+        cache[name] = id
+        return id
+    end
+    local ehh = game.Players.LocalPlayer.Name
+    local Final = lol(ehh)
+    
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    
+    
+    
+    end
+    while Options.hakidrain.Value do wait()
+        hakiauto()
+end
+end)
 
 
 
