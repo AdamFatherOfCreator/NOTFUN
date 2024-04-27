@@ -37,7 +37,22 @@ local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = fals
     Toggle:OnChanged(function()
 while Options.MyToggle.Value do
 wait()
-print("con cac")
+    local Players = game:GetService("Players")
+    local Plr = Players.LocalPlayer
+    local Character = Plr.Character
+    local Yoru = Character:FindFirstChild("Yoru")
+    local Environment
+wait()
+pcall(function()
+for i,v in pairs(getconnections(Yoru["RequestAnimation"].OnClientEvent)) do 
+    Environment = getsenv(Yoru["AnimationController"])
+end
+    wait()
+for i = 1, Speeds do
+Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
+end
+end)
+wait()
 end
 end)
 
