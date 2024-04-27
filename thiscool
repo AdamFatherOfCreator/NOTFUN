@@ -34,10 +34,10 @@ local YoruSpeed = Tabs.Main:AddSlider("Slider", {
 Speeds = 50
 YoruSpeed:SetValue(50)
 
-local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Yoru Spamming", Default = false })
 
 Toggle:OnChanged(function()
-print("Toggle changed:", Options.MyToggle.Value)
+_G.Yoru = Options.MyToggle.Value
 end)
 
     Options.MyToggle:SetValue(false)
