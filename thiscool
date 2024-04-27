@@ -2,7 +2,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A1)",
+    Title = "SALUNA HUB (A2)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -22,7 +22,7 @@ do
 local InstantWeapon = Tabs.Main:AddSection("Instant Weapon")
 local YoruSpeed = Tabs.Main:AddSlider("Slider", {
     Title = "Yoru Speed",
-    Description = "Change this for adjusting yoru speed",
+    Description = "Change this for adjusting Yoru's speed",
     Default = 50,
     Min = 1,
     Max = 200,
@@ -31,17 +31,13 @@ local YoruSpeed = Tabs.Main:AddSlider("Slider", {
             Speeds = to
         end
     })
-
-    Slider:OnChanged(function(Value)
-        print("Slider changed:", Value)
-    end)
 YoruSpeed:SetValue(50)
 
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
-    Toggle:OnChanged(function()
-        print("Toggle changed:", Options.MyToggle.Value)
-    end)
+Toggle:OnChanged(function()
+print("Toggle changed:", Options.MyToggle.Value)
+end)
 
     Options.MyToggle:SetValue(false)
 
