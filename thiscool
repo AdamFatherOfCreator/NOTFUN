@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A20)",
+    Title = "SALUNA HUB (A21)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1128,21 +1128,18 @@ Lucyfirst:SetValue(1.7)
         Description = "You can select multiple values.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
-        Default = {"Defense"},
+        Default = {"Defense", "Melee", "Sniper", "Sword"},
     })
 
     keeplucy:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
+        Defense = true,
+        Melee = true,
+        Sniper = true,
+	Sword = true
     })
 
-    keeplucy:OnChanged(function()
-affrr = Melee
-while affrr do wait()
-print("con cac")
-end
+    keeplucy:OnChanged(function(gfr)
+print(gfr)
     end)
 
 
