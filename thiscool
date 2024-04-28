@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A32.1)",
+    Title = "SALUNA HUB (A32.2)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1123,69 +1123,34 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
     })
 Lucyfirst:SetValue(1.7)
 
-    local keeplucy = Tabs.Affinity:AddDropdown("MultiDropdown", {
+    local ccccccc = Tabs.Affinity:AddDropdown("MultiDropdown", {
         Title = "Dropdown",
         Description = "You can select multiple values.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
-        Default = {"Defense", "Melee", "Sniper", "Sword"},
+        Default = {"seven"},
     })
 
-    keeplucy:SetValue({
-        Defense = true,
-        Melee = true,
-        Sniper = true,
-	Sword = true
+    ccccccc:SetValue({
+        Defense = false,
+        Melee = false,
+        Sniper = false,
+	Sword = false
     })
 
-keeplucy:OnChanged(function(gfrr)
-local gfrs = {}
-for gfrr, State in next, gfrr do
-table.insert(gfrs, gfrr)
-end
-if gfrs[1] == "Defense" or gfrs[2] == "Defense" or gfrs[3] == "Defense" or gfrs[4] == "Defense" then
-_G.keepdef1 = true
-else
-_G.keepdef1 = false
-end
-
-if gfrs[1] == "Melee" or gfrs[2] == "Melee" or gfrs[3] == "Melee" or gfrs[4] == "Melee" then
-_G.keepmelee1 = true
-else
-_G.keepmelee1 = false
-end
-
-if gfrs[1] == "Sniper" or gfrs[2] == "Sniper" or gfrs[3] == "Sniper" or gfrs[4] == "Sniper" then
-_G.keepsnip1 = true
-else
-_G.keepsnip1 = false
-end
-
-if gfrs[1] == "Sword" or gfrs[2] == "Sword" or gfrs[3] == "Sword" or gfrs[4] == "Sword" then
-_G.keepsword1 = true
-else
-_G.keepsword1 = false
-end
-end)
+    ccccccc:OnChanged(function(Value)
+        local Values = {}
+        for Value, State in next, Value do
+            table.insert(Values, Value)
+        end
+        print("Mutlidropdown changed:", table.concat(Values, ", "))
+    end)
 
 
 local cc = Tabs.Main:AddSection("                                                -----")
 local ccc = Tabs.Main:AddSection("                                                -----")
 end
 
-
-while _G.keepsword1 do wait(2)
-print("Sword keep is on")
-end
-while _G.keepsnip1 do wait(2)
-print("Snip keep is on")
-end
-while _G.keepmelee1 do wait(2)
-print("Melee keep is on")
-end
-while _G.keepdef1 do wait(2)
-print("Def keep is on")
-end
 
 -- Addons:
 -- SaveManager (Allows you to have a configuration system)
