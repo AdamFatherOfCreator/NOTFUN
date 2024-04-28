@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A23)",
+    Title = "SALUNA HUB (A24)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1139,14 +1139,40 @@ Lucyfirst:SetValue(1.7)
     })
 
     keeplucy:OnChanged(function(gfr)
-        local Values = {}
-        for gfr, State in next, gfr do
-            table.insert(Values, gfr)
-        end    
-print(table.concat(Values))
+if gfr[1] == "Defense" or gfr[2] == "Defense" or gfr[3] == "Defense" or gfr[4] == "Defense" then
+_G.keepdef1 = true
+else
+_G.keepdef1 = false
+end
+if gfr[1] == "Melee" or gfr[2] == "Melee" or gfr[3] == "Melee" or gfr[4] == "Melee" then
+_G.keepmelee1 = true
+else
+_G.keepmelee1 = false
+end
+if gfr[1] == "Sniper" or gfr[2] == "Sniper" or gfr[3] == "Sniper" or gfr[4] == "Sniper" then
+_G.keepsnip1 = true
+else
+_G.keepsnip2 = false
+end
+if gfr[1] == "Sword" or gfr[2] == "Sword" or gfr[3] == "Sword" or gfr[4] == "Sword" then
+_G.keepsword1 = true
+else
+_G.keepsword1 = false
+end
 end)
 
-
+while _G.keepdef1 do wait(2)
+print("Def keep is on")
+end
+while _G.keepmelee1 do wait(2)
+print("Melee keep is on")
+end
+while _G.keepsnip1 do wait(2)
+print("Snip keep is on")
+end
+while _G.keepsword1 do wait(2)
+print("Sword keep is on")
+end
 
 local cc = Tabs.Main:AddSection("                                                -----")
 local ccc = Tabs.Main:AddSection("                                                -----")
