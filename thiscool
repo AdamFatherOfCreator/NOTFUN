@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A18)",
+    Title = "SALUNA HUB (A19)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1128,7 +1128,7 @@ Lucyfirst:SetValue(1.7)
         Description = "You can select multiple values.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
-        Default = {},
+        Default = {"Defense"},
     })
 
     keeplucy:SetValue({
@@ -1146,7 +1146,10 @@ Lucyfirst:SetValue(1.7)
         print("Mutlidropdown changed:", table.concat(Values, ", "))
     end)
 
-
+affrr = Melee
+while affrr do wait()
+print("con cac")
+end
 
 
 local cc = Tabs.Main:AddSection("                                                -----")
