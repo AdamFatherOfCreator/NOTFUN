@@ -1039,7 +1039,7 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
     })
 Lucyfirst:SetValue(1.7)
 
-    local keep = Tabs.Main:AddDropdown("MultiDropdown", {
+    local keep = Tabs.Affinity:AddDropdown("MultiDropdown", {
         Title = "Keep Current Affinity",
         Description = "Choose to keep current affinity (multiple value).",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
