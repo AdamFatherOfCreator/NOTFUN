@@ -1024,6 +1024,21 @@ end
         end
     })
 
+local af1 = Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
+
+local Lucyfirst = Tabs.Main:AddSlider("Slider", {
+    Title = "1st Devil Fruit Point",
+    Description = "Choose the point of affinity",
+    Default = 1.7,
+    Min = 1,
+    Max = 2,
+    Rounding = 1,
+    Callback = function(treo)
+            affty = treo
+        end
+    })
+Lucyfirst:SetValue(1.7)
+
 
 
 local cc = Tabs.Main:AddSection("                                                -----")
