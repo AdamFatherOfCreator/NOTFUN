@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A25)",
+    Title = "SALUNA HUB (A26)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1138,8 +1138,10 @@ Lucyfirst:SetValue(1.7)
 	Sword = true
     })
 
-keeplucy:OnChanged(function(gfr)
-local gfr = {}
+keeplucy:OnChanged(function(gfrr)
+local gfrs = {}
+gfr.insert(gfrs, gfrr)
+
 if gfr[1] == "Defense" or gfr[2] == "Defense" or gfr[3] == "Defense" or gfr[4] == "Defense" then
 _G.keepdef1 = true
 else
