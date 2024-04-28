@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A16)",
+    Title = "SALUNA HUB (A17)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1123,7 +1123,7 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
     })
 Lucyfirst:SetValue(1.7)
 
-    local keeplucy = Tabs.Main:AddDropdown("MultiDropdown", {
+    local keeplucy = Tabs.Affinity:AddDropdown("MultiDropdown", {
         Title = "Dropdown",
         Description = "You can select multiple values.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
