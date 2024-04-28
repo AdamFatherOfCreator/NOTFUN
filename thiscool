@@ -1164,20 +1164,6 @@ _G.keepsword1 = true
 else
 _G.keepsword1 = false
 end
-
-while _G.keepdef1 do wait(3)
-print("Def keep is on")
-end
-while _G.keepmelee1 do wait(3.2)
-print("Melee keep is on")
-end
-while _G.keepsnip1 do wait(3.4)
-print("Snip keep is on")
-end
-while _G.keepsword1 do wait(3.6)
-print("Sword keep is on")
-end
-
 end)
 
 
@@ -1185,6 +1171,27 @@ local cc = Tabs.Main:AddSection("                                               
 local ccc = Tabs.Main:AddSection("                                                -----")
 end
 
+spawn(function()
+while wait() do
+if _G.keepsword1 then
+pcall(function()
+print("Sword keep is on")
+end)
+elseif _G.keepsnip1 then
+pcall(function()
+print("Snip keep is on")
+end)
+elseif _G.keepmelee1 then
+pcall(function()
+print("Melee keep is on")
+end)
+elseif _G.keepdef1 then
+pcall(function()
+print("Def keep is on")
+end)
+end
+end
+ end)
 
 -- Addons:
 -- SaveManager (Allows you to have a configuration system)
