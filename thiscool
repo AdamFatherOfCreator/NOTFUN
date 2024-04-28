@@ -999,7 +999,7 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
 
     Tabs.Server:AddButton({
         Title = "Rejoin Server",
-        Description = "Rejoin The Current Server",
+        Description = "Rejoin the current server",
         Callback = function()
             Window:Dialog({
                 Title = "Rejoin Server",
@@ -1008,9 +1008,9 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
                     {
                         Title = "OK",
                         Callback = function()
-		Players.LocalPlayer:Kick("\nRejoining...")
-		wait()
-game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+            local ts = game:GetService("TeleportService")
+            local p = game:GetService("Players").LocalPlayer
+            ts:Teleport(game.PlaceId, p)            
 end
                     },
                     {
@@ -1022,7 +1022,6 @@ end
             })
         end
     })
-
 
 
 
