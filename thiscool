@@ -1123,6 +1123,29 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
     })
 Lucyfirst:SetValue(1.7)
 
+    local keeplucy = Tabs.Main:AddDropdown("MultiDropdown", {
+        Title = "Dropdown",
+        Description = "You can select multiple values.",
+        Values = {"Defense", "Melee", "Sniper", "Sword"},
+        Multi = true,
+        Default = {""},
+    })
+
+    keeplucy:SetValue({
+        Defense = false,
+        Melee = false,
+        Sniper = false,
+	Sword = false
+    })
+
+    keeplucy:OnChanged(function(Value)
+        local Values = {}
+        for Value, State in next, Value do
+            table.insert(Values, Value)
+        end
+        print("Mutlidropdown changed:", table.concat(Values, ", "))
+    end)
+
 
 
 
