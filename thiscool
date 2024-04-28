@@ -1026,40 +1026,7 @@ end
 
 local af1 = Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
 
-local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
-    Title = "1st Devil Fruit Point",
-    Description = "Choose the point of affinity",
-    Default = 1.7,
-    Min = 1,
-    Max = 2,
-    Rounding = 1,
-    Callback = function(treo)
-            affty = treo
-        end
-    })
-Lucyfirst:SetValue(1.7)
 
-    local keep = Tabs.Affinity:AddDropdown("MultiDropdown", {
-        Title = "Keep Current Affinity",
-        Description = "Choose to keep current affinity (multiple value).",
-        Values = {"Defense", "Melee", "Sniper", "Sword"},
-        Multi = true,
-    })
-
-    MultiDropdown:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
-    })
-
-    MultiDropdown:OnChanged(function(Value)
-        local Values = {}
-        for Value, State in next, Value do
-            table.insert(Values, Value)
-        end
-        print("Mutlidropdown changed:", table.concat(Values, ", "))
-    end)
 
 
 
