@@ -1044,14 +1044,13 @@ Lucyfirst:SetValue(1.7)
         Description = "Choose to keep current affinity (multiple value).",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
-        Default = {""},
     })
 
     MultiDropdown:SetValue({
         Defense = false,
         Melee = false,
         Sniper = false,
-	Sword = false,
+	Sword = false
     })
 
     MultiDropdown:OnChanged(function(Value)
