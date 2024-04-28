@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A13)",
+    Title = "SALUNA HUB (A14)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1010,7 +1010,7 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
                         Callback = function()
 		Players.LocalPlayer:Kick("\nRejoining...")
 		wait()
-		TeleportService:Teleport(PlaceId, Players.LocalPlayer)
+game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
 end
                     },
                     {
