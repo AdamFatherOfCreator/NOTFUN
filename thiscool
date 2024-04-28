@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A26)",
+    Title = "SALUNA HUB (A27)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1140,24 +1140,25 @@ Lucyfirst:SetValue(1.7)
 
 keeplucy:OnChanged(function(gfrr)
 local gfrs = {}
-gfr.insert(gfrs, gfrr)
-
-if gfr[1] == "Defense" or gfr[2] == "Defense" or gfr[3] == "Defense" or gfr[4] == "Defense" then
+for gfrr, State in next, gfrr do
+table.insert(gfrs, gfrr)
+end
+if table[1] == "Defense" or table[2] == "Defense" or table[3] == "Defense" or table[4] == "Defense" then
 _G.keepdef1 = true
 else
 _G.keepdef1 = false
 end
-if gfr[1] == "Melee" or gfr[2] == "Melee" or gfr[3] == "Melee" or gfr[4] == "Melee" then
+if table[1] == "Melee" or table[2] == "Melee" or table[3] == "Melee" or table[4] == "Melee" then
 _G.keepmelee1 = true
 else
 _G.keepmelee1 = false
 end
-if gfr[1] == "Sniper" or gfr[2] == "Sniper" or gfr[3] == "Sniper" or gfr[4] == "Sniper" then
+if table[1] == "Sniper" or table[2] == "Sniper" or table[3] == "Sniper" or table[4] == "Sniper" then
 _G.keepsnip1 = true
 else
 _G.keepsnip2 = false
 end
-if gfr[1] == "Sword" or gfr[2] == "Sword" or gfr[3] == "Sword" or gfr[4] == "Sword" then
+if table[1] == "Sword" or table[2] == "Sword" or table[3] == "Sword" or table[4] == "Sword" then
 _G.keepsword1 = true
 else
 _G.keepsword1 = false
