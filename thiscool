@@ -941,8 +941,8 @@ Options.hakifarm:SetValue(false)
         Description = "Use to reduce lag",
         Callback = function()
             Window:Dialog({
-                Title = "Do you want to use low-graphic mode",
-                Content = "This is a dialog",
+                Title = "Low-graphic Mode",
+                Content = "Do you want to use?",
                 Buttons = {
                     {
                         Title = "Confirm",
