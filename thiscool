@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A21)",
+    Title = "SALUNA HUB (A22)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1139,8 +1139,12 @@ Lucyfirst:SetValue(1.7)
     })
 
     keeplucy:OnChanged(function(gfr)
-print(gfr)
-    end)
+        local Values = {}
+        for gfr, State in next, gfr do
+            table.insert(Values, gfr)
+        end    
+print(Values)
+end)
 
 
 
