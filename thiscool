@@ -945,7 +945,7 @@ Options.hakifarm:SetValue(false)
                 Content = "Do you want to use?",
                 Buttons = {
                     {
-                        Title = "Confirm",
+                        Title = "OK",
                         Callback = function()
 workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
 	workspace:FindFirstChildOfClass('Terrain').WaterWaveSpeed = 0
@@ -998,30 +998,20 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
     })
 
     Tabs.Server:AddButton({
-        Title = "Server Information",
-        Description = "Show the server's information",
+        Title = "Rejoin Server",
+        Description = "Rejoin The Current Server",
         Callback = function()
-local minutes = math.floor(workspace.DistributedGameTime / 60)
-local hours = math.floor(workspace.DistributedGameTime / 60 / 60)
-local seconds = seconds - (minutes * 60)
-local minutes = minutes - (hours * 60)
-if hours < 1 then if minutes < 1 then
             Window:Dialog({
-                Title = "Server Information",
-                Content = seconds .. " Second(s)" else 
-          Window:Dialog({
-                Title = "Server Information",
-                Content = minutes .. " Minute(s), " .. seconds .. " Second(s)" else
-Window:Dialog({
-                Title = "Server Information",
-                Content = minutes .. " Minute(s), " .. seconds .. " Second(s)" hours .. " Hour(s), " .. minutes .. " Minute(s), " .. seconds .. " Second(s)"
-end
-,
+                Title = "Rejoin Server",
+                Content = "Do you want to use?",
                 Buttons = {
                     {
-                        Title = "Confirm",
+                        Title = "OK",
                         Callback = function()
-             end
+		Players.LocalPlayer:Kick("\nRejoining...")
+		wait()
+		TeleportService:Teleport(PlaceId, Players.LocalPlayer)
+end
                     },
                     {
                         Title = "Cancel",
@@ -1032,7 +1022,6 @@ end
             })
         end
     })
-
 
 
 
