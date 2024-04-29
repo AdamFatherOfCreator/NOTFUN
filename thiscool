@@ -1167,24 +1167,6 @@ end
 end
 end)
 
-local ret = Tabs.Affinity:AddDropdown("Dropdown", {
-        Title = "Budget Type",
-        Values = {"Cash", "Gems"},
-        Multi = false,
-        Default = 1,
-    })
-
-    ret:SetValue("Cash")
-
-    ret:OnChanged(function(Valuezx)
-getgenv().budget = Valuezx
-print(budget)
-end)
-
-
-
-
-
 local cc = Tabs.Main:AddSection("                                                -----")
 local ccc = Tabs.Main:AddSection("                                                -----")
 end
