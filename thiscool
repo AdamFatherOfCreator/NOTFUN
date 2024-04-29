@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A33)",
+    Title = "SALUNA HUB (B00)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1107,47 +1107,6 @@ end
             })
         end
     })
-
-local af1 = Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
-
-local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
-    Title = "1st Devil Fruit Point",
-    Description = "Choose the point of affinity",
-    Default = 1.7,
-    Min = 1,
-    Max = 2,
-    Rounding = 1,
-    Callback = function(treo)
-            affty = treo
-        end
-    })
-Lucyfirst:SetValue(1.7)
-
-    local ccccccc = Tabs.Affinity:AddDropdown("MultiDropdown", {
-        Title = "Dropdown",
-        Description = "You can select multiple values.",
-        Values = {"Defense", "Melee", "Sniper", "Sword"},
-        Multi = true,
-        Default = {"seven"},
-    })
-
-    ccccccc:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
-    })
-
-    ccccccc:OnChanged(function(Value)
-        local Values = {}
-        for Value, State in next, Value do
-            table.insert(Values, Value)
-        end
-for k, v in pairs(Values) do
-print(k)
-end
-end)
-
 
 local cc = Tabs.Main:AddSection("                                                -----")
 local ccc = Tabs.Main:AddSection("                                                -----")
