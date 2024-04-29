@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A32.3)",
+    Title = "SALUNA HUB (A33)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1143,8 +1143,10 @@ Lucyfirst:SetValue(1.7)
         for Value, State in next, Value do
             table.insert(Values, Value)
         end
-        print("Mutlidropdown changed:", table.concat(Values, ", "))
-    end)
+for k, v in pairs(Values) do
+print(k)
+end
+end)
 
 
 local cc = Tabs.Main:AddSection("                                                -----")
