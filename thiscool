@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (A34.5)",
+    Title = "SALUNA HUB (A35)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1144,8 +1144,25 @@ Lucyfirst:SetValue(1.7)
             table.insert(Values, Value)
         end
 for k, v in pairs(Values) do
+if string.find(v, "Defense") then
+_G.keepdef = true
+else
+_G.keepdef = false
+end
 if string.find(v, "Melee") then
-print("Melee nek")
+_G.keepmelee = true
+else
+_G.keepmelee = false
+end
+if string.find(v, "Sniper") then
+_G.keepsnip = true
+else
+_G.keepsnip = false
+end
+if string.find(v, "Sword") then
+_G.keepsword = true
+else
+_G.keepsword = false
 end
 end
 end)
