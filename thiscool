@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (B1)",
+    Title = "SALUNA HUB (B2)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1189,24 +1189,24 @@ end)
         end
 for k, q in pairs(Valuess) do
 if string.find(q, "Defense") then
-_G.keepdef = true
+_G.targetdef = true
 else
-_G.keepdef = false
+_G.targetdef = false
 end
 if string.find(q, "Melee") then
-_G.keepmelee = true
+_G.targetmelee = true
 else
-_G.keepmelee = false
+_G.targetmelee = false
 end
 if string.find(q, "Sniper") then
-_G.keepsnip = true
+_G.targetsnip = true
 else
-_G.keepsnip = false
+_G.targetsnip = false
 end
 if string.find(q, "Sword") then
-_G.keepsword = true
+_G.targetword = true
 else
-_G.keepsword = false
+_G.targetword = false
 end
 end
 end)
