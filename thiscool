@@ -1128,7 +1128,7 @@ Lucyfirst:SetValue(1.7)
         Description = "You can select multiple values.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
-        Default = {"seven"},
+        Default = {""},
     })
 
     ccccccc:SetValue({
@@ -1144,7 +1144,9 @@ Lucyfirst:SetValue(1.7)
             table.insert(Values, Value)
         end
 for k, v in pairs(Values) do
-print(v)
+if string.find(v, "Melee") then
+print("Melee nek")
+end
 end
 end)
 
