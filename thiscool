@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (B1)",
+    Title = "SALUNA HUB (A33)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1124,11 +1124,11 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
 Lucyfirst:SetValue(1.7)
 
     local ccccccc = Tabs.Affinity:AddDropdown("MultiDropdown", {
-        Title = "Lock Affinity",
-        Description = "You can lock multiple affinity.",
+        Title = "Dropdown",
+        Description = "You can select multiple values.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
-        Default = {""},
+        Default = {"seven"},
     })
 
     ccccccc:SetValue({
@@ -1144,73 +1144,9 @@ Lucyfirst:SetValue(1.7)
             table.insert(Values, Value)
         end
 for k, v in pairs(Values) do
-if string.find(v, "Defense") then
-_G.keepdef = true
-else
-_G.keepdef = false
-end
-if string.find(v, "Melee") then
-_G.keepmelee = true
-else
-_G.keepmelee = false
-end
-if string.find(v, "Sniper") then
-_G.keepsnip = true
-else
-_G.keepsnip = false
-end
-if string.find(v, "Sword") then
-_G.keepsword = true
-else
-_G.keepsword = false
-end
+print(k)
 end
 end)
-
-    local wwwwww = Tabs.Affinity:AddDropdown("MultiDropdown", {
-        Title = "Target Affinity",
-        Description = "You can choose the target affinity.",
-        Values = {"Defense", "Melee", "Sniper", "Sword"},
-        Multi = true,
-        Default = {""},
-    })
-
-    wwwwww:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
-    })
-
-    wwwwww:OnChanged(function(Valuerr)
-        local Valuess = {}
-        for Valuerr, State in next, Valuerr do
-            table.insert(Valuess, Valuerr)
-        end
-for k, q in pairs(Valuess) do
-if string.find(q, "Defense") then
-_G.keepdef = true
-else
-_G.keepdef = false
-end
-if string.find(q, "Melee") then
-_G.keepmelee = true
-else
-_G.keepmelee = false
-end
-if string.find(q, "Sniper") then
-_G.keepsnip = true
-else
-_G.keepsnip = false
-end
-if string.find(q, "Sword") then
-_G.keepsword = true
-else
-_G.keepsword = false
-end
-end
-end)
-
 
 
 local cc = Tabs.Main:AddSection("                                                -----")
