@@ -197,13 +197,13 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (B00)",
+    Title = "SALUNA HUB (B4.1)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Aqua",
-    MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
+    MinimizeKey = Enum.KeyCode.F2 -- Used when theres no MinimizeKeybind
 })
 --Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
 local Tabs = {
@@ -1107,6 +1107,83 @@ end
             })
         end
     })
+
+local af1 = Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
+
+local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
+    Title = "1st Devil Fruit Point",
+    Description = "Choose the point of affinity",
+    Default = 1.7,
+    Min = 1,
+    Max = 2,
+    Rounding = 1,
+    Callback = function(treo)
+            affty = treo
+        end
+    })
+Lucyfirst:SetValue(1.7)
+
+    local ccccccc = Tabs.Affinity:AddDropdown("MultiDropdown", {
+        Title = "Lock Affinity",
+        Description = "You can lock multiple affinity.",
+        Values = {"Defense", "Melee", "Sniper", "Sword"},
+        Multi = true,
+        Default = {""},
+    })
+
+    ccccccc:SetValue({
+        Defense = false,
+        Melee = false,
+        Sniper = false,
+	Sword = false
+    })
+
+    ccccccc:OnChanged(function(Value)
+        local Values = {}
+        for Value, State in next, Value do
+            table.insert(Values, Value)
+        end
+for k, v in pairs(Values) do
+if string.find(v, "Defense") then
+_G.keepdef = true
+else
+_G.keepdef = false
+end
+if string.find(v, "Melee") then
+_G.keepmelee = true
+else
+_G.keepmelee = false
+end
+if string.find(v, "Sniper") then
+_G.keepsnip = true
+else
+_G.keepsnip = false
+end
+if string.find(v, "Sword") then
+_G.keepsword = true
+else
+_G.keepsword = false
+end
+end
+end)
+
+local ret = Tabs.Affinity:AddDropdown("Dropdown", {
+        Title = "Budget Type",
+        Values = {"Cash", "Gems"},
+        Multi = false,
+        Default = 1,
+    })
+
+    ret:SetValue("Cash")
+
+    ret:OnChanged(function(Valuezx)
+getgenv().budget = Valuezx
+print(budget)
+end)
+
+
+
+
 
 local cc = Tabs.Main:AddSection("                                                -----")
 local ccc = Tabs.Main:AddSection("                                                -----")
