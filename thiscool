@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (B5)",
+    Title = "SALUNA HUB (C1)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -210,7 +210,7 @@ local Tabs = {
     Main = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://8587689304" }),
     Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://2294529381" }),
     Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://10957111168" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16149111731" }),
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
     Webhook = Window:AddTab({ Title = "Webhook", Icon = "rbxassetid://14769727847" }),
