@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (C1)",
+    Title = "SALUNA HUB (C2)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -941,6 +941,190 @@ end
 end)
 Options.hakifarm:SetValue(false)
 
+    Tabs.Haki:AddButton({
+        Title = "Haki Farming (BETA)",
+        Description = "Click to run (can click multi-time)",
+        Callback = function()
+local x = game.Players.LocalPlayer.UserId
+local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
+
+for i = 1,99999 do
+
+while wait() do
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+end
+end
+end
+ })
     Tabs.Server:AddButton({
         Title = "Low-Graphic Mode",
         Description = "Use to reduce lag",
