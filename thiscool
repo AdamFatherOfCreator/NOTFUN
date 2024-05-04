@@ -197,7 +197,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (C5)",
+    Title = "SALUNA HUB (C6)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1076,6 +1076,20 @@ local args = {
 
 workspace.UserData["User_"..x].III:FireServer(unpack(args))
 wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait() 
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait() 
 local args = {
     [1] = "On",
     [2] = haki
