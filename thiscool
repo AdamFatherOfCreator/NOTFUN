@@ -209,7 +209,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D2)",
+    Title = "SALUNA HUB (D3)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1519,7 +1519,13 @@ game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,gam
 wait(0.1)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 end)
+else
+game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Go Buy Script")
+everyClipboard = toclipboard
+function toClipboard(txt)
+    if everyClipboard then
+        everyClipboard(tostring(txt))
+    end
 end
-if _G.WhiteListed == false then 
-game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Go Buy Script https://discord.gg/ecpbhm8G3w")
+toClipboard("https://discord.gg/ecpbhm8G3w")
 end
