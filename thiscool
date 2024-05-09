@@ -41,7 +41,7 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
 end)  
 
 local listed = {
-"46f9f1f2-e343-40b8-add5-74bb314189a1" -- SALUNA
+"bfcd6f8a-8b84-4bbc-bd46-823923114b09" -- SALUNA
 }
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
