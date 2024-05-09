@@ -40,12 +40,24 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
     end
 end)  
 
+local listed = {
+46f9f1f2-e343-40b8-add5-74bb314189a1 -- SALUNA
+}
+_G.WhiteListed = false
+        for _, v1 in pairs(listed) do
+local gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
+            if gethwid == v1 then
+_G.WhiteListed = true
+            end
+        end
+if _G.WhiteListed then 
     local vu = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:connect(function()
        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
        wait(1)
        vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
     end)
+
 
 local Players = game:GetService("Players")
     local cache = {}
@@ -197,7 +209,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (C7)",
+    Title = "SALUNA HUB (D1)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1507,3 +1519,7 @@ game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,gam
 wait(0.1)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 end)
+end
+if _G.WhiteListed == false then 
+game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Go Buy Script https://discord.gg/ecpbhm8G3w")
+end
