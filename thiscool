@@ -41,7 +41,7 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
 end)  
 
 local listed = {
-"bfcd6f8a-8b84-4bbc-bd46-823923114b09",-- SALUNA
+"7d4ae994-5d43-4f31-82be-8a174b05525c",-- SALUNA
 "746c28fd-45e0-4172-8778-3648642740a6" -- Khôi
 }
 _G.WhiteListed = false
