@@ -213,7 +213,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D26)",
+    Title = "SALUNA HUB (D27)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1441,7 +1441,7 @@ end)
 
 local ret = Tabs.Affinity:AddDropdown("Dropdown", {
         Title = "Budget Type",
-        Values = {"Cash", "Gems"},
+        Values = {budget, "Gems"},
         Multi = false,
         Default = 1,
     })
@@ -1449,7 +1449,7 @@ local ret = Tabs.Affinity:AddDropdown("Dropdown", {
     ret:SetValue("Cash")
 
     ret:OnChanged(function(Valuezx)
-getgenv().budget = Valuezx
+_G.budget = Valuezx
 end)
 
 local Toggle = Tabs.Affinity:AddToggle("DF1Toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
@@ -1545,6 +1545,177 @@ Fluent:Notify({
     Duration = 8
 })
 end
+if _G.defswordsnip == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+
+elseif _G.allspin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+
+elseif _G.meleesnipswordspin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+elseif _G.defmeleeswordspin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+
+elseif _G.defmeleesnipspin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+
+elseif _G.swordsnipspin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+elseif _G.meleeswordspin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+elseif _G.meleesnipspin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+elseif _G.defswordspin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+elseif _G.defsnipspin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+elseif _G.defmeleespin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+elseif _G.swordspin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+elseif _G.sniperspin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+elseif _G.meleespin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+elseif _G.defspin == true and Options.DF1Toggle.Value == true then
+local args = {
+    [1] = "DFT1",
+    [2] = DEFAFF,
+    [3] = MELEEAFF,
+    [4] = SNIPAFF,
+    [5] = SWORDAFF,
+    [6] = budget
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+end
+wait(12)
 
 end)
 end
