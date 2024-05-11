@@ -81,12 +81,18 @@ local Players = game:GetService("Players")
     local Final = lol(ehh)
     getgenv().firstfruit = game.Workspace.UserData["User_"..Final].Data["DevilFruit"].Value
     getgenv().secondfruit = game.Workspace.UserData["User_"..Final].Data["DevilFruit2"].Value
+
    do  
     local fishingplace =  game:GetService("Workspace"):FindFirstChild("fishingplace")  
     if fishingplace then 
     fishingplace:Destroy() 
     end 
     end
+
+        if game.CoreGui:FindFirstChild("BBB") then
+            game.CoreGui:FindFirstChild("BBB"):Destroy()
+        end
+
     local fishingplace = Instance.new("Part",game.Workspace)
     fishingplace.Name = "fishingplace"
     fishingplace.Size = Vector3.new(2,1,2)
@@ -210,7 +216,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D4)",
+    Title = "SALUNA HUB (D5)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -244,7 +250,7 @@ local kills = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Fram
 local fish = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.FishAmount.Text
     Tabs.Main:AddParagraph({
         Title = "Your Stats",
-        Content = total
+        Content = total " \n" haki " \nGems: " gems  " \nBounty: " bounty " \nKills: " kills " \nFish: " fish
     })
 
 
@@ -1514,7 +1520,7 @@ Fluent:Notify({
 -- which has been marked to be one that auto loads!
 SaveManager:LoadAutoloadConfig()
 --------
-local BBB= Instance.new("ScreenGui")
+local BBB = Instance.new("ScreenGui")
 BBB.Name = "BBB"
 BBB.Parent = game.CoreGui
 local hideUI = Instance.new("TextButton")
