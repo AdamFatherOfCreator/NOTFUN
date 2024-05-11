@@ -213,7 +213,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D21)",
+    Title = "SALUNA HUB (D22)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1511,10 +1511,10 @@ hideUI.Parent = BBB
 hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 hideUI.ClipsDescendants = true
 hideUI.Position = UDim2.new(0.005, 1, 0.013, 1)
-hideUI.Size = UDim2.new(0.121, 0, 0.111, 0)
+hideUI.Size = UDim2.new(0.15, 0, 0.18, 0)
 hideUI.AutoButtonColor = false
 hideUI.Font = Enum.Font.SourceSans
-hideUI.Font = " HIDE/SHOW UI "
+hideUI.Text = " HIDE/SHOW UI "
 hideUI.TextColor3 = Color3.fromRGB(255, 255, 255)
 hideUI.TextSize = 14
 hideUI.TextWrapped = true
@@ -1525,6 +1525,7 @@ game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,gam
 wait(0.1)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 end)
+
 else
 game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Go Buy Script")
 everyClipboard = toclipboard
