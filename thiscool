@@ -248,7 +248,8 @@ local kills = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Fram
 local fish = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.FishAmount.Text
     Tabs.Main:AddParagraph({
         Title = "Your Stats",
-        Content = total .. "\nGems" ..gems
+        Content = total .. " \n" ..haki .. "\nGems: " ..gems .. " \nBounty: " ..bounty .. " \nKills: " ..kills .. " \nFish: " ..fish
+
     })
 
 
