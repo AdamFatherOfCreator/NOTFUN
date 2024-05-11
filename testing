@@ -1392,7 +1392,6 @@ if string.find(v, "Sword") then
 _G.keepsword = true
 else
 _G.keepsword = false
-print("Melee:" .._G.keepmelee .. " Def:" .._G.keepdef .. " Snip:" .._G.keepsnip .. " Sw: " .._G.keepsword)
 end
 end
 end)
@@ -1442,6 +1441,7 @@ _G.targetsword = true
 end
 if q ~= "Sword" then
 _G.targetsword = false
+print("Mutlidropdown changed:", table.concat(Valuess, ", "))
 end
 end
 end)
