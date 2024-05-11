@@ -210,7 +210,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D3)",
+    Title = "SALUNA HUB (D4)",
     SubTitle = "by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -234,6 +234,20 @@ local Options = Fluent.Options
 
 
 do
+local CurrentStats = Tabs.Main:AddSection("Current Stats")
+local total = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.TotalLevel.Text
+local haki = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Haki.Text
+local gems = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Gems.GemsAmount.Text
+local beries = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Beri.BeriAmount.Text
+local bounty = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Bounty.BountyAmount.Text
+local kills = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Kills.KillsAmount.Text
+local fish = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.FishAmount.Text
+    Tabs.Main:AddParagraph({
+        Title = "Your Stats",
+        Content = ..total " \n" ..haki " \nGems: " .. gems  " \nBounty: " ..bounty " \nKills: " ..kills " \nFish: " ..fish
+    })
+
+
 local InstantWeapon = Tabs.Main:AddSection("Instant Weapon")
 local YoruSpeed = Tabs.Main:AddSlider("Slider", {
     Title = "Yoru Speed",
