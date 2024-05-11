@@ -1,3 +1,4 @@
+_G.statss = true
 local Pedo = {
     1135910299, -- Havelic
     1619950875, -- Pixel_SkillzSPIN2
@@ -211,9 +212,9 @@ local remotes = {}
  end
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
-local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D12)",
+    Title = "SALUNA HUB (D19)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -234,21 +235,6 @@ local Tabs = {
     
 }
 local Options = Fluent.Options
-
-do
-local CurrentStats = Tabs.Main:AddSection("Current Stats")
-local total = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.TotalLevel.Text
-local haki = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Haki.Text
-local gems = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Gems.GemsAmount.Text
-local beries = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Beri.BeriAmount.Text
-local bounty = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Bounty.BountyAmount.Text
-local kills = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Kills.KillsAmount.Text
-local fish = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.FishAmount.Text
-    Tabs.Main:AddParagraph({
-        Title = "Your Stats",
-        Content = total .. " \n" ..haki .. "\nGems: " ..gems .. "\nBeri: " ..beries .. " \nBounty: " ..bounty .. " \nKills: " ..kills .. " \nFish: " ..fish
-
-    })
 
 
 local InstantWeapon = Tabs.Main:AddSection("Instant Weapon")
@@ -1269,7 +1255,7 @@ end
 
    Tabs.Server:AddButton({
         Title = "Server Hop",
-        Description = "Join the different server",
+        Description = "Join the different server (fewer player)",
         Callback = function()
             Window:Dialog({
                 Title = "Server Hop",
@@ -1474,7 +1460,7 @@ end)
 
 local cc = Tabs.Main:AddSection("                                                -----")
 local ccc = Tabs.Main:AddSection("                                                -----")
-end
+
 
 
 -- Addons:
@@ -1508,9 +1494,9 @@ local qq = Tabs.Settings:AddSection("                                           
 Window:SelectTab(1)
 
 Fluent:Notify({
-    Title = "Saluna With Love",
-    Content = "The script is loaded, enjoy!",
-    Duration = 8
+    Title = "Saluna With Love ♥",
+    Content = "Have a nice day!",
+    Duration = 15
 })
 
 -- You can use the SaveManager:LoadAutoloadConfig() to load a config
@@ -1525,20 +1511,22 @@ hideUI.Name = "hideUI"
 hideUI.Parent = BBB
 hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 hideUI.ClipsDescendants = true
-hideUI.Position = UDim2.new(0, 0, 0, 0)
-hideUI.Size = UDim2.new(0, 100, 0, 43)
+hideUI.Position = {-0.002, 1},{0.058, 1}
+hideUI.Size = {0.118, 0},{0.09, 0}
 hideUI.AutoButtonColor = false
 hideUI.Font = Enum.Font.SourceSans
 hideUI.Text = "HIDE/SHOW UI"
 hideUI.TextColor3 = Color3.fromRGB(255, 255, 255)
 hideUI.TextSize = 14
+hideUI.TextWrapped = true
+hideUI.TextScaled = true
 hideUI.MouseButton1Up:Connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 wait(0.1)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 end)
 else
-game.Players.LocalPlayer:Kick("KICKED      https://discord.gg/ecpbhm8G3w")
+game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Go Buy Script")
 everyClipboard = toclipboard
 function toClipboard(txt)
     if everyClipboard then
