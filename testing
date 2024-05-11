@@ -213,7 +213,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D37)",
+    Title = "SALUNA HUB (D38)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1360,11 +1360,11 @@ Lucyfirst:SetValue(1.7)
     })
 
     ccccccc:SetValue({
-        "Defense" = false,
-        "Melee" = false,
-        "Sniper" = false,
-	"Sword" = false,
-	"None" = true
+        Defense = false,
+        Melee = false,
+        Sniper = false,
+	Sword = false,
+	None = true
     })
 
     ccccccc:OnChanged(function(Value)
@@ -1411,11 +1411,11 @@ end)
     })
 
     wwwwww:SetValue({
-        "Defense" = false,
-        "Melee" = false,
-        "Sniper" = fa;se,
-	"Sword" = false,
-	"None" = true
+        Defense = false,
+        Melee = false,
+        Sniper = fa;se,
+	Sword = false,
+	None = true
 
     })
 
