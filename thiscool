@@ -42,7 +42,7 @@ end)
 
 local listed = {
 "7d4ae994-5d43-4f31-82be-8a174b05525c",-- SALUNA
-"746c28fd-45e0-4172-8778-3648642740a6" -- Khôi
+"f64dd522-2de8-4d33-81c3-69312187d6ef" -- Khôi
 }
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
@@ -1537,7 +1537,7 @@ wait(0.1)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 end)
 else
-game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Go Buy Script")
+game.Players.LocalPlayer:Kick("KICKED      https://discord.gg/ecpbhm8G3w")
 everyClipboard = toclipboard
 function toClipboard(txt)
     if everyClipboard then
