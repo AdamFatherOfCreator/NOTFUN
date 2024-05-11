@@ -1510,7 +1510,7 @@ hideUI.Name = "hideUI"
 hideUI.Parent = BBB
 hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 hideUI.ClipsDescendants = true
-hideUI.Position = UDim2.new(-0.002, 1, 0.058, 1)
+hideUI.Position = UDim2.new(0.02, 1, 0.058, 1)
 hideUI.Size = UDim2.new(0.118, 0, 0.09, 0)
 hideUI.AutoButtonColor = false
 hideUI.Font = Enum.Font.SourceSans
@@ -1519,6 +1519,7 @@ hideUI.TextColor3 = Color3.fromRGB(255, 255, 255)
 hideUI.TextSize = 14
 hideUI.TextWrapped = true
 hideUI.TextScaled = true
+hideUI.TextWeight = Bold
 hideUI.MouseButton1Up:Connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 wait(0.1)
