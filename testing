@@ -1,0 +1,1548 @@
+local Pedo = {
+    1135910299, -- Havelic
+    1619950875, -- Pixel_SkillzSPIN2
+    1581720092, -- Pixel_SkillzSPIN
+    1661505948, -- Pixel_SkillzBARRIER
+    679804290, -- Pixel_Skillz
+    520944, -- Oblivic
+    43247021, -- BowTiedPony
+    2350183594, -- icydragonwingsis
+    1338963426, -- happypandamagic2
+    1276541545, -- VanitasThePlague
+    587649463, -- happypandamagic
+    245586741, -- Tiptop98
+    174941504, -- FoxKingFab
+    136099207,-- CudlessTheCat
+    94825741, -- NATSUDRAGN331
+    358051152, -- VortexFragmented
+    529455640, -- vlonedd
+    281482099, -- Quixotize
+    355207559, -- Elianmc1s
+    5084487, -- Americanflag
+    928623624, -- TrashPanda2361
+    30049170, -- Farquanetta
+    474452017 -- Bige0n
+    }
+
+for _, v in pairs(game:GetService("Players"):GetPlayers()) do
+    for _, v1 in pairs(Pedo) do
+        if v.UserId == v1 then
+            game:GetService("Players").LocalPlayer:Kick("Admin is in the server")
+        end
+    end
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(r)
+    for _, v in pairs(Pedo) do
+        if r.UserId == v then
+            game:GetService("Players").LocalPlayer:Kick("Admin or Staff has joined the server")
+        end
+    end
+end)  
+
+local listed = {
+"7d4ae994-5d43-4f31-82be-8a174b05525c",-- SALUNA
+"746c28fd-45e0-4172-8778-3648642740a6" -- Khôi
+}
+_G.WhiteListed = false
+        for _, v1 in pairs(listed) do
+local gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
+            if gethwid == v1 then
+_G.WhiteListed = true
+            end
+        end
+if _G.WhiteListed then 
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+       vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+       wait(1)
+       vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end)
+
+
+local Players = game:GetService("Players")
+    local cache = {}
+    function lol(name)
+        if cache[name] then return cache[name] end
+        local player = Players:FindFirstChild(name)
+        if player then
+            cache[name] = player.UserId
+            return player.UserId
+        end 
+    
+        local id
+        pcall(function ()
+            id = Players:lol(name)
+        end)
+        cache[name] = id
+        return id
+    end
+    local ehh = game.Players.LocalPlayer.Name
+    local Final = lol(ehh)
+    getgenv().firstfruit = game.Workspace.UserData["User_"..Final].Data["DevilFruit"].Value
+    getgenv().secondfruit = game.Workspace.UserData["User_"..Final].Data["DevilFruit2"].Value
+
+   do  
+    local fishingplace =  game:GetService("Workspace"):FindFirstChild("fishingplace")  
+    if fishingplace then 
+    fishingplace:Destroy() 
+    end 
+    end
+    local fishingplace = Instance.new("Part",game.Workspace)
+    fishingplace.Name = "fishingplace"
+    fishingplace.Size = Vector3.new(2,1,2)
+    fishingplace.Position = Vector3.new(19784, 210,5000)
+    fishingplace.Anchored = true
+    
+    do  
+    local safezonedestroyspace =  game:GetService("Workspace"):FindFirstChild("SafeZoneOuterSpacePart")  
+    if safezonedestroyspace then 
+    safezonedestroyspace:Destroy() 
+    end 
+    end
+        if game.CoreGui:FindFirstChild("BBB") then
+            game.CoreGui:FindFirstChild("BBB"):Destroy()
+        end
+    local SafeZoneOuterSpace = Instance.new("Part",game.Workspace)
+    SafeZoneOuterSpace.Name = "SafeZoneOuterSpacePart"
+    SafeZoneOuterSpace.Size = Vector3.new(200,3,200)
+    SafeZoneOuterSpace.Position = Vector3.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
+    SafeZoneOuterSpace.Anchored = true
+local mta = getrawmetatable(game)
+local namecall = mta.__namecall
+local setreadonly = setreadonly or make_writable
+
+
+setreadonly(mta, false)
+
+mta.__namecall = newcclosure(function(self, ...)
+    local args = {...}
+    local arguments = args
+    local a = {}
+    for i = 1, #arguments - 1 do
+        a[i] = arguments[i]
+    end
+    local method = getnamecallmethod() 
+
+    if method == 'FireServer' or method == "InvokeServer" then
+        if self.Name == 'Drown' and _G.nowaterdamage then
+            if args[1] then
+                return nil
+            end
+        end
+    end
+    
+    return namecall(self, ...)    
+end)
+
+local attackremote = {}    
+
+local a
+a=hookmetamethod(game,"__namecall",function(self,...)
+    local args = {...}
+    local method = getnamecallmethod()
+    if method == "FireServer" or method == "InvokeServer" then
+        if self.Name == "RequestAnimation" and game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
+            attackremote[self.Name] = args[1]
+            return a(self,unpack(args))
+        elseif self.Name == "RequestAnimation" and game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+            attackremote[self.Name] = ""
+        end
+    end
+      return a(self,...)
+end)
+
+aaxc = hookmetamethod(game, "__namecall", function(self, ...)
+    local args = {...}
+    local method = getnamecallmethod()
+    if method == "FireServer" or method == "InvokeServer" then
+        if self.Name == "RemoteEvent" and args[3] == "StopCharging" and _G.auto100rate then
+            args[6] = 100
+            return aaxc(self, unpack(args))
+        end
+    end
+    return aaxc(self, ...)
+end)
+
+local remotes = {}
+    local azc
+    azc=hookmetamethod(game,"__namecall",function(self,...)
+        local args = {...}
+        local method = getnamecallmethod()
+        if method == "FireServer" or method == "InvokeServer" then
+            if self.Name == "RemoteEvent" and args[3] == "StopCharging" or args[3] == "Create" then
+                remotes[self.Name] = args[1]
+                return azc(self,unpack(args))
+            end
+        end
+          return azc(self,...)
+    end)
+    
+    function serializeTable(val, name, skipnewlines, depth)
+    skipnewlines = skipnewlines or false
+    depth = depth or 0
+ 
+    local tmp = string.rep("", depth)
+ 
+    if name then tmp = tmp end
+ 
+    if type(val) == "table" then
+        tmp = tmp .. (not skipnewlines and "" or "")
+ 
+        for k, v in pairs(val) do
+            tmp =  tmp .. serializeTable(v, k, skipnewlines, depth + 1) .. (not skipnewlines and "" or "")
+        end
+ 
+        tmp = tmp .. string.rep("", depth) 
+    elseif type(val) == "number" then
+        tmp = tmp .. tostring(val)
+    elseif type(val) == "string" then
+        tmp = tmp .. string.format("%q", val)
+    elseif type(val) == "boolean" then
+        tmp = tmp .. (val and "true" or "false")
+    elseif type(val) == "function" then
+        tmp = tmp  .. "func: " .. debug.getinfo(val).name
+    else
+        tmp = tmp .. tostring(val)
+    end
+ 
+    return tmp
+ end
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+local Window = Fluent:CreateWindow({
+    Title = "SALUNA HUB (D12)",
+    SubTitle = "Made by Irenkiss",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Aqua",
+    MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
+})
+--Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
+local Tabs = {
+    Main = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://8587689304" }),
+    Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://2294529381" }),
+    Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16149111731" }),
+    Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
+    Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
+    Webhook = Window:AddTab({ Title = "Webhook", Icon = "rbxassetid://14769727847" }),
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+    
+}
+local Options = Fluent.Options
+
+do
+local CurrentStats = Tabs.Main:AddSection("Current Stats")
+local total = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.TotalLevel.Text
+local haki = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Haki.Text
+local gems = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Gems.GemsAmount.Text
+local beries = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Beri.BeriAmount.Text
+local bounty = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Bounty.BountyAmount.Text
+local kills = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Kills.KillsAmount.Text
+local fish = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.FishAmount.Text
+    Tabs.Main:AddParagraph({
+        Title = "Your Stats",
+        Content = total .. " \n" ..haki .. "\nGems: " ..gems .. "\nBeri: " ..beries .. " \nBounty: " ..bounty .. " \nKills: " ..kills .. " \nFish: " ..fish
+
+    })
+
+
+local InstantWeapon = Tabs.Main:AddSection("Instant Weapon")
+local YoruSpeed = Tabs.Main:AddSlider("Slider", {
+    Title = "Yoru Speed",
+    Description = "Change this for adjusting Yoru's speed",
+    Default = 50,
+    Min = 1,
+    Max = 200,
+    Rounding = 0,
+    Callback = function(to)
+            Speeds = to
+        end
+    })
+YoruSpeed:SetValue(50)
+
+local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Yoru Spamming", Default = false })
+    Toggle:OnChanged(function()
+while Options.MyToggle.Value do
+wait()
+    local Players = game:GetService("Players")
+    local Plr = Players.LocalPlayer
+    local Character = Plr.Character
+    local Yoru = Character:FindFirstChild("Yoru")
+    local Environment
+wait()
+pcall(function()
+for i,v in pairs(getconnections(Yoru["RequestAnimation"].OnClientEvent)) do 
+    Environment = getsenv(Yoru["AnimationController"])
+end
+    wait()
+for i = 1, Speeds do
+Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
+end
+end)
+wait()
+end
+end)
+Options.MyToggle:SetValue(false)
+
+local CestusSpeed = Tabs.Main:AddSlider("Slider", {
+    Title = "Cestus Speed",
+    Description = "Change this for adjusting Seastone Cestus's speed",
+    Default = 50,
+    Min = 1,
+    Max = 200,
+    Rounding = 0,
+    Callback = function(too)
+            Speedss = too
+        end
+    })
+CestusSpeed:SetValue(50)
+
+local CestusToggle = Tabs.Main:AddToggle("CestussToggle", {Title = "Cestus Spamming", Default = false })
+    CestusToggle:OnChanged(function()
+while Options.CestussToggle.Value do
+wait()
+    local Players = game:GetService("Players")
+    local Plr = Players.LocalPlayer
+    local Character = Plr.Character
+    local Cestus = Character:FindFirstChild("Seastone Cestus")
+    local Environment
+wait()
+pcall(function()
+for i,v in pairs(getconnections(Cestus["RequestAnimation"].OnClientEvent)) do 
+    Environment = getsenv(Cestus["AnimationController"])
+end
+    wait()
+for i = 1, Speedss do
+Cestus["RequestAnimation"]:FireServer(Environment.PlaceId)
+end
+end)
+wait()
+end
+end)
+Options.CestussToggle:SetValue(false)
+
+
+local HakiSection = Tabs.Main:AddSection("Haki Farming")
+local gethaki = Tabs.Main:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
+gethaki:OnChanged(function()
+while Options.hakiget.Value do wait()
+pcall(function()
+workspace:WaitForChild("Merchants"):WaitForChild("QuestHakiMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+wait(2)
+end)
+end
+end)
+Options.hakiget:SetValue(false)
+
+
+local drainhaki = Tabs.Main:AddToggle("hakidrain", {Title = "Drain Haki", Default = false })
+drainhaki:OnChanged(function()
+function hakiauto()
+       local Players = game:GetService("Players")
+    local cache = {}
+    function lol(name)
+        if cache[name] then return cache[name] end
+        local player = Players:FindFirstChild(name)
+        if player then
+            cache[name] = player.UserId
+            return player.UserId
+        end 
+    
+        local id
+        pcall(function ()
+            id = Players:lol(name)
+        end)
+        cache[name] = id
+        return id
+    end
+    local ehh = game.Players.LocalPlayer.Name
+    local Final = lol(ehh)
+    
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    
+    
+    
+    end
+    while Options.hakidrain.Value do wait()
+        hakiauto()
+end
+end)
+local HakiSection2 = Tabs.Main:AddSection("Auto Haki Farming")
+local hakitargett = Tabs.Main:AddSlider("Slider", {
+    Title = "Haki Target (%)",
+    Description = "Change this for adjusting haki's target",
+    Default = 25,
+    Min = 1,
+    Max = 90,
+    Rounding = 0,
+    Callback = function(gmm)
+            hakitarget = gmm
+        end
+    })
+hakitargett:SetValue(25)
+
+local hakispeedt = Tabs.Main:AddSlider("Slider", {
+    Title = "Haki Speed",
+    Description = "Change this for adjusting haki's speed",
+    Default = 5,
+    Min = 1,
+    Max = 50,
+    Rounding = 0,
+    Callback = function(gttmm)
+            hakispeed = gttmm
+        end
+    })
+hakispeedt:SetValue(5)
+
+local farmhaki = Tabs.Main:AddToggle("hakifarm", {Title = "Auto Farm Haki", Default = false })
+farmhaki:OnChanged(function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+_G.concu = true
+while _G.concu do wait()
+local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
+local sss = slv/100*hakitarget
+local sll =  slv/100*90
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and Options.hakifarm.Value == true then
+local Players = game:GetService("Players")
+local cache = {}
+function lol(name)
+if cache[name] then
+return cache[name] 
+end
+local player = Players:FindFirstChild(name)
+if player then
+cache[name] = player.UserId
+return player.UserId
+end 
+    
+local id
+pcall(function ()
+id = Players:lol(name)
+end)
+cache[name] = id
+return id
+end
+
+local ehh = game.Players.LocalPlayer.Name
+local Final = lol(ehh)
+for i = 1, hakispeed do
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+end
+elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and Options.hakifarm.Value == true then
+        local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+repeat task.wait()
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= sll
+_G.concu = true
+elseif Options.hakifarm.Value == false then
+_G.concu = false
+        local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+end
+end
+end)
+Options.hakifarm:SetValue(false)
+
+local HakiSection3 = Tabs.Main:AddSection("Advanced Haki Farming")
+
+    Tabs.Main:AddButton({
+        Title = "Farming Haki (Beta)",
+        Description = "Click to farm, can click multi-time",
+        Callback = function()
+local x = game.Players.LocalPlayer.UserId
+local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
+
+for i = 1,99999 do
+
+while wait() do
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait() 
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait() 
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+
+wait()
+
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+end
+end
+        end
+    })
+
+
+    Tabs.Server:AddButton({
+        Title = "Low-Graphic Mode",
+        Description = "Use to reduce lag",
+        Callback = function()
+            Window:Dialog({
+                Title = "Low-graphic Mode",
+                Content = "Do you want to use?",
+                Buttons = {
+                    {
+                        Title = "OK",
+                        Callback = function()
+workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
+	workspace:FindFirstChildOfClass('Terrain').WaterWaveSpeed = 0
+	workspace:FindFirstChildOfClass('Terrain').WaterReflectance = 0
+	workspace:FindFirstChildOfClass('Terrain').WaterTransparency = 0
+	game:GetService("Lighting").GlobalShadows = false
+	game:GetService("Lighting").FogEnd = 9e9
+	settings().Rendering.QualityLevel = 1
+	for i,v in pairs(game:GetDescendants()) do
+		if v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+			v.Material = "Plastic"
+			v.Reflectance = 0
+		elseif v:IsA("Decal") then
+			v.Transparency = 1
+		elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+			v.Lifetime = NumberRange.new(0)
+		elseif v:IsA("Explosion") then
+			v.BlastPressure = 1
+			v.BlastRadius = 1
+		end
+	end
+	for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do
+		if v:IsA("BlurEffect") or v:IsA("SunRaysEffect") or v:IsA("ColorCorrectionEffect") or v:IsA("BloomEffect") or v:IsA("DepthOfFieldEffect") then
+			v.Enabled = false
+		end
+	end
+	workspace.DescendantAdded:Connect(function(child)
+		coroutine.wrap(function()
+			if child:IsA('ForceField') then
+				game:GetService('RunService').Heartbeat:Wait()
+				child:Destroy()
+			elseif child:IsA('Sparkles') then
+				game:GetService('RunService').Heartbeat:Wait()
+				child:Destroy()
+			elseif child:IsA('Smoke') or child:IsA('Fire') then
+				game:GetService('RunService').Heartbeat:Wait()
+				child:Destroy()
+			end
+		end)()
+	end)                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                        end
+                    }
+                }
+            })
+        end
+    })
+
+    Tabs.Server:AddButton({
+        Title = "Rejoin Server",
+        Description = "Rejoin the current server",
+        Callback = function()
+            Window:Dialog({
+                Title = "Rejoin Server",
+                Content = "Do you want to use?",
+                Buttons = {
+                    {
+                        Title = "OK",
+                        Callback = function()
+            local ts = game:GetService("TeleportService")
+            local p = game:GetService("Players").LocalPlayer
+            ts:Teleport(game.PlaceId, p)            
+end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                        end
+                    }
+                }
+            })
+        end
+    })
+
+   Tabs.Server:AddButton({
+        Title = "Server Hop",
+        Description = "Join the different server",
+        Callback = function()
+            Window:Dialog({
+                Title = "Server Hop",
+                Content = "Do you want to use?",
+                Buttons = {
+                    {
+                        Title = "OK",
+                        Callback = function()
+            local PlaceID = game.PlaceId
+            local AllIDs = {}
+            local foundAnything = ""
+            local actualHour = os.date("!*t").hour
+            local Deleted = false
+            function TPReturner()
+                local Site;
+                if foundAnything == "" then
+                    Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+                else
+                    Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+                end
+                local ID = ""
+                if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+                    foundAnything = Site.nextPageCursor
+                end
+                local num = 0;
+                for i,v in pairs(Site.data) do
+                    local Possible = true
+                    ID = tostring(v.id)
+                    if tonumber(v.maxPlayers) > tonumber(v.playing) then
+                        for _,Existing in pairs(AllIDs) do
+                            if num ~= 0 then
+                                if ID == tostring(Existing) then
+                                    Possible = false
+                                end
+                            else
+                                if tonumber(actualHour) ~= tonumber(Existing) then
+                                    local delFile = pcall(function()
+                                        -- delfile("NotSameServers.json")
+                                        AllIDs = {}
+                                        table.insert(AllIDs, actualHour)
+                                    end)
+                                end
+                            end
+                            num = num + 1
+                        end
+                        if Possible == true then
+                            table.insert(AllIDs, ID)
+                            wait()
+                            pcall(function()
+                                -- writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                                wait()
+                                game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                            end)
+                            wait(.1)
+                        end
+                    end
+                end
+            end
+            function Teleport() 
+                while wait() do
+                    pcall(function()
+                        TPReturner()
+                        if foundAnything ~= "" then
+                            TPReturner()
+                        end
+                    end)
+                end
+            end
+            Teleport()         
+end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                        end
+                    }
+                }
+            })
+        end
+    })
+
+local af1 = Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
+
+local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
+    Title = "1st Devil Fruit Point",
+    Description = "Choose the point of affinity",
+    Default = 1.7,
+    Min = 1,
+    Max = 2,
+    Rounding = 1,
+    Callback = function(treo)
+            affty = treo
+        end
+    })
+Lucyfirst:SetValue(1.7)
+
+    local ccccccc = Tabs.Affinity:AddDropdown("MultiDropdown", {
+        Title = "Lock Affinity",
+        Description = "You can lock multiple affinity.",
+        Values = {"Defense", "Melee", "Sniper", "Sword"},
+        Multi = true,
+        Default = {""},
+    })
+
+    ccccccc:SetValue({
+        Defense = false,
+        Melee = false,
+        Sniper = false,
+	Sword = false
+    })
+
+    ccccccc:OnChanged(function(Value)
+        local Values = {}
+        for Value, State in next, Value do
+            table.insert(Values, Value)
+        end
+for k, v in pairs(Values) do
+if string.find(v, "Defense") then
+_G.keepdef = true
+else
+_G.keepdef = false
+end
+if string.find(v, "Melee") then
+_G.keepmelee = true
+else
+_G.keepmelee = false
+end
+if string.find(v, "Sniper") then
+_G.keepsnip = true
+else
+_G.keepsnip = false
+end
+if string.find(v, "Sword") then
+_G.keepsword = true
+else
+_G.keepsword = false
+end
+end
+end)
+
+    local wwwwww = Tabs.Affinity:AddDropdown("MultiDropdown", {
+        Title = "Target Affinity",
+        Description = "You can choose the target affinity.",
+        Values = {"Defense", "Melee", "Sniper", "Sword"},
+        Multi = true,
+        Default = {""},
+    })
+
+    wwwwww:SetValue({
+        Defense = false,
+        Melee = false,
+        Sniper = false,
+	Sword = false
+    })
+
+    wwwwww:OnChanged(function(Valuerr)
+        local Valuess = {}
+        for Valuerr, State in next, Valuerr do
+            table.insert(Valuess, Valuerr)
+        end
+for k, q in pairs(Valuess) do
+if string.find(q, "Defense") then
+_G.targetdef = true
+else
+_G.targetdef = false
+end
+if string.find(q, "Melee") then
+_G.targetmelee = true
+else
+_G.targetmelee = false
+end
+if string.find(q, "Sniper") then
+_G.targetsnip = true
+else
+_G.targetsnip = false
+end
+if string.find(q, "Sword") then
+_G.targetword = true
+else
+_G.targetword = false
+end
+end
+end)
+
+local ret = Tabs.Affinity:AddDropdown("Dropdown", {
+        Title = "Budget Type",
+        Values = {"Cash", "Gems"},
+        Multi = false,
+        Default = 1,
+    })
+
+    ret:SetValue("Cash")
+
+    ret:OnChanged(function(Valuezx)
+getgenv().budget = Valuezx
+print(budget)
+end)
+
+
+
+
+
+local cc = Tabs.Main:AddSection("                                                -----")
+local ccc = Tabs.Main:AddSection("                                                -----")
+end
+
+
+-- Addons:
+-- SaveManager (Allows you to have a configuration system)
+-- InterfaceManager (Allows you to have a interface managment system)
+
+-- Hand the library over to our managers
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+
+-- Ignore keys that are used by ThemeManager.
+-- (we dont want configs to save themes, do we?)
+SaveManager:IgnoreThemeSettings()
+
+-- You can add indexes of elements the save manager should ignore
+SaveManager:SetIgnoreIndexes({})
+
+-- use case for doing it this way:
+-- a script hub could have themes in a global folder
+-- and game configs in a separate folder per game
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+
+local q = Tabs.Settings:AddSection("                                                -----")
+local qq = Tabs.Settings:AddSection("                                                -----")
+
+
+Window:SelectTab(1)
+
+Fluent:Notify({
+    Title = "Saluna With Love",
+    Content = "The script is loaded, enjoy!",
+    Duration = 8
+})
+
+-- You can use the SaveManager:LoadAutoloadConfig() to load a config
+-- which has been marked to be one that auto loads!
+SaveManager:LoadAutoloadConfig()
+--------
+local BBB = Instance.new("ScreenGui")
+BBB.Name = "BBB"
+BBB.Parent = game.CoreGui
+local hideUI = Instance.new("TextButton")
+hideUI.Name = "hideUI"
+hideUI.Parent = BBB
+hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+hideUI.ClipsDescendants = true
+hideUI.Position = UDim2.new(0, 0, 0, 0)
+hideUI.Size = UDim2.new(0, 100, 0, 43)
+hideUI.AutoButtonColor = false
+hideUI.Font = Enum.Font.SourceSans
+hideUI.Text = "HIDE/SHOW UI"
+hideUI.TextColor3 = Color3.fromRGB(255, 255, 255)
+hideUI.TextSize = 14
+hideUI.MouseButton1Up:Connect(function()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+wait(0.1)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end)
+else
+game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Go Buy Script")
+everyClipboard = toclipboard
+function toClipboard(txt)
+    if everyClipboard then
+        everyClipboard(tostring(txt))
+    end
+end
+toClipboard("https://discord.gg/ecpbhm8G3w")
+end
