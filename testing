@@ -1,3 +1,4 @@
+print("execute r đó nhưng nó k chạy")
 _G.statss = true
 local Pedo = {
     1135910299, -- Havelic
