@@ -1,3 +1,4 @@
+_G.statss = true
 local Pedo = {
     1135910299, -- Havelic
     1619950875, -- Pixel_SkillzSPIN2
@@ -212,7 +213,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D16)",
+    Title = "SALUNA HUB (D17)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -236,7 +237,7 @@ local Options = Fluent.Options
 
 
 local CurrentStats = Tabs.Main:AddSection("Current Stats")
-while true do wait(0.5)
+while _G.statss do wait(0.5)
 local total = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.TotalLevel.Text
 local haki = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Haki.Text
 local gems = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Gems.GemsAmount.Text
