@@ -213,7 +213,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D25)",
+    Title = "SALUNA HUB (D26)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1454,7 +1454,7 @@ end)
 
 local Toggle = Tabs.Affinity:AddToggle("DF1Toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
     Toggle:OnChanged(function()
-while DF1Toggle.MyToggle.Value do wait()
+while Options.DF1Toggle.Value do wait()
 pcall(function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
@@ -1538,10 +1538,12 @@ else
 _G.allspin = false
 end
 if _G.targetsword == false and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == false then
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
-game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "CHOOSE TARGET BEFORE SPIN"
+Options.DF1Toggle.Value = false
+Fluent:Notify({
+    Title = "Roll affinity (DF1) Goes wrong",
+    Content = "You didn't choose target(s)",
+    Duration = 8
+})
 end
 
 end)
