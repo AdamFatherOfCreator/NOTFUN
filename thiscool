@@ -1,3 +1,18 @@
+_G.statss = true
+pcall(function()
+if _G.statss == true then
+while _G.statss do wait(0,5)
+local total = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.TotalLevel.Text
+local haki = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Haki.Text
+local gems = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Gems.GemsAmount.Text
+local beries = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Beri.BeriAmount.Text
+local bounty = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Bounty.BountyAmount.Text
+local kills = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Kills.KillsAmount.Text
+local fish = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.FishAmount.Text
+end
+end
+end)
+
 local Pedo = {
     1135910299, -- Havelic
     1619950875, -- Pixel_SkillzSPIN2
@@ -234,16 +249,6 @@ local Tabs = {
     
 }
 local Options = Fluent.Options
-
-while true do wait(0,5)
-local total = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.TotalLevel.Text
-local haki = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Haki.Text
-local gems = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Gems.GemsAmount.Text
-local beries = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Beri.BeriAmount.Text
-local bounty = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Bounty.BountyAmount.Text
-local kills = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Kills.KillsAmount.Text
-local fish = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.FishAmount.Text
-end
 
 do
 local CurrentStats = Tabs.Main:AddSection("Current Stats")
