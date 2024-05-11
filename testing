@@ -213,7 +213,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D27)",
+    Title = "SALUNA HUB (D28)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1441,7 +1441,7 @@ end)
 
 local ret = Tabs.Affinity:AddDropdown("Dropdown", {
         Title = "Budget Type",
-        Values = {budget, "Gems"},
+        Values = {"Cash", "Gems"},
         Multi = false,
         Default = 1,
     })
