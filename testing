@@ -213,7 +213,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D41)",
+    Title = "SALUNA HUB (D42)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1354,12 +1354,13 @@ Lucyfirst:SetValue(1.7)
     local ccccccc = Tabs.Affinity:AddDropdown("MultiDropdown", {
         Title = "Lock Affinity (DF1)",
         Description = "You can lock multiple affinity.",
-        Values = {"Defense", "Melee", "Sniper", "Sword"},
+        Values = {"None", "Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
         Default = {""},
     })
 
     ccccccc:SetValue({
+	None = true,
         Defense = false,
         Melee = false,
         Sniper = false,
@@ -1398,12 +1399,13 @@ end)
     local wwwwww = Tabs.Affinity:AddDropdown("MultiDropdown", {
         Title = "Target Affinity (DF1)",
         Description = "You can choose the target affinity.",
-        Values = {"Defense", "Melee", "Sniper", "Sword"},
+        Values = {"None", "Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
         Default = {""},
     })
 
     wwwwww:SetValue({
+	None = true,
         Defense = false,
         Melee = false,
         Sniper = false,
