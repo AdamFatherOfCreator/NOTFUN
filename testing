@@ -213,7 +213,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D39)",
+    Title = "SALUNA HUB (D32)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1352,15 +1352,14 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
 Lucyfirst:SetValue(1.7)
 
     local ccccccc = Tabs.Affinity:AddDropdown("MultiDropdown", {
-        Title = "Lock Affinity",
+        Title = "Lock Affinity (DF1)",
         Description = "You can lock multiple affinity.",
-        Values = {"None", "Defense", "Melee", "Sniper", "Sword"},
+        Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
         Default = {""},
     })
 
     ccccccc:SetValue({
-        None = true,
         Defense = false,
         Melee = false,
         Sniper = false,
@@ -1397,19 +1396,18 @@ end
 end)
 
     local wwwwww = Tabs.Affinity:AddDropdown("MultiDropdown", {
-        Title = "Target Affinity",
+        Title = "Target Affinity (DF1)",
         Description = "You can choose the target affinity.",
-        Values = {"None", "Defense", "Melee", "Sniper", "Sword"},
+        Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
         Default = {""},
     })
 
     wwwwww:SetValue({
-        None = true,
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
+        Defense = true,
+        Melee = true,
+        Sniper = true,
+	Sword = true
     })
 
     wwwwww:OnChanged(function(Valuerr)
@@ -1418,78 +1416,31 @@ end)
             table.insert(Valuess, Valuerr)
         end
 for k, q in pairs(Valuess) do
-if string.find(q, "Defense") then
+if q == "Defense" then
 _G.targetdef = true
-else
+end
+if q ~= "Defense" then 
 _G.targetdef = false
 end
-if string.find(q, "Melee") then
+if q == "Melee" then
 _G.targetmelee = true
-else
-_G.targetmelee = false
 end
-if string.find(q, "Sniper") then
-_G.targetsnip = true
-else
-_G.targetsnip = false
-end
-if string.find(q, "Sword") then
-_G.targetword = true
-else
-_G.targetword = false
-end
-end
-end)
-
-    local wwwwww = Tabs.Affinity:AddDropdown("MultiDropdown", {
-        Title = "Target Affinity (DF1)",
-        Description = "You can choose the target affinity.",
-        Values = {"None","Defense", "Melee", "Sniper", "Sword"},
-        Multi = true,
-        Default = {"None"},
-    })
-
-    wwwwww:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = fa;se,
-	Sword = false,
-	None = true
-
-    })
-
-    wwwwww:OnChanged(function(Valuerr)
-        local Valuess = {}
-        for Valuerr, State in next, Valuerr do
-            table.insert(Valuess, Valuerr)
-        end
-for _, q in pairs(Valuess) do
-if string.find(q, "Defense") then
-_G.targetdef = true
-else
-_G.targetdef = false
-end
-if string.find(q, "Melee") then
-_G.targetmelee = true
-else
+if q ~= "Melee" then
 _G.targetmelee = false
 end
 
-if string.find(q, "Sniper") then
+if q == "Sniper" then
 _G.targetsnip = true
-else
+end
+if q ~= "Sniper" then
 _G.targetsnip = false
 end
-if string.find(q, "Sword") then
+if q == "Sword" then
 _G.targetsword = true
-else
+end
+if q ~= "Sword" then
 _G.targetsword = false
 end
-if string.find(q, "None") then
-_G.targetsword = false
-_G.targetsnip = false
-_G.targetmelee = false
-_G.targetdef = false
 end
 end)
 
