@@ -1268,7 +1268,7 @@ end
 
    Tabs.Server:AddButton({
         Title = "Server Hop",
-        Description = "Join the different server",
+        Description = "Join the different server (fewer player)",
         Callback = function()
             Window:Dialog({
                 Title = "Server Hop",
