@@ -212,7 +212,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D12)",
+    Title = "SALUNA HUB (D13)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -234,7 +234,7 @@ local Tabs = {
 }
 local Options = Fluent.Options
 
-do
+
 local CurrentStats = Tabs.Main:AddSection("Current Stats")
 local total = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.TotalLevel.Text
 local haki = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Haki.Text
@@ -1473,7 +1473,7 @@ end)
 
 local cc = Tabs.Main:AddSection("                                                -----")
 local ccc = Tabs.Main:AddSection("                                                -----")
-end
+
 
 
 -- Addons:
