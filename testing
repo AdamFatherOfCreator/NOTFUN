@@ -244,12 +244,12 @@ local beries = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Fra
 local bounty = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Bounty.BountyAmount.Text
 local kills = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Kills.KillsAmount.Text
 local fish = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.A.Fish.FishAmount.Text
-end
     Tabs.Main:AddParagraph({
         Title = "Your Stats",
         Content = total .. " \n" ..haki .. "\nGems: " ..gems .. "\nBeri: " ..beries .. " \nBounty: " ..bounty .. " \nKills: " ..kills .. " \nFish: " ..fish
 
     })
+end
 
 
 local InstantWeapon = Tabs.Main:AddSection("Instant Weapon")
