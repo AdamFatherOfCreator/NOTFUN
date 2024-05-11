@@ -213,7 +213,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D29)",
+    Title = "SALUNA HUB (D30)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1538,12 +1538,10 @@ else
 _G.allspin = false
 end
 if _G.targetsword == false and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == false then
-Options.DF1Toggle.Value = false
-Fluent:Notify({
-    Title = "Roll affinity (DF1) Goes wrong",
-    Content = "You didn't choose target(s)",
-    Duration = 8
-})
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.Visible = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Active = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Visible = true
+game:GetService("Players").LocalPlayer.PlayerGui.Announcement.Frame.TextLabel.Text = "CHOOSE TARGET BEFORE SPIN"
 end
 if _G.defswordsnip == true and Options.DF1Toggle.Value == true then
 local args = {
