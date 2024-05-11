@@ -213,7 +213,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D38)",
+    Title = "SALUNA HUB (D39)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1352,7 +1352,7 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
 Lucyfirst:SetValue(1.7)
 
     local ccccccc = Tabs.Affinity:AddDropdown("MultiDropdown", {
-        Title = "Lock Affinity (DF1)",
+        Title = "Lock Affinity",
         Description = "You can lock multiple affinity.",
         Values = {"None", "Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
@@ -1360,11 +1360,11 @@ Lucyfirst:SetValue(1.7)
     })
 
     ccccccc:SetValue({
+        None = true,
         Defense = false,
         Melee = false,
         Sniper = false,
-	Sword = false,
-	None = true
+	Sword = false
     })
 
     ccccccc:OnChanged(function(Value)
@@ -1393,11 +1393,50 @@ _G.keepsword = true
 else
 _G.keepsword = false
 end
-if string.find(v, "None") then
-_G.keepsword = false
-_G.keepsnip = false
-_G.keepmelee = false
-_G.keepdef = false
+end
+end)
+
+    local wwwwww = Tabs.Affinity:AddDropdown("MultiDropdown", {
+        Title = "Target Affinity",
+        Description = "You can choose the target affinity.",
+        Values = {"None", "Defense", "Melee", "Sniper", "Sword"},
+        Multi = true,
+        Default = {""},
+    })
+
+    wwwwww:SetValue({
+        None = true,
+        Defense = false,
+        Melee = false,
+        Sniper = false,
+	Sword = false
+    })
+
+    wwwwww:OnChanged(function(Valuerr)
+        local Valuess = {}
+        for Valuerr, State in next, Valuerr do
+            table.insert(Valuess, Valuerr)
+        end
+for k, q in pairs(Valuess) do
+if string.find(q, "Defense") then
+_G.targetdef = true
+else
+_G.targetdef = false
+end
+if string.find(q, "Melee") then
+_G.targetmelee = true
+else
+_G.targetmelee = false
+end
+if string.find(q, "Sniper") then
+_G.targetsnip = true
+else
+_G.targetsnip = false
+end
+if string.find(q, "Sword") then
+_G.targetword = true
+else
+_G.targetword = false
 end
 end
 end)
