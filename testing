@@ -213,7 +213,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D32)",
+    Title = "SALUNA HUB (D33)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1391,6 +1391,7 @@ if string.find(v, "Sword") then
 _G.keepsword = true
 else
 _G.keepsword = false
+print("Melee:" .._G.keepmelee .. " Def:" .._G.keepdef .. " Snip:" .._G.keepsnip .. " Sw: " .._G.keepsword
 end
 end
 end)
