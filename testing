@@ -214,7 +214,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E8)",
+    Title = "SALUNA HUB (E9)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1546,10 +1546,7 @@ end
 end)
 Options.DF1Toggle:SetValue(false)
 
-            spawn(function()
-            while wait() do
-                if Options.DF1Toggle.Value then
-                    pcall(function()
+while Options.DF1Toggle.Value do wait()
 if _G.defswordsnip == true then
 local args = {
     [1] = "DFT1",
@@ -1721,10 +1718,7 @@ local args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 end
 wait(12)
-                    end)
-                end
-            end
-            end)
+end
 
 
 local cc = Tabs.Main:AddSection("                                                -----")
