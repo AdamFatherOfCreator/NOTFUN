@@ -213,7 +213,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D44)",
+    Title = "SALUNA HUB (D45)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1549,18 +1549,7 @@ Fluent:Notify({
     Content = "Choose target(s) before spin",
     Duration = 8
 })
-Options.DF1Toggle.Value = false
 end
-
-if _G.keepdef == true and _G.keepmelee == true and _G.keepsnip == true and _G.keepsword == true then
-Fluent:Notify({
-    Title = "AUTO-ROLL AFFINITY NOTIFY",
-    Content = "You have locked all of the affinity",
-    Duration = 8
-})
-Options.DF1Toggle.Value = false
-end
-
 wait(0.1)
 if _G.defswordsnip == true and Options.DF1Toggle.Value == true then
 local args = {
