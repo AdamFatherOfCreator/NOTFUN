@@ -214,7 +214,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (D48)",
+    Title = "SALUNA HUB (E1)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1374,25 +1374,25 @@ Lucyfirst:SetValue(1.7)
         end
 			for _, v in pairs(Values) do
 if v == "Defense" then
-_G.targetdef = true
+_G.keepdef = true
 else
-_G.targetdef = false
+_G.keepdef = false
 end
 if v == "Melee" then
-_G.targetmelee = true
+_G.keepdef = true
 else
-_G.targetmelee = false
+_G.keepdef = false
 end
 
 if v == "Sniper" then
-_G.targetsnip = true
+_G.keepdef = true
 else
-_G.targetsnip = false
+_G.keepdef = false
 end
 if v == "Sword" then
-_G.targetsword = true
+_G.keepdef = true
 else
-_G.targetsword = false
+_G.keepdef = false
 end
 			end
 end)
