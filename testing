@@ -214,7 +214,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E4)",
+    Title = "SALUNA HUB (E5)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1369,10 +1369,27 @@ Lucyfirst:SetValue(1.7)
 
     wrrrrr:OnChanged(function(Valuer)
         local Values = {"None"}
+_G.keepdef = false
+_G.keepmelee = false
+_G.keepsnip = false
+_G.keepsword = false
         for Valuer, State in next, Valuer do
             table.insert(Values, Valuer)
         end
-        print("Mutlidropdown changed:", table.concat(Values, ", "))
+			for _, n in pairs(Values) do
+if string.find(n, "Defense") then
+_G.keepdef = true
+end
+if string.find(n, "Melee") then
+_G.keepmelee = true
+end
+if string.find(n, "Sniper") then
+_G.keepsnip = true
+end
+if string.find(n, "Sword") then
+_G.keepsword = true
+end
+			end
 end)
 
 
@@ -1393,10 +1410,27 @@ end)
 
     wwwwww:OnChanged(function(Valuerr)
         local Valuess = {"None"}
+_G.targetdef = false
+_G.targetmelee = false
+_G.targetsnip = false
+_G.targetsword = false
         for Valuerr, State in next, Valuerr do
             table.insert(Valuess, Valuerr)
         end
-        print("Mutlidropdown changed:", table.concat(Valuess, ", "))
+			for _, q in pairs(Valuess) do
+if string.find(q, "Defense") then
+_G.targetdef = true
+end
+if string.find(q, "Melee") then
+_G.targetmelee = true
+end
+if string.find(q, "Sniper") then
+_G.targetsnip = true
+end
+if string.find(q, "Sword") then
+_G.targetsword = true
+end
+			end
 end)
 
 local ret = Tabs.Affinity:AddDropdown("Dropdown", {
