@@ -1450,6 +1450,11 @@ local DF11Toggle = Tabs.Affinity:AddToggle("DF1Toggle", {Title = "Auto Roll Affi
     DF11Toggle:OnChanged(function()
 while Options.DF1Toggle.Value do wait()
 pcall(function()
+if Options.DF1Toggle.Value == true then
+_G.quayfirstdf = true
+else
+_G.quayfirstdf = false
+end
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 if _G.targetdef == true and _G.targetsnip == false and _G.targetmelee == false and _G.targetsword == false and workspace.UserData["User_"..plrid].Data.DFT1Defense.Value < _G.trqpwo then
@@ -1546,7 +1551,10 @@ end
 end)
 Options.DF1Toggle:SetValue(false)
 
-while Options.DF1Toggle.Value do wait()
+            spawn(function()
+            while wait() do
+                if _G.quayfirstdf then
+                    pcall(function()
 if _G.defswordsnip == true then
 local args = {
     [1] = "DFT1",
@@ -1718,7 +1726,10 @@ local args = {
 workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
 end
 wait(12)
-end
+                    end)
+                end
+            end
+            end)
 
 
 local cc = Tabs.Main:AddSection("                                                -----")
