@@ -215,7 +215,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E12)",
+    Title = "SALUNA HUB (E13)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -2126,6 +2126,21 @@ wait(12)
                 end
             end
             end)
+
+spawn(function()
+	while wait() do
+		if _G.quayfirstdf2 or _G.quayfirstdf then
+                	pcall(function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge12")
+end
+			end)		
+		end
+	end
+end)
+
 
 local c1 = Tabs.Affinity:AddSection("                                                -----")
 local c2 = Tabs.Affinity:AddSection("                                                -----")
