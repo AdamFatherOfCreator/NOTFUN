@@ -214,7 +214,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E1)",
+    Title = "SALUNA HUB (E2)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1352,50 +1352,51 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
     })
 Lucyfirst:SetValue(1.7)
 
-    local ccccccc = Tabs.Affinity:AddDropdown("MultiDropdown", {
+     local wrrrrr = Tabs.Affinity:AddDropdown("MultiDropdown", {
         Title = "Lock Affinity (DF1)",
-        Description = "You can lock multiple affinity.",
+        Description = "You can choose affinities to lock.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
         Multi = true,
         Default = {""},
     })
 
-    ccccccc:SetValue({
+    wrrrrr:SetValue({
         Defense = false,
         Melee = false,
         Sniper = false,
 	Sword = false
     })
 
-    ccccccc:OnChanged(function(Value)
+    wrrrrr:OnChanged(function(Valuer)
         local Values = {"None"}
-        for Value, State in next, Value do
-            table.insert(Values, Value)
+        for Valuer, State in next, Valuer do
+            table.insert(Values, Valuer)
         end
-			for _, v in pairs(Values) do
-if v == "Defense" then
+			for _, n in pairs(Values) do
+if n == "Defense" then
 _G.keepdef = true
 else
 _G.keepdef = false
 end
-if v == "Melee" then
-_G.keepdef = true
+if n == "Melee" then
+_G.keepmelee = true
 else
-_G.keepdef = false
+_G.keepmelee = false
 end
 
-if v == "Sniper" then
-_G.keepdef = true
+if n == "Sniper" then
+_G.keepsnip = true
 else
-_G.keepdef = false
+_G.keepsnip = false
 end
-if v == "Sword" then
-_G.keepdef = true
+if n == "Sword" then
+_G.keepsword = true
 else
-_G.keepdef = false
+_G.keepsword = false
 end
 			end
 end)
+
 
     local wwwwww = Tabs.Affinity:AddDropdown("MultiDropdown", {
         Title = "Target Affinity (DF1)",
