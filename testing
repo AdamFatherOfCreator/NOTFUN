@@ -215,7 +215,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E10)",
+    Title = "SALUNA HUB (E11)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -2127,9 +2127,12 @@ wait(12)
             end
             end)
 
-
-local cc = Tabs.Main:AddSection("                                                -----")
-local ccc = Tabs.Main:AddSection("                                                -----")
+local c1 = Tabs.Affinity:AddSection("                                                -----")
+local c2 = Tabs.Affinity:AddSection("                                                -----")
+local c3 = Tabs.Affinity:AddSection("                                                -----")
+local c4 = Tabs.Main:AddSection("                                                -----")
+local c5 = Tabs.Main:AddSection("                                                -----")
+local c6 = Tabs.Main:AddSection("                                                -----")
 
 
 
