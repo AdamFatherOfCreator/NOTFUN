@@ -215,7 +215,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E14)",
+    Title = "SALUNA HUB (E15)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -239,8 +239,13 @@ local Tabs = {
 local Options = Fluent.Options
 
 local Safe = Tabs.Teleport:AddSection("Safe Zone")
-
-
+Tabs.Teleport:AddButton({
+        Title = "Farming Haki (Beta)",
+        Description = "Click to farm, can click multi-time",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+        end
+    })
 local InstantWeapon = Tabs.Main:AddSection("Instant Weapon")
 local YoruSpeed = Tabs.Main:AddSlider("Slider", {
     Title = "Yoru Speed",
