@@ -2223,7 +2223,7 @@ game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,ga
 end)
 
 else
-game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Go Buy Script")
+game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Your HWID was not whitelisted")
 everyClipboard = toclipboard
 function toClipboard(txt)
     if everyClipboard then
