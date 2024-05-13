@@ -238,6 +238,8 @@ local Tabs = {
 }
 local Options = Fluent.Options
 
+local Safe = Tabs.Teleport:AddSection("Safe Zone")
+
 
 local InstantWeapon = Tabs.Main:AddSection("Instant Weapon")
 local YoruSpeed = Tabs.Main:AddSlider("Slider", {
