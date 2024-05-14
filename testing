@@ -215,7 +215,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E21)",
+    Title = "SALUNA HUB (E22)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -234,9 +234,9 @@ local Tabs = {
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
     Webhook = Window:AddTab({ Title = "Webhook", Icon = "rbxassetid://14769727847" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
-    none1 = Window:AddTab({ Title = "-------", Icon = "" }),
-    none2 = Window:AddTab({ Title = "-------", Icon = "" }),
-    none3 = Window:AddTab({ Title = "-------", Icon = "" })
+    nonef = Window:AddTab({ Title = "-------", Icon = "" }),
+    nones = Window:AddTab({ Title = "-------", Icon = "" }),
+    nonet = Window:AddTab({ Title = "-------", Icon = "" })
 }
 local Options = Fluent.Options
 
