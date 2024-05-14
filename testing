@@ -269,7 +269,7 @@ Tabs.Teleport:AddButton({
         Title = "Teleport To Dark Atlas",
         Description = "(Legendary Pedestal)",
         Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Altar.RecepticalEffect.CFrame * CFrame.new(0, 3, 0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Altar.RecepticalEffect.CFrame * CFrame.new(0, 0, 0)
         end
     })
 
