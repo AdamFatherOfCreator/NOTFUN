@@ -215,7 +215,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E15)",
+    Title = "SALUNA HUB (E16)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -2214,7 +2214,7 @@ hideUI.TextWrapped = true
 hideUI.TextScaled = true
 hideUI.Font = Enum.Font.SourceSans
 hideUI.Text = "HIDE/SHOW UI"
-hideUI.TextColor3 = Color3.fromRGB(255, 255, 255)
+hideUI.TextColor3 = Color3.fromRGB(0, 0, 0)
 hideUI.TextSize = 14
 hideUI.MouseButton1Up:Connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
