@@ -215,7 +215,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E24)",
+    Title = "SALUNA HUB (E25)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -239,20 +239,22 @@ local Tabs = {
 }
 local Options = Fluent.Options
 
-local Safe = Tabs.Teleport:AddSection("Safe Zone")
+local Safe = Tabs.Teleport:AddSection("Special Teleport")
 Tabs.Teleport:AddButton({
-        Title = "Farming Haki (Beta)",
-        Description = "Click to farm, can click multi-time",
+        Title = "Teleport To Safe Zone",
+        Description = "Teleport to Safe Zone",
         Callback = function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
         end
     })
 
+local Tmrt = Tabs.Teleport:AddSection("Teleport")
+
 local MobsTP = Tabs.Teleport:AddDropdown("Dropdown", {
         Title = "NPC Teleport",
         Values = {"nil", "Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flair Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
         Multi = false,
-        Default = 1,
+        Default = 2,
     })
 
     MobsTP:SetValue("nil")
