@@ -242,7 +242,7 @@ local Options = Fluent.Options
 local Safe = Tabs.Teleport:AddSection("Special Teleport")
 Tabs.Teleport:AddButton({
         Title = "Teleport To Safe Zone",
-        Description = "Teleport to Safe Zone",
+        Description = "(A high platform)",
         Callback = function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
         end
