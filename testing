@@ -43,7 +43,7 @@ end)
 
 local listed = {
 "af26dcea-a475-482f-8e3a-dcc82c127b8c",-- SALUNA
-"f43a9f37-c5d7-41b7-bee4-46c57dedd412", -- Khôi
+"91656726-2eb9-45ab-aa56-d306c69cf393", -- Khôi
 "5190d394-8333-40df-9242-c8b01ea093fe" -- Hiếu Trung
 }
 _G.WhiteListed = false
