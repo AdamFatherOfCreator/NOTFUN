@@ -43,7 +43,7 @@ end)
 
 local listed = {
 "af26dcea-a475-482f-8e3a-dcc82c127b8c",-- SALUNA
-"f43a9f37-c5d7-41b7-bee4-46c57dedd412", -- Khôi
+"91656726-2eb9-45ab-aa56-d306c69cf393", -- Khôi
 "5190d394-8333-40df-9242-c8b01ea093fe" -- Hiếu Trung
 }
 _G.WhiteListed = false
@@ -215,7 +215,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E15)",
+    Title = "SALUNA HUB (E27)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -233,19 +233,163 @@ local Tabs = {
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
     Webhook = Window:AddTab({ Title = "Webhook", Icon = "rbxassetid://14769727847" }),
-    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
-    
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
+    nonef = Window:AddTab({ Title = "-------", Icon = "" }),
+    nonet = Window:AddTab({ Title = "-------", Icon = "" })
 }
 local Options = Fluent.Options
 
-local Safe = Tabs.Teleport:AddSection("Safe Zone")
+local Safe = Tabs.Teleport:AddSection("Special Teleport")
+
 Tabs.Teleport:AddButton({
-        Title = "Farming Haki (Beta)",
-        Description = "Click to farm, can click multi-time",
+        Title = "Teleport To Safe Zone",
+        Description = "(A high platform)",
         Callback = function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
         end
     })
+
+Tabs.Teleport:AddButton({
+        Title = "Teleport To Rayleigh",
+        Description = "Check and teleport to Rayleigh if he spawns",
+        Callback = function()
+if game:GetService("Workspace").Merchants.QuestHakiMerchant.Clickable.Available.Value == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.QuestHakiMerchant.HumanoidRootPart.CFrame
+else
+Fluent:Notify({
+    Title = "Rayleigh Notify",
+    Content = "Rayleigh hasn't spawned yet",
+    Duration = 4
+})
+end
+        end
+    })
+
+Tabs.Teleport:AddButton({
+        Title = "Teleport To Dark Atlas",
+        Description = "(Legendary Pedestal)",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Altar.RecepticalEffect.CFrame * CFrame.new(0, 0, 0)
+        end
+    })
+
+local Tmrt = Tabs.Teleport:AddSection("Teleport")
+
+local MobsTP = Tabs.Teleport:AddDropdown("Dropdown", {
+        Title = "NPC Teleport",
+        Values = {"nil", "Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flair Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
+        Multi = false,
+        Default = 2,
+    })
+
+    MobsTP:SetValue("nil")
+
+    MobsTP:OnChanged(function(Mobbb)
+if Mobbb == "Bartender (Sam)" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.DrinkMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Bartender (Bar)" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.BetterDrinkMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Sam" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.QuestMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Friend" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.FriendMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Cannon Seller" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.HeavyWeaponsMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Krizma Seller" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.KrizmaMerch.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Flair Seller" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.FlailMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Sword Seller" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.SwordMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Gun Seller" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.SniperMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Merlin" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.QuestFishMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Emotes Teacher" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.EmoteMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Lucy (Affinity)" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.AffinityMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Chef" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.FishMerchant.HumanoidRootPart.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+elseif Mobbb == "Expertise Giver" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Merchants.ExpertiseMerchant.Head.CFrame
+Fluent:Notify({
+    Title = "Teleport Notify",
+    Content = "Teleported to " ..Mobbb,
+    Duration = 1
+})
+end
+end)
+
+
+
+
+
 local InstantWeapon = Tabs.Main:AddSection("Instant Weapon")
 local YoruSpeed = Tabs.Main:AddSlider("Slider", {
     Title = "Yoru Speed",
@@ -1457,6 +1601,15 @@ end)
 
 local DF11Toggle = Tabs.Affinity:AddToggle("DF1Toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
     DF11Toggle:OnChanged(function()
+
+if _G.targetsword == false and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == false then
+Fluent:Notify({
+    Title = "AUTO-ROLL AFFINITY (DF1) NOTIFY",
+    Content = "Choose target(s) before spin",
+    Duration = 8
+})
+end
+
 while Options.DF1Toggle.Value do wait()
 pcall(function()
 if Options.DF1Toggle.Value == true then
@@ -1548,15 +1701,6 @@ end
 
 end)
 end
-
-if _G.targetsword == false and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == false then
-Fluent:Notify({
-    Title = "AUTO-ROLL AFFINITY (DF1) NOTIFY",
-    Content = "Choose target(s) before spin",
-    Duration = 8
-})
-end
-
 end)
 Options.DF1Toggle:SetValue(false)
 
@@ -1852,6 +1996,15 @@ end)
 
 local DF22Toggle = Tabs.Affinity:AddToggle("DF2Toggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
     DF22Toggle:OnChanged(function()
+
+if _G.targetsword2 == false and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == false then
+Fluent:Notify({
+    Title = "AUTO-ROLL AFFINITY (DF2) NOTIFY",
+    Content = "Choose target(s) before spin",
+    Duration = 8
+})
+end
+
 while Options.DF2Toggle.Value do wait()
 pcall(function()
 if Options.DF2Toggle.Value == true then
@@ -1943,15 +2096,6 @@ end
 
 end)
 end
-
-if _G.targetsword2 == false and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == false then
-Fluent:Notify({
-    Title = "AUTO-ROLL AFFINITY (DF2) NOTIFY",
-    Content = "Choose target(s) before spin",
-    Duration = 8
-})
-end
-
 end)
 Options.DF2Toggle:SetValue(false)
 
@@ -2214,7 +2358,7 @@ hideUI.TextWrapped = true
 hideUI.TextScaled = true
 hideUI.Font = Enum.Font.SourceSans
 hideUI.Text = "HIDE/SHOW UI"
-hideUI.TextColor3 = Color3.fromRGB(255, 255, 255)
+hideUI.TextColor3 = Color3.fromRGB(0, 0, 0)
 hideUI.TextSize = 14
 hideUI.MouseButton1Up:Connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
@@ -2223,7 +2367,7 @@ game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,ga
 end)
 
 else
-game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Your HWID was not whitelisted")
+game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Go Buy Script")
 everyClipboard = toclipboard
 function toClipboard(txt)
     if everyClipboard then
