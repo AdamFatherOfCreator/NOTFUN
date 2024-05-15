@@ -215,7 +215,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E27)",
+    Title = "SALUNA HUB (E29)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -238,6 +238,35 @@ local Tabs = {
     nonet = Window:AddTab({ Title = "-------", Icon = "" })
 }
 local Options = Fluent.Options
+
+local Autorj = Tabs.Automatic:AddSection("Automatic Function")
+local AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
+    AutorjToggle:OnChanged(function()
+if Options.Autorj1Toggle.Value == true then
+_G.autorj = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Reconnect Is Turned On",
+    Duration = 5
+})
+else
+_G.autorj = false
+end
+end)
+Options.Autorj1Toggle:SetValue(false)
+
+spawn(function()
+while true do wait()
+if _G.autorj then
+pcall(function()
+if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
+Players = game:GetService("Players")
+TeleportService = game:GetService("TeleportService")
+TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)end
+end)
+end
+end
+end)
 
 local Safe = Tabs.Teleport:AddSection("Special Teleport")
 
