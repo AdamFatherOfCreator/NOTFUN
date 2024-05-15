@@ -4,8 +4,9 @@ while true do wait()
 if _G.autorj then
 pcall(function()
 if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
-TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)
-end
+Players = game:GetService("Players")
+TeleportService = game:GetService("TeleportService")
+TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)end
 end)
 end
 end
