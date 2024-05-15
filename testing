@@ -234,6 +234,7 @@ local Tabs = {
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
     Webhook = Window:AddTab({ Title = "Webhook", Icon = "rbxassetid://14769727847" }),
+    Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://16181364687" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
     nonef = Window:AddTab({ Title = "-------", Icon = "" }),
     nonet = Window:AddTab({ Title = "-------", Icon = "" })
