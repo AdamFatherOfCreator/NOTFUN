@@ -240,7 +240,7 @@ local Tabs = {
 local Options = Fluent.Options
 
 local Autorj = Tabs.Automatic:AddSection("Automatic Function")
-local AutorjToggle = Tabs.Affinity:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
+local AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
     AutorjToggle:OnChanged(function()
 if Options.Autorj1Toggle.Value == true then
 _G.autorj = true
