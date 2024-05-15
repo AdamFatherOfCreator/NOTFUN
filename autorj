@@ -1,1 +1,12 @@
-.
+_G.autorj = true
+spawn(function()
+while true do wait()
+if _G.autorj then
+pcall(function()
+if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
+TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)
+end
+end)
+end
+end
+end)
