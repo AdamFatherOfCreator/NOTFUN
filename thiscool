@@ -44,7 +44,7 @@ end)
 local listed = {
 "af26dcea-a475-482f-8e3a-dcc82c127b8c",-- SALUNA
 "91656726-2eb9-45ab-aa56-d306c69cf393", -- Khôi
-"5190d394-8333-40df-9242-c8b01ea093fe" -- Hiếu Trung
+"45f8b028-9e2f-4d10-96cb-8eb6b0fe43d7" -- Hiếu Trung
 }
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
