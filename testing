@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E29)",
+    Title = "SALUNA HUB (E30)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1041,7 +1041,6 @@ local hakitargett = Tabs.Main:AddSlider("Slider", {
             hakitarget = gmm
         end
     })
-hakitargett:SetValue(25)
 
 local hakispeedt = Tabs.Main:AddSlider("Slider", {
     Title = "Haki Speed",
@@ -1054,7 +1053,6 @@ local hakispeedt = Tabs.Main:AddSlider("Slider", {
             hakispeed = gttmm
         end
     })
-hakispeedt:SetValue(5)
 
 local farmhaki = Tabs.Main:AddToggle("hakifarm", {Title = "Auto Farm Haki", Default = false })
 farmhaki:OnChanged(function()
