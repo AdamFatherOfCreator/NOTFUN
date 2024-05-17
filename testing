@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E37)",
+    Title = "SALUNA HUB (E38)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1038,7 +1038,7 @@ local HakiSection2 = Tabs.Main:AddSection("Auto Haki Farming")
         Numeric = true, -- Only allows numbers
         Finished = true, -- Only calls callback when you press enter
         Callback = function(gwqe)
-	hakitarget = tonumber(Inputhaki.gwqe)
+	hakitarget = tonumber(Inputhaki.Value)
         end
     })
 
@@ -1051,7 +1051,7 @@ local HakiSection2 = Tabs.Main:AddSection("Auto Haki Farming")
         Numeric = true, -- Only allows numbers
         Finished = true, -- Only calls callback when you press enter
         Callback = function(gttmm)
-	hakispeed = tonumber(Inputspeedhaki.gttmm)
+	hakispeed = tonumber(Inputspeedhaki.Value)
         end
     })
 
