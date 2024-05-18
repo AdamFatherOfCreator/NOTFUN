@@ -225,6 +225,7 @@ local Tabs = {
 local Options = Fluent.Options
 
 local Autospawn = Tabs.Automatic:AddSection("Auto Spawn")
+
 local AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
     AutospawnToggle:OnChanged(function()
 if Options.Autospawn1Toggle.Value == true then
@@ -239,6 +240,7 @@ _G.autospawn = false
 end
 end)
 Options.Autospawn1Toggle:SetValue(false)
+
         spawn(function()
             while wait() do
                 if _G.autospawn then
@@ -253,6 +255,7 @@ Options.Autospawn1Toggle:SetValue(false)
                     end)
                 end
             end
+	end)
 
 local Autorj = Tabs.Automatic:AddSection("Automatic Function")
 local AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
