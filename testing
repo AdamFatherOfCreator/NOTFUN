@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E30)",
+    Title = "SALUNA HUB (E31)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -405,7 +405,7 @@ end)
 
 
 local InstantWeapon = Tabs.Main:AddSection("Instant Weapon")
-local YoruSpeed = Tabs.Main:AddSlider("Slider", {
+local YoruSpeed = Tabs.Main:AddSlider("Slideryoru", {
     Title = "Yoru Speed",
     Description = "Change this for adjusting Yoru's speed",
     Default = 50,
@@ -416,7 +416,6 @@ local YoruSpeed = Tabs.Main:AddSlider("Slider", {
             Speeds = to
         end
     })
-YoruSpeed:SetValue(50)
 
 local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Yoru Spamming", Default = false })
     Toggle:OnChanged(function()
@@ -442,7 +441,7 @@ end
 end)
 Options.MyToggle:SetValue(false)
 
-local CestusSpeed = Tabs.Main:AddSlider("Slider", {
+local CestusSpeed = Tabs.Main:AddSlider("Slidercestus", {
     Title = "Cestus Speed",
     Description = "Change this for adjusting Seastone Cestus's speed",
     Default = 50,
@@ -453,7 +452,6 @@ local CestusSpeed = Tabs.Main:AddSlider("Slider", {
             Speedss = too
         end
     })
-CestusSpeed:SetValue(50)
 
 local CestusToggle = Tabs.Main:AddToggle("CestussToggle", {Title = "Cestus Spamming", Default = false })
     CestusToggle:OnChanged(function()
@@ -1504,7 +1502,7 @@ end
 
 local af1 = Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
 
-local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
+local Lucyfirst = Tabs.Affinity:AddSlider("Sliderfirstfruit", {
     Title = "1st Devil Fruit Point",
     Description = "Choose the point of affinity",
     Default = 1.9,
@@ -1515,7 +1513,6 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
             _G.trqpwo = treo
         end
     })
-Lucyfirst:SetValue(1.9)
 
      local wrrrrr = Tabs.Affinity:AddDropdown("MultiDropdown", {
         Title = "Lock Affinity (DF1)",
@@ -1899,7 +1896,7 @@ wait(12)
 
 local af2 = Tabs.Affinity:AddSection("Roll Affinity 2st Devil Fruit")
 
-local Lucysecond = Tabs.Affinity:AddSlider("Slider", {
+local Lucysecond = Tabs.Affinity:AddSlider("Slidersecondfruit", {
     Title = "2nd Devil Fruit Point",
     Description = "Choose the point of affinity",
     Default = 1.9,
@@ -1910,7 +1907,6 @@ local Lucysecond = Tabs.Affinity:AddSlider("Slider", {
             _G.trqpwo2 = treot
         end
     })
-Lucysecond:SetValue(1.9)
 
      local wrrrrr2 = Tabs.Affinity:AddDropdown("MultiDropdown", {
         Title = "Lock Affinity (DF2)",
