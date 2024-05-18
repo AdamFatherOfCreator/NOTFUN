@@ -199,7 +199,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E33)",
+    Title = "SALUNA HUB (E35)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -223,6 +223,39 @@ local Tabs = {
     nonet = Window:AddTab({ Title = "-------", Icon = "" })
 }
 local Options = Fluent.Options
+
+local Autospawn = Tabs.Automatic:AddSection("Auto Spawn")
+
+local AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
+    AutospawnToggle:OnChanged(function()
+if Options.Autospawn1Toggle.Value == true then
+_G.autospawn = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Spawn Is Turned On",
+    Duration = 5
+})
+else
+_G.autospawn = false
+end
+end)
+Options.Autospawn1Toggle:SetValue(false)
+
+        spawn(function()
+            while wait() do
+                if _G.autospawn then
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
+                            repeat wait(4)
+                                for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
+                                    v.Function()
+                                end
+                            until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == false
+                        end
+                    end)
+                end
+            end
+	end)
 
 local Autorj = Tabs.Automatic:AddSection("Automatic Function")
 local AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
