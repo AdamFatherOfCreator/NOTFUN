@@ -27,9 +27,7 @@ end)
 
 local listed = {
 "af26dcea-a475-482f-8e3a-dcc82c127b8c",-- SALUNA
-"934c98f2-6ef1-4c5f-9ba0-15f500110b0a", -- Khôi
 "45f8b028-9e2f-4d10-96cb-8eb6b0fe43d7", -- Hiếu Trung
-"d8b482f3-0c2a-424d-b6a2-3000d4fb5c34" -- tab 2
 }
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
@@ -200,7 +198,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E29)",
+    Title = "SALUNA HUB (E30)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1029,10 +1027,10 @@ function hakiauto()
 end
 end)
 local HakiSection2 = Tabs.Main:AddSection("Auto Haki Farming")
-local hakitargett = Tabs.Main:AddSlider("Slider", {
+local hakitargett = Tabs.Main:AddSlider("Sliderhaki", {
     Title = "Haki Target (%)",
     Description = "Change this for adjusting haki's target",
-    Default = 25,
+    Default = 55,
     Min = 1,
     Max = 90,
     Rounding = 0,
@@ -1040,12 +1038,11 @@ local hakitargett = Tabs.Main:AddSlider("Slider", {
             hakitarget = gmm
         end
     })
-hakitargett:SetValue(25)
 
-local hakispeedt = Tabs.Main:AddSlider("Slider", {
+local hakispeedt = Tabs.Main:AddSlider("Slidertargethaki", {
     Title = "Haki Speed",
     Description = "Change this for adjusting haki's speed",
-    Default = 5,
+    Default = 20,
     Min = 1,
     Max = 50,
     Rounding = 0,
@@ -1053,7 +1050,6 @@ local hakispeedt = Tabs.Main:AddSlider("Slider", {
             hakispeed = gttmm
         end
     })
-hakispeedt:SetValue(5)
 
 local farmhaki = Tabs.Main:AddToggle("hakifarm", {Title = "Auto Farm Haki", Default = false })
 farmhaki:OnChanged(function()
