@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E31)",
+    Title = "SALUNA HUB (E32)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -218,6 +218,7 @@ local Tabs = {
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
     Webhook = Window:AddTab({ Title = "Webhook", Icon = "rbxassetid://14769727847" }),
+    Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://16181364687" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
     nonef = Window:AddTab({ Title = "-------", Icon = "" }),
     nonet = Window:AddTab({ Title = "-------", Icon = "" })
@@ -247,7 +248,8 @@ pcall(function()
 if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
 Players = game:GetService("Players")
 TeleportService = game:GetService("TeleportService")
-TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)end
+TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)
+end
 end)
 end
 end
@@ -1328,7 +1330,7 @@ end
         end
     })
 
-
+local mgfrrr = Tabs.Server:AddSection("Boost")
     Tabs.Server:AddButton({
         Title = "Low-Graphic Mode",
         Description = "Use to reduce lag",
@@ -1390,6 +1392,7 @@ workspace:FindFirstChildOfClass('Terrain').WaterWaveSize = 0
         end
     })
 
+local mgfrrr2 = Tabs.Server:AddSection("Rejoin/Hop")
     Tabs.Server:AddButton({
         Title = "Rejoin Server",
         Description = "Rejoin the current server",
@@ -1416,8 +1419,34 @@ end
         end
     })
 
+    Tabs.Server:AddButton({
+        Title = "Hop Server",
+        Description = "Hop to other server",
+        Callback = function()
+            Window:Dialog({
+                Title = "Hop Server",
+                Content = "Do you want to use?",
+                Buttons = {
+                    {
+                        Title = "OK",
+                        Callback = function()
+Players = game:GetService("Players")
+TeleportService = game:GetService("TeleportService")
+TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)        
+end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                        end
+                    }
+                }
+            })
+        end
+    })
+
    Tabs.Server:AddButton({
-        Title = "Server Hop",
+        Title = "Low-Server Hop",
         Description = "Join the different server (fewer player)",
         Callback = function()
             Window:Dialog({
