@@ -199,7 +199,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E34)",
+    Title = "SALUNA HUB (E35)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -238,7 +238,7 @@ else
 _G.autospawn = false
 end
 end)
-
+Options.Autospawn1Toggle:SetValue(false)
         spawn(function()
             while wait() do
                 if _G.autospawn then
@@ -254,7 +254,7 @@ end)
                 end
             end
 
-local Autorj = Tabs.Automatic:AddSection("Auto Function")
+local Autorj = Tabs.Automatic:AddSection("Automatic Function")
 local AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
     AutorjToggle:OnChanged(function()
 if Options.Autorj1Toggle.Value == true then
@@ -268,6 +268,7 @@ else
 _G.autorj = false
 end
 end)
+Options.Autorj1Toggle:SetValue(false)
 
 spawn(function()
 while true do wait()
@@ -383,6 +384,8 @@ local MobsTP = Tabs.Teleport:AddDropdown("Dropdown", {
         Multi = false,
         Default = 2,
     })
+
+    MobsTP:SetValue("nil")
 
     MobsTP:OnChanged(function(Mobbb)
 if Mobbb == "Bartender (Sam)" then
@@ -525,6 +528,7 @@ end)
 wait()
 end
 end)
+Options.MyToggle:SetValue(false)
 
 local CestusSpeed = Tabs.Main:AddSlider("Slidercestus", {
     Title = "Cestus Speed",
@@ -560,6 +564,7 @@ end)
 wait()
 end
 end)
+Options.CestussToggle:SetValue(false)
 
 
 local HakiSection = Tabs.Main:AddSection("Haki Farming")
@@ -572,6 +577,7 @@ wait(2)
 end)
 end
 end)
+Options.hakiget:SetValue(false)
 
 
 local drainhaki = Tabs.Main:AddToggle("hakidrain", {Title = "Drain Haki", Default = false })
@@ -1201,6 +1207,7 @@ _G.concu = false
 end
 end
 end)
+Options.hakifarm:SetValue(false)
 
 local HakiSection3 = Tabs.Main:AddSection("Advanced Haki Farming")
 
@@ -1685,6 +1692,7 @@ local ret = Tabs.Affinity:AddDropdown("Dropdown", {
         Default = 1,
     })
 
+    ret:SetValue("Cash")
 
     ret:OnChanged(function(Valuezx)
 _G.budget = Valuezx
@@ -1793,6 +1801,7 @@ end
 end)
 end
 end)
+Options.DF1Toggle:SetValue(false)
 
             spawn(function()
             while wait() do
@@ -2077,6 +2086,7 @@ local ret2 = Tabs.Affinity:AddDropdown("Dropdown", {
         Default = 1,
     })
 
+    ret2:SetValue("Cash")
 
     ret2:OnChanged(function(Valuezx2)
 _G.budget2 = Valuezx2
@@ -2185,6 +2195,7 @@ end
 end)
 end
 end)
+Options.DF2Toggle:SetValue(false)
 
             spawn(function()
             while wait() do
