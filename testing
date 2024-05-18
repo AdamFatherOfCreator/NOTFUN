@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E38)",
+    Title = "SALUNA HUB (E30)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -218,7 +218,6 @@ local Tabs = {
     Automatic = Window:AddTab({ Title = "Automatic", Icon = "rbxassetid://11860859170" }),
     Server = Window:AddTab({ Title = "Server", Icon = "rbxassetid://7539983773" }),
     Webhook = Window:AddTab({ Title = "Webhook", Icon = "rbxassetid://14769727847" }),
-    Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://16181364687" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
     nonef = Window:AddTab({ Title = "-------", Icon = "" }),
     nonet = Window:AddTab({ Title = "-------", Icon = "" })
@@ -1030,28 +1029,27 @@ function hakiauto()
 end
 end)
 local HakiSection2 = Tabs.Main:AddSection("Auto Haki Farming")
-
-    local hakitargett = Tabs.Main:AddInput("Inputhaki", {
-        Title = "Haki Target (1 -> 90)",
-        Default = "55",
-        Placeholder = "",
-        Numeric = true, -- Only allows numbers
-        Finished = true, -- Only calls callback when you press enter
-        Callback = function(gwqe)
-	hakitarget = tonumber(Inputhaki.Value)
+local hakitargett = Tabs.Main:AddSlider("Sliderhaki", {
+    Title = "Haki Target (%)",
+    Description = "Change this for adjusting haki's target",
+    Default = 55,
+    Min = 1,
+    Max = 90,
+    Rounding = 0,
+    Callback = function(gmm)
+            hakitarget = gmm
         end
     })
 
-
-
-    local hakispeedt = Tabs.Main:AddInput("Inputspeedhaki", {
-        Title = "Haki Speed (>=1)",
-        Default = "5",
-        Placeholder = "",
-        Numeric = true, -- Only allows numbers
-        Finished = true, -- Only calls callback when you press enter
-        Callback = function(gttmm)
-	hakispeed = tonumber(Inputspeedhaki.Value)
+local hakispeedt = Tabs.Main:AddSlider("Slidertargethaki", {
+    Title = "Haki Speed",
+    Description = "Change this for adjusting haki's speed",
+    Default = 20,
+    Min = 1,
+    Max = 50,
+    Rounding = 0,
+    Callback = function(gttmm)
+            hakispeed = gttmm
         end
     })
 
