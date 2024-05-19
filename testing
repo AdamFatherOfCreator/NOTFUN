@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (F23)",
+    Title = "SALUNA HUB (F24)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -349,28 +349,27 @@ spawn(function() --autohaki cannon
 while wait() do
 if _G.autocannonplr or _G.autocannonslow then
 pcall(function()
+repeat task.wait()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local hakiregen = hakigoc/100*20
+local hakiregen = hakigoc/100*80
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
-task.wait(0)
+repeat task.wait()
 if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 end
+until game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value <= hakiregen or game.Players.LocalPlayer.Character.Humanoid.Health == 0
 
-        repeat task.wait()
-        until game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value <= hakiregen
-
+repeat task.wait()
+if game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value <= hakiregen then
 if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 end
-
-repeat task.wait()
-if game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value <= hakiregen then
+wait(0.5)
 local args = {
     [1] = "On",
     [2] = haki
@@ -433,11 +432,11 @@ local args = {
 }
 workspace.UserData["User_"..x].III:FireServer(unpack(args))
 end
-until game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value >= hakigoc
+until game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value >= hakigoc or game.Players.LocalPlayer.Character.Humanoid.Health == 0
 
 
 
-
+until _G.autocannonplr == false and _G.autocannonslow == false
 end)
 end
 end
