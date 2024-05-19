@@ -1,85 +1,97 @@
-spawn(function()
+spawn(function() --autohaki cannon
 while wait() do
 pcall(function()
-if _G.autocannonplr then
-for i,v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name then
-for i,c in pairs(game.Workspace:GetChildren()) do
-if c:IsA("Model") and c.Name == v.Name then
-pcall(function()
-  if _G.autocannonplr == true then
+
+local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
+local hakiregen = slv/100*20
+local x = game.Players.LocalPlayer.UserId
+local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
+
+if _G.autocannonplr or _G.autocannonslow then
+
+fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
+wait()
+        repeat task.wait()
+        if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+        wait(0.5)
+        game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+        end
+        until game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value <= hakiregen
+
+repeat task.wait()
+if game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value <= hakiregen then
+if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+wait(0.5)
+game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+end
+end
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+until game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value >= hakigoc
 
 
 
-
-for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-v.Name = FRtt1
-if v.Name == c.Name then
-repeat task.wait(0.23)
-for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
-if q.Name == "CannonBall" then
-                          			q.CFrame = v.HumanoidRootPart.CFrame
-                           			q.CanCollide = true
-end
-end
-until _G.autocannonplr == false
-end
 end
 
-
-for i,b in pairs(game:GetService("Workspace"):GetChildren()) do
-b.Name = FRtt2
-if b.Name ~= c.Name and b.Name ~= v.Name then
-repeat task.wait(0.3)
-for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
-if q.Name == "CannonBall" then
-                          			q.CFrame = b.HumanoidRootPart.CFrame
-                           			q.CanCollide = true
-end
-end
-until _G.autocannonplr == false
-end
-end
-
-
-for i,n in pairs(game:GetService("Workspace"):GetChildren()) do
-n.Name = FRtt3
-if n.Name ~= c.Name and n.Name ~= FRtt1 and n.Name ~= FRtt2 then
-repeat task.wait(0.27)
-for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
-if q.Name == "CannonBall" then
-                          			q.CFrame = n.HumanoidRootPart.CFrame
-                           			q.CanCollide = true
-end
-end
-until _G.autocannonplr == false
-end
-end
-
-for i,m in pairs(game:GetService("Workspace"):GetChildren()) do
-m.Name = FRtt4
-if m.Name ~= c.Name and m.Name ~= FRtt1 and m.Name ~= FRtt2 and m.Name ~= FRtt3 then
-repeat task.wait(0.2)
-for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
-if q.Name == "CannonBall" then
-                          			q.CFrame = m.HumanoidRootPart.CFrame
-                           			q.CanCollide = true
-end
-end
-until _G.autocannonplr == false
-end
-end
-
-
-
-
-end
-end)
-end
-end
-end
-end
-end
 end)
 end
 end)
