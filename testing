@@ -199,7 +199,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (F1)",
+    Title = "SALUNA HUB (F2)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -547,9 +547,7 @@ repeat wait()
 		end
 	end)
 until  c.Humanoid.Health <= 0 or _G.autocannonplr == false and _G.autocannonslow == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
-			end
-		end
-elseif v.Name == game.Players.LocalPlayer.Name then
+elseif c.Humanoid.Health <= 0 or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name  then
 repeat wait()
 	pcall(function()
 		if _G.autocannonslow == true then
@@ -618,6 +616,8 @@ repeat wait()
 		end
 	end)
 until  v.Name ~= game.Players.LocalPlayer.Name
+			end
+		end
 	end
 end
 
