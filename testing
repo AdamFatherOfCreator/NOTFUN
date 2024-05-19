@@ -29,7 +29,7 @@ end)
 local listed = {
 "1884245e-ea3d-46c8-bf60-eb0c86edd21b",-- SALUNA
 "934c98f2-6ef1-4c5f-9ba0-15f500110b0a", -- Khôi
-"bbb3412a-f200-4afa-94fd-c15e6be3243f" -- Hiếu Trung
+"e8b1aa3d-a419-4553-9965-845e9f83951d" -- Hiếu Trung
 }
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
@@ -433,14 +433,17 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
-
 for i,v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
-		for i,c in pairs(game.Workspace:GetChildren()) do
-		if c:IsA("Model") and c.Name == v.Name then
+for i,c in pairs(game.Workspace:GetChildren()) do
+if c:IsA("Model") and c.Name == v.Name then
 pcall(function()
-if _G.autocannonplr == true then
-		for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+  if _G.autocannonplr == true then
+
+
+
+
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 v.Name = FRtt1
 if v.Name == c.Name then
 repeat task.wait(0.2)
@@ -454,9 +457,10 @@ until _G.autocannonplr == false
 end
 end
 
-		for i,b in pairs(game:GetService("Workspace"):GetChildren()) do
+
+for i,b in pairs(game:GetService("Workspace"):GetChildren()) do
 b.Name = FRtt2
-if b.Name ~= FRtt1 anb b.Name ~= c.Name then
+if b.Name ~= c.Name and b.Name ~= v.Name then
 repeat task.wait(0.2)
 for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
 if q.Name == "CannonBall" then
@@ -466,10 +470,12 @@ end
 end
 until _G.autocannonplr == false
 end
+end
 
-		for i,n in pairs(game:GetService("Workspace"):GetChildren()) do
+
+for i,n in pairs(game:GetService("Workspace"):GetChildren()) do
 n.Name = FRtt3
-if n.Name ~= FRtt1 and n.Name ~+ FRtt2 anb n.Name ~= c.Name then
+if n.Name ~= c.Name and n.Name ~= FRtt1 and n.Name ~= FRtt2 then
 repeat task.wait(0.2)
 for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
 if q.Name == "CannonBall" then
@@ -480,15 +486,30 @@ end
 until _G.autocannonplr == false
 end
 end
-		end
-		end
 
+for i,m in pairs(game:GetService("Workspace"):GetChildren()) do
+m.Name = FRtt4
+if m.Name ~= c.Name and m.Name ~= FRtt1 and m.Name ~= FRtt2 and m.Name ~= FRtt3 then
+repeat task.wait(0.2)
+for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+if q.Name == "CannonBall" then
+                          			q.CFrame = m.HumanoidRootPart.CFrame
+                           			q.CanCollide = true
+end
+end
+until _G.autocannonplr == false
+end
+end
+
+
+
+
+end
 end)
-		end
-		end
 end
 end
-
+end
+end
 end
 end)
 end
