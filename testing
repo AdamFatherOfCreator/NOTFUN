@@ -458,49 +458,6 @@ end
 end
 
 
-for i,b in pairs(game:GetService("Workspace"):GetChildren()) do
-b.Name = FRtt2
-if b.Name ~= c.Name and b.Name ~= v.Name then
-repeat task.wait(0.2)
-for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
-if q.Name == "CannonBall" then
-                          			q.CFrame = b.HumanoidRootPart.CFrame
-                           			q.CanCollide = true
-end
-end
-until _G.autocannonplr == false
-end
-end
-
-
-for i,n in pairs(game:GetService("Workspace"):GetChildren()) do
-n.Name = FRtt3
-if n.Name ~= c.Name and n.Name ~= FRtt1 and n.Name ~= FRtt2 then
-repeat task.wait(0.2)
-for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
-if q.Name == "CannonBall" then
-                          			q.CFrame = n.HumanoidRootPart.CFrame
-                           			q.CanCollide = true
-end
-end
-until _G.autocannonplr == false
-end
-end
-
-for i,m in pairs(game:GetService("Workspace"):GetChildren()) do
-m.Name = FRtt4
-if m.Name ~= c.Name and m.Name ~= FRtt1 and m.Name ~= FRtt2 and m.Name ~= FRtt3 then
-repeat task.wait(0.2)
-for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
-if q.Name == "CannonBall" then
-                          			q.CFrame = m.HumanoidRootPart.CFrame
-                           			q.CanCollide = true
-end
-end
-until _G.autocannonplr == false
-end
-end
-
 
 
 
