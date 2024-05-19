@@ -432,7 +432,7 @@ repeat wait()
 			end
 		end
 	end)
-until  c.Humanoid.Health <= 0 or _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
+until  c.Humanoid.Health <= 0 or _G.autocannonplr == false and _G.autocannonslow == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
 
 			end
 		end
