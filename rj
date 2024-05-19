@@ -15,7 +15,7 @@ pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 v.Name = FRtt1
 if v.Name == c.Name then
-repeat task.wait(0.2)
+repeat task.wait(0.23)
 for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
 if q.Name == "CannonBall" then
                           			q.CFrame = v.HumanoidRootPart.CFrame
@@ -30,7 +30,7 @@ end
 for i,b in pairs(game:GetService("Workspace"):GetChildren()) do
 b.Name = FRtt2
 if b.Name ~= c.Name and b.Name ~= v.Name then
-repeat task.wait(0.2)
+repeat task.wait(0.3)
 for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
 if q.Name == "CannonBall" then
                           			q.CFrame = b.HumanoidRootPart.CFrame
@@ -45,7 +45,7 @@ end
 for i,n in pairs(game:GetService("Workspace"):GetChildren()) do
 n.Name = FRtt3
 if n.Name ~= c.Name and n.Name ~= FRtt1 and n.Name ~= FRtt2 then
-repeat task.wait(0.2)
+repeat task.wait(0.27)
 for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
 if q.Name == "CannonBall" then
                           			q.CFrame = n.HumanoidRootPart.CFrame
