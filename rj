@@ -1,30 +1,4 @@
-spawn(function() --autohaki cannon
-while wait() do
-pcall(function()
-
-local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local hakiregen = slv/100*20
-local x = game.Players.LocalPlayer.UserId
-local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
-
-if _G.autocannonplr or _G.autocannonslow then
-
-fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
-wait()
-        repeat task.wait()
-        if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-        wait(0.5)
-        game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-        end
-        until game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value <= hakiregen
-
-repeat task.wait()
-if game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value <= hakiregen then
-if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-wait(0.5)
-game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-end
-end
+for i = 1,5 do
 local args = {
     [1] = "On",
     [2] = haki
@@ -86,12 +60,4 @@ local args = {
     [2] = haki
 }
 workspace.UserData["User_"..x].III:FireServer(unpack(args))
-until game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value >= hakigoc
-
-
-
 end
-
-end)
-end
-end)
