@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (F30)",
+    Title = "SALUNA HUB (F31)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -347,86 +347,88 @@ end)
 
 spawn(function() --autohaki cannon
 while wait() do
+if _G.autocannonplr or _G.autocannonslow then
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local hakiregen = hakigoc/100*80
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
-if _G.autocannonplr or _G.autocannonslow then
 pcall(function()
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
 if currenthaki > hakiregen and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 wait(0.5)
-elseif game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and currenthaki <= hakiregen then
+elseif currenthaki <= hakiregen and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-elseif currenthaki <= hakiregen then
-wait()
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
+end
+if currenthaki <= hakiregen then
 repeat task.wait()
+for i = 1,5 do
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+end
 until currenthaki >= hakigoc or game.Players.LocalPlayer.Character.Humanoid.Health == 0
 end
 
