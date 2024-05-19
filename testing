@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (F10)",
+    Title = "SALUNA HUB (F11)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -439,24 +439,22 @@ for i,v in pairs(game.Players:GetChildren()) do
 		for i,c in pairs(game.Workspace:GetChildren()) do
 			if c:IsA("Model") and c.Name == v.Name and c.Humanoid.Health > 0 and c.HumanoidRootPart.Position.Y < 211000 then
 Choose2 = c.Name
-repeat task.wait()
 	pcall(function()
 		if _G.autocannonplr == true and c.Humanoid.Health > 0 and c.HumanoidRootPart.Position.Y < 211000 then
     			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
       				if v.Name == Choose2 then
-                repeat task.wait()
+                repeat task.wait(0.3)
 					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if q.Name == "CannonBall" then
                           			q.CFrame = v.HumanoidRootPart.CFrame
                            			q.CanCollide = true
 						end
 					end
-until _G.autocannonplr == false or game.Players.LocalPlayer.Character.Humanoid.Health == 0
+until  c.Humanoid.Health <= 0 or _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
 				end
 			end
 		end
 	end)
-until  c.Humanoid.Health <= 0 or _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
 
 			end
 		end
