@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (F22)",
+    Title = "SALUNA HUB (F23)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -347,12 +347,12 @@ end)
 
 spawn(function() --autohaki cannon
 while wait() do
-pcall(function()
 if _G.autocannonplr or _G.autocannonslow then
+pcall(function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local hakiregen = slv/100*20
+local hakiregen = hakigoc/100*20
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
 task.wait(0)
@@ -437,9 +437,9 @@ until game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value >= hakigoc
 
 
 
-end
 
 end)
+end
 end
 end)
 
