@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (F19)",
+    Title = "SALUNA HUB (F20)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -346,22 +346,101 @@ spawn(function()
 end)
 
 spawn(function() --autohaki cannon
-    while wait() do
-        pcall(function()
-            if _G.autocannonplr or _G.autocannonslow then
-                fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
-                task.wait()
-                if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-                    wait(1)
-                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-                end
-                if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-                    wait(1)
-                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-                end
-            end
-        end)
-    end
+while wait() do
+pcall(function()
+
+local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
+local hakiregen = slv/100*20
+local x = game.Players.LocalPlayer.UserId
+local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
+
+if _G.autocannonplr or _G.autocannonslow then
+
+fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
+wait()
+        repeat task.wait()
+        if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+        wait(0.5)
+        game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+        end
+        until game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value <= hakiregen
+
+repeat task.wait()
+if game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value <= hakiregen then
+if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+wait(0.5)
+game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+end
+end
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "On",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+local args = {
+    [1] = "Off",
+    [2] = haki
+}
+workspace.UserData["User_"..x].III:FireServer(unpack(args))
+until game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value >= hakigoc
+
+
+
+end
+
+end)
+end
 end)
 
 spawn(function() -- autofarm cannon
