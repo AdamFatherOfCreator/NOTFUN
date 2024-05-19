@@ -439,7 +439,7 @@ if v.Name ~= game.Players.LocalPlayer.Name then
 		for i,c in pairs(game.Workspace:GetChildren()) do
 		if c:IsA("Model") and c.Name == v.Name then
 pcall(function()
-		if _G.autocannonplr == true then
+if _G.autocannonplr == true then
 		for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 v.Name = FRtt1
 if v.Name == c.Name then
@@ -451,6 +451,7 @@ if q.Name == "CannonBall" then
 end
 end
 until _G.autocannonplr == false
+end
 end
 
 		for i,b in pairs(game:GetService("Workspace"):GetChildren()) do
@@ -478,7 +479,7 @@ end
 end
 until _G.autocannonplr == false
 end
-
+end
 		end
 		end
 
@@ -488,8 +489,6 @@ end)
 end
 end
 
-end
-end
 end
 end)
 end
