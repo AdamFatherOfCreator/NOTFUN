@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (F18)",
+    Title = "SALUNA HUB (F19)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -539,6 +539,48 @@ end
 end)
 end
 end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.autocannonplr then
+
+for i,g in pairs(game.Players:GetChildren()) do
+	if g.Name ~= game.Players.LocalPlayer.Name and g.Name ~= Choose2 and g.Name ~= Choose3 and g.Name ~= Choose4 then
+		for i,j in pairs(game.Workspace:GetChildren()) do
+			if j:IsA("Model") and j.Name == g.Name and j.Humanoid.Health > 0 and j.HumanoidRootPart.Position.Y < 211000 then
+Choose5 = j.Name
+	pcall(function()
+		if _G.autocannonplr == true and j.Humanoid.Health > 0 and j.HumanoidRootPart.Position.Y < 211000 then
+    			for i,g in pairs(game:GetService("Workspace"):GetChildren()) do
+      				if g.Name == Choose5 then
+                repeat task.wait(0.35)
+					for i, t in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                      				if t.Name == "CannonBall" then
+                          			t.CFrame = g.HumanoidRootPart.CFrame
+                           			t.CanCollide = true
+						end
+					end
+until  j.Humanoid.Health <= 0 or _G.autocannonplr == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name
+				end
+			end
+		end
+	end)
+
+			end
+		end
+	end
+end
+
+end
+end)
+end
+end)
+
+
+
+
+
 
 local Autospawn = Tabs.Automatic:AddSection("Auto Spawn")
 
