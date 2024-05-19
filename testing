@@ -226,7 +226,7 @@ local Options = Fluent.Options
 
 local Cannon = Tabs.Farm:AddSection("Cannon Farming")
 
-local autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mob (Cannon)", Default = false })
+local autocannonmob = Tabs.Automatic:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mob (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
 if Options.cannonmobtoggle.Value == true then
 _G.autocannonslow = true
@@ -236,7 +236,7 @@ end
 end)
 Options.cannonmobtoggle:SetValue(false)
 
-local autocannonplr = Tabs.Farm:AddToggle("cannonplrtoggle", {Title = "Auto Kill All Player (Cannon)", Default = false })
+local autocannonplr = Tabs.Automatic:AddToggle("cannonplrtoggle", {Title = "Auto Kill All Player (Cannon)", Default = false })
 autocannonplr:OnChanged(function()
 if Options.cannonplrtoggle.Value == true then
 _G.autocannonplr = true
@@ -343,9 +343,9 @@ spawn(function()
 end)
 
 spawn(function() -- autofarm cannon
-    while wait(0) do
+    while wait() do
         pcall(function()
-            if _G.autocannonslow then
+            if _G.autocannonslow == true and _G.autocannonplr == false then
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, " Boar")
                     and v:FindFirstChild("HumanoidRootPart") then
@@ -407,7 +407,42 @@ spawn(function() -- autofarm cannon
     end
 end)
 
+spawn(function()
+while wait() do
+pcall(function()
+if _G.autocannonplr == true and _G.autocannonslow == false then
 
+for i,v in pairs(game.Players:GetChildren()) do
+	if v.Name ~= game.Players.LocalPlayer.Name then
+		for i,c in pairs(game.Workspace:GetChildren()) do
+			if c:IsA("Model") and c.Name == v.Name and c.Humanoid.Health > 0 and c.HumanoidRootPart.Position.Y < 211000 then
+
+repeat wait()
+	pcall(function()
+		if _G.autocannonplr == true and c.Humanoid.Health > 0 and c.HumanoidRootPart.Position.Y < 211000 then
+    			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+      				if v.Name == Choose2 then
+					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                      				if q.Name == "CannonBall" then
+                          			q.CFrame = v.HumanoidRootPart.CFrame
+                           			q.CanCollide = false
+						end
+					end
+				end
+			end
+		end
+	end)
+until  c.Humanoid.Health <= 0 or _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
+
+			end
+		end
+	end
+end
+
+end
+end)
+end
+end)
 
 local Autospawn = Tabs.Automatic:AddSection("Auto Spawn")
 
