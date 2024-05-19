@@ -355,7 +355,7 @@ local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local hakiregen = hakigoc/100*80
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
-if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value > hakiregen then
+if game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value > hakiregen and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 end
