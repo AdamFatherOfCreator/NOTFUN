@@ -199,7 +199,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (E40)",
+    Title = "SALUNA HUB (E41)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -226,7 +226,7 @@ local Options = Fluent.Options
 
 local Cannon = Tabs.Farm:AddSection("Cannon Farming")
 
-local autocannonmob = Tabs.Automatic:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mob (Cannon)", Default = false })
+local autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mob (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
 if Options.cannonmobtoggle.Value == true then
 _G.autocannonslow = true
@@ -236,7 +236,7 @@ end
 end)
 Options.cannonmobtoggle:SetValue(false)
 
-local autocannonplr = Tabs.Automatic:AddToggle("cannonplrtoggle", {Title = "Auto Kill All Player (Cannon)", Default = false })
+local autocannonplr = Tabs.Farm:AddToggle("cannonplrtoggle", {Title = "Auto Kill All Player (Cannon)", Default = false })
 autocannonplr:OnChanged(function()
 if Options.cannonplrtoggle.Value == true then
 _G.autocannonplr = true
@@ -526,6 +526,16 @@ repeat wait()
 		end
 	end)
 until  c.Humanoid.Health <= 0 or _G.autocannonplr == false and _G.autocannonslow == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
+else
+
+
+                    for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                        if v.Name == "CannonBall" then
+                            v.CFrame = CFrame.new(100, 3000, 800)
+                            v.CanCollide = false
+                        end
+                    end
+
 
 			end
 		end
@@ -537,7 +547,62 @@ end)
 end
 end)
 
-
+                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                    if string.find(v.Name, " Boar")
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                     end
+                end
+                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                    if string.find(v.Name, "Crab")
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
+                        v.HumanoidRootPart.Transparency = 0.9
+                        v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                     end
+                end
+                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                    if string.find(v.Name, "Angry ") 
+                    or string.find(v.Name, "Bandit") 
+                    or string.find(v.Name, "Thief")
+                    or string.find(v.Name, "Bruno") 
+                    or string.find(v.Name, "Bucky") 
+                    or string.find(v.Name, " Vokun") 
+                    or string.find(v.Name, "Freddy")  
+                    or string.find(v.Name, "Cave ") 
+                    or string.find(v.Name, "Thug") 
+                    or string.find(v.Name, "Gunslinger")
+                    or string.find(v.Name, "Gunner") 
+                    or string.find(v.Name, "Buster") 
+                    and v:FindFirstChild("HumanoidRootPart") then
+                        v.HumanoidRootPart.CanCollide = false
+                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
+                        v:FindFirstChild("HumanoidRootPart").Anchored = true
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                    end
+                end
 
 
 local Autospawn = Tabs.Automatic:AddSection("Auto Spawn")
