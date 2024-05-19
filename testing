@@ -367,7 +367,7 @@ game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:F
 end
 if currenthaki <= hakiregen then
 repeat task.wait()
-for i = 1,5 do
+for i = 1, 20 do
 local args = {
     [1] = "On",
     [2] = haki
