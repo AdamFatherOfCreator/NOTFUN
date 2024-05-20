@@ -1,4 +1,5 @@
 repeat wait() until game:IsLoaded()
+  if game.placeId == 8569358381 or game.placeId == 3237168 then
 _G.statss = true
 local Pedo = {
     1135910299, -- Havelic
@@ -39,7 +40,6 @@ _G.WhiteListed = true
             end
         end
 if _G.WhiteListed then 
-  if game.placeId == 8569358381 or game.placeId == 3237168 then
     local vu = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:connect(function()
        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
@@ -2825,7 +2825,7 @@ game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,gam
 wait(0.1)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 end)
-end
+
 else
 game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Your HWID Wasn't Whitelisted")
 everyClipboard = toclipboard
@@ -2835,4 +2835,5 @@ function toClipboard(txt)
     end
 end
 toClipboard("https://discord.gg/ecpbhm8G3w")
+end
 end
