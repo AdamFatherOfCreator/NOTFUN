@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (F36)",
+    Title = "SALUNA HUB (F37)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -363,17 +363,13 @@ if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and not game.Play
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 repeat task.wait()
-until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autocannonplr == false and _G.autocannonslow == false
 end
 
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value < sss and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-repeat task.wait()
-until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv
-end
-
-if game.Workspace.UserData["User_"..plrid].HakiBar.Value < sss then
+wait()
 for i = 1, 20 do
 local args = {
     [1] = "On",
@@ -438,8 +434,9 @@ local args = {
 workspace.UserData["User_"..x].III:FireServer(unpack(args))
 end
 repeat task.wait()
-until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autocannonplr == false and _G.autocannonslow == false
 end
+
 
 end)
 end
