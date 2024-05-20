@@ -584,9 +584,9 @@ end)
 
 
 
-local Autospawn = Tabs.Automatic:AddSection("Auto Spawn")
+local Autospawn = Tabs.Misc:AddSection("Auto Spawn")
 
-local AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
+local AutospawnToggle = Tabs.Misc:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
     AutospawnToggle:OnChanged(function()
 if Options.Autospawn1Toggle.Value == true then
 _G.autospawn = true
@@ -616,6 +616,10 @@ Options.Autospawn1Toggle:SetValue(false)
                 end
             end
 	end)
+
+local Autogetquest = Tabs.Misc:AddSection("Auto Get Quest")
+
+
 
 local Autorj = Tabs.Automatic:AddSection("Automatic Function")
 local AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
