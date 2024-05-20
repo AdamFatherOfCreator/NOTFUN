@@ -360,6 +360,7 @@ else
 _G.autohakicannon = false
 end
 if _G.autohakicannon == true then
+repeat task.wait()
 pcall(function()
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
 
@@ -443,6 +444,7 @@ end
 
 
 end)
+until _G.autohakicannon == false
 end
 end
 end)
