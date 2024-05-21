@@ -202,7 +202,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G16)",
+    Title = "SALUNA HUB (G19)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -214,7 +214,7 @@ local Window = Fluent:CreateWindow({
 local Tabs = {
     Main = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://8587689304" }),
     Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://2294529381" }),
-    Fruit = Window:AddTab({ Title = "Fruit & Compass", Icon = "rbxassetid://15204130040" }),
+    Fruit = Window:AddTab({ Title = "Fruit & Compass", Icon = "rbxassetid://13492316250" }),
     Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://6723742952" }),
     Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16149111731" }),
@@ -862,67 +862,47 @@ while true do wait()
 if _G.autorj then
 pcall(function()
 if game.CoreGui.RobloxPromptGui.promptOverlay.Active == true then
-            local PlaceID = game.PlaceId
-            local AllIDs = {}
-            local foundAnything = ""
-            local actualHour = os.date("!*t").hour
-            local Deleted = false
-            function TPReturner()
-                local Site;
-                if foundAnything == "" then
-                    Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
-                else
-                    Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
-                end
-                local ID = ""
-                if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
-                    foundAnything = Site.nextPageCursor
-                end
-                local num = 0;
-                for i,v in pairs(Site.data) do
-                    local Possible = true
-                    ID = tostring(v.id)
-                    if tonumber(v.maxPlayers) > tonumber(v.playing) then
-                        for _,Existing in pairs(AllIDs) do
-                            if num ~= 0 then
-                                if ID == tostring(Existing) then
-                                    Possible = false
-                                end
-                            else
-                                if tonumber(actualHour) ~= tonumber(Existing) then
-                                    local delFile = pcall(function()
-                                        -- delfile("NotSameServers.json")
-                                        AllIDs = {}
-                                        table.insert(AllIDs, actualHour)
-                                    end)
-                                end
-                            end
-                            num = num + 1
-                        end
-                        if Possible == true then
-                            table.insert(AllIDs, ID)
-                            wait()
-                            pcall(function()
-                                -- writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
-                                wait()
-                                game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
-                            end)
-                            wait(.1)
-                        end
-                    end
+TeleportService = game:GetService("TeleportService")
+HttpService = game:GetService("HttpService")
+PlaceId, JobId = game.PlaceId, game.JobId
+httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+	if httprequest then
+		httprequest({
+			Url = 'http://127.0.0.1:6463/rpc?v=1',
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				Origin = 'https://discord.com'
+			},
+			Body = HttpService:JSONEncode({
+				cmd = 'INVITE_BROWSER',
+				nonce = HttpService:GenerateGUID(false),
+				args = {code = 'dYHag43eeU'}
+			})
+		})
+	end   
+ if httprequest then
+        local servers = {}
+        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
+        local body = HttpService:JSONDecode(req.Body)
+
+        if body and body.data then
+            for i, v in next, body.data do
+                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
+                    table.insert(servers, 1, v.id)
                 end
             end
-            function Teleport() 
-                while wait() do
-                    pcall(function()
-                        TPReturner()
-                        if foundAnything ~= "" then
-                            TPReturner()
-                        end
-                    end)
-                end
-            end
-            Teleport()
+        end
+
+        if #servers > 0 then
+            TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
+        else
+            return notify("Serverhop", "Couldn't find a server.")
+        end
+    else
+        notify("Incompatible Exploit", "Your exploit does not support this command (missing request)")
+    end          
+
 end
 end)
 end
@@ -2154,9 +2134,72 @@ end
         end
     })
 
+    Tabs.Server:AddButton({
+        Title = "Hop Server",
+        Description = "Hop to random server",
+        Callback = function()
+            Window:Dialog({
+                Title = "Hop Server",
+                Content = "Do you want to use?",
+                Buttons = {
+                    {
+                        Title = "OK",
+                        Callback = function()
+TeleportService = game:GetService("TeleportService")
+HttpService = game:GetService("HttpService")
+PlaceId, JobId = game.PlaceId, game.JobId
+httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+	if httprequest then
+		httprequest({
+			Url = 'http://127.0.0.1:6463/rpc?v=1',
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				Origin = 'https://discord.com'
+			},
+			Body = HttpService:JSONEncode({
+				cmd = 'INVITE_BROWSER',
+				nonce = HttpService:GenerateGUID(false),
+				args = {code = 'dYHag43eeU'}
+			})
+		})
+	end   
+ if httprequest then
+        local servers = {}
+        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
+        local body = HttpService:JSONDecode(req.Body)
+
+        if body and body.data then
+            for i, v in next, body.data do
+                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
+                    table.insert(servers, 1, v.id)
+                end
+            end
+        end
+
+        if #servers > 0 then
+            TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
+        else
+            return notify("Serverhop", "Couldn't find a server.")
+        end
+    else
+        notify("Incompatible Exploit", "Your exploit does not support this command (missing request)")
+    end          
+end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                        end
+                    }
+                }
+            })
+        end
+    })
+
    Tabs.Server:AddButton({
         Title = "Low-Server Hop",
-        Description = "Join the different server (fewer player)",
+        Description = "Hop to a fewer players server",
         Callback = function()
             Window:Dialog({
                 Title = "Server Hop",
@@ -3040,12 +3083,6 @@ end
 end)
 
 
-local c1 = Tabs.Affinity:AddSection("                                                -----")
-local c2 = Tabs.Affinity:AddSection("                                                -----")
-local c3 = Tabs.Affinity:AddSection("                                                -----")
-local c4 = Tabs.Main:AddSection("                                                -----")
-local c5 = Tabs.Main:AddSection("                                                -----")
-local c6 = Tabs.Main:AddSection("                                                -----")
 
 
 
@@ -3073,9 +3110,28 @@ SaveManager:SetFolder("FluentScriptHub/specific-game")
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
 
-local q = Tabs.Settings:AddSection("                                                -----")
-local qq = Tabs.Settings:AddSection("                                                -----")
-
+local c1 = Tabs.Affinity:AddSection("                                                -----")
+local c2 = Tabs.Affinity:AddSection("                                                -----")
+local c3 = Tabs.Farm:AddSection("                                                -----")
+local c4 = Tabs.Main:AddSection("                                                -----")
+local c5 = Tabs.Main:AddSection("                                                -----")
+local c6 = Tabs.Farm:AddSection("                                                -----")
+local c7 = Tabs.Server:AddSection("                                                -----")
+local c8 = Tabs.Server:AddSection("                                                -----")
+local c9 = Tabs.Fruit:AddSection("                                                -----")
+local c10 = Tabs.Fruit:AddSection("                                                -----")
+local c11 = Tabs.Teleport:AddSection("                                                -----")
+local c12 = Tabs.Teleport:AddSection("                                                -----")
+local c13 = Tabs.Player:AddSection("                                                -----")
+local c14 = Tabs.Player:AddSection("                                                -----")
+local c15 = Tabs.Automatic:AddSection("                                                -----")
+local c16 = Tabs.Automatic:AddSection("                                                -----")
+local c17 = Tabs.Webhook:AddSection("                                                -----")
+local c18 = Tabs.Webhook:AddSection("                                                -----")
+local c19 = Tabs.Misc:AddSection("                                                -----")
+local c20 = Tabs.Misc:AddSection("                                                -----")
+local c21 = Tabs.Settings:AddSection("                                                -----")
+local c22 = Tabs.Settings:AddSection("                                                -----")
 
 Window:SelectTab(1)
 
