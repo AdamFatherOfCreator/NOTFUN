@@ -202,7 +202,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G17)",
+    Title = "SALUNA HUB (G18)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -3105,11 +3105,26 @@ end)
 
 local c1 = Tabs.Affinity:AddSection("                                                -----")
 local c2 = Tabs.Affinity:AddSection("                                                -----")
-local c3 = Tabs.Affinity:AddSection("                                                -----")
+local c3 = Tabs.Farm:AddSection("                                                -----")
 local c4 = Tabs.Main:AddSection("                                                -----")
 local c5 = Tabs.Main:AddSection("                                                -----")
-local c6 = Tabs.Main:AddSection("                                                -----")
-
+local c6 = Tabs.Farm:AddSection("                                                -----")
+local c7 = Tabs.Server:AddSection("                                                -----")
+local c8 = Tabs.Server:AddSection("                                                -----")
+local c9 = Tabs.Fruit:AddSection("                                                -----")
+local c10 = Tabs.Fruit:AddSection("                                                -----")
+local c11 = Tabs.Teleport:AddSection("                                                -----")
+local c12 = Tabs.Teleport:AddSection("                                                -----")
+local c13 = Tabs.Player:AddSection("                                                -----")
+local c14 = Tabs.Player:AddSection("                                                -----")
+local c15 = Tabs.Automatic:AddSection("                                                -----")
+local c16 = Tabs.Automatic:AddSection("                                                -----")
+local c17 = Tabs.Webhook:AddSection("                                                -----")
+local c18 = Tabs.Webhook:AddSection("                                                -----")
+local c19 = Tabs.Misc:AddSection("                                                -----")
+local c20 = Tabs.Misc:AddSection("                                                -----")
+local c21 = Tabs.Settings:AddSection("                                                -----")
+local c22 = Tabs.Settings:AddSection("                                                -----")
 
 
 -- Addons:
@@ -3135,9 +3150,6 @@ SaveManager:SetFolder("FluentScriptHub/specific-game")
 
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
-
-local q = Tabs.Settings:AddSection("                                                -----")
-local qq = Tabs.Settings:AddSection("                                                -----")
 
 
 Window:SelectTab(1)
