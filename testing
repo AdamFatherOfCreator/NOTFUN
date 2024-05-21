@@ -651,49 +651,7 @@ end)
 end
 end)
 
-
-
-
-
-
-local Autospawn = Tabs.Misc:AddSection("Auto Spawn")
-
-local AutospawnToggle = Tabs.Misc:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
-    AutospawnToggle:OnChanged(function()
-if Options.Autospawn1Toggle.Value == true then
-_G.autospawn = true
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Spawn Is Turned On",
-    Duration = 5
-})
-else
-_G.autospawn = false
-end
-end)
-Options.Autospawn1Toggle:SetValue(false)
-
-        spawn(function()
-            while wait() do
-                if _G.autospawn then
-                    pcall(function()
-                        if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
-                            repeat wait(4)
-                                for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
-                                    v.Function()
-                                end
-                            until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == false
-                        end
-                    end)
-                end
-            end
-	end)
-
-local Autogetquest = Tabs.Misc:AddSection("Auto Get Quest")
-
-
-
-local Autorj = Tabs.Automatic:AddSection("Automatic Function")
+local Autorj = Tabs.Automatic:AddSection("General Function")
 local AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
     AutorjToggle:OnChanged(function()
 if Options.Autorj1Toggle.Value == true then
@@ -780,6 +738,42 @@ end)
 end
 end
 end)
+
+local Autospawn = Tabs.Automatic:AddSection("In-Game Function")
+local AutospawnToggle = Tabs.Misc:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
+    AutospawnToggle:OnChanged(function()
+if Options.Autospawn1Toggle.Value == true then
+_G.autospawn = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Spawn Is Turned On",
+    Duration = 5
+})
+else
+_G.autospawn = false
+end
+end)
+Options.Autospawn1Toggle:SetValue(false)
+
+        spawn(function()
+            while wait() do
+                if _G.autospawn then
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
+                            repeat wait(4)
+                                for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
+                                    v.Function()
+                                end
+                            until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == false
+                        end
+                    end)
+                end
+            end
+	end)
+
+
+
+
 
 local Safe = Tabs.Teleport:AddSection("Special Teleport")
 
