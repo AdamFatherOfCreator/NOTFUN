@@ -202,7 +202,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (F19)",
+    Title = "SALUNA HUB (G2)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -348,23 +348,84 @@ spawn(function()
 end)
 
 spawn(function() --autohaki cannon
-    while wait() do
-        pcall(function()
-            if _G.autocannonplr or _G.autocannonslow then
-                fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
-                task.wait()
-                if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-                    wait(1)
-                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-                end
-                if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-                    wait(1)
-                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-                end
-            end
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+while wait() do
+if _G.autohakicannon then wait()
+local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
+local sss = slv/100*30
+local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
+local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
+local x = game.Players.LocalPlayer.UserId
+pcall(function()
+fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
+
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+wait(0.5)
+game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+repeat task.wait()
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+end
+
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+wait(0.5)
+game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+ local Players = game:GetService("Players")
+local cache = {}
+    function lol(name)
+        if cache[name] then return cache[name] end
+        local player = Players:FindFirstChild(name)
+        if player then
+            cache[name] = player.UserId
+            return player.UserId
+        end 
+    
+        local id
+        pcall(function ()
+            id = Players:lol(name)
         end)
+        cache[name] = id
+        return id
     end
+    local ehh = game.Players.LocalPlayer.Name
+    local Final = lol(ehh)
+for i = 1,15 do wait()
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+    end
+task.wait(2)
+        local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+        local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait(13)
+repeat task.wait()
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+end
+
+
 end)
+end
+end
 
 spawn(function() -- autofarm cannon
     while wait() do
@@ -435,7 +496,7 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
-
+wait()
 for i,v in pairs(game.Players:GetChildren()) do
 	if v.Name ~= game.Players.LocalPlayer.Name then
 		for i,c in pairs(game.Workspace:GetChildren()) do
@@ -445,7 +506,7 @@ Choose2 = c.Name
 		if _G.autocannonplr == true and c.Humanoid.Health > 0 and c.HumanoidRootPart.Position.Y < 211000 then
     			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
       				if v.Name == Choose2 then
-                repeat task.wait(0.2)
+                repeat task.wait(0.31)
 					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if q.Name == "CannonBall" then
                           			q.CFrame = v.HumanoidRootPart.CFrame
@@ -472,7 +533,7 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
-
+wait()
 for i,d in pairs(game.Players:GetChildren()) do
 	if d.Name ~= game.Players.LocalPlayer.Name and d.Name ~= Choose2 then
 		for i,b in pairs(game.Workspace:GetChildren()) do
@@ -482,7 +543,7 @@ Choose3 = b.Name
 		if _G.autocannonplr == true and b.Humanoid.Health > 0 and b.HumanoidRootPart.Position.Y < 211000 then
     			for i,d in pairs(game:GetService("Workspace"):GetChildren()) do
       				if d.Name == Choose3 then
-                repeat task.wait(0.25)
+                repeat task.wait(0.32)
 					for i, e in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if e.Name == "CannonBall" then
                           			e.CFrame = d.HumanoidRootPart.CFrame
@@ -509,7 +570,7 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
-
+wait()
 for i,f in pairs(game.Players:GetChildren()) do
 	if f.Name ~= game.Players.LocalPlayer.Name and f.Name ~= Choose2 and f.Name ~= Choose3 then
 		for i,h in pairs(game.Workspace:GetChildren()) do
@@ -519,7 +580,7 @@ Choose4 = h.Name
 		if _G.autocannonplr == true and h.Humanoid.Health > 0 and h.HumanoidRootPart.Position.Y < 211000 then
     			for i,f in pairs(game:GetService("Workspace"):GetChildren()) do
       				if f.Name == Choose4 then
-                repeat task.wait(0.3)
+                repeat task.wait(0.33)
 					for i, w in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if w.Name == "CannonBall" then
                           			w.CFrame = f.HumanoidRootPart.CFrame
@@ -546,7 +607,7 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
-
+wait()
 for i,g in pairs(game.Players:GetChildren()) do
 	if g.Name ~= game.Players.LocalPlayer.Name and g.Name ~= Choose2 and g.Name ~= Choose3 and g.Name ~= Choose4 then
 		for i,j in pairs(game.Workspace:GetChildren()) do
@@ -556,7 +617,7 @@ Choose5 = j.Name
 		if _G.autocannonplr == true and j.Humanoid.Health > 0 and j.HumanoidRootPart.Position.Y < 211000 then
     			for i,g in pairs(game:GetService("Workspace"):GetChildren()) do
       				if g.Name == Choose5 then
-                repeat task.wait(0.35)
+                repeat task.wait(0.34)
 					for i, t in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if t.Name == "CannonBall" then
                           			t.CFrame = g.HumanoidRootPart.CFrame
