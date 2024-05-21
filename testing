@@ -527,7 +527,7 @@ spawn(function()
     while task.wait() do
         pcall(function()
             if _G.autocannonslow then
-                repeat task.wait(0.2)
+                repeat task.wait(0.5)
                     for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                         if v.Name == "CannonBall" then
                             v.CFrame = CFrame.new(100, 3000, 800)
@@ -710,7 +710,7 @@ Choose2 = c.Name
 		if _G.autocannonplr == true and c.Humanoid.Health > 0 and c.HumanoidRootPart.Position.Y < 211000 then
     			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
       				if v.Name == Choose2 then
-                repeat task.wait(0.31)
+                repeat task.wait(0.3)
 					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if q.Name == "CannonBall" then
                           			q.CFrame = v.HumanoidRootPart.CFrame
@@ -784,7 +784,7 @@ Choose4 = h.Name
 		if _G.autocannonplr == true and h.Humanoid.Health > 0 and h.HumanoidRootPart.Position.Y < 211000 then
     			for i,f in pairs(game:GetService("Workspace"):GetChildren()) do
       				if f.Name == Choose4 then
-                repeat task.wait(0.33)
+                repeat task.wait(0.34)
 					for i, w in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if w.Name == "CannonBall" then
                           			w.CFrame = f.HumanoidRootPart.CFrame
@@ -821,7 +821,7 @@ Choose5 = j.Name
 		if _G.autocannonplr == true and j.Humanoid.Health > 0 and j.HumanoidRootPart.Position.Y < 211000 then
     			for i,g in pairs(game:GetService("Workspace"):GetChildren()) do
       				if g.Name == Choose5 then
-                repeat task.wait(0.34)
+                repeat task.wait(0.36)
 					for i, t in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if t.Name == "CannonBall" then
                           			t.CFrame = g.HumanoidRootPart.CFrame
