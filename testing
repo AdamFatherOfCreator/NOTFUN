@@ -202,7 +202,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G11)",
+    Title = "SALUNA HUB (G12)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -255,9 +255,9 @@ end)
 local findcompass = Tabs.Fruit:AddToggle("findcompasstoggle", {Title = "Auto Find Compass", Default = false })
 findcompass:OnChanged(function()
 if Options.findcompasstoggle.Value == true then
-getgenv().claim = true
+getgenv().find = true
 else
-getgenv().claim = false
+getgenv().find = false
 end
 end)
 Options.findcompasstoggle:SetValue(false)
@@ -265,7 +265,7 @@ Options.findcompasstoggle:SetValue(false)
 spawn(function()
     while task.wait() do
         pcall(function()
-if getgenv().claim then
+if getgenv().find then
                 pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
