@@ -229,7 +229,7 @@ local Tabs = {
 local Options = Fluent.Options
 
 local FruitF = Tabs.Fruit:AddSection("Auto Compass")
-local getcompass = Tabs.Farm:AddToggle("getcompasstoggle", {Title = "Auto Get Compass", Default = false })
+local getcompass = Tabs.Fruit:AddToggle("getcompasstoggle", {Title = "Auto Get Compass", Default = false })
 getcompass:OnChanged(function()
 if Options.getcompasstoggle.Value == true then
 getgenv().claim = true
@@ -252,7 +252,7 @@ end)
 end
 end)
 
-local findsam = Tabs.Farm:AddToggle("findsamtoggle", {Title = "Auto Find Compass", Default = false })
+local findsam = Tabs.Fruit:AddToggle("findsamtoggle", {Title = "Auto Find Compass", Default = false })
 findsam:OnChanged(function()
 if Options.findsamtoggle.Value == true then
 getgenv().autofindsam = true
@@ -268,6 +268,7 @@ spawn(function()
 if getgenv().autofindsam then
                 pcall(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+task.wait(0.3)
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
 end
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
@@ -276,7 +277,6 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Poser.
 end
 if game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Compass:Activate()
-task.wait(0.3)
 end
     end
        end)
