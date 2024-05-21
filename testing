@@ -214,7 +214,7 @@ local Window = Fluent:CreateWindow({
 local Tabs = {
     Main = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://8587689304" }),
     Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://2294529381" }),
-    Fruit = Window:AddTab({ Title = "Fruit & Compass", Icon = "rbxassetid://15204130040" }),
+    Fruit = Window:AddTab({ Title = "Fruit & Compass", Icon = "rbxassetid://13492316250" }),
     Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://6723742952" }),
     Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16149111731" }),
