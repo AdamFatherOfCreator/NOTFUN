@@ -202,7 +202,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G4)",
+    Title = "SALUNA HUB (G6)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -349,9 +349,9 @@ end)
 
 spawn(function()
 	while wait() do
-if _G.autocannonplr  or _G.autocannonslow then
+if _G.autocannonplr == true  or _G.autocannonslow == true then
 _G.autohakicannon = true
-elseif _G.autocannonplr == false and _G.autocannonslow == false then
+else
 _G.autohakicannon = false
 end
 	end
@@ -361,7 +361,7 @@ spawn(function() --autohaki cannon
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 while wait() do
-if _G.autohakicannon then wait()
+if _G.autohakicannon == true then wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*30
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
@@ -477,7 +477,7 @@ spawn(function() -- autofarm cannon
                     or string.find(v.Name, "Bruno") 
                     or string.find(v.Name, "Bucky") 
                     or string.find(v.Name, " Vokun") 
-                    or string.find(v.Name, "Freddy")  
+                    or string.find(v.Name, "Fred")  
                     or string.find(v.Name, "Cave ") 
                     or string.find(v.Name, "Thug") 
                     or string.find(v.Name, "Gunslinger")
@@ -651,49 +651,7 @@ end)
 end
 end)
 
-
-
-
-
-
-local Autospawn = Tabs.Misc:AddSection("Auto Spawn")
-
-local AutospawnToggle = Tabs.Misc:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
-    AutospawnToggle:OnChanged(function()
-if Options.Autospawn1Toggle.Value == true then
-_G.autospawn = true
-Fluent:Notify({
-    Title = "Auto Function Notify",
-    Content = "Auto Spawn Is Turned On",
-    Duration = 5
-})
-else
-_G.autospawn = false
-end
-end)
-Options.Autospawn1Toggle:SetValue(false)
-
-        spawn(function()
-            while wait() do
-                if _G.autospawn then
-                    pcall(function()
-                        if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
-                            repeat wait(4)
-                                for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
-                                    v.Function()
-                                end
-                            until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == false
-                        end
-                    end)
-                end
-            end
-	end)
-
-local Autogetquest = Tabs.Misc:AddSection("Auto Get Quest")
-
-
-
-local Autorj = Tabs.Automatic:AddSection("Automatic Function")
+local Autorj = Tabs.Automatic:AddSection("General Function")
 local AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
     AutorjToggle:OnChanged(function()
 if Options.Autorj1Toggle.Value == true then
@@ -780,6 +738,67 @@ end)
 end
 end
 end)
+
+local Autospawn = Tabs.Automatic:AddSection("In-Game Function")
+local AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
+    AutospawnToggle:OnChanged(function()
+if Options.Autospawn1Toggle.Value == true then
+_G.autospawn = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Spawn Is Turned On",
+    Duration = 5
+})
+else
+_G.autospawn = false
+end
+end)
+Options.Autospawn1Toggle:SetValue(false)
+
+        spawn(function()
+            while wait() do
+                if _G.autospawn then
+                    pcall(function()
+                        if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
+                            repeat wait(4)
+                                for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Load.MouseButton1Click)) do
+                                    v.Function()
+                                end
+                            until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == false
+                        end
+                    end)
+                end
+            end
+	end)
+
+local AutogetexpToggle = Tabs.Automatic:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
+    AutogetexpToggle:OnChanged(function()
+if Options.Autogetexp1Toggle.Value == true then
+_G.autogetexp = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Get Expertise Quest Is Turned On",
+    Duration = 5
+})
+else
+_G.autogetexp = false
+end
+end)
+Options.Autogetexp1Toggle:SetValue(false)
+
+        spawn(function()
+            while wait() do
+                if _G.autogetexp then
+                    pcall(function()
+workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+wait(5)
+                    end)
+                end
+            end
+	end)
+
+
+
 
 local Safe = Tabs.Teleport:AddSection("Special Teleport")
 
