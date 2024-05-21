@@ -349,9 +349,9 @@ end)
 
 spawn(function()
 	while wait() do
-if _G.autocannonplr  or _G.autocannonslow then
+if _G.autocannonplr == true  or _G.autocannonslow == true then
 _G.autohakicannon = true
-elseif _G.autocannonplr == false and _G.autocannonslow == false then
+else
 _G.autohakicannon = false
 end
 	end
@@ -361,7 +361,7 @@ spawn(function() --autohaki cannon
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 while wait() do
-if _G.autohakicannon then wait()
+if _G.autohakicannon == true then wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*30
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
