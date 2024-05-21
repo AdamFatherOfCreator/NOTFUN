@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (F42)",
+    Title = "SALUNA HUB (G1)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -505,7 +505,7 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
-
+wait()
 for i,v in pairs(game.Players:GetChildren()) do
 	if v.Name ~= game.Players.LocalPlayer.Name then
 		for i,c in pairs(game.Workspace:GetChildren()) do
@@ -515,7 +515,7 @@ Choose2 = c.Name
 		if _G.autocannonplr == true and c.Humanoid.Health > 0 and c.HumanoidRootPart.Position.Y < 211000 then
     			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
       				if v.Name == Choose2 then
-                repeat task.wait(0.2)
+                repeat task.wait(0.3)
 					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if q.Name == "CannonBall" then
                           			q.CFrame = v.HumanoidRootPart.CFrame
@@ -542,7 +542,7 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
-
+wait()
 for i,d in pairs(game.Players:GetChildren()) do
 	if d.Name ~= game.Players.LocalPlayer.Name and d.Name ~= Choose2 then
 		for i,b in pairs(game.Workspace:GetChildren()) do
@@ -579,7 +579,7 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
-
+wait()
 for i,f in pairs(game.Players:GetChildren()) do
 	if f.Name ~= game.Players.LocalPlayer.Name and f.Name ~= Choose2 and f.Name ~= Choose3 then
 		for i,h in pairs(game.Workspace:GetChildren()) do
@@ -616,7 +616,7 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
-
+wait()
 for i,g in pairs(game.Players:GetChildren()) do
 	if g.Name ~= game.Players.LocalPlayer.Name and g.Name ~= Choose2 and g.Name ~= Choose3 and g.Name ~= Choose4 then
 		for i,j in pairs(game.Workspace:GetChildren()) do
