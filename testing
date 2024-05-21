@@ -205,7 +205,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G19)",
+    Title = "SALUNA HUB (G20)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -538,11 +538,13 @@ end)
 
 spawn(function()
 	while wait() do
-if _G.autocannonplr == true  or _G.autocannonslow == true then
+pcall(function()
+if _G.autocannonplr or _G.autocannonslow then
 _G.autohakicannon = true
 else
 _G.autohakicannon = false
 end
+end)
 	end
 end)
 
@@ -552,7 +554,7 @@ local plr = tostring(game.Players.LocalPlayer)
 while wait() do
 if _G.autohakicannon == true then wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*30
+local sss = slv/100*40
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 local x = game.Players.LocalPlayer.UserId
