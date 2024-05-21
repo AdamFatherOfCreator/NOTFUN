@@ -740,7 +740,7 @@ end
 end)
 
 local Autospawn = Tabs.Automatic:AddSection("In-Game Function")
-local AutospawnToggle = Tabs.Misc:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
+local AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
     AutospawnToggle:OnChanged(function()
 if Options.Autospawn1Toggle.Value == true then
 _G.autospawn = true
@@ -771,7 +771,7 @@ Options.Autospawn1Toggle:SetValue(false)
             end
 	end)
 
-local AutogetexpToggle = Tabs.Misc:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
+local AutogetexpToggle = Tabs.Automatic:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
     AutogetexpToggle:OnChanged(function()
 if Options.Autogetexp1Toggle.Value == true then
 _G.autogetexp = true
