@@ -771,6 +771,31 @@ Options.Autospawn1Toggle:SetValue(false)
             end
 	end)
 
+local AutogetexpToggle = Tabs.Misc:AddToggle("Autogetexp1Toggle", {Title = "Auto Get Expertise", Default = false })
+    AutogetexpToggle:OnChanged(function()
+if Options.Autogetexp1Toggle.Value == true then
+_G.autogetexp = true
+Fluent:Notify({
+    Title = "Auto Function Notify",
+    Content = "Auto Get Expertise Quest Is Turned On",
+    Duration = 5
+})
+else
+_G.autogetexp = false
+end
+end)
+Options.Autogetexp1Toggle:SetValue(false)
+
+        spawn(function()
+            while wait() do
+                if _G.autogetexp then
+                    pcall(function()
+workspace:WaitForChild("Merchants"):WaitForChild("ExpertiseMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+wait(5)
+                    end)
+                end
+            end
+	end)
 
 
 
