@@ -200,7 +200,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (F40)",
+    Title = "SALUNA HUB (F41)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -345,21 +345,26 @@ spawn(function()
     end
 end)
 
+spawn(function()
+	while wait() do
+if _G.autocannonplr  or _G.autocannonslow then
+_G.autohakicannon = true
+elseif _G.autocannonplr == false and _G.autocannonslow == false then
+_G.autohakicannon = false
+end
+	end
+end)
+
 spawn(function() --autohaki cannon
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 while wait() do
+if _G.autohakicannon then wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*90
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 local x = game.Players.LocalPlayer.UserId
-if _G.autocannonplr == true or _G.autocannonslow == true then
-_G.autohakicannon = true
-else
-_G.autohakicannon = false
-end
-if _G.autohakicannon == true then
 pcall(function()
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
 
@@ -397,41 +402,34 @@ if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss then
     end
     local ehh = game.Players.LocalPlayer.Name
     local Final = lol(ehh)
-for i = 1,5 do
+for i = 1,5 do wait()
     local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
     end
-    elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and getgenv().concuvm == true then
-        local args = {
-        [1] = "Off",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
 wait(2)
         local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
 wait()
         local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..Final].III:FireServer(unpack(args))
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
 wait(4)
 repeat task.wait()
 until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
