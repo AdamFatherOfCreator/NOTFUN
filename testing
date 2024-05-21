@@ -451,11 +451,7 @@ end)
                         v.Character.HumanoidRootPart.Transparency = 0.9
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
                         v.Character.HumanoidRootPart.CanCollide = false
-                        v.Character.HumanoidRootPart.Size = Vector3.new(10000, 10000, 10000)
-                        if v.Character.Humanoid.Health == 0 then
-                            v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
-                            v.Character.HumanoidRootPart.Transparency = 1
-                        end
+                        v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
                     end
                 end
             end
@@ -531,7 +527,7 @@ spawn(function()
                     for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                         if v.Name == "CannonBall" then
                             v.CFrame = CFrame.new(100, 3000, 800)
-                            v.CanCollide = true
+                            v.CanCollide = false
                         end
                     end
                 until _G.autocannonslow == false or game.Players.LocalPlayer.Character.Humanoid.Health == 0
@@ -635,6 +631,7 @@ spawn(function() -- autofarm cannon
     while wait() do
         pcall(function()
             if _G.autocannonslow then
+wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, " Boar")
                     and v:FindFirstChild("HumanoidRootPart") then
@@ -648,6 +645,7 @@ spawn(function() -- autofarm cannon
                         end
                      end
                 end
+wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, "Crab")
                     and v:FindFirstChild("HumanoidRootPart") then
@@ -663,6 +661,7 @@ spawn(function() -- autofarm cannon
                         end
                      end
                 end
+wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, "Angry ") 
                     or string.find(v.Name, "Bandit") 
