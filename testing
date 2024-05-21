@@ -202,7 +202,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G7)",
+    Title = "SALUNA HUB (G8)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -227,6 +227,65 @@ local Tabs = {
     nonet = Window:AddTab({ Title = "-------", Icon = "" })
 }
 local Options = Fluent.Options
+
+local FruitF = Tabs.Fruit:AddSection("Auto Compass")
+local getcompass = Tabs.Farm:AddToggle("getcompasstoggle", {Title = "Auto Get Compass", Default = false })
+getcompass:OnChanged(function()
+if Options.getcompasstoggle.Value == true then
+getgenv().claim = true
+else
+getgenv().claim = false
+end
+end)
+Options.getcompasstoggle:SetValue(false)
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+if getgenv().claim then
+            pcall(function()
+                workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10")
+            end)
+task.wait(1)
+end
+end)
+end
+end)
+
+local findsam = Tabs.Farm:AddToggle("findsamtoggle", {Title = "Auto Find Compass", Default = false })
+findsam:OnChanged(function()
+if Options.findsamtoggle.Value == true then
+getgenv().autofindsam = true
+else
+getgenv().autofindsam = false
+end
+end)
+Options.findsamtoggle:SetValue(false)
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+if getgenv().autofindsam then
+                pcall(function()
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v.Name == "Compass" then              
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Poser.Value)
+end
+if game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
+game.Players.LocalPlayer.Character.Compass:Activate()
+task.wait(0.3)
+end
+    end
+       end)
+task.wait(1)
+end
+end)
+end
+end)
+
 
 local Cannon = Tabs.Farm:AddSection("Cannon Farming")
 
