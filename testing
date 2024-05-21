@@ -202,7 +202,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G10)",
+    Title = "SALUNA HUB (G11)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -252,7 +252,7 @@ end)
 end
 end)
 
-local findcompass = Tabs.Fruit:AddToggle("findcompasstoggle", {Title = "Auto Get Compass", Default = false })
+local findcompass = Tabs.Fruit:AddToggle("findcompasstoggle", {Title = "Auto Find Compass", Default = false })
 findcompass:OnChanged(function()
 if Options.findcompasstoggle.Value == true then
 getgenv().claim = true
