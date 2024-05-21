@@ -202,7 +202,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G6)",
+    Title = "SALUNA HUB (G7)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -248,6 +248,79 @@ _G.autocannonplr = false
 end
 end)
 Options.cannonplrtoggle:SetValue(false)
+
+local Fishing = Tabs.Farm:AddSection("Fishing")
+
+local autofish = Tabs.Farm:AddToggle("fishytoggle", {Title = "Auto Fish (Cannot be used with Auto-Package)", Default = false })
+autofish:OnChanged(function()
+if Options.fishytoggle.Value == true then
+getgenv().fishing = true
+else
+getgenv().fishing = false
+end
+end)
+Options.fishytoggle:SetValue(false)
+
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+local plr = game.Players.LocalPlayer
+if getgenv().fishing then
+for i,v in pairs(plr.Backpack:GetChildren()) do
+if string.find(v.Name, "Rod") then
+v.Parent = plr.Character
+                end
+            end
+         end
+      end)
+   end
+end)
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+if getgenv().fishing then
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["fishingplace"].CFrame * CFrame.new(0, 3, 0)
+wait(0.1)
+for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(v.Name, "Rod") then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+end
+end
+for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if string.find(v.Name, "Rod") then
+for _, x in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+if string.find(x.Name, "Rod") then
+for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+if v:FindFirstChild("Bobber") then
+if v.Bobber.Effect.Enabled == true then
+wait(0.1)
+
+local args = {
+[1] = Vector3.new(20837,-3017,-4390)
+}
+game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
+end
+elseif v.Name == "Cast" and not v:FindFirstChild("Bobber") then
+wait(0.6)
+local args = {
+[1] = Vector3.new(20837,-3017,-4390)
+}
+game:GetService("Players").LocalPlayer.Character:FindFirstChild(x.Name).Click:FireServer(unpack(args))
+wait()
+workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+end
+end
+end
+end
+end
+end
+      end)
+   end
+end)
 
     spawn(function() -- autofarm teleport cannon
     while wait() do
