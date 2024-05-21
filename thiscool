@@ -426,6 +426,7 @@ end
 end)
 end
 end
+end)
 
 spawn(function() -- autofarm cannon
     while wait() do
