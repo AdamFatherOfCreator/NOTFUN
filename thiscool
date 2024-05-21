@@ -202,7 +202,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G2)",
+    Title = "SALUNA HUB (G3)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -345,6 +345,16 @@ spawn(function()
             end
         end)
     end
+end)
+
+spawn(function()
+	while wait() do
+if _G.autocannonplr  or _G.autocannonslow then
+_G.autohakicannon = true
+elseif _G.autocannonplr == false and _G.autocannonslow == false then
+_G.autohakicannon = false
+end
+	end
 end)
 
 spawn(function() --autohaki cannon
