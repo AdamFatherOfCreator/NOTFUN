@@ -202,7 +202,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G14)",
+    Title = "SALUNA HUB (G15)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -383,7 +383,7 @@ end)
 
 local Package = Tabs.Farm:AddSection("Auto Package")
 
-local autopackage = Tabs.Farm:AddToggle("packagetoggle", {Title = "Auto Fish (Cannot be used with Auto-Package)", Default = false })
+local autopackage = Tabs.Farm:AddToggle("packagetoggle", {Title = "Auto Package (Cannot be used with Auto-Fishing)", Default = false })
 autopackage:OnChanged(function()
 if Options.packagetoggle.Value == true then
 getgenv().tret = true
