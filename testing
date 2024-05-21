@@ -1,4 +1,5 @@
 repeat wait() until game:IsLoaded()
+  if game.placeId == 8569358381 or game.placeId == 3237168 then
 _G.statss = true
 local Pedo = {
     1135910299, -- Havelic
@@ -28,8 +29,9 @@ end)
 
 local listed = {
 "1884245e-ea3d-46c8-bf60-eb0c86edd21b",-- SALUNA
-"934c98f2-6ef1-4c5f-9ba0-15f500110b0a", -- Khôi
-"e8b1aa3d-a419-4553-9965-845e9f83951d" -- Hiếu Trung
+"76bf8d34-a05a-4803-8c43-24656f4fd7dd", -- Khôi
+"e8b1aa3d-a419-4553-9965-845e9f83951d", -- Hiếu Trung
+"743b921d-a215-4c71-99c6-29229e61e357" -- Khoa GK
 }
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
@@ -200,7 +202,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G2)",
+    Title = "SALUNA HUB (G3)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -332,11 +334,11 @@ spawn(function()
     while task.wait() do
         pcall(function()
             if _G.autocannonslow then
-                repeat task.wait(0.4)
+                repeat task.wait(0.2)
                     for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                         if v.Name == "CannonBall" then
                             v.CFrame = CFrame.new(100, 3000, 800)
-                            v.CanCollide = false
+                            v.CanCollide = true
                         end
                     end
                 until _G.autocannonslow == false or game.Players.LocalPlayer.Character.Humanoid.Health == 0
@@ -654,9 +656,9 @@ end)
 
 
 
-local Autospawn = Tabs.Automatic:AddSection("Auto Spawn")
+local Autospawn = Tabs.Misc:AddSection("Auto Spawn")
 
-local AutospawnToggle = Tabs.Automatic:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
+local AutospawnToggle = Tabs.Misc:AddToggle("Autospawn1Toggle", {Title = "Auto Spawn", Default = false })
     AutospawnToggle:OnChanged(function()
 if Options.Autospawn1Toggle.Value == true then
 _G.autospawn = true
@@ -686,6 +688,10 @@ Options.Autospawn1Toggle:SetValue(false)
                 end
             end
 	end)
+
+local Autogetquest = Tabs.Misc:AddSection("Auto Get Quest")
+
+
 
 local Autorj = Tabs.Automatic:AddSection("Automatic Function")
 local AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
@@ -2906,4 +2912,5 @@ function toClipboard(txt)
     end
 end
 toClipboard("https://discord.gg/ecpbhm8G3w")
+end
 end
