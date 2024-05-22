@@ -207,7 +207,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G24)",
+    Title = "SALUNA HUB (G25)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -538,10 +538,10 @@ spawn(function()
     while task.wait() do
         pcall(function()
             if _G.autocannonslow then
-                repeat task.wait(0.3)
+                repeat task.wait(0.4)
                     for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                         if v.Name == "CannonBall" then
-                            v.CFrame = CFrame.new(100, 3000, 800)
+                            v.CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
                             v.CanCollide = false
                         end
                     end
@@ -643,7 +643,7 @@ wait()
                         v.HumanoidRootPart.CanCollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
                         if v.Humanoid.Health == 0 then
                             v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
                             v:Destroy()
@@ -659,7 +659,7 @@ wait()
                         --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
                         v.HumanoidRootPart.Transparency = 0.9
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
                         if v.Humanoid.Health == 0 then
                             v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
                             v:Destroy()
@@ -684,7 +684,7 @@ wait()
                         v.HumanoidRootPart.CanCollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
                         if v.Humanoid.Health == 0 then
                             v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
                             v:Destroy()
