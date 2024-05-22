@@ -1254,7 +1254,7 @@ end
 end)
 Options.statsdrinktoggle:SetValue(false)
 
-spawn(funnction()
+spawn(function()
 while wait() do
 if getgenv().autodrinkmixer then
 pcal(function()
