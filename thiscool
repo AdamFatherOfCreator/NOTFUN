@@ -207,7 +207,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G21)",
+    Title = "SALUNA HUB (G26)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -313,6 +313,16 @@ end
 end)
 Options.cannonplrtoggle:SetValue(false)
 
+local autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off)", Default = false })
+autobusohaki:OnChanged(function()
+if Options.autobusohakitoggle.Value == true then
+_G.autohakibuso = true
+else
+_G.autohakibuso = false
+end
+end)
+Options.autobusohakitoggle:SetValue(false)
+
 local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso (Fast Regen)", Default = false })
 autoregenhaki:OnChanged(function()
 if Options.autoregenhakitoggle.Value == true then
@@ -336,6 +346,25 @@ end
 end)
 Options.fishytoggle:SetValue(false)
 
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.autohakibuso then
+                task.wait(0)
+                if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+                    wait(0.5)
+                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+                end
+                if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+                    wait(0.5)
+                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+                end
+
+            end
+        end)
+    end
+end)
 
 spawn(function()
     while task.wait() do
@@ -436,9 +465,11 @@ game.Players.LocalPlayer.Character.Humanoid.Sit = true
 end
  for _,v in pairs(game.Workspace.Merchants:GetChildren()) do
 if string.find(v.Name, "Aff") or string.find(v.Name, "Heavy") or string.find(v.Name, "Drink") or string.find(v.Name, "Boat") or string.find(v.Name, "Emote") or string.find(v.Name, "Exp") or string.find(v.Name, "Fish") or string.find(v.Name, "Flail") or string.find(v.Name, "Krizma") or string.find(v.Name, "QuestFish") or string.find(v.Name, "QuestMe") or string.find(v.Name, "Friend") or string.find(v.Name, "Sniper") or string.find(v.Name, "Sword") and v:FindFirstChild("HumanoidRootPart") then
+if not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(1, 0, 0)
 wait(0.3)
 game.Players.LocalPlayer.Character.Package:Activate()
+end
 end
 end
 elseif not game.Players.LocalPlayer.Backpack:FindFirstChild("Package") and not game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
@@ -536,11 +567,11 @@ spawn(function()
     while task.wait() do
         pcall(function()
             if _G.autocannonslow then
-                repeat task.wait(0.3)
+                repeat task.wait(0.4)
                     for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                         if v.Name == "CannonBall" then
-                            v.CFrame = CFrame.new(100, 3000, 800)
-                            v.CanCollide = true
+                            v.CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
+                            v.CanCollide = false
                         end
                     end
                 until _G.autocannonslow == false or game.Players.LocalPlayer.Character.Humanoid.Health == 0
@@ -555,7 +586,7 @@ local plr = tostring(game.Players.LocalPlayer)
 while wait() do
 if _G.autohakicannon then wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*40
+local sss = slv/100*50
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 local x = game.Players.LocalPlayer.UserId
@@ -591,7 +622,7 @@ local cache = {}
     end
     local ehh = game.Players.LocalPlayer.Name
     local Final = lol(ehh)
-for i = 1,20 do wait()
+for i = 1, 30 do wait()
     local args = {
         [1] = "Off",
         [2] = 1
@@ -605,7 +636,7 @@ for i = 1,20 do wait()
     
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
     end
-task.wait(0.5)
+task.wait(0.1)
         local args = {
         [1] = "Off",
         [2] = 1
@@ -619,7 +650,7 @@ wait()
     }
     
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait(13)
+wait(30)
 repeat task.wait()
 until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
 end
@@ -641,7 +672,7 @@ wait()
                         v.HumanoidRootPart.CanCollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
                         if v.Humanoid.Health == 0 then
                             v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
                             v:Destroy()
@@ -657,7 +688,7 @@ wait()
                         --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
                         v.HumanoidRootPart.Transparency = 0.9
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
                         if v.Humanoid.Health == 0 then
                             v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
                             v:Destroy()
@@ -682,7 +713,7 @@ wait()
                         v.HumanoidRootPart.CanCollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
                         if v.Humanoid.Health == 0 then
                             v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
                             v:Destroy()
@@ -2291,7 +2322,7 @@ local af1 = Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
 local Lucyfirst = Tabs.Affinity:AddSlider("Sliderfirstfruit", {
     Title = "1st Devil Fruit Point",
     Description = "Choose the point of affinity",
-    Default = 1.9,
+    Default = 2,
     Min = 1,
     Max = 2,
     Rounding = 1,
@@ -2685,7 +2716,7 @@ local af2 = Tabs.Affinity:AddSection("Roll Affinity 2st Devil Fruit")
 local Lucysecond = Tabs.Affinity:AddSlider("Slidersecondfruit", {
     Title = "2nd Devil Fruit Point",
     Description = "Choose the point of affinity",
-    Default = 1.9,
+    Default = 2,
     Min = 1,
     Max = 2,
     Rounding = 1,
