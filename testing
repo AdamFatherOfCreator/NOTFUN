@@ -208,7 +208,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G37)",
+    Title = "SALUNA HUB (G38)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1337,7 +1337,7 @@ if getgenv().farmstats then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
 if v.Name == "Barrel" then
-if getgenv().farmstats == true then
+if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 amongus()
 end
@@ -1346,14 +1346,14 @@ end
 end
 for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
 if v.Name == "Crate" then
-if getgenv().farmstats == true then
+if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 amongus()
 end
 wait(0.1)
 end
 end
-if getgenv().farmstats == true then
+if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.workspace[""..user].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
 amongus()
