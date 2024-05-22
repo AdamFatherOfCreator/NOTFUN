@@ -207,7 +207,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G30)",
+    Title = "SALUNA HUB (G31)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1232,7 +1232,7 @@ end)
 Options.CestussToggle:SetValue(false)
 
 local StatsFF = Tabs.Main:AddSection("Stats Farming")
-local statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto get haki (1k lvl)", Default = false })
+local statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer", Default = false })
 statsfarm:OnChanged(function()
 if Options.statstoggle.Value == true then
 getgenv().farmstats = true
@@ -1241,6 +1241,35 @@ getgenv().farmstats = false
 end
 end)
 Options.statstoggle:SetValue(false)
+
+
+local statsdrink = Tabs.Main:AddToggle("statsdrinktoggle", {Title = "Auto Farm Mixer", Default = false })
+statsdrink:OnChanged(function()
+if Options.statsdrinktoggle.Value == true then
+getgenv().autodrinkmixer = true
+else
+getgenv().autodrinkmixer = false
+end
+end)
+Options.statsdrinktoggle:SetValue(false)
+
+spawn(funnction()
+while wait() do
+if getgenv().autodrinkmixer then
+pcal(function()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v:Activate()
+end
+end
+end)
+end
+end
+end)
+
+
+
 
 spawn(function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
