@@ -207,7 +207,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G25)",
+    Title = "SALUNA HUB (G26)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -313,6 +313,16 @@ end
 end)
 Options.cannonplrtoggle:SetValue(false)
 
+local autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off)", Default = false })
+autobusohaki:OnChanged(function()
+if Options.autobusohakitoggle.Value == true then
+_G.autohakibuso = true
+else
+_G.autohakibuso = false
+end
+end)
+Options.autobusohakitoggle:SetValue(false)
+
 local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso (Fast Regen)", Default = false })
 autoregenhaki:OnChanged(function()
 if Options.autoregenhakitoggle.Value == true then
@@ -336,6 +346,25 @@ end
 end)
 Options.fishytoggle:SetValue(false)
 
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.autohakibuso then
+                task.wait(0)
+                if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+                    wait(0.5)
+                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+                end
+                if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+                    wait(0.5)
+                    game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+                end
+
+            end
+        end)
+    end
+end)
 
 spawn(function()
     while task.wait() do
