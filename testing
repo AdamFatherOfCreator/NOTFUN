@@ -1244,7 +1244,7 @@ end)
 Options.statstoggle:SetValue(false)
 
 
-local statsdrink = Tabs.Main:AddToggle("statsdrinktoggle", {Title = "Auto Farm Mixer", Default = false })
+local statsdrink = Tabs.Main:AddToggle("statsdrinktoggle", {Title = "Auto Drink Mixer", Default = false })
 statsdrink:OnChanged(function()
 if Options.statsdrinktoggle.Value == true then
 getgenv().autodrinkmixer = true
