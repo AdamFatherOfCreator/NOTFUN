@@ -313,7 +313,7 @@ end
 end)
 Options.cannonplrtoggle:SetValue(false)
 
-local autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off) (Cannot Use At The Same Time With Fast Regen)", Default = false })
+local autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off)", Default = false })
 autobusohaki:OnChanged(function()
 if Options.autobusohakitoggle.Value == true then
 _G.autohakibuso = true
