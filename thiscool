@@ -207,7 +207,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G19)",
+    Title = "SALUNA HUB (G21)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -312,6 +312,17 @@ _G.autocannonplr = false
 end
 end)
 Options.cannonplrtoggle:SetValue(false)
+
+local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso (Fast Regen)", Default = false })
+autoregenhaki:OnChanged(function()
+if Options.autoregenhakitoggle.Value == true then
+_G.autohakicannon = true
+else
+_G.autohakicannon = false
+end
+end)
+Options.autoregenhakitoggle:SetValue(false)
+
 
 local Fishing = Tabs.Farm:AddSection("Auto Fishing")
 
@@ -453,11 +464,7 @@ end)
                         v.Character.HumanoidRootPart.Transparency = 0.9
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
                         v.Character.HumanoidRootPart.CanCollide = false
-                        v.Character.HumanoidRootPart.Size = Vector3.new(10000, 10000, 10000)
-                        if v.Character.Humanoid.Health == 0 then
-                            v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
-                            v.Character.HumanoidRootPart.Transparency = 1
-                        end
+                        v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
                     end
                 end
             end
@@ -529,7 +536,7 @@ spawn(function()
     while task.wait() do
         pcall(function()
             if _G.autocannonslow then
-                repeat task.wait(0.2)
+                repeat task.wait(0.3)
                     for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                         if v.Name == "CannonBall" then
                             v.CFrame = CFrame.new(100, 3000, 800)
@@ -542,23 +549,13 @@ spawn(function()
     end
 end)
 
-spawn(function()
-	while wait() do
-if _G.autocannonplr == true  or _G.autocannonslow == true then
-_G.autohakicannon = true
-else
-_G.autohakicannon = false
-end
-	end
-end)
-
 spawn(function() --autohaki cannon
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 while wait() do
-if _G.autohakicannon == true then wait()
+if _G.autohakicannon then wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*30
+local sss = slv/100*40
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 local x = game.Players.LocalPlayer.UserId
@@ -594,7 +591,7 @@ local cache = {}
     end
     local ehh = game.Players.LocalPlayer.Name
     local Final = lol(ehh)
-for i = 1,15 do wait()
+for i = 1,20 do wait()
     local args = {
         [1] = "Off",
         [2] = 1
@@ -608,7 +605,7 @@ for i = 1,15 do wait()
     
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
     end
-task.wait(2)
+task.wait(0.5)
         local args = {
         [1] = "Off",
         [2] = 1
@@ -637,6 +634,7 @@ spawn(function() -- autofarm cannon
     while wait() do
         pcall(function()
             if _G.autocannonslow then
+wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, " Boar")
                     and v:FindFirstChild("HumanoidRootPart") then
@@ -650,6 +648,7 @@ spawn(function() -- autofarm cannon
                         end
                      end
                 end
+wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, "Crab")
                     and v:FindFirstChild("HumanoidRootPart") then
@@ -665,6 +664,7 @@ spawn(function() -- autofarm cannon
                         end
                      end
                 end
+wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, "Angry ") 
                     or string.find(v.Name, "Bandit") 
@@ -712,7 +712,7 @@ Choose2 = c.Name
 		if _G.autocannonplr == true and c.Humanoid.Health > 0 and c.HumanoidRootPart.Position.Y < 211000 then
     			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
       				if v.Name == Choose2 then
-                repeat task.wait(0.31)
+                repeat task.wait(0.3)
 					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if q.Name == "CannonBall" then
                           			q.CFrame = v.HumanoidRootPart.CFrame
@@ -786,7 +786,7 @@ Choose4 = h.Name
 		if _G.autocannonplr == true and h.Humanoid.Health > 0 and h.HumanoidRootPart.Position.Y < 211000 then
     			for i,f in pairs(game:GetService("Workspace"):GetChildren()) do
       				if f.Name == Choose4 then
-                repeat task.wait(0.33)
+                repeat task.wait(0.34)
 					for i, w in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if w.Name == "CannonBall" then
                           			w.CFrame = f.HumanoidRootPart.CFrame
@@ -823,7 +823,7 @@ Choose5 = j.Name
 		if _G.autocannonplr == true and j.Humanoid.Health > 0 and j.HumanoidRootPart.Position.Y < 211000 then
     			for i,g in pairs(game:GetService("Workspace"):GetChildren()) do
       				if g.Name == Choose5 then
-                repeat task.wait(0.34)
+                repeat task.wait(0.36)
 					for i, t in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if t.Name == "CannonBall" then
                           			t.CFrame = g.HumanoidRootPart.CFrame
@@ -2056,7 +2056,7 @@ local mgfrrr = Tabs.Server:AddSection("Boost")
         Description = "Use to reduce lag",
         Callback = function()
             Window:Dialog({
-                Title = "Low-graphic Mode",
+                Title = "Low-Graphic Mode",
                 Content = "Do you want to use?",
                 Buttons = {
                     {
