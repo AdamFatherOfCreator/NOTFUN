@@ -2056,7 +2056,7 @@ local mgfrrr = Tabs.Server:AddSection("Boost")
         Description = "Use to reduce lag",
         Callback = function()
             Window:Dialog({
-                Title = "Low-graphic Mode",
+                Title = "Low-Graphic Mode",
                 Content = "Do you want to use?",
                 Buttons = {
                     {
