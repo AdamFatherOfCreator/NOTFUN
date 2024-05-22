@@ -207,7 +207,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G28)",
+    Title = "SALUNA HUB (G29)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1245,13 +1245,14 @@ Options.statstoggle:SetValue(false)
 spawn(function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
-while getgenv().farmstats do
-wait()
+while wait() do
+if getgenv().farmstats then
 pcall(function()
 repeat task.wait() until game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true
 workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge13")
 workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge14")
 end)
+end
 end
 end)
 
@@ -1268,7 +1269,10 @@ end
 end
 end
 
-while getgenv().farmstats do
+spawn(function()
+local user = tostring(game.Players.LocalPlayer.Name)
+while wait() do
+if getgenv().farmstats then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
 if v.Name == "Barrel" then
@@ -1288,15 +1292,37 @@ end
 wait(0.1)
 end
 end
-if getgenv().farmstats == true then
+end)
+end
+end
+end)
+
+spawn(function()
+local user = tostring(game.Players.LocalPlayer.Name)
+while wait() do
+if getgenv().farmstats then
+pcall(function()
 game.workspace[""..user].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+end)
+end
 end
 end)
-amongus()
- workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-task.wait(15)
+
+spawn(function()
+while wait() do
+if getgenv().farmstats then
+pcall(function()
+workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+wait(15)
+end)
+end
 end
 end)
+
+
+
+
+
 
 local HakiSection = Tabs.Haki:AddSection("Haki Farming")
 local gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
