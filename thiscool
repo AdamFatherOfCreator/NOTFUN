@@ -208,7 +208,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G34)",
+    Title = "SALUNA HUB (G38)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -234,6 +234,35 @@ local Tabs = {
     nonet = Window:AddTab({ Title = "-------", Icon = "" })
 }
 local Options = Fluent.Options
+
+local FruitFFt = Tabs.Fruit:AddSection("Fruit")
+local bringfruit = Tabs.Fruit:AddToggle("bringfruittoggle", {Title = "Auto Bring Fruit", Default = false })
+bringfruit:OnChanged(function()
+if Options.bringfruittoggle.Value == true then
+getgenv().pickkk = true
+else
+getgenv().pickkk = false
+end
+end)
+Options.bringfruittoggle:SetValue(false)
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+if getgenv().pickkk then
+            pcall(function()
+for i,v in pairs(game:GetService("Workspace").Trees.Tree:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+            end)
+end
+end)
+end
+end)
+
+
 
 local FruitF = Tabs.Fruit:AddSection("Auto Compass")
 local getcompass = Tabs.Fruit:AddToggle("getcompasstoggle", {Title = "Auto Get Compass", Default = false })
@@ -277,16 +306,18 @@ if getgenv().find then
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
 end
+
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if v.Name == "Compass" then              
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Poser.Value)
 end
+
 if game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Compass:Activate()
 end
     end
        end)
-task.wait(0.3)
+wait(0.5)
 end
 end)
 end
@@ -1306,23 +1337,23 @@ if getgenv().farmstats then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
 if v.Name == "Barrel" then
-if getgenv().farmstats == true then
+if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 amongus()
 end
-wait(0.15)
+wait(0.1)
 end
 end
 for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
 if v.Name == "Crate" then
-if getgenv().farmstats == true then
+if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 amongus()
 end
-wait(0.15)
+wait(0.1)
 end
 end
-if getgenv().farmstats == true then
+if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.workspace[""..user].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
 amongus()
