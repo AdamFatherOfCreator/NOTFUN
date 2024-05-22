@@ -2326,8 +2326,8 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Sliderfirstfruit", {
     Min = 1,
     Max = 2,
     Rounding = 1,
-    Callback = function(treo)
-            _G.trqpwo = treo
+    Callback = function(treotttt)
+            _G.trqpwo = treotttt
         end
     })
 
