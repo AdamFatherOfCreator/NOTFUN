@@ -207,7 +207,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G31)",
+    Title = "SALUNA HUB (G32)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1324,30 +1324,13 @@ end
 if getgenv().farmstats == true then
 game.workspace[""..user].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
-end)
 amongus()
  workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 wait(15)
-end
-end
-end)
-
-
-spawn(function()
-while wait() do
-if getgenv().farmstats then
-pcall(function()
-workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
-wait(15)
 end)
 end
 end
 end)
-
-
-
-
-
 
 local HakiSection = Tabs.Haki:AddSection("Haki Farming")
 local gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
