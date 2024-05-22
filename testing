@@ -235,6 +235,35 @@ local Tabs = {
 }
 local Options = Fluent.Options
 
+local FruitFFt = Tabs.Fruit:AddSection("Fruit")
+local bringfruit = Tabs.Fruit:AddToggle("bringfruittoggle", {Title = "Auto Bring Fruit", Default = false })
+bringfruit:OnChanged(function()
+if Options.bringfruittoggle.Value == true then
+getgenv().pickkk = true
+else
+getgenv().pickkk = false
+end
+end)
+Options.bringfruittoggle:SetValue(false)
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+if getgenv().pickkk then
+            pcall(function()
+for i,v in pairs(game:GetService("Workspace").Trees.Tree:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+            end)
+end
+end)
+end
+end)
+
+
+
 local FruitF = Tabs.Fruit:AddSection("Auto Compass")
 local getcompass = Tabs.Fruit:AddToggle("getcompasstoggle", {Title = "Auto Get Compass", Default = false })
 getcompass:OnChanged(function()
@@ -1310,7 +1339,7 @@ if getgenv().farmstats == true then
 game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 amongus()
 end
-wait(0.15)
+wait(0.1)
 end
 end
 for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
@@ -1319,7 +1348,7 @@ if getgenv().farmstats == true then
 game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 amongus()
 end
-wait(0.15)
+wait(0.1)
 end
 end
 if getgenv().farmstats == true then
