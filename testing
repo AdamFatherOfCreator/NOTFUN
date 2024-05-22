@@ -207,7 +207,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G27)",
+    Title = "SALUNA HUB (G28)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -218,6 +218,7 @@ local Window = Fluent:CreateWindow({
 --Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
 local Tabs = {
     Main = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://8587689304" }),
+    Haki = Window:AddTab({ Title = "Haki", Icon = "rbxassetid://16149070644" }),
     Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://2294529381" }),
     Fruit = Window:AddTab({ Title = "Fruit & Compass", Icon = "rbxassetid://13492316250" }),
     Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
@@ -1230,9 +1231,75 @@ end
 end)
 Options.CestussToggle:SetValue(false)
 
+local StatsFF = Tabs.Haki:AddSection("Stats Farming")
+local statsfarm = Tabs.Haki:AddToggle("statstoggle", {Title = "Auto get haki (1k lvl)", Default = false })
+statsfarm:OnChanged(function()
+if Options.statstoggle.Value == true then
+getgenv().farmstats = true
+else
+getgenv().farmstats = false
+end
+end)
+Options.statstoggle:SetValue(false)
 
-local HakiSection = Tabs.Main:AddSection("Haki Farming")
-local gethaki = Tabs.Main:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
+spawn(function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+while getgenv().farmstats do
+wait()
+pcall(function()
+repeat task.wait() until game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge13")
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge14")
+end)
+end
+end)
+
+function amongus()
+for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+for i,v in pairs(game:GetService("Workspace").Island8.Kitchen:GetDescendants()) do
+if v:IsA("ClickDetector") then
+fireclickdetector(v)
+end
+end
+end
+
+while getgenv().farmstats do
+pcall(function()
+for i,v in pairs(game:GetService("Workspace").Barrels.Barrels:GetDescendants()) do
+if v.Name == "Barrel" then
+if getgenv().farmstats == true then
+game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+amongus()
+end
+wait(0.1)
+end
+end
+for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
+if v.Name == "Crate" then
+if getgenv().farmstats == true then
+game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
+amongus()
+end
+wait(0.1)
+end
+end
+if getgenv().farmstats == true then
+game.workspace[""..user].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
+end
+end)
+amongus()
+ workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
+task.wait(15)
+end
+end)
+
+local HakiSection = Tabs.Haki:AddSection("Haki Farming")
+local gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
 gethaki:OnChanged(function()
 while Options.hakiget.Value do wait()
 pcall(function()
@@ -1244,7 +1311,7 @@ end)
 Options.hakiget:SetValue(false)
 
 
-local drainhaki = Tabs.Main:AddToggle("hakidrain", {Title = "Drain Haki", Default = false })
+local drainhaki = Tabs.Haki:AddToggle("hakidrain", {Title = "Drain Haki", Default = false })
 drainhaki:OnChanged(function()
 function hakiauto()
        local Players = game:GetService("Players")
@@ -1779,8 +1846,8 @@ function hakiauto()
         hakiauto()
 end
 end)
-local HakiSection2 = Tabs.Main:AddSection("Auto Haki Farming")
-local hakitargett = Tabs.Main:AddSlider("Sliderhaki", {
+local HakiSection2 = Tabs.Haki:AddSection("Auto Haki Farming")
+local hakitargett = Tabs.Haki:AddSlider("Sliderhaki", {
     Title = "Haki Target (%)",
     Description = "Change this for adjusting haki's target",
     Default = 55,
@@ -1792,7 +1859,7 @@ local hakitargett = Tabs.Main:AddSlider("Sliderhaki", {
         end
     })
 
-local hakispeedt = Tabs.Main:AddSlider("Slidertargethaki", {
+local hakispeedt = Tabs.Haki:AddSlider("Slidertargethaki", {
     Title = "Haki Speed",
     Description = "Change this for adjusting haki's speed",
     Default = 20,
@@ -1804,7 +1871,7 @@ local hakispeedt = Tabs.Main:AddSlider("Slidertargethaki", {
         end
     })
 
-local farmhaki = Tabs.Main:AddToggle("hakifarm", {Title = "Auto Farm Haki", Default = false })
+local farmhaki = Tabs.Haki:AddToggle("hakifarm", {Title = "Auto Farm Haki", Default = false })
 farmhaki:OnChanged(function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
@@ -1873,9 +1940,9 @@ end
 end)
 Options.hakifarm:SetValue(false)
 
-local HakiSection3 = Tabs.Main:AddSection("Advanced Haki Farming")
+local HakiSection3 = Tabs.Haki:AddSection("Advanced Haki Farming")
 
-    Tabs.Main:AddButton({
+    Tabs.Haki:AddButton({
         Title = "Farming Haki (Beta)",
         Description = "Click to farm, can click multi-time",
         Callback = function()
@@ -3168,6 +3235,8 @@ local c19 = Tabs.Misc:AddSection("                                              
 local c20 = Tabs.Misc:AddSection("                                                -----")
 local c21 = Tabs.Settings:AddSection("                                                -----")
 local c22 = Tabs.Settings:AddSection("                                                -----")
+local c23 = Tabs.Haki:AddSection("                                                -----")
+local c24 = Tabs.Haki:AddSection("                                                -----")
 
 Window:SelectTab(1)
 
