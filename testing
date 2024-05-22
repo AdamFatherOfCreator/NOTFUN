@@ -207,7 +207,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G20)",
+    Title = "SALUNA HUB (G21)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -312,6 +312,17 @@ _G.autocannonplr = false
 end
 end)
 Options.cannonplrtoggle:SetValue(false)
+
+local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso (Fast Regen)", Default = false })
+autoregenhaki:OnChanged(function()
+if Options.autoregenhakitoggle.Value == true then
+_G.autohakicannon = true
+else
+_G.autohakicannon = false
+end
+end)
+Options.autoregenhakitoggle:SetValue(false)
+
 
 local Fishing = Tabs.Farm:AddSection("Auto Fishing")
 
@@ -538,23 +549,11 @@ spawn(function()
     end
 end)
 
-spawn(function()
-	while wait() do
-pcall(function()
-if _G.autocannonplr or _G.autocannonslow then
-_G.autohakicannon = true
-else
-_G.autohakicannon = false
-end
-end)
-	end
-end)
-
 spawn(function() --autohaki cannon
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 while wait() do
-if _G.autohakicannon == true then wait()
+if _G.autohakicannon then wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*40
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
@@ -592,7 +591,7 @@ local cache = {}
     end
     local ehh = game.Players.LocalPlayer.Name
     local Final = lol(ehh)
-for i = 1,15 do wait()
+for i = 1,20 do wait()
     local args = {
         [1] = "Off",
         [2] = 1
@@ -606,7 +605,7 @@ for i = 1,15 do wait()
     
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
     end
-task.wait(2)
+task.wait(0.5)
         local args = {
         [1] = "Off",
         [2] = 1
