@@ -306,12 +306,12 @@ if getgenv().find then
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
 end
-wait()
+
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if v.Name == "Compass" then              
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Poser.Value)
 end
-wait()
+
 if game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
 game.Players.LocalPlayer.Character.Compass:Activate()
 end
