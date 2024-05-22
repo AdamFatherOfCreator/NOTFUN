@@ -208,7 +208,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G33)",
+    Title = "SALUNA HUB (G34)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1257,7 +1257,7 @@ Options.statsdrinktoggle:SetValue(false)
 spawn(function()
 while wait() do
 if getgenv().autodrinkmixer then
-pcal(function()
+pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
