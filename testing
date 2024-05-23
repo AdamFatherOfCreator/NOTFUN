@@ -236,6 +236,13 @@ local Tabs = {
 }
 local Options = Fluent.Options
 
+local Shoo1p = Tabs.Shop:AddSection("Melee Weapon")
+local Shoo2p = Tabs.Shop:AddSection("Sword")
+local Shoo3p = Tabs.Shop:AddSection("Gun")
+local Shoo4p = Tabs.Shop:AddSection("Drinks")
+
+
+
 local FruitFFt = Tabs.Fruit:AddSection("Fruit")
 local bringfruit = Tabs.Fruit:AddToggle("bringfruittoggle", {Title = "Auto Bring Fruit", Default = false })
 bringfruit:OnChanged(function()
@@ -346,6 +353,8 @@ _G.autocannonplr = false
 end
 end)
 Options.cannonplrtoggle:SetValue(false)
+
+local Cannon = Tabs.Farm:AddSection("Auto Buso (Only 1 Allowed)")
 
 local autobusohaki = Tabs.Farm:AddToggle("autobusohakitoggle", {Title = "Auto Buso (On/Off)", Default = false })
 autobusohaki:OnChanged(function()
