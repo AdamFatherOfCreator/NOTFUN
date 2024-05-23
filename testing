@@ -208,7 +208,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G43)",
+    Title = "SALUNA HUB (G44)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -238,11 +238,12 @@ local Options = Fluent.Options
 
 local Shoo1p = Tabs.Shop:AddSection("Melee Weapon")
     Tabs.Shop:AddButton({
-        Title = "Seastone Cestus (Fake)",
+        Title = "Seastone Cestus (Fake Equipment)",
         Description = "Requires 500 Melee",
         Callback = function()
 local plr = tostring(game.Players.LocalPlayer)
 local plrid = tostring(game.Players.LocalPlayer.UserId)
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Melee") or game.Players.LocalPlayer.Backpack:FindFirstChild("Table Kick") or game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Backpack:FindFirstChild("Seastone Cestus") or game.Players.LocalPlayer.Backpack:FindFirstChild("Aqua Staff") then
 if game.Workspace.UserData["User_"..plrid].Data.MeleeLevel.Value >= 500 then
 pcall(function()
           local Players = game:GetService("Players")
@@ -268,10 +269,22 @@ pcall(function()
     local Event = game:GetService("Workspace").UserData["User_"..Final].UpdateMelee
     Event:FireServer(A_1)
 end)
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "Equiped Seastone Cestus",
+    Duration = 5
+})
 else
 Fluent:Notify({
     Title = "Saluna Shop Notify",
     Content = "Your Melee Level Is Lower Than 500",
+    Duration = 5
+})
+end
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "Please Spawn",
     Duration = 5
 })
 end
