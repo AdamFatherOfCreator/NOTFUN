@@ -208,7 +208,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G39)",
+    Title = "SALUNA HUB (G40)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -237,6 +237,47 @@ local Tabs = {
 local Options = Fluent.Options
 
 local Shoo1p = Tabs.Shop:AddSection("Melee Weapon")
+    Tabs.Shop:AddButton({
+        Title = "Seastone Cestus (Fake)",
+        Description = "Requires 500 Melee",
+        Callback = function()
+local plr = tostring(game.Players.LocalPlayer)
+if game.Workspace.UserData["User_"..Final].Data.MeleeLevel.Value >= 500 then
+pcall(function()
+          local Players = game:GetService("Players")
+    local cache = {}
+    function lol(name)
+        if cache[name] then return cache[name] end
+        local player = Players:FindFirstChild(name)
+        if player then
+            cache[name] = player.UserId
+            return player.UserId
+        end 
+    
+        local id
+        pcall(function ()
+            id = Players:lol(name)
+        end)
+        cache[name] = id
+        return id
+    end
+    local ehh = game.Players.LocalPlayer.Name
+    local Final = lol(ehh)
+    local A_1 = "Smokestack"
+    local Event = game:GetService("Workspace").UserData["User_"..Final].UpdateMelee
+    Event:FireServer(A_1)
+end)
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "Your Melee Level Is Lower Than 500",
+    Duration = 5
+})
+        end
+    })
+
+
+
 local Shoo2p = Tabs.Shop:AddSection("Sword")
 local Shoo3p = Tabs.Shop:AddSection("Gun")
 local Shoo4p = Tabs.Shop:AddSection("Drinks")
