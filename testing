@@ -214,7 +214,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G45)",
+    Title = "SALUNA HUB (G46)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -242,11 +242,32 @@ local Tabs = {
 }
 local Options = Fluent.Options
 
-local Shoo1p = Tabs.Shop:AddSection("Melee Weapon")
+local Plr1123 = Tabs.Player:AddSection("About Player")
+    PlayerName = {}
+        for i,v in pairs(game.Players:GetChildren()) do  
+            table.insert(PlayerName ,v.Name)
+        end
+SelectedKillPlayer = ""
+local MobsTP = Tabs.Teleport:AddDropdown("Dropdownplr", {
+        Title = "Player List",
+        Values = PlayerName,
+        Multi = false,
+        Default = 1,
+    })
+
+    MobsTP:SetValue("")
+
+    MobsTP:OnChanged(function(plr1)
+
+
+
 
 local Shoo2p = Tabs.Shop:AddSection("Sword")
+local c24 = Tabs.Shop:AddSection("                                                -----")
 local Shoo3p = Tabs.Shop:AddSection("Gun")
+local c24 = Tabs.Shop:AddSection("                                                -----")
 local Shoo4p = Tabs.Shop:AddSection("Drinks")
+local c24 = Tabs.Shop:AddSection("                                                -----")
 
 
 
