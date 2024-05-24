@@ -248,9 +248,9 @@ local Plr1123 = Tabs.Player:AddSection("About Player")
         for i,v in pairs(game.Players:GetChildren()) do  
             table.insert(PlayerName ,v.Name)
         end
-local plrdrop = Tabs.Player:AddDropdown("Dropdownplr", {
+local plrdrop = Tabs.Player:AddDropdown("Dropdown", {
         Title = "Player List",
-        Values = PlayerName,
+        Values = ..PlayerName,
         Multi = false,
         Default = 1,
     })
