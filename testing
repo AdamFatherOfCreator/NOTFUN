@@ -1,3 +1,4 @@
+print('G47')
 repeat wait() until game:IsLoaded()
   if game.placeId == 8569358381 or game.placeId == 3237168 then
 
@@ -214,7 +215,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G46)",
+    Title = "SALUNA HUB (G47)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -247,8 +248,7 @@ local Plr1123 = Tabs.Player:AddSection("About Player")
         for i,v in pairs(game.Players:GetChildren()) do  
             table.insert(PlayerName ,v.Name)
         end
-SelectedKillPlayer = ""
-local MobsTP = Tabs.Teleport:AddDropdown("Dropdownplr", {
+local plrdrop = Tabs.Player:AddDropdown("Dropdownplr", {
         Title = "Player List",
         Values = PlayerName,
         Multi = false,
