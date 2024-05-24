@@ -250,14 +250,14 @@ local Plr1123 = Tabs.Player:AddSection("About Player")
         end
 local plrdrop = Tabs.Player:AddDropdown("Dropdown", {
         Title = "Player List",
-        Values = ..PlayerName,
+        Values = PlayerName,
         Multi = false,
         Default = 1,
     })
 
-    MobsTP:SetValue("")
+    plrdrop:SetValue("")
 
-    MobsTP:OnChanged(function(plr1)
+    plrdrop:OnChanged(function(plr1)
 
 
 
