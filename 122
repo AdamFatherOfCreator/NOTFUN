@@ -40,3 +40,26 @@ while wait() do
 wait(5)
 mm:Destroy()
 end
+
+local BBB = Instance.new("ScreenGui")
+BBB.Name = "BBB"
+BBB.Parent = game.CoreGui
+local hideUI = Instance.new("TextButton")
+hideUI.Name = "hideUI"
+hideUI.Parent = BBB
+hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
+hideUI.ClipsDescendants = true
+hideUI.Position = UDim2.new(0.005, 1, 0.155, 1)
+hideUI.Size = UDim2.new(0.079, 0, 0.069, 0)
+hideUI.AutoButtonColor = false
+hideUI.TextWrapped = true
+hideUI.TextScaled = true
+hideUI.Font = Enum.Font.SourceSans
+hideUI.Text = "HIDE/SHOW UI"
+hideUI.TextColor3 = Color3.fromRGB(0, 0, 0)
+hideUI.TextSize = 14
+hideUI.MouseButton1Up:Connect(function()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+wait(0.1)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,"LeftControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+end)
