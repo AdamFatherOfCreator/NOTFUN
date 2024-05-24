@@ -32,9 +32,10 @@ local Tabs = {
         Default = 1,
     })
 
-    Dropdown:SetValue("four")
 
     Dropdown:OnChanged(function(Value)
         print("Dropdown changed:", Value)
     end)
+
+Window:SelectTab(1)
 
