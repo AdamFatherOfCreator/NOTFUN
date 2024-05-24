@@ -17,15 +17,6 @@ local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "" })
 }
 
-while wait() do
-   local mm = Tabs.Main:AddParagraph({
-        Title = "Paragraph",
-        Content = "This is a paragraph.\nSecond line!"
-    })
-wait(5)
-mm:Destroy()
-end
-
 
     local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
         Title = "Dropdown",
@@ -41,3 +32,11 @@ end
 
 Window:SelectTab(1)
 
+while wait() do
+   local mm = Tabs.Main:AddParagraph({
+        Title = "Paragraph",
+        Content = "This is a paragraph.\nSecond line!"
+    })
+wait(5)
+mm:Destroy()
+end
