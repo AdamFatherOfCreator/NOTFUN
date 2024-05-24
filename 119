@@ -18,7 +18,7 @@ local Tabs = {
 }
 
 
-    Tabs.Main:AddParagraph({
+   local mm = Tabs.Main:AddParagraph({
         Title = "Paragraph",
         Content = "This is a paragraph.\nSecond line!"
     })
