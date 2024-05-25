@@ -498,7 +498,7 @@ game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Dagger == f
 else
 Fluent:Notify({
     Title = "Saluna Shop Notify",
-    Content = "You have already got " ..A_1,
+    Content = "You have already got Dagger",
     Duration = 5
 })
 end
