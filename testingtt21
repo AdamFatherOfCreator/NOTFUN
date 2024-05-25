@@ -255,10 +255,25 @@ local plrsec = Tabs.Player:AddSection("About Player")
     })
 
     plrts:OnChanged(function()
-        Choose2 = plrts.Value
-	SelectedKillPlayer = plrts.Value
-print(SelectedKillPlayer)
-    end)
+for i,e in pairs(game.Players:GetChildren()) do
+if string.find(e.Name, plrts.Value) then
+        Choose2 = e.Name
+	SelectedKillPlayer = e.Name
+end
+end
+end)
+
+
+
+local viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
+viewplr:OnChanged(function()
+if Options.viewplrtoggle.Value == true then
+getgenv().viewplrr = true
+else
+getgenv().viewplrr = false
+end
+end)
+Options.viewplrtoggle:SetValue(false)
 
 Tabs.Player:AddButton({
         Title = "Fix Cam",
@@ -275,17 +290,6 @@ Tabs.Player:AddButton({
 	game.Players.LocalPlayer.Character.Head.Anchored = false       
 end
     })
-
-
-local viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
-viewplr:OnChanged(function()
-if Options.viewplrtoggle.Value == true then
-getgenv().viewplrr = true
-else
-getgenv().viewplrr = false
-end
-end)
-Options.viewplrtoggle:SetValue(false)
 
 spawn(function()
 while wait() do
