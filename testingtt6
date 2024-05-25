@@ -255,9 +255,34 @@ local plrsec = Tabs.Player:AddSection("About Player")
     })
 
     plrts:OnChanged(function()
-        print("Input updated:", plrts.Value)
+        Choose2 = plrts.Value
+	SelectedKillPlayer = plrts.Value
     end)
 
+local viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
+viewplr:OnChanged(function()
+if Options.viewplrtoggle.Value == true then
+getgenv().viewplrr = true
+else
+getgenv().viewplrr = false
+end
+end)
+Options.viewplrtoggle:SetValue(false)
+
+spawn(function()
+while wait() do
+local plr1 = game.Players.LocalPlayer.Character.Humanoid
+local plr2 = game.Players:FindFirstChild(SelectedKillPlayer)
+if getgenv().viewplrr then
+for _, ry in pairs(game.Players:GetChildren()) do
+repeat wait()
+game.Workspace.Camera.CameraSubject = plr2.Character.Humanoid
+until getgenv().viewplrr == false or SelectedKillPlayer ~= plr2.Name or plr2.Name ~= ry
+game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+end
+end
+end
+end)
 
 
 
