@@ -490,7 +490,7 @@ local Shooppp1 = Tabs.Shop:AddSection("Sword")
         Description = "Requires 1000 Beries",
         Callback = function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
-game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Dagger == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Dagger == false then
         local A_1 = "Dagger"
         local A_2 = 1000
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
