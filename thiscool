@@ -242,6 +242,65 @@ local Tabs = {
 }
 local Options = Fluent.Options
 
+local quakerer = Tabs.Player:AddSection("Quake Kill All")
+local hakitargett = Tabs.Player:AddSlider("Sliderhaki", {
+    Title = "Quake Multiple",
+    Description = "Change this for adjusting Quake per hit",
+    Default = 5,
+    Min = 1,
+    Max = 10,
+    Rounding = 0,
+    Callback = function(quarw)
+            quaketime = quarw
+        end
+    })
+
+local quakeall = Tabs.Player:AddToggle("quakealltoggle", {Title = "Quake Kill All", Default = false })
+quakeall:OnChanged(function()
+if Options.quakealltoggle.Value == true then
+_G.quakerty = true
+else
+_G.quakerty = false
+end
+end)
+Options.quakealltoggle:SetValue(false)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.quakerty then
+wait()
+for i,vv in pairs(game.Players:GetChildren()) do
+	if vv.Name ~= game.Players.LocalPlayer.Name then
+		for i,cc in pairs(game.Workspace:GetChildren()) do
+			if cc:IsA("Model") and cc.Name == vv.Name and cc.Humanoid.Health > 0 and cc.HumanoidRootPart.Position.Y < 211000 then
+Choosequake = cc.Name
+local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
+local vptt = xr.VTCebvc
+	pcall(function()
+		if _G.quakerty == true and cc.Humanoid.Health > 0 and cc.HumanoidRootPart.Position.Y < 211000 then
+    			for i,vv in pairs(game:GetService("Workspace"):GetChildren()) do
+      				if vv.Name == Choosequake then
+                repeat task.wait(0.2)
+for i = 1,quaketime do
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,vv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
+end
+until  cc.Humanoid.Health <= 0 or _G.quakerty == false or cc.HumanoidRootPart.Position.Y > 211000 or cc.Name ~= vv.Name
+				end
+			end
+		end
+	end)
+
+			end
+		end
+	end
+end
+
+end
+end)
+end
+end)
+
 local plrsec = Tabs.Player:AddSection("About Player")
 
     local plrts = Tabs.Player:AddInput("plrts", {
