@@ -490,7 +490,7 @@ local Shooppp1 = Tabs.Shop:AddSection("Sword")
         Description = "Requires 1000 Beries",
         Callback = function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
-if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Dagger == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Dagger.Value == false then
         local A_1 = "Dagger"
         local A_2 = 1000
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
@@ -517,7 +517,7 @@ end
         Description = "Requires 5000 Beries",
         Callback = function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
-if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Wakizashi == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Wakizashi.Value == false then
         local A_1 = "Wakizashi"
         local A_2 = 5000
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
@@ -544,7 +544,7 @@ end
         Description = "Requires 7500 Beries",
         Callback = function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
-if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Tachi == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Tachi.Value == false then
         local A_1 = "Tachi"
         local A_2 = 7500
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
@@ -571,7 +571,7 @@ end
         Description = "Requires 10000 Beries",
         Callback = function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
-if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Katana == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Katana.Value == false then
         local A_1 = "Katana"
         local A_2 = 10000
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
