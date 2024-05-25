@@ -246,7 +246,7 @@ local quakerer = Tabs.Player:AddSection("Quake Kill All")
 local hakitargett = Tabs.Player:AddSlider("Sliderhaki", {
     Title = "Quake Multiple",
     Description = "Change this for adjusting Quake per hit",
-    Default = 1,
+    Default = 3,
     Min = 1,
     Max = 10,
     Rounding = 0,
@@ -265,8 +265,44 @@ end
 end)
 Options.quakealltoggle:SetValue(false)
 
-
-
+spawn(function()
+while wait() do
+ocal x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
+local vp = x.VTCebvc
+pcall(function()
+if getgenv().quakerty then
+for i, ff in pairs(game.Players:GetChildren()) do
+	if ff.Name ~= game.Players.LocalPlayer.Name then
+for i,cc in pairs(game.Workspace:GetChildren()) do
+if cc:IsA("Model") and cc.Name == ff.Name and cc.HumanoidRootPart.Position.Y < 211000 then
+QuakeTarget = cc.Name
+pcall(function()
+if getgenv().quakerty == true and c.HumanoidRootPart.Position.Y < 211000 then
+    			for i,dd in pairs(game:GetService("Workspace"):GetChildren()) do
+      				if dd.Name == QuakeTarget then
+repeat task.wait(0.2)
+for i = 1, quaketime do
+    pcall(function()
+    for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+        if v.Name == "asdfghjklzxcvbnmdz" then
+            game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vp,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,v.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
+        end
+    end
+    end)
+end
+until getgenv().quakerty == false or dd.HumanoidRootPart.Position.Y > 211000 or dd.Name ~= v.Name
+end
+end
+end
+end)
+end
+end
+end
+end
+end
+end)
+end
+end)
 
 local plrsec = Tabs.Player:AddSection("About Player")
 
