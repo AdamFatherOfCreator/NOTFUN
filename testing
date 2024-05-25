@@ -38,8 +38,8 @@ end)
 local listed = {
 "465e0aa1-7d14-4958-b156-14851e4c7bdd",-- SALUNA
 "76bf8d34-a05a-4803-8c43-24656f4fd7dd", -- Khôi
-"32d8f1fe-be00-41fb-85dd-dd8af9d54ecc", -- Hiếu Trung
-"743b921d-a215-4c71-99c6-29229e61e357", -- Khoa GK
+"5b7fd5ab-f007-490d-bf11-7fbed380a42b", -- Hiếu Trung
+"8dd7fc91-caed-411d-ab4d-6791b995415a", -- Khoa GK
 "b45ce734-c0c2-40f0-94f8-8352b02540c7", -- Huy Tú
 "a4cb5880-52e9-4da6-abc1-d512a580b0f1", -- Nguyễn Anh Tiến
 "d4edc475-461a-4497-bb18-9748a6816796", -- Ka Báo
