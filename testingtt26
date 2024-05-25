@@ -258,9 +258,9 @@ local hakitargett = Tabs.Player:AddSlider("Sliderhaki", {
 local quakeall = Tabs.Player:AddToggle("quakealltoggle", {Title = "Quake Kill All", Default = false })
 quakeall:OnChanged(function()
 if Options.quakealltoggle.Value == true then
-getgenv().quakerty = true
+_G.quakerty = true
 else
-getgenv().quakerty = false
+_G.quakerty = false
 end
 end)
 Options.quakealltoggle:SetValue(false)
@@ -268,33 +268,32 @@ Options.quakealltoggle:SetValue(false)
 spawn(function()
 while wait() do
 pcall(function()
-if getgenv().quakerty then
-for i, ff in pairs(game.Players:GetChildren()) do
-	if ff.Name ~= game.Players.LocalPlayer.Name then
-for i,cc in pairs(game.Workspace:GetChildren()) do
-if cc:IsA("Model") and cc.Name == ff.Name and cc.HumanoidRootPart.Position.Y < 211000 then
-QuakeTarget = cc.Name
-pcall(function()
-if getgenv().quakerty == true and c.HumanoidRootPart.Position.Y < 211000 then
-    			for i,dd in pairs(game:GetService("Workspace"):GetChildren()) do
-      				if dd.Name == QuakeTarget then
-repeat task.wait(0.2)
-for i = 1, quaketime do
-    pcall(function()
-local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
-local vp = x.VTCebvc
-game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vp,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,dd.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
-    end)
+if _G.quakerty then
+wait()
+for i,vv in pairs(game.Players:GetChildren()) do
+	if vv.Name ~= game.Players.LocalPlayer.Name then
+		for i,cc in pairs(game.Workspace:GetChildren()) do
+			if cc:IsA("Model") and cc.Name == vv.Name and cc.Humanoid.Health > 0 and cc.HumanoidRootPart.Position.Y < 211000 then
+Choosequake = cc.Name
+	pcall(function()
+		if _G.quakerty == true and cc.Humanoid.Health > 0 and cc.HumanoidRootPart.Position.Y < 211000 then
+    			for i,vv in pairs(game:GetService("Workspace"):GetChildren()) do
+      				if vv.Name == Choosequake then
+                repeat task.wait(0.3)
+for i, quaketime do
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vp,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,vv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 end
-until getgenv().quakerty == false or dd.HumanoidRootPart.Position.Y > 211000 or dd.Name ~= v.Name
+until  cc.Humanoid.Health <= 0 or _G.quakerty == false or cc.HumanoidRootPart.Position.Y > 211000 or cc.Name ~= vv.Name
+				end
+			end
+		end
+	end)
+
+			end
+		end
+	end
 end
-end
-end
-end)
-end
-end
-end
-end
+
 end
 end)
 end
