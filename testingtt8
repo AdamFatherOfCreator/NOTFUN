@@ -1,3 +1,5 @@
+SelectedKillPlayer = ""
+Choose2 = ""
 repeat wait() until game:IsLoaded()
   if game.placeId == 8569358381 or game.placeId == 3237168 then
 
@@ -257,6 +259,7 @@ local plrsec = Tabs.Player:AddSection("About Player")
     plrts:OnChanged(function()
         Choose2 = plrts.Value
 	SelectedKillPlayer = plrts.Value
+print(SelectedKillPlayer)
     end)
 
 local viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
