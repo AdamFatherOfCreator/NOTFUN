@@ -214,7 +214,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (G45)",
+    Title = "SALUNA HUB (H1)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -242,11 +242,94 @@ local Tabs = {
 }
 local Options = Fluent.Options
 
-local Shoo1p = Tabs.Shop:AddSection("Melee Weapon")
+local plrsec = Tabs.Player:AddSection("About Player")
+
+    local plrts = Tabs.Player:AddInput("plrts", {
+        Title = "Choose Player:",
+        Default = "",
+        Placeholder = "Insert Here",
+        Numeric = false, -- Only allows numbers
+        Finished = true, -- Only calls callback when you press enter
+        Callback = function()
+        end
+    })
+
+    plrts:OnChanged(function()
+for i,e in pairs(game.Players:GetChildren()) do
+if string.find(e.Name, plrts.Value) then
+        Choose2 = e.Name
+	SelectedKillPlayer = e.Name
+end
+end
+end)
+
+
+
+local viewplr = Tabs.Player:AddToggle("viewplrtoggle", {Title = "View Chosen Player", Default = false })
+viewplr:OnChanged(function()
+if Options.viewplrtoggle.Value == true then
+getgenv().viewplrr = true
+else
+getgenv().viewplrr = false
+end
+end)
+Options.viewplrtoggle:SetValue(false)
+
+Tabs.Player:AddButton({
+        Title = "Fix Cam",
+        Description = "Reset Camera (If Error)",
+        Callback = function()
+	workspace.CurrentCamera:remove()
+	wait(.1)
+	repeat wait() until game.Players.LocalPlayer.Character ~= nil
+	workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
+	workspace.CurrentCamera.CameraType = "Custom"
+	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
+	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
+	game.Players.LocalPlayer.CameraMode = "Classic"
+	game.Players.LocalPlayer.Character.Head.Anchored = false       
+end
+    })
+
+spawn(function()
+while wait() do
+pcall(function()
+local plr2 = game.Players:FindFirstChild(SelectedKillPlayer)
+if getgenv().viewplrr == true and plr2.Name == SelectedKillPlayer then
+pcall(function()
+repeat wait()
+game.Workspace.Camera.CameraSubject = plr2.Character.Humanoid
+until getgenv().viewplrr == false or plr2.Name ~= SelectedKillPlayer
+end)
+end
+end)
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+local plr2 = game.Players:FindFirstChild(SelectedKillPlayer)
+if getgenv().viewplrr == false or plr2.Name ~= SelectedKillPlayer then
+pcall(function()
+repeat wait()
+game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+until getgenv().viewplrr == true or plr2.Name == SelectedKillPlayer
+end)
+end
+end)
+end
+end)
+
+
+
 
 local Shoo2p = Tabs.Shop:AddSection("Sword")
+local c24 = Tabs.Shop:AddSection("                                                -----")
 local Shoo3p = Tabs.Shop:AddSection("Gun")
+local c24 = Tabs.Shop:AddSection("                                                -----")
 local Shoo4p = Tabs.Shop:AddSection("Drinks")
+local c24 = Tabs.Shop:AddSection("                                                -----")
 
 
 
@@ -797,7 +880,7 @@ Choose2 = c.Name
 					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if q.Name == "CannonBall" then
                           			q.CFrame = v.HumanoidRootPart.CFrame
-                           			q.CanCollide = true
+                           			q.CanCollide = false
 						end
 					end
 until  c.Humanoid.Health <= 0 or _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
@@ -834,7 +917,7 @@ Choose3 = b.Name
 					for i, e in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if e.Name == "CannonBall" then
                           			e.CFrame = d.HumanoidRootPart.CFrame
-                           			e.CanCollide = true
+                           			e.CanCollide = false
 						end
 					end
 until  b.Humanoid.Health <= 0 or _G.autocannonplr == false or b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name
@@ -871,7 +954,7 @@ Choose4 = h.Name
 					for i, w in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if w.Name == "CannonBall" then
                           			w.CFrame = f.HumanoidRootPart.CFrame
-                           			w.CanCollide = true
+                           			w.CanCollide = false
 						end
 					end
 until  h.Humanoid.Health <= 0 or _G.autocannonplr == false or h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name
@@ -908,7 +991,7 @@ Choose5 = j.Name
 					for i, t in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if t.Name == "CannonBall" then
                           			t.CFrame = g.HumanoidRootPart.CFrame
-                           			t.CanCollide = true
+                           			t.CanCollide = false
 						end
 					end
 until  j.Humanoid.Health <= 0 or _G.autocannonplr == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name
