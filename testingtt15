@@ -246,8 +246,8 @@ local plrsec = Tabs.Player:AddSection("About Player")
 
     local plrts = Tabs.Player:AddInput("plrts", {
         Title = "Choose Player:",
-        Default = "Default",
-        Placeholder = "Placeholder",
+        Default = "",
+        Placeholder = "Insert Here",
         Numeric = false, -- Only allows numbers
         Finished = true, -- Only calls callback when you press enter
         Callback = function()
