@@ -858,7 +858,7 @@ Choose2 = c.Name
 					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if q.Name == "CannonBall" then
                           			q.CFrame = v.HumanoidRootPart.CFrame
-                           			q.CanCollide = true
+                           			q.CanCollide = false
 						end
 					end
 until  c.Humanoid.Health <= 0 or _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
@@ -895,7 +895,7 @@ Choose3 = b.Name
 					for i, e in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if e.Name == "CannonBall" then
                           			e.CFrame = d.HumanoidRootPart.CFrame
-                           			e.CanCollide = true
+                           			e.CanCollide = false
 						end
 					end
 until  b.Humanoid.Health <= 0 or _G.autocannonplr == false or b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name
@@ -932,7 +932,7 @@ Choose4 = h.Name
 					for i, w in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if w.Name == "CannonBall" then
                           			w.CFrame = f.HumanoidRootPart.CFrame
-                           			w.CanCollide = true
+                           			w.CanCollide = false
 						end
 					end
 until  h.Humanoid.Health <= 0 or _G.autocannonplr == false or h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name
@@ -969,7 +969,7 @@ Choose5 = j.Name
 					for i, t in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if t.Name == "CannonBall" then
                           			t.CFrame = g.HumanoidRootPart.CFrame
-                           			t.CanCollide = true
+                           			t.CanCollide = false
 						end
 					end
 until  j.Humanoid.Health <= 0 or _G.autocannonplr == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name
