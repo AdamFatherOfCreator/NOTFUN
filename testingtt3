@@ -244,18 +244,18 @@ local Options = Fluent.Options
 
 local plrsec = Tabs.Player:AddSection("About Player")
 
-    local plr12 = Tabs.Main:AddInput("Inputplr", {
+    local plr12 = Tabs.Player:AddInput("Inputplr", {
         Title = "Choose Player",
         Default = "Default",
         Placeholder = "Placeholder",
         Numeric = false, -- Only allows numbers
         Finished = false, -- Only calls callback when you press enter
-        Callback = function()
+        Callback = function(Var)
         end
     })
 
     plr12:OnChanged(function()
-        print("Input updated:", Inputplr.Value)
+        print("Input updated:", Inputplr.Var)
     end)
 
 
