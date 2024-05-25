@@ -512,7 +512,86 @@ end
         end
     })
 
+    Tabs.Shop:AddButton({
+        Title = "Wakizashi",
+        Description = "Requires 5000 Beries",
+        Callback = function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Wakizashi == false then
+        local A_1 = "Wakizashi"
+        local A_2 = 5000
+        local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
+        Event:FireServer(A_1, A_2)
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You just bought Wakizashi",
+    Duration = 5
+})
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You have already got Wakizashi",
+    Duration = 5
+})
+end
 
+
+        end
+    })
+
+    Tabs.Shop:AddButton({
+        Title = "Tachi",
+        Description = "Requires 7500 Beries",
+        Callback = function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Tachi == false then
+        local A_1 = "Tachi"
+        local A_2 = 7500
+        local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
+        Event:FireServer(A_1, A_2)
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You just bought Tachi",
+    Duration = 5
+})
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You have already got Tachi",
+    Duration = 5
+})
+end
+
+
+        end
+    })
+
+    Tabs.Shop:AddButton({
+        Title = "Katana",
+        Description = "Requires 10000 Beries",
+        Callback = function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Katana == false then
+        local A_1 = "Katana"
+        local A_2 = 10000
+        local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
+        Event:FireServer(A_1, A_2)
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You just bought Katana",
+    Duration = 5
+})
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You have already got Katana",
+    Duration = 5
+})
+end
+
+
+        end
+    })
 
 
 
