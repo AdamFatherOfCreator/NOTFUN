@@ -267,7 +267,7 @@ Options.quakealltoggle:SetValue(false)
 
 spawn(function()
 while wait() do
-ocal x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
+local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
 local vp = x.VTCebvc
 pcall(function()
 if getgenv().quakerty then
