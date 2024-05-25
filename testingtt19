@@ -274,9 +274,11 @@ spawn(function()
 while wait() do
 pcall(function()
 local plr2 = game.Players:FindFirstChild(SelectedKillPlayer)
-if getgenv().viewplrr == true and plr2.Name ~= SelectedKillPlayer then
+if getgenv().viewplrr == true and plr2.Name == SelectedKillPlayer then
 pcall(function()
+repeat wait()
 game.Workspace.Camera.CameraSubject = plr2.Character.Humanoid
+until getgenv().viewplrr == false or plr2.Name ~= SelectedKillPlayer
 end)
 end
 end)
@@ -289,7 +291,9 @@ pcall(function()
 local plr2 = game.Players:FindFirstChild(SelectedKillPlayer)
 if getgenv().viewplrr == false or plr2.Name ~= SelectedKillPlayer then
 pcall(function()
+repeat wait()
 game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+until getgenv().viewplrr == true or plr2.Name == SelectedKillPlayer
 end)
 end
 end)
