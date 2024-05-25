@@ -484,8 +484,23 @@ end
     })
 
 
-local Shoo2p = Tabs.Shop:AddSection("Sword")
-local c24 = Tabs.Shop:AddSection("                                                -----")
+local Shooppp1 = Tabs.Shop:AddSection("Sword")
+    Tabs.Shop:AddButton({
+        Title = "Dagger",
+        Description = "Requires 1000 Beries",
+        Callback = function()
+        local A_1 = "Dagger"
+        local A_2 = 1000
+        local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
+        Event:FireServer(A_1, A_2)
+        end
+    })
+
+
+
+
+
+
 local Shoo3p = Tabs.Shop:AddSection("Gun")
 local c24 = Tabs.Shop:AddSection("                                                -----")
 local Shoo4p = Tabs.Shop:AddSection("Drinks")
