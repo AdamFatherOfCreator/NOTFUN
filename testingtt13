@@ -280,9 +280,9 @@ pcall(function()
 repeat wait()
 game.Workspace.Camera.CameraSubject = plr2.Character.Humanoid
 until getgenv().viewplrr == false or plr2.Name ~= SelectedKillPlayer or not game.Players:FindFirstChild(SelectedKillPlayer)
-
+wait()
 workspace.CurrentCamera:remove()
-wait(.1)
+wait(0.1)
 repeat wait() until game.Players.LocalPlayer.Character ~= nil
 workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
 workspace.CurrentCamera.CameraType = "Custom"
