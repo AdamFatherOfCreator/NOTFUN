@@ -254,7 +254,7 @@ local plrsec = Tabs.Player:AddSection("About Player")
         end
     })
 
-    Input:OnChanged(function()
+    plr12:OnChanged(function()
         print("Input updated:", Inputplr.Value)
     end)
 
