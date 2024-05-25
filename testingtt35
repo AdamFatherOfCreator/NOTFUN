@@ -495,6 +495,11 @@ if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Dagger =
         local A_2 = 1000
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
         Event:FireServer(A_1, A_2)
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You just bought Dagger",
+    Duration = 5
+})
 else
 Fluent:Notify({
     Title = "Saluna Shop Notify",
