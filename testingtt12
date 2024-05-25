@@ -280,15 +280,17 @@ pcall(function()
 repeat wait()
 game.Workspace.Camera.CameraSubject = plr2.Character.Humanoid
 until getgenv().viewplrr == false or plr2.Name ~= SelectedKillPlayer or not game.Players:FindFirstChild(SelectedKillPlayer)
-	workspace.CurrentCamera:remove()
-	wait(.1)
-	repeat wait() until game.Players.LocalPlayer.Character ~= nil
-	workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
-	workspace.CurrentCamera.CameraType = "Custom"
-	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
-	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
-	game.Players.LocalPlayer.CameraMode = "Classic"
-	game.Players.LocalPlayer.Character.Head.Anchored = falseend)
+
+workspace.CurrentCamera:remove()
+wait(.1)
+repeat wait() until game.Players.LocalPlayer.Character ~= nil
+workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
+workspace.CurrentCamera.CameraType = "Custom"
+game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
+game.Players.LocalPlayer.CameraMaxZoomDistance = 400
+game.Players.LocalPlayer.CameraMode = "Classic"
+game.Players.LocalPlayer.Character.Head.Anchored = false
+end)
 end
 end
 end)
