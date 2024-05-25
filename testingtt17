@@ -273,26 +273,27 @@ Options.viewplrtoggle:SetValue(false)
 spawn(function()
 while wait() do
 pcall(function()
-if getgenv().viewplrr then
-local plr1 = game.Players.LocalPlayer.Character.Humanoid
 local plr2 = game.Players:FindFirstChild(SelectedKillPlayer)
+if getgenv().viewplrr == true and plr2.Name ~= SelectedKillPlayer then
 pcall(function()
 repeat wait()
 game.Workspace.Camera.CameraSubject = plr2.Character.Humanoid
-until getgenv().viewplrr == false or plr2.Name ~= SelectedKillPlayer or not game.Players:FindFirstChild(SelectedKillPlayer)
-wait()
-workspace.CurrentCamera:remove()
-wait(0.1)
-repeat wait() until game.Players.LocalPlayer.Character ~= nil
-	workspace.CurrentCamera:remove()
-	wait(.1)
-	repeat wait() until game.Players.LocalPlayer.Character ~= nil
-	workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
-	workspace.CurrentCamera.CameraType = "Custom"
-	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
-	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
-	game.Players.LocalPlayer.CameraMode = "Classic"
-	game.Players.LocalPlayer.Character.Head.Anchored = false
+until getgenv().viewplrr == false or plr2.Name ~= SelectedKillPlayer
+end)
+end
+end)
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+local plr2 = game.Players:FindFirstChild(SelectedKillPlayer)
+if getgenv().viewplrr == false or plr2.Name ~= SelectedKillPlayer then
+pcall(function()
+repeat wait()
+game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+until getgenv().viewplrr == true
 end)
 end
 end)
