@@ -277,10 +277,10 @@ while wait() do
 local plr1 = game.Players.LocalPlayer.Character.Humanoid
 local plr2 = game.Players:FindFirstChild(SelectedKillPlayer)
 if getgenv().viewplrr then
-for _, ry in pairs(game.Players:GetChildren()) do
+for i, u in pairs(game.Players:GetChildren()) do
 repeat wait()
 game.Workspace.Camera.CameraSubject = plr2.Character.Humanoid
-until getgenv().viewplrr == false or SelectedKillPlayer ~= plr2.Name or plr2.Name ~= ry
+until getgenv().viewplrr == false or SelectedKillPlayer ~= plr2.Name or plr2.Name ~= u.Name
 game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 end
 end
