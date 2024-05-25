@@ -243,7 +243,8 @@ local Tabs = {
 local Options = Fluent.Options
 
 local plrsec = Tabs.Player:AddSection("About Player")
-  local plrinputtt = Tabs.Main:AddInput("plrinput", {
+
+  local plrinputtt = Tabs.Player:AddInput("Input", {
         Title = "Choose Player",
         Default = "Default",
         Placeholder = "Placeholder",
@@ -254,7 +255,7 @@ local plrsec = Tabs.Player:AddSection("About Player")
     })
 
     Input:OnChanged(function()
-        print("Player updated:", plrinput.Value)
+        print("Player updated:", plrinputtt.Value)
     end)
 end
 
