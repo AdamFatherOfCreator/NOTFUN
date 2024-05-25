@@ -244,21 +244,6 @@ local Options = Fluent.Options
 
 local plrsec = Tabs.Player:AddSection("About Player")
 
-  local plrinputtt = Tabs.Player:AddInput("Input", {
-        Title = "Choose Player",
-        Default = "Default",
-        Placeholder = "Placeholder",
-        Numeric = false, -- Only allows numbers
-        Finished = false, -- Only calls callback when you press enter
-        Callback = function()
-        end
-    })
-
-    Input:OnChanged(function()
-        print("Player updated:", plrinputtt.Value)
-    end)
-end
-
 
 
 local Shoo2p = Tabs.Shop:AddSection("Sword")
