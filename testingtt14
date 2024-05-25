@@ -284,18 +284,13 @@ wait()
 workspace.CurrentCamera:remove()
 wait(0.1)
 repeat wait() until game.Players.LocalPlayer.Character ~= nil
-workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
-workspace.CurrentCamera.CameraType = "Custom"
-game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
-game.Players.LocalPlayer.CameraMaxZoomDistance = 400
-game.Players.LocalPlayer.CameraMode = "Classic"
-game.Players.LocalPlayer.Character.Head.Anchored = false
+game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 end)
-end
 end
 end)
 end
 end)
+
 
 
 
