@@ -281,7 +281,7 @@ local vptt = xr.VTCebvc
 		if _G.quakerty == true and cc.Humanoid.Health > 0 and cc.HumanoidRootPart.Position.Y < 211000 then
     			for i,vv in pairs(game:GetService("Workspace"):GetChildren()) do
       				if vv.Name == Choosequake then
-                repeat task.wait(0.3)
+                repeat task.wait(0.2)
 for i = 1,quaketime do
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,vv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 end
