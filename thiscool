@@ -208,7 +208,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H5)",
+    Title = "SALUNA HUB (H6)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -354,8 +354,10 @@ local plrsec = Tabs.Player:AddSection("About Player")
     })
 
     plrts:OnChanged(function()
+plrlow = string.lower(plrts.Value)
 for i,e in pairs(game.Players:GetChildren()) do
-if string.find(e.Name, plrts.Value) then
+plrchoose = string.lower(e.Name)
+if string.find(plrchoose, plrlow) then
         Choose2 = e.Name
 	SelectedKillPlayer = e.Name
 end
@@ -395,6 +397,11 @@ while wait() do
 pcall(function()
 local plr2 = game.Players:FindFirstChild(SelectedKillPlayer)
 if getgenv().viewplrr == true and plr2.Name == SelectedKillPlayer then
+Fluent:Notify({
+    Title = "Players Notify",
+    Content = "Viewing " ..plr2.Name,
+    Duration = 5
+})
 pcall(function()
 repeat wait()
 game.Workspace.Camera.CameraSubject = plr2.Character.Humanoid
