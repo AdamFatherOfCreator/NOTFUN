@@ -208,7 +208,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H6)",
+    Title = "SALUNA HUB (H7)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1048,6 +1048,81 @@ end)
 
 local Cannon = Tabs.Farm:AddSection("Auto Cannon Farming")
 
+local fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Fast Cannon", Default = false })
+fastcannon:OnChanged(function()
+if Options.fastcannontoggle.Value == true then
+_G.autocannon = true
+else
+_G.autocannon = false
+end
+end)
+Options.fastcannontoggle:SetValue(false)
+
+spawn(function()
+    while task.wait(0) do
+        pcall(function()
+            if _G.autocannon then
+                local toolname = "Cannon Ball"
+                local Plr = game:GetService("Players").LocalPlayer
+                wait(0.5)
+                if Plr.Backpack:FindFirstChild(toolname) and not Plr.Character:FindFirstChild(toolname) and not Plr.Character:FindFirstChildOfClass("Tool") then
+                    local tool = Plr.Backpack:FindFirstChild(toolname)
+                    Plr.Character.Humanoid:EquipTool(tool)
+                    wait(0.5)
+                    game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+                end
+            end
+        end)
+    end
+end)
+spawn(function()
+    while task.wait(0) do
+        pcall(function()
+            if _G.autocannon and game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
+                task.wait(1)
+                for i=1,2 do
+                    game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+                end
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    while task.wait(15) do
+        pcall(function()
+            if _G.autocannon then
+                task.wait(0.1)
+                if game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
+                    for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        if v.Name == "Cannon Ball" then
+                            v:Destroy()
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+spawn(function()
+    while task.wait(0) do
+        pcall(function()
+            if _G.autocannon then
+                task.wait(0.1)
+                if game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
+                    for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        if v.Name ~= "Cannon" and v.Name ~= "Cannon Ball" then
+                            v:Destroy()
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+
+
 local autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mob (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
 if Options.cannonmobtoggle.Value == true then
@@ -1242,6 +1317,22 @@ end
 end)
 
 
+spawn(function()
+    while task.wait() do
+        pcall(function()
+local plr = game.Players.LocalPlayer
+if _G.autocannonslow or _G.autocannonplr then
+if _G.autocannon == false then
+for i,v in pairs(plr.Backpack:GetChildren()) do
+if v.Name == "Cannon Ball" then
+v.Parent = plr.Character
+end
+end
+end
+end
+      end)
+   end
+end)
 
     spawn(function() -- autofarm teleport cannon
     while wait() do
@@ -1260,20 +1351,7 @@ end)
     end
 end)
 
-spawn(function()
-    while task.wait() do
-        pcall(function()
-local plr = game.Players.LocalPlayer
-if _G.autocannonslow or _G.autocannonplr then
-for i,v in pairs(plr.Backpack:GetChildren()) do
-if v.Name == "Cannon Ball" then
-v.Parent = plr.Character
-end
-end
-end
-      end)
-   end
-end)
+
 
 spawn(function()
     while task.wait() do
