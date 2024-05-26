@@ -208,7 +208,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H8)",
+    Title = "SALUNA HUB (H9)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -288,7 +288,7 @@ local hakitargett = Tabs.Player:AddSlider("Sliderhaki", {
     Description = "Change this for adjusting Quake per hit",
     Default = 3,
     Min = 1,
-    Max = 5,
+    Max = 10,
     Rounding = 0,
     Callback = function(quarw)
             quaketime = quarw
@@ -313,19 +313,19 @@ wait()
 for i,vv in pairs(game.Players:GetChildren()) do
 	if vv.Name ~= game.Players.LocalPlayer.Name then
 		for i,cc in pairs(game.Workspace:GetChildren()) do
-			if cc:IsA("Model") and cc.Name == vv.Name and cc.Humanoid.Health > 0 and cc.HumanoidRootPart.Position.Y < 211000 then
+			if cc:IsA("Model") and cc.Name == vv.Name and cc.HumanoidRootPart.Position.Y < 211000 then
 Choosequake = cc.Name
 local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
 local vptt = xr.VTCebvc
 	pcall(function()
-		if _G.quakerty == true and cc.Humanoid.Health > 0 and cc.HumanoidRootPart.Position.Y < 211000 then
+		if _G.quakerty == true and cc.HumanoidRootPart.Position.Y < 211000 then
     			for i,vv in pairs(game:GetService("Workspace"):GetChildren()) do
       				if vv.Name == Choosequake then
                 repeat task.wait(0.3)
 for i = 1,quaketime do
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,vv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 end
-until  cc.Humanoid.Health <= 0 or _G.quakerty == false or cc.HumanoidRootPart.Position.Y > 211000 or cc.Name ~= vv.Name
+until _G.quakerty == false or cc.HumanoidRootPart.Position.Y > 211000 or cc.Name ~= vv.Name
 				end
 			end
 		end
