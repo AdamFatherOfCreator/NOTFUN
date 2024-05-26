@@ -397,6 +397,11 @@ while wait() do
 pcall(function()
 local plr2 = game.Players:FindFirstChild(SelectedKillPlayer)
 if getgenv().viewplrr == true and plr2.Name == SelectedKillPlayer then
+Fluent:Notify({
+    Title = "Players Notify",
+    Content = "Viewing " ..plr2.Name,
+    Duration = 5
+})
 pcall(function()
 repeat wait()
 game.Workspace.Camera.CameraSubject = plr2.Character.Humanoid
