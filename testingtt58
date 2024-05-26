@@ -1079,17 +1079,20 @@ spawn(function()
     while task.wait(0) do
         pcall(function()
             if _G.autocannon and game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
-                task.wait(0.3)
+                task.wait(1)
+                for i=1,2 do
                     game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+                end
             end
         end)
     end
 end)
+
 spawn(function()
-    while task.wait(5) do
+    while task.wait(15) do
         pcall(function()
             if _G.autocannon then
-                task.wait(0.05)
+                task.wait(0.1)
                 if game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
                     for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                         if v.Name == "Cannon Ball" then
@@ -1105,7 +1108,7 @@ spawn(function()
     while task.wait(0) do
         pcall(function()
             if _G.autocannon then
-                task.wait()
+                task.wait(0.1)
                 if game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
                     for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                         if v.Name ~= "Cannon" and v.Name ~= "Cannon Ball" then
