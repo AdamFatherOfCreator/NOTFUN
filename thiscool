@@ -208,7 +208,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H4)",
+    Title = "SALUNA HUB (H5)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -235,6 +235,52 @@ local Tabs = {
     nonet = Window:AddTab({ Title = "-------", Icon = "" })
 }
 local Options = Fluent.Options
+
+local Miscc1 = Tabs.Misc:AddSection("Makes Server Lagging")
+local miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", Default = false })
+miscquake:OnChanged(function()
+if Options.miscquaketoggle.Value == true then
+_G.quakelagmisc = true
+else
+_G.quakelagmisc = false
+end
+end)
+Options.miscquaketoggle:SetValue(false)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.quakelagmisc then wait()
+local x = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
+local vp = x.VTCebvc
+for i = 1,5 do
+    pcall(function()
+    for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+        if v.Name == game.Players.LocalPlayer.Name then
+            local args = {
+    [1] = vp,
+    [2] = "QuakePower1",
+    [3] = "StopCharging",
+    [4] = workspace:WaitForChild("IslandTown"):WaitForChild("Runic"):WaitForChild("Union"),
+    [5] = v.HumanoidRootPart.CFrame,
+    [6] = 100,
+    [7] = Vector3.new(150.66384887695312, 230.749755859375, 4937.19677734375)
+}
+
+game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(unpack(args))
+        end
+    end
+    end)
+end
+wait(0.3)
+
+end
+end)
+end
+end)
+
+
+
 
 local quakerer = Tabs.Player:AddSection("Quake Kill All")
 local hakitargett = Tabs.Player:AddSlider("Sliderhaki", {
