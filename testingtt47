@@ -354,10 +354,10 @@ local plrsec = Tabs.Player:AddSection("About Player")
     })
 
     plrts:OnChanged(function()
-plrlow = string.lower(plrts.Value) -- giá trị nhập
+plrlow = string.lower(tostring(plrts.Value)) -- giá trị nhập
 for i,e in pairs(game.Players:GetChildren()) do
-local plrchoose = string.lower(e.Name) -- giá trị server
-if plrchoose == plrlow then
+plrchoose = string.lower(tostring(e.Name)) -- giá trị server
+if plrlow == plrchoose then
         Choose2 = e.Name
 	SelectedKillPlayer = e.Name
 end
