@@ -1421,7 +1421,7 @@ local plr = tostring(game.Players.LocalPlayer)
 while wait() do
 if _G.autohakicannon then wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*50
+local sss = slv/100*90
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 local x = game.Players.LocalPlayer.UserId
@@ -1438,6 +1438,12 @@ end
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+repeat task.wait()
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+end
+
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+wait()
  local Players = game:GetService("Players")
 local cache = {}
     function lol(name)
@@ -1457,7 +1463,7 @@ local cache = {}
     end
     local ehh = game.Players.LocalPlayer.Name
     local Final = lol(ehh)
-for i = 1, 30 do wait()
+for i = 1, 60 do
     local args = {
         [1] = "Off",
         [2] = 1
@@ -1471,7 +1477,7 @@ for i = 1, 30 do wait()
     
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
     end
-task.wait(0.1)
+task.wait(0.01)
         local args = {
         [1] = "Off",
         [2] = 1
@@ -1489,7 +1495,6 @@ wait(15)
 repeat task.wait()
 until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
 end
-
 
 end)
 end
