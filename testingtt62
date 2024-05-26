@@ -1464,7 +1464,7 @@ local cache = {}
     end
     local ehh = game.Players.LocalPlayer.Name
     local Final = lol(ehh)
-for i = 1, 60 do
+for i = 1, 60 do wait()
     local args = {
         [1] = "Off",
         [2] = 1
