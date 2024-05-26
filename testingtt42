@@ -677,7 +677,7 @@ end
         Description = "Requires 80,000 Beries",
         Callback = function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
-if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Flail.Value == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Krizma.Value == false then
 if game:GetService("Workspace").UserData["User_"..plrid].Data.Cash.Value >= 80000 then
 
         local A_1 = "Krizma"
