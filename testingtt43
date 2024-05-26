@@ -710,7 +710,195 @@ end
     })
 
 local Shoo3p = Tabs.Shop:AddSection("Gun")
-local c24 = Tabs.Shop:AddSection("                                                -----")
+
+    Tabs.Shop:AddButton({
+        Title = "Slingshot",
+        Description = "Requires 1,000 Beries",
+        Callback = function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Slingshot.Value == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.Cash.Value >= 1000 then
+
+        local A_1 = "Slingshot"
+        local A_2 = 1000
+        local Event = game:GetService("Workspace").Merchants.SniperMerchant.Clickable.Retum
+        Event:FireServer(A_1, A_2)
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You just bought Slingshot",
+    Duration = 5
+})
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "Lack Of Beries",
+    Duration = 5
+})
+end
+
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You have already got Slingshot",
+    Duration = 5
+})
+end
+
+
+        end
+    })
+
+    Tabs.Shop:AddButton({
+        Title = "Stars",
+        Description = "Requires 5,000 Beries",
+        Callback = function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Stars.Value == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.Cash.Value >= 5000 then
+
+        local A_1 = "Stars"
+        local A_2 = 5000
+        local Event = game:GetService("Workspace").Merchants.SniperMerchant.Clickable.Retum
+        Event:FireServer(A_1, A_2)
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You just bought Stars",
+    Duration = 5
+})
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "Lack Of Beries",
+    Duration = 5
+})
+end
+
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You have already got Stars",
+    Duration = 5
+})
+end
+
+
+        end
+    })
+
+    Tabs.Shop:AddButton({
+        Title = "Crossbow",
+        Description = "Requires 7,500 Beries",
+        Callback = function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Crossbow.Value == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.Cash.Value >= 7500 then
+
+        local A_1 = "Crossbow"
+        local A_2 = 7500
+        local Event = game:GetService("Workspace").Merchants.SniperMerchant.Clickable.Retum
+        Event:FireServer(A_1, A_2)
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You just bought Crossbow",
+    Duration = 5
+})
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "Lack Of Beries",
+    Duration = 5
+})
+end
+
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You have already got Crossbow",
+    Duration = 5
+})
+end
+
+
+        end
+    })
+
+    Tabs.Shop:AddButton({
+        Title = "Flintlock",
+        Description = "Requires 10,000 Beries",
+        Callback = function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Flintlock.Value == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.Cash.Value >= 10000 then
+
+        local A_1 = "Flintlock"
+        local A_2 = 10000
+        local Event = game:GetService("Workspace").Merchants.SniperMerchant.Clickable.Retum
+        Event:FireServer(A_1, A_2)
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You just bought Flintlock",
+    Duration = 5
+})
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "Lack Of Beries",
+    Duration = 5
+})
+end
+
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You have already got Flintlock",
+    Duration = 5
+})
+end
+
+
+        end
+    })
+
+    Tabs.Shop:AddButton({
+        Title = "Cannon Ball",
+        Description = "Requires 400,000 Beries",
+        Callback = function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+if game:GetService("Workspace").UserData["User_"..plrid].Data["PlayerHas_Cannon Ball"].Value == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.Cash.Value >= 400000 then
+
+        local A_1 = "Cannon Ball"
+        local A_2 = 400000
+        local Event = game:GetService("Workspace").Merchants.HeavyWeaponsMerchant.Clickable.Retum
+        Event:FireServer(A_1, A_2)
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You just bought Cannon Ball",
+    Duration = 5
+})
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "Lack Of Beries",
+    Duration = 5
+})
+end
+
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "You have already got Cannon Ball",
+    Duration = 5
+})
+end
+
+
+        end
+    })
+
+
+
+
 local Shoo4p = Tabs.Shop:AddSection("Drinks")
 local c24 = Tabs.Shop:AddSection("                                                -----")
 
