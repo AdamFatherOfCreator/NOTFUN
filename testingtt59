@@ -1064,11 +1064,11 @@ spawn(function()
             if _G.autocannon then
                 local toolname = "Cannon Ball"
                 local Plr = game:GetService("Players").LocalPlayer
-                wait(0.3)
+                wait(0.5)
                 if Plr.Backpack:FindFirstChild(toolname) and not Plr.Character:FindFirstChild(toolname) and not Plr.Character:FindFirstChildOfClass("Tool") then
                     local tool = Plr.Backpack:FindFirstChild(toolname)
                     Plr.Character.Humanoid:EquipTool(tool)
-                    wait(0.3)
+                    wait(0.5)
                     game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
                 end
             end
