@@ -392,6 +392,19 @@ Tabs.Player:AddButton({
 end
     })
 
+local plr22as = Tabs.Player:AddSection("Camp Chosen Player")
+local quakecart = Tabs.Player:AddToggle("quakecarttoggle", {Title = "Quake Camp", Default = false })
+quakecart:OnChanged(function()
+if Options.quakecarttoggle.Value == true then
+getgenv().quaketpio = true
+else
+getgenv().quaketpio = false
+end
+end)
+Options.quakecarttoggle:SetValue(false)
+
+
+
 spawn(function()
 while wait() do
 pcall(function()
