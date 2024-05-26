@@ -1048,7 +1048,7 @@ end)
 
 local Cannon = Tabs.Farm:AddSection("Auto Cannon Farming")
 
-local fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Auto Farm Mob (Cannon)", Default = false })
+local fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Fast Cannon", Default = false })
 fastcannon:OnChanged(function()
 if Options.fastcannontoggle.Value == true then
 _G.autocannon = true
@@ -1058,7 +1058,6 @@ end
 end)
 Options.fastcannontoggle:SetValue(false)
 
-_G.autocannon = true
 spawn(function()
     while task.wait() do
         pcall(function()
