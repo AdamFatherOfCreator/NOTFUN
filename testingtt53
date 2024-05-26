@@ -1062,7 +1062,7 @@ _G.autocannon = true
 spawn(function()
     while task.wait() do
         pcall(function()
-            if _G.autocannon then
+            if _G.autocannon or _G.autocannonslow or _G.autocannonplr then
                 local toolname = "Cannon Ball"
                 local Plr = game:GetService("Players").LocalPlayer
                 wait(0.5)
@@ -1334,20 +1334,7 @@ end)
     end
 end)
 
-spawn(function()
-    while task.wait() do
-        pcall(function()
-local plr = game.Players.LocalPlayer
-if _G.autocannonslow or _G.autocannonplr then
-for i,v in pairs(plr.Backpack:GetChildren()) do
-if v.Name == "Cannon Ball" then
-v.Parent = plr.Character
-end
-end
-end
-      end)
-   end
-end)
+
 
 spawn(function()
     while task.wait() do
