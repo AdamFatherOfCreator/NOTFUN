@@ -491,6 +491,7 @@ local Shooppp1 = Tabs.Shop:AddSection("Sword")
         Callback = function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Dagger.Value == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.Cash.Value >= 1000 then
         local A_1 = "Dagger"
         local A_2 = 1000
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
@@ -500,6 +501,13 @@ Fluent:Notify({
     Content = "You just bought Dagger",
     Duration = 5
 })
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "Lack Of Beries",
+    Duration = 5
+})
+end
 else
 Fluent:Notify({
     Title = "Saluna Shop Notify",
