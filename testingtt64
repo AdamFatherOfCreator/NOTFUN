@@ -1064,7 +1064,7 @@ spawn(function()
             if _G.autocannon then
                 local toolname = "Cannon Ball"
                 local Plr = game:GetService("Players").LocalPlayer
-                wait(0.5)
+                wait(0.1)
                 if Plr.Backpack:FindFirstChild(toolname) and not Plr.Character:FindFirstChild(toolname) and not Plr.Character:FindFirstChildOfClass("Tool") then
                     local tool = Plr.Backpack:FindFirstChild(toolname)
                     Plr.Character.Humanoid:EquipTool(tool)
@@ -1421,8 +1421,8 @@ local plr = tostring(game.Players.LocalPlayer)
 while wait() do
 if _G.autohakicannon then wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*90
-local svs = slv/100*95
+local sss = slv/100*50
+local svs = slv/100*55
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 local x = game.Players.LocalPlayer.UserId
@@ -1448,8 +1448,8 @@ local plr = tostring(game.Players.LocalPlayer)
 while wait() do
 if _G.autohakicannon then wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*90
-local svs = slv/100*95
+local sss = slv/100*50
+local svs = slv/100*55
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 local x = game.Players.LocalPlayer.UserId
@@ -1471,8 +1471,8 @@ local plr = tostring(game.Players.LocalPlayer)
 while wait() do
 if _G.autohakicannon then wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*90
-local svs = slv/100*95
+local sss = slv/100*50
+local svs = slv/100*55
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 local x = game.Players.LocalPlayer.UserId
