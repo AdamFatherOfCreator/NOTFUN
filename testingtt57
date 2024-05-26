@@ -1059,37 +1059,37 @@ end)
 Options.fastcannontoggle:SetValue(false)
 
 spawn(function()
-    while task.wait() do
+    while task.wait(0) do
         pcall(function()
-            if _G.autocannon or _G.autocannonslow or _G.autocannonplr then
+            if _G.autocannon then
                 local toolname = "Cannon Ball"
                 local Plr = game:GetService("Players").LocalPlayer
-                wait(0.5)
+                wait(0.3)
                 if Plr.Backpack:FindFirstChild(toolname) and not Plr.Character:FindFirstChild(toolname) and not Plr.Character:FindFirstChildOfClass("Tool") then
                     local tool = Plr.Backpack:FindFirstChild(toolname)
                     Plr.Character.Humanoid:EquipTool(tool)
                     wait(0.3)
+                    game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
                 end
             end
         end)
     end
 end)
-
 spawn(function()
     while task.wait(0) do
         pcall(function()
-            if _G.autocannon then
-                task.wait(0.5)
+            if _G.autocannon and game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
+                task.wait(0.3)
                     game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
             end
         end)
     end
 end)
 spawn(function()
-    while task.wait() do
+    while task.wait(5) do
         pcall(function()
             if _G.autocannon then
-                task.wait(0.1)
+                task.wait(0.05)
                 if game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
                     for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                         if v.Name == "Cannon Ball" then
@@ -1314,6 +1314,22 @@ end
 end)
 
 
+spawn(function()
+    while task.wait() do
+        pcall(function()
+local plr = game.Players.LocalPlayer
+if _G.autocannonslow or _G.autocannonplr then
+if _G.autocannon == false then
+for i,v in pairs(plr.Backpack:GetChildren()) do
+if v.Name == "Cannon Ball" then
+v.Parent = plr.Character
+end
+end
+end
+end
+      end)
+   end
+end)
 
     spawn(function() -- autofarm teleport cannon
     while wait() do
