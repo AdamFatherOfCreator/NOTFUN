@@ -208,7 +208,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H7)",
+    Title = "SALUNA HUB (H8)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1064,7 +1064,7 @@ spawn(function()
             if _G.autocannon then
                 local toolname = "Cannon Ball"
                 local Plr = game:GetService("Players").LocalPlayer
-                wait(0.5)
+                wait(0.1)
                 if Plr.Backpack:FindFirstChild(toolname) and not Plr.Character:FindFirstChild(toolname) and not Plr.Character:FindFirstChildOfClass("Tool") then
                     local tool = Plr.Backpack:FindFirstChild(toolname)
                     Plr.Character.Humanoid:EquipTool(tool)
@@ -1422,6 +1422,7 @@ while wait() do
 if _G.autohakicannon then wait()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
+local svs = slv/100*55
 local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
 local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 local x = game.Players.LocalPlayer.UserId
@@ -1435,9 +1436,49 @@ repeat task.wait()
 until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
 end
 
+end)
+end
+end
+end)
+
+
+spawn(function() --autohaki cannon
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+while wait() do
+if _G.autohakicannon then wait()
+local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
+local sss = slv/100*50
+local svs = slv/100*55
+local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
+local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
+local x = game.Players.LocalPlayer.UserId
+pcall(function()
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+repeat task.wait()
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+end
+end)
+end
+end
+end)
+
+spawn(function() --autohaki cannon
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+while wait() do
+if _G.autohakicannon then wait()
+local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
+local sss = slv/100*50
+local svs = slv/100*55
+local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
+local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
+local x = game.Players.LocalPlayer.UserId
+pcall(function()
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= svs and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+wait()
  local Players = game:GetService("Players")
 local cache = {}
     function lol(name)
@@ -1471,7 +1512,7 @@ for i = 1, 30 do wait()
     
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
     end
-task.wait(0.1)
+task.wait(0.01)
         local args = {
         [1] = "Off",
         [2] = 1
@@ -1489,12 +1530,29 @@ wait(15)
 repeat task.wait()
 until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
 end
-
-
 end)
 end
 end
 end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 spawn(function() -- autofarm cannon
     while wait() do
