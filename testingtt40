@@ -491,6 +491,7 @@ local Shooppp1 = Tabs.Shop:AddSection("Sword")
         Callback = function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Dagger.Value == false then
+
 if game:GetService("Workspace").UserData["User_"..plrid].Data.Cash.Value >= 1000 then
         local A_1 = "Dagger"
         local A_2 = 1000
@@ -508,6 +509,7 @@ Fluent:Notify({
     Duration = 5
 })
 end
+
 else
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -526,6 +528,8 @@ end
         Callback = function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Wakizashi.Value == false then
+
+if game:GetService("Workspace").UserData["User_"..plrid].Data.Cash.Value >= 5000 then
         local A_1 = "Wakizashi"
         local A_2 = 5000
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
@@ -535,6 +539,14 @@ Fluent:Notify({
     Content = "You just bought Wakizashi",
     Duration = 5
 })
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "Lack Of Beries",
+    Duration = 5
+})
+end
+
 else
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -553,6 +565,8 @@ end
         Callback = function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Tachi.Value == false then
+
+if game:GetService("Workspace").UserData["User_"..plrid].Data.Cash.Value >= 7500 then
         local A_1 = "Tachi"
         local A_2 = 7500
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
@@ -562,6 +576,16 @@ Fluent:Notify({
     Content = "You just bought Tachi",
     Duration = 5
 })
+
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "Lack Of Beries",
+    Duration = 5
+})
+end
+
+
 else
 Fluent:Notify({
     Title = "Saluna Shop Notify",
@@ -580,6 +604,8 @@ end
         Callback = function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 if game:GetService("Workspace").UserData["User_"..plrid].Data.PlayerHas_Katana.Value == false then
+if game:GetService("Workspace").UserData["User_"..plrid].Data.Cash.Value >= 10000 then
+
         local A_1 = "Katana"
         local A_2 = 10000
         local Event = game:GetService("Workspace").Merchants.SwordMerchant.Clickable.Retum
@@ -589,6 +615,14 @@ Fluent:Notify({
     Content = "You just bought Katana",
     Duration = 5
 })
+else
+Fluent:Notify({
+    Title = "Saluna Shop Notify",
+    Content = "Lack Of Beries",
+    Duration = 5
+})
+end
+
 else
 Fluent:Notify({
     Title = "Saluna Shop Notify",
