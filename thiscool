@@ -209,7 +209,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H10)",
+    Title = "SALUNA HUB (H11)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -280,7 +280,26 @@ end)
 end
 end)
 
+local Miscc2 = Tabs.Misc:AddSection("Useful Misc")
+local randomtp = Tabs.Misc:AddToggle("randomtptoggle", {Title = "Random Teleport", Default = false })
+randomtp:OnChanged(function()
+if Options.randomtptoggle.Value == true then
+getgenv().bgtyhn = true
+else
+getgenv().bgtyhn = false
+end
+end)
+Options.randomtptoggle:SetValue(false)
 
+spawn(function()
+while wait() do
+if getgenv().bgtyhn then
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
+end)
+end
+end
+end)
 
 
 local quakerer = Tabs.Player:AddSection("Quake Kill All")
@@ -1065,7 +1084,7 @@ spawn(function()
             if _G.autocannon then
                 local toolname = "Cannon Ball"
                 local Plr = game:GetService("Players").LocalPlayer
-                wait(0.1)
+                wait(0.2)
                 if Plr.Backpack:FindFirstChild(toolname) and not Plr.Character:FindFirstChild(toolname) and not Plr.Character:FindFirstChildOfClass("Tool") then
                     local tool = Plr.Backpack:FindFirstChild(toolname)
                     Plr.Character.Humanoid:EquipTool(tool)
@@ -1124,7 +1143,7 @@ end)
 
 
 
-local autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mob (Cannon)", Default = false })
+local autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
 if Options.cannonmobtoggle.Value == true then
 _G.autocannonslow = true
@@ -1421,22 +1440,18 @@ local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 while wait() do
 if _G.autohakicannon then wait()
+local x = game.Players.LocalPlayer.UserId
+pcall(function()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
 local svs = slv/100*55
-local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
-local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
-local x = game.Players.LocalPlayer.UserId
-pcall(function()
-fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
-
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 repeat task.wait()
 until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+wait(5)
 end
-
 end)
 end
 end
@@ -1448,18 +1463,17 @@ local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 while wait() do
 if _G.autohakicannon then wait()
+local x = game.Players.LocalPlayer.UserId
+pcall(function()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
 local svs = slv/100*55
-local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
-local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
-local x = game.Players.LocalPlayer.UserId
-pcall(function()
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 repeat task.wait()
 until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+wait(5)
 end
 end)
 end
@@ -1471,13 +1485,11 @@ local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 while wait() do
 if _G.autohakicannon then wait()
+local x = game.Players.LocalPlayer.UserId
+pcall(function()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
 local svs = slv/100*55
-local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLevel.Value
-local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
-local x = game.Players.LocalPlayer.UserId
-pcall(function()
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= svs and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait()
  local Players = game:GetService("Players")
@@ -1499,7 +1511,7 @@ local cache = {}
     end
     local ehh = game.Players.LocalPlayer.Name
     local Final = lol(ehh)
-for i = 1, 30 do wait()
+for i = 1, 20 do wait()
     local args = {
         [1] = "Off",
         [2] = 1
@@ -1513,8 +1525,8 @@ for i = 1, 30 do wait()
     
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
     end
-task.wait(0.01)
-        local args = {
+wait()
+local args = {
         [1] = "Off",
         [2] = 1
     }
@@ -1527,38 +1539,21 @@ wait()
     }
     
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait(15)
+wait()
 repeat task.wait()
 until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+wait(5)
 end
 end)
 end
 end
 end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 spawn(function() -- autofarm cannon
     while wait() do
         pcall(function()
-            if _G.autocannonslow then
+            if _G.autocannonslow then wait()
+fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
 wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, " Boar")
