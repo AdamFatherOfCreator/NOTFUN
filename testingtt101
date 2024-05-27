@@ -1181,11 +1181,11 @@ Options.autobusohakitoggle:SetValue(false)
 
 local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso (Fast Regen)", Default = false })
 autoregenhaki:OnChanged(function()
-if Options.autoregenhakitoggle.Value == true then wait()
+if Options.autoregenhakitoggle.Value == true then
 _G.autohakicannon = true
-_G.offhaki = true
 _G.onhaki = true
-elseif Options.autoregenhakitoggle.Value == false then wait()
+_G.offhaki = true
+else
 _G.autohakicannon = false
 _G.onhaki = false
 _G.offhaki = false
@@ -1457,12 +1457,9 @@ _G.offhaki = true
 wait(3)
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
-local svs = slv/100*60
-local sts = slv/100*55
-if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sts then
+local svs = slv/100*55
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss then
 _G.onhaki = true
-elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value < sss then
-_G.offhaki = true
 end
 end
 end)
@@ -1482,10 +1479,9 @@ local x = game.Players.LocalPlayer.UserId
 pcall(function()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
-local svs = slv/100*60
-local sts = slv/100*55
-if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sts and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-wait()
+local svs = slv/100*55
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 _G.onhaki = false
 wait()
@@ -1505,11 +1501,10 @@ local x = game.Players.LocalPlayer.UserId
 pcall(function()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
-local svs = slv/100*60
-if game.Workspace.UserData["User_"..plrid].HakiBar.Value < sss and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-wait()
+local svs = slv/100*55
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-_G.offhaki = false
 wait()
 end
 end)
@@ -1526,7 +1521,7 @@ local x = game.Players.LocalPlayer.UserId
 pcall(function()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
-local svs = slv/100*60
+local svs = slv/100*55
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= svs and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait()
  local Players = game:GetService("Players")
@@ -1578,9 +1573,11 @@ wait()
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
 wait()
 repeat task.wait()
-until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true or _G.autohakicannon == false
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv then
 _G.onhaki = true
 _G.offhaki = true
+end
 end
 end)
 end
