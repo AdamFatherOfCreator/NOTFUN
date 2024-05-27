@@ -1512,7 +1512,7 @@ local cache = {}
     end
     local ehh = game.Players.LocalPlayer.Name
     local Final = lol(ehh)
-for i = 1, 30 do wait()
+for i = 1, 20 do 
     local args = {
         [1] = "Off",
         [2] = 1
@@ -1526,7 +1526,7 @@ for i = 1, 30 do wait()
     
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
     end
-task.wait(0.01)
+task.wait()
         local args = {
         [1] = "Off",
         [2] = 1
