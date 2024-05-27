@@ -393,19 +393,6 @@ Tabs.Player:AddButton({
 end
     })
 
-local plr22as = Tabs.Player:AddSection("Camp Chosen Player")
-local quakecart = Tabs.Player:AddToggle("quakecarttoggle", {Title = "Quake Camp", Default = false })
-quakecart:OnChanged(function()
-if Options.quakecarttoggle.Value == true then
-getgenv().quaketpio = true
-else
-getgenv().quaketpio = false
-end
-end)
-Options.quakecarttoggle:SetValue(false)
-
-
-
 spawn(function()
 while wait() do
 pcall(function()
@@ -1078,7 +1065,7 @@ spawn(function()
             if _G.autocannon then
                 local toolname = "Cannon Ball"
                 local Plr = game:GetService("Players").LocalPlayer
-                wait(0.1)
+                wait(0.05)
                 if Plr.Backpack:FindFirstChild(toolname) and not Plr.Character:FindFirstChild(toolname) and not Plr.Character:FindFirstChildOfClass("Tool") then
                     local tool = Plr.Backpack:FindFirstChild(toolname)
                     Plr.Character.Humanoid:EquipTool(tool)
@@ -1093,15 +1080,17 @@ spawn(function()
     while task.wait(0) do
         pcall(function()
             if _G.autocannon and game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
-                task.wait(0.6)
+                task.wait(1)
+                for i=1,2 do
                     game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
+                end
             end
         end)
     end
 end)
 
 spawn(function()
-    while task.wait(10) do
+    while task.wait(15) do
         pcall(function()
             if _G.autocannon then
                 task.wait(0.1)
@@ -1117,7 +1106,7 @@ spawn(function()
     end
 end)
 spawn(function()
-    while task.wait() do
+    while task.wait(0) do
         pcall(function()
             if _G.autocannon then
                 task.wait(0.1)
@@ -1333,11 +1322,12 @@ spawn(function()
     while task.wait() do
         pcall(function()
 local plr = game.Players.LocalPlayer
-if _G.autocannon == false and
-_G.autocannonslow or _G.autocannonplr then
+if _G.autocannonslow or _G.autocannonplr then
+if _G.autocannon == false then
 for i,v in pairs(plr.Backpack:GetChildren()) do
 if v.Name == "Cannon Ball" then
 v.Parent = plr.Character
+end
 end
 end
 end
@@ -1529,7 +1519,7 @@ for i = 1, 20 do wait()
     
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
     end
-task.wait()
+task.wait(0.01)
         local args = {
         [1] = "Off",
         [2] = 1
