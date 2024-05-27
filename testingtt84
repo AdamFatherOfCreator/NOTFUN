@@ -1075,10 +1075,6 @@ _G.autocannon = true
 else
 _G.autocannon = false
 end
-
-local Plr = game:GetService("Players").LocalPlayer
-if Plr.Character:FindFirstChildOfClass("Cannon Ball")
-game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 end)
 Options.fastcannontoggle:SetValue(false)
 
@@ -1453,7 +1449,7 @@ if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and not game.Play
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 repeat task.wait()
-until game.Workspace.UserData["User_"..plrid].HakiBar.Value == slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
 wait(5)
 end
 end)
@@ -1476,7 +1472,7 @@ if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and game.Players
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 repeat task.wait()
-until game.Workspace.UserData["User_"..plrid].HakiBar.Value == slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
 wait(5)
 end
 end)
@@ -1545,7 +1541,7 @@ wait()
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
 wait()
 repeat task.wait()
-until game.Workspace.UserData["User_"..plrid].HakiBar.Value == slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
 wait(5)
 end
 end)
