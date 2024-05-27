@@ -1101,7 +1101,7 @@ spawn(function()
 end)
 
 spawn(function()
-    while task.wait() do
+    while task.wait(10) do
         pcall(function()
             if _G.autocannon then
                 task.wait(0.1)
