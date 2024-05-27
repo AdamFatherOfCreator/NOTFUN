@@ -1075,6 +1075,10 @@ _G.autocannon = true
 else
 _G.autocannon = false
 end
+if game.Players.LocalPlayer.Character:FindFirstChild("Cannon Ball") then
+wait()
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+end
 end)
 Options.fastcannontoggle:SetValue(false)
 
