@@ -1444,6 +1444,23 @@ spawn(function()
 end)
 
 
+spawn(function() --autohaki cannon
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+while wait() do
+if _G.autohakicannon then wait()
+pcall(function()
+if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
+wait(3)
+_G.onhaki = true
+_G.offhaki = true
+end
+end)
+end
+end
+end)
+
+
 
 
 spawn(function() --autohaki cannon
