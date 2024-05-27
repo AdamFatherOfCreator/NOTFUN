@@ -1070,14 +1070,12 @@ local Cannon = Tabs.Farm:AddSection("Auto Cannon Farming")
 
 local fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Fast Cannon", Default = false })
 fastcannon:OnChanged(function()
-local toolname = "Cannon Ball"
-local Plr = game:GetService("Players").LocalPlayer
 if Options.fastcannontoggle.Value == true then
 _G.autocannon = true
 else
 _G.autocannon = false
 end
-if Plr.Backpack:FindFirstChild(toolname) and Plr.Character:FindFirstChild(toolname) then
+if game.Players.LocalPlayer.Character:FindFirstChild("Cannon Ball") then
 wait()
 game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 end
