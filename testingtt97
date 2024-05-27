@@ -1181,11 +1181,11 @@ Options.autobusohakitoggle:SetValue(false)
 
 local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso (Fast Regen)", Default = false })
 autoregenhaki:OnChanged(function()
-if Options.autoregenhakitoggle.Value == true then
+if Options.autoregenhakitoggle.Value == true then wait()
 _G.autohakicannon = true
-_G.onhaki = true
 _G.offhaki = true
-else
+_G.onhaki = true
+elseif Options.autoregenhakitoggle.Value == false then wait()
 _G.autohakicannon = false
 _G.onhaki = false
 _G.offhaki = false
@@ -1460,7 +1460,7 @@ local sss = slv/100*50
 local svs = slv/100*55
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss then
 _G.onhaki = true
-elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss then
+elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value < sss then
 _G.offhaki = true
 end
 end
