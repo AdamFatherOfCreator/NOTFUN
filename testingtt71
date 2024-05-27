@@ -1335,12 +1335,11 @@ spawn(function()
     while task.wait() do
         pcall(function()
 local plr = game.Players.LocalPlayer
-if _G.autocannonslow or _G.autocannonplr then
-if _G.autocannon == false then
+if _G.autocannon == false and
+_G.autocannonslow or _G.autocannonplr then
 for i,v in pairs(plr.Backpack:GetChildren()) do
 if v.Name == "Cannon Ball" then
 v.Parent = plr.Character
-end
 end
 end
 end
