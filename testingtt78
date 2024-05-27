@@ -1124,7 +1124,7 @@ end)
 
 
 
-local autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mob (Cannon)", Default = false })
+local autocannonmob = Tabs.Farm:AddToggle("cannonmobtoggle", {Title = "Auto Farm Mobs (Cannon)", Default = false })
 autocannonmob:OnChanged(function()
 if Options.cannonmobtoggle.Value == true then
 _G.autocannonslow = true
@@ -1428,8 +1428,6 @@ local haki = game:GetService("Workspace").UserData["User_"..plrid].Data.HakiLeve
 local currenthaki = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 local x = game.Players.LocalPlayer.UserId
 pcall(function()
-fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
-
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
@@ -1539,7 +1537,8 @@ end)
 spawn(function() -- autofarm cannon
     while wait() do
         pcall(function()
-            if _G.autocannonslow then
+            if _G.autocannonslow then wait()
+fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
 wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, " Boar")
