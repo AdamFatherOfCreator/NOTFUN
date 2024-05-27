@@ -281,7 +281,7 @@ end
 end)
 
 local Miscc2 = Tabs.Misc:AddSection("Useful Misc")
-local randomtp = Tabs.Misc:AddToggle("randomtptoggle", {Title = "Quake Makes Lag", Default = false })
+local randomtp = Tabs.Misc:AddToggle("randomtptoggle", {Title = "Random Teleport", Default = false })
 randomtp:OnChanged(function()
 if Options.randomtptoggle.Value == true then
 getgenv().bgtyhn = true
