@@ -30,7 +30,7 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
 end)  
 
 local listed = {
-"465e0aa1-7d14-4958-b156-14851e4c7bdd",-- SALUNA
+"8e44fb64-4ef0-4cb0-9f35-8c5ffbd428d0",-- SALUNA
 "76bf8d34-a05a-4803-8c43-24656f4fd7dd", -- Khôi
 "5b7fd5ab-f007-490d-bf11-7fbed380a42b", -- Hiếu Trung
 "8dd7fc91-caed-411d-ab4d-6791b995415a", -- Khoa GK
