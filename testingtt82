@@ -280,7 +280,26 @@ end)
 end
 end)
 
+local Miscc2 = Tabs.Misc:AddSection("Useful Misc")
+local randomtp = Tabs.Misc:AddToggle("randomtptoggle", {Title = "Quake Makes Lag", Default = false })
+randomtp:OnChanged(function()
+if Options.randomtptoggle.Value == true then
+getgenv().bgtyhn = true
+else
+getgenv().bgtyhn = false
+end
+end)
+Options.randomtptoggle:SetValue(false)
 
+spawn(function()
+while wait() do
+if getgenv().bgtyhn then
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new((math.random(-100000, 100000)), 10000, (math.random(-100000, 100000)))
+end)
+end
+end
+end)
 
 
 local quakerer = Tabs.Player:AddSection("Quake Kill All")
