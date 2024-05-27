@@ -1451,6 +1451,9 @@ while wait() do
 if _G.autohakicannon then wait()
 pcall(function()
 if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
+wait()
+_G.onhaki = false
+_G.offhaki = false
 wait(3)
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
