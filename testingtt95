@@ -1482,6 +1482,7 @@ wait()
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 wait()
 _G.onhaki = false
+_G.offhaki = true
 wait()
 end
 end)
@@ -1505,6 +1506,7 @@ wait()
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 wait()
 _G.offhaki = false
+_G.onhaki = true
 wait()
 end
 end)
