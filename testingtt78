@@ -1512,15 +1512,9 @@ for i = 1, 20 do wait()
     }
     
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
-    local args = {
-        [1] = "Off",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
     end
-task.wait(0.01)
-        local args = {
+wait()
+local args = {
         [1] = "Off",
         [2] = 1
     }
@@ -1541,25 +1535,6 @@ end)
 end
 end
 end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 spawn(function() -- autofarm cannon
     while wait() do
