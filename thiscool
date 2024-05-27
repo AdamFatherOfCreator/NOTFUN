@@ -1571,10 +1571,10 @@ wait()
     }
     
     workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
+wait(5)
 repeat task.wait()
 until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
-if game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv then
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv then wait()
 _G.onhaki = true
 _G.offhaki = true
 end
