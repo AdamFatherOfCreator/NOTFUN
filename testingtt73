@@ -1082,7 +1082,7 @@ spawn(function()
                 if Plr.Backpack:FindFirstChild(toolname) and not Plr.Character:FindFirstChild(toolname) and not Plr.Character:FindFirstChildOfClass("Tool") then
                     local tool = Plr.Backpack:FindFirstChild(toolname)
                     Plr.Character.Humanoid:EquipTool(tool)
-                    wait(0.6)
+                    wait(0.5)
                     game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
                 end
             end
@@ -1094,9 +1094,7 @@ spawn(function()
         pcall(function()
             if _G.autocannon and game.Players.LocalPlayer.Backpack:FindFirstChild("Cannon Ball") then
                 task.wait(1)
-                for i=1,2 do
                     game:GetService("Players").LocalPlayer.Character.Weapons:FireServer()
-                end
             end
         end)
     end
