@@ -1461,7 +1461,9 @@ local sss = slv/100*50
 local svs = slv/100*55
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss then
 _G.onhaki = true
-else
+end
+wait()
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss then
 _G.offhaki = true
 end
 end
@@ -1480,15 +1482,10 @@ while wait() do
 if _G.onhaki then wait()
 local x = game.Players.LocalPlayer.UserId
 pcall(function()
-local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*50
-local svs = slv/100*55
-if not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-_G.onhaki = false
 wait()
-end
+_G.onhaki = false
 end)
 end
 end
@@ -1502,15 +1499,10 @@ while wait() do
 if _G.offhaki then wait()
 local x = game.Players.LocalPlayer.UserId
 pcall(function()
-local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*50
-local svs = slv/100*55
-if game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 wait()
 _G.offhaki = false
-end
 end)
 end
 end
