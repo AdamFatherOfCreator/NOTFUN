@@ -3277,7 +3277,7 @@ end
         Description = "Hop to a fewer players server",
         Callback = function()
             Window:Dialog({
-                Title = "Server Hop",
+                Title = "Low-Server Hop",
                 Content = "Do you want to use?",
                 Buttons = {
                     {
