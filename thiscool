@@ -210,7 +210,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H16)",
+    Title = "SALUNA HUB (H17)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -344,6 +344,7 @@ for i = 1,quaketime do
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,vv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 end
 until _G.quakerty == false or cc.HumanoidRootPart.Position.Y > 211000 or cc.Name ~= vv.Name
+Choosequake = ""
 				end
 			end
 		end
@@ -376,7 +377,6 @@ plrlow = string.lower(plrts.Value)
 for i,e in pairs(game.Players:GetChildren()) do
 plrchoose = string.lower(e.Name)
 if string.find(plrchoose, plrlow) then
-        Choose2 = e.Name
 	SelectedKillPlayer = e.Name
 end
 end
@@ -1446,7 +1446,7 @@ end)
                         v.Character.HumanoidRootPart.Transparency = 0.9
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
                         v.Character.HumanoidRootPart.CanCollide = false
-                        v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
+                        v.Character.HumanoidRootPart.Size = Vector3.new(100, 100, 100)
                     end
                 end
             end
@@ -1764,6 +1764,7 @@ Choose2 = c.Name
 						end
 					end
 until _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
+Choose2 = ""
 				end
 			end
 		end
@@ -1801,6 +1802,7 @@ Choose3 = b.Name
 						end
 					end
 until _G.autocannonplr == false or b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name
+Choose3 = ""
 				end
 			end
 		end
@@ -1838,6 +1840,7 @@ Choose4 = h.Name
 						end
 					end
 until _G.autocannonplr == false or h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name
+Choose4 = ""
 				end
 			end
 		end
@@ -1875,6 +1878,7 @@ Choose5 = j.Name
 						end
 					end
 until _G.autocannonplr == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name
+Choose5 = ""
 				end
 			end
 		end
