@@ -3435,7 +3435,7 @@ _G.budget = Valuezx
 end)
 
 local DF11Toggle = Tabs.Affinity:AddToggle("DF1Toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
-    DF11Toggle:OnChanged(function()
+    DF11Toggle:OnChanged(function(gg)
 
 if _G.targetsword == false and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == false then
 Fluent:Notify({
@@ -3768,7 +3768,8 @@ end
 end)
 
 
-    local wwwwww2 = Tabs.Affinity:AddDropdown("MultiDropdown", {
+
+    local wwrwwww2 = Tabs.Affinity:AddDropdown("MultiDropdown", {
         Title = "Target Affinity (DF2)",
         Description = "You can choose the target affinity.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
@@ -3777,7 +3778,7 @@ end)
     })
 
 
-    wwwwww2:OnChanged(function(Valuerr2)
+    wwrwwww2:OnChanged(function(Valuerr2)
         local Valuess2 = {"None"}
 _G.targetdef2 = false
 _G.targetmelee2 = false
@@ -3802,7 +3803,8 @@ end
 			end
 end)
 
-local ret2 = Tabs.Affinity:AddDropdown("Dropdown", {
+
+local retw2 = Tabs.Affinity:AddDropdown("Dropdown", {
         Title = "Budget Type",
         Values = {"Cash", "Gems"},
         Multi = false,
@@ -3810,12 +3812,12 @@ local ret2 = Tabs.Affinity:AddDropdown("Dropdown", {
     })
 
 
-    ret2:OnChanged(function(Valuezx2)
+    retw2:OnChanged(function(Valuezx2)
 _G.budget2 = Valuezx2
 end)
 
 local DF22Toggle = Tabs.Affinity:AddToggle("DF2Toggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
-    DF22Toggle:OnChanged(function()
+    DF22Toggle:OnChanged(function(tt)
 
 if _G.targetsword2 == false and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == false then
 Fluent:Notify({
