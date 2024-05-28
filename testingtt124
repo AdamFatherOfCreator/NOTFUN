@@ -1003,7 +1003,7 @@ Tabs.Shop:AddButton({
         Description = "Buy selected drinks",
         Callback = function()
 amountdrink = tretgmm
-if _G.drinktret == "Smoothie" or _G.drinktret == "Cider" or _G.drinktret == "Juice" or _G.drinktret == "Smoothie" then
+if _G.drinktret == "Smoothie" or _G.drinktret == "Cider" or _G.drinktret == "Juice" or _G.drinktret == "Lemonade" then
 for i = 1,amountdrink do
     local args = {
         [1] = _G.drinktret
@@ -1011,7 +1011,7 @@ for i = 1,amountdrink do
     
 workspace.Merchants.DrinkMerchant.Clickable.Retum:FireServer(unpack(args))
 end
-elseif _G.drinktret == "Smoothie+" or _G.drinktret == "Cider+" or _G.drinktret == "Juice+" or _G.drinktret == "Smoothie+" then
+elseif _G.drinktret == "Smoothie+" or _G.drinktret == "Cider+" or _G.drinktret == "Juice+" or _G.drinktret == "Lemonade+" then
 for i = 1,amountdrink do
     local args = {
         [1] = _G.drinktret
