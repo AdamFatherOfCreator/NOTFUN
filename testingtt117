@@ -971,6 +971,35 @@ end
 
 local Shoo4p = Tabs.Shop:AddSection("Drinks")
 
+local drinkstype = Tabs.Shop:AddDropdown("Dropdown", {
+        Title = "Select Drinks",
+        Values = {"Defense","Melee","Sword","Sniper","Defense+","Melee+","Sword+","Sniper+"},
+        Multi = false,
+        Default = "",
+    })
+
+
+    drinkstype:OnChanged(function(typepp)
+_G.drinktret = typepp
+end)
+
+    local drinkamount = Tabs.Player:AddInput("drinkamount", {
+        Title = "Choose Amount:",
+        Default = "",
+        Placeholder = "Insert Here",
+        Numeric = true, -- Only allows numbers
+        Finished = true, -- Only calls callback when you press enter
+        Callback = function()
+        end
+    })
+
+    drinkamount:OnChanged(function()
+drinkff = tonumber(drinkamount.Value)
+for i = 1,drinkff do
+print(i)
+end
+end)
+
 
 local FruitFFt = Tabs.Fruit:AddSection("Fruit")
 local bringfruit = Tabs.Fruit:AddToggle("bringfruittoggle", {Title = "Auto Bring Fruit", Default = false })
