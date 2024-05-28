@@ -444,6 +444,79 @@ end)
 end
 end)
 
+local Shoo4p = Tabs.Shop:AddSection("Drinks")
+
+local drinkstype = Tabs.Shop:AddDropdown("Dropdown", {
+        Title = "Select Drinks",
+        Values = {"Smoothie","Cider","Juice","Lemonade","Smoothie+","Cider+","Juice+","Lemonade+"},
+        Multi = false,
+        Default = "",
+    })
+
+
+    drinkstype:OnChanged(function(typepp)
+_G.drinktret = typepp
+end)
+
+    local drinkamount = Tabs.Shop:AddInput("drinkamount", {
+        Title = "Choose Amount:",
+        Default = "",
+        Placeholder = "Insert Here",
+        Numeric = true, -- Only allows numbers
+        Finished = true, -- Only calls callback when you press enter
+        Callback = function()
+        end
+    })
+
+    drinkamount:OnChanged(function()
+drinkff = drinkamount.Value
+tretgmm = tonumber(drinkff)
+end)
+
+Tabs.Shop:AddButton({
+        Title = "Buy Drinks",
+        Description = "Buy selected drinks",
+        Callback = function()
+amountdrink = tretgmm
+if _G.drinktret == "Smoothie" or _G.drinktret == "Cider" or _G.drinktret == "Juice" or _G.drinktret == "Lemonade" then
+for i = 1,amountdrink do
+    local args = {
+        [1] = _G.drinktret
+    }
+    
+workspace.Merchants.DrinkMerchant.Clickable.Retum:FireServer(unpack(args))
+end
+elseif _G.drinktret == "Smoothie+" or _G.drinktret == "Cider+" or _G.drinktret == "Juice+" or _G.drinktret == "Lemonade+" then
+for i = 1,amountdrink do
+    local args = {
+        [1] = _G.drinktret
+    }
+    
+workspace.Merchants.BetterDrinkMerchant.Clickable.Retum:FireServer(unpack(args))
+end
+end
+end
+    })
+
+Tabs.Shop:AddButton({
+        Title = "Instant Drink",
+        Description = "Fast Drink",
+        Callback = function()
+
+                    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+                                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v:Activate()
+                                        end
+                    end
+end
+    })
+
+
+
+
+
+
 local Shoo1p = Tabs.Shop:AddSection("Melee Weapon")
     Tabs.Shop:AddButton({
         Title = "Seastone Cestus (Fake Equipment)",
@@ -967,75 +1040,6 @@ end
     })
 
 
-
-
-local Shoo4p = Tabs.Shop:AddSection("Drinks")
-
-local drinkstype = Tabs.Shop:AddDropdown("Dropdown", {
-        Title = "Select Drinks",
-        Values = {"Smoothie","Cider","Juice","Lemonade","Smoothie+","Cider+","Juice+","Lemonade+"},
-        Multi = false,
-        Default = "",
-    })
-
-
-    drinkstype:OnChanged(function(typepp)
-_G.drinktret = typepp
-end)
-
-    local drinkamount = Tabs.Shop:AddInput("drinkamount", {
-        Title = "Choose Amount:",
-        Default = "",
-        Placeholder = "Insert Here",
-        Numeric = true, -- Only allows numbers
-        Finished = true, -- Only calls callback when you press enter
-        Callback = function()
-        end
-    })
-
-    drinkamount:OnChanged(function()
-drinkff = drinkamount.Value
-tretgmm = tonumber(drinkff)
-end)
-
-Tabs.Shop:AddButton({
-        Title = "Buy Drinks",
-        Description = "Buy selected drinks",
-        Callback = function()
-amountdrink = tretgmm
-if _G.drinktret == "Smoothie" or _G.drinktret == "Cider" or _G.drinktret == "Juice" or _G.drinktret == "Lemonade" then
-for i = 1,amountdrink do
-    local args = {
-        [1] = _G.drinktret
-    }
-    
-workspace.Merchants.DrinkMerchant.Clickable.Retum:FireServer(unpack(args))
-end
-elseif _G.drinktret == "Smoothie+" or _G.drinktret == "Cider+" or _G.drinktret == "Juice+" or _G.drinktret == "Lemonade+" then
-for i = 1,amountdrink do
-    local args = {
-        [1] = _G.drinktret
-    }
-    
-workspace.Merchants.BetterDrinkMerchant.Clickable.Retum:FireServer(unpack(args))
-end
-end
-end
-    })
-
-Tabs.Shop:AddButton({
-        Title = "Instant Drink",
-        Description = "Fast Drink",
-        Callback = function()
-
-                    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-                    if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
-                                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-v:Activate()
-                                        end
-                    end
-end
-    })
 
 
 
