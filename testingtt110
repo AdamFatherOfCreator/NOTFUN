@@ -2239,7 +2239,6 @@ if v:IsA("ClickDetector") then
 fireclickdetector(v)
 end
 end
-workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 end
 
 spawn(function()
@@ -2269,6 +2268,7 @@ if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFir
 game.workspace[""..user].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
 amongus()
+ workspace:WaitForChild("Merchants"):WaitForChild("FishMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 wait(15)
 end)
 end
