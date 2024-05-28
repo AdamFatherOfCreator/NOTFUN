@@ -1023,6 +1023,31 @@ end
 end
     })
 
+Tabs.Shop:AddButton({
+        Title = "Instant Drink",
+        Description = "Fast Drink",
+        Callback = function()
+
+                    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+                                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v:Activate()
+                                        end
+                    end
+end
+    })
+
+
+
+
+
+
+
+
+
+
+
+
 local FruitFFt = Tabs.Fruit:AddSection("Fruit")
 local bringfruit = Tabs.Fruit:AddToggle("bringfruittoggle", {Title = "Auto Bring Fruit", Default = false })
 bringfruit:OnChanged(function()
