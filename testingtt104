@@ -2191,7 +2191,7 @@ end)
 Options.statsdrinktoggle:SetValue(false)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().autodrinkmixer then
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
@@ -2199,6 +2199,8 @@ if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk")
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 v:Activate()
 end
+if string.find(v.Name, "Crab") then
+v:Destroy()
 end
 end)
 end
@@ -2213,7 +2215,7 @@ local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 while wait() do
 if getgenv().farmstats then
-pcall(function()
+pcall(function(0.3)
 repeat task.wait() until game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true
 workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge13")
 workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge14")
@@ -2247,7 +2249,7 @@ if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFir
 game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 amongus()
 end
-wait()
+wait(0.1)
 end
 end
 for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
@@ -2256,7 +2258,7 @@ if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFir
 game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 amongus()
 end
-wait()
+wait(0.1)
 end
 end
 if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
