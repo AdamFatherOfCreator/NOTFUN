@@ -210,7 +210,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H15)",
+    Title = "SALUNA HUB (H16)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -344,6 +344,7 @@ for i = 1,quaketime do
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,vv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 end
 until _G.quakerty == false or cc.HumanoidRootPart.Position.Y > 211000 or cc.Name ~= vv.Name
+Choosequake = ""
 				end
 			end
 		end
@@ -1677,21 +1678,6 @@ spawn(function() -- autofarm cannon
     while wait() do
         pcall(function()
             if _G.autocannonslow then wait()
-                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                        if v.Humanoid.Health == 0 then
-                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
-                            v:Destroy()
-                        end
-                end
-            end
-        end)
-    end
-end)
-
-spawn(function() -- autofarm cannon
-    while wait() do
-        pcall(function()
-            if _G.autocannonslow then wait()
 fireclickdetector(workspace.Island11.CentralBuilding.Doors.Button.Button.ClickDetector)
 wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
@@ -1701,9 +1687,13 @@ wait()
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
                         v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
                      end
                 end
-wait(0.1)
+wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, "Crab")
                     and v:FindFirstChild("HumanoidRootPart") then
@@ -1713,130 +1703,40 @@ wait(0.1)
                         v.HumanoidRootPart.Transparency = 0.9
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
                         v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
                      end
                 end
-wait(0.1)
+wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if string.find(v.Name, "Angry")
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-                        v.HumanoidRootPart.Transparency = 0.9
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
-                     end
-                end
-wait(0.1)
-                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if string.find(v.Name, "Bandit")
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-                        v.HumanoidRootPart.Transparency = 0.9
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
-                     end
-                end
-wait(0.1)
-                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if string.find(v.Name, "Thief")
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-                        v.HumanoidRootPart.Transparency = 0.9
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
-                     end
-                end
-wait(0.1)
-                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if string.find(v.Name, "Fred")
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-                        v.HumanoidRootPart.Transparency = 0.9
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
-                     end
-                end
-wait(0.1)
-                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if string.find(v.Name, "Thug")
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-                        v.HumanoidRootPart.Transparency = 0.9
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
-                     end
-                end
-wait(0.1)
-                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if string.find(v.Name, "Thug")
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-                        v.HumanoidRootPart.Transparency = 0.9
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
-                     end
-                end
-wait(0.1)
-                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if string.find(v.Name, "Cave")
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-                        v.HumanoidRootPart.Transparency = 0.9
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
-                     end
-                end
-wait(0.1)
-                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if string.find(v.Name, "Gunslinger")
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-                        v.HumanoidRootPart.Transparency = 0.9
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
-                     end
-                end
-wait(0.1)
-                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if string.find(v.Name, "Vokun")
-                    and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.CanCollide = false
-                    	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-                        v.HumanoidRootPart.Transparency = 0.9
-                        v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
-                     end
-                end
-wait(0.1)
-                for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if string.find(v.Name, "Bruno")
+                    if string.find(v.Name, "Angry ") 
+                    or string.find(v.Name, "Bandit") 
+                    or string.find(v.Name, "Thief")
+                    or string.find(v.Name, "Bruno") 
                     or string.find(v.Name, "Bucky") 
+                    or string.find(v.Name, " Vokun") 
+                    or string.find(v.Name, "Fred")  
+                    or string.find(v.Name, "Cave ") 
+                    or string.find(v.Name, "Thug") 
+                    or string.find(v.Name, "Gunslinger")
                     or string.find(v.Name, "Gunner") 
                     or string.find(v.Name, "Buster") 
                     and v:FindFirstChild("HumanoidRootPart") then
                         v.HumanoidRootPart.CanCollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
-                        --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-                        v.HumanoidRootPart.Transparency = 0.9
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
                         v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
-                     end
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                        if v.Humanoid.Health == 0 then
+                            v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
+                            v:Destroy()
+                        end
+                    end
                 end
             end
         end)
@@ -1865,6 +1765,7 @@ Choose2 = c.Name
 						end
 					end
 until _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
+Choose2 = ""
 				end
 			end
 		end
@@ -1902,6 +1803,7 @@ Choose3 = b.Name
 						end
 					end
 until _G.autocannonplr == false or b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name
+Choose3 = ""
 				end
 			end
 		end
@@ -1939,6 +1841,7 @@ Choose4 = h.Name
 						end
 					end
 until _G.autocannonplr == false or h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name
+Choose4 = ""
 				end
 			end
 		end
@@ -1976,6 +1879,7 @@ Choose5 = j.Name
 						end
 					end
 until _G.autocannonplr == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name
+Choose5 = ""
 				end
 			end
 		end
