@@ -505,7 +505,7 @@ for i = 1,amountdrink do
 workspace.Merchants.BetterDrinkMerchant.Clickable.Retum:FireServer(unpack(args))
 end
 end
-wait()
+wait(0.1)
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 if game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_11"].Claim.AutoButtonColor == true then
