@@ -1968,7 +1968,7 @@ local MobsTP = Tabs.Teleport:AddDropdown("Dropdown", {
         Title = "NPC Teleport",
         Values = {"Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flair Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
         Multi = false,
-        Default = 2,
+        Default = "",
     })
 
 
@@ -3426,7 +3426,7 @@ local ret = Tabs.Affinity:AddDropdown("Dropdown", {
         Title = "Budget Type",
         Values = {"Cash", "Gems"},
         Multi = false,
-        Default = 1,
+        Default = "",
     })
 
 
@@ -3806,7 +3806,7 @@ local ret2 = Tabs.Affinity:AddDropdown("Dropdown", {
         Title = "Budget Type",
         Values = {"Cash", "Gems"},
         Multi = false,
-        Default = 1,
+        Default = "",
     })
 
 
