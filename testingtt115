@@ -970,8 +970,6 @@ end
 
 
 local Shoo4p = Tabs.Shop:AddSection("Drinks")
-local c24 = Tabs.Shop:AddSection("                                                -----")
-
 
 
 local FruitFFt = Tabs.Fruit:AddSection("Fruit")
@@ -3441,7 +3439,7 @@ if _G.targetsword == false and _G.targetdef == false and _G.targetmelee == false
 Fluent:Notify({
     Title = "AUTO-ROLL AFFINITY (DF1) NOTIFY",
     Content = "Choose target(s) before spin",
-    Duration = 8
+    Duration = 3
 })
 end
 
@@ -3823,7 +3821,7 @@ if _G.targetsword2 == false and _G.targetdef2 == false and _G.targetmelee2 == fa
 Fluent:Notify({
     Title = "AUTO-ROLL AFFINITY (DF2) NOTIFY",
     Content = "Choose target(s) before spin",
-    Duration = 8
+    Duration = 3
 })
 end
 
@@ -4166,6 +4164,8 @@ local c21 = Tabs.Settings:AddSection("                                          
 local c22 = Tabs.Settings:AddSection("                                                -----")
 local c23 = Tabs.Haki:AddSection("                                                -----")
 local c24 = Tabs.Haki:AddSection("                                                -----")
+local c25 = Tabs.Shop:AddSection("                                                -----")
+local c26 = Tabs.Shop:AddSection("                                                -----")
 
 Window:SelectTab(1)
 
