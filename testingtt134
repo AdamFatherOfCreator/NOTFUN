@@ -1446,7 +1446,7 @@ end)
                     if v.Name ~= game.Players.LocalPlayer.Name then
                         v.Character.HumanoidRootPart.Transparency = 0.9
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-                        v.Character.HumanoidRootPart.Cancollide = true
+                        v.Character.HumanoidRootPart.Cancollide = false
                         v.Character.HumanoidRootPart.Size = Vector3.new(100, 100, 100)
                     end
                 end
