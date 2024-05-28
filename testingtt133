@@ -1446,8 +1446,8 @@ end)
                     if v.Name ~= game.Players.LocalPlayer.Name then
                         v.Character.HumanoidRootPart.Transparency = 0.9
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-                        v.Character.HumanoidRootPart.CanCollide = true
-                        v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
+                        v.Character.HumanoidRootPart.Cancollide = true
+                        v.Character.HumanoidRootPart.Size = Vector3.new(100, 100, 100)
                     end
                 end
             end
@@ -1472,7 +1472,7 @@ spawn(function()
                 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cannon Ball").RemoteEvent:FireServer(unpack(args))
                 wait()
                 if game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("CannonBall") then
-                    game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("CannonBall").CanCollide = true
+                    game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:FindFirstChild("CannonBall").Cancollide = false
                 end
             end
         end)
@@ -1510,7 +1510,7 @@ spawn(function()
                     for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                         if v.Name == "CannonBall" then
                             v.CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
-                            v.cancollide = true
+                            v.Cancollide = false
                         end
                     end
                 until _G.autocannonslow == false or game.Players.LocalPlayer.Character.Humanoid.Health == 0
@@ -1683,7 +1683,7 @@ wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, " Boar")
                     and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.cancollide = true
+                        v.HumanoidRootPart.Cancollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
                         v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
@@ -1697,7 +1697,7 @@ wait()
                 for _,v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if string.find(v.Name, "Crab")
                     and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.cancollide = true
+                        v.HumanoidRootPart.Cancollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
                         v.HumanoidRootPart.Transparency = 0.9
@@ -1724,7 +1724,7 @@ wait()
                     or string.find(v.Name, "Gunner") 
                     or string.find(v.Name, "Buster") 
                     and v:FindFirstChild("HumanoidRootPart") then
-                        v.HumanoidRootPart.cancollide = true
+                        v.HumanoidRootPart.Cancollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
                         v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
@@ -1761,7 +1761,7 @@ Choose2 = c.Name
 					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if q.Name == "CannonBall" then
                           			q.CFrame = v.HumanoidRootPart.CFrame
-                           			q.cancollide = true
+                           			q.Cancollide = false
 						end
 					end
 until _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
@@ -1799,7 +1799,7 @@ Choose3 = b.Name
 					for i, e in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if e.Name == "CannonBall" then
                           			e.CFrame = d.HumanoidRootPart.CFrame
-                           			e.cancollide = true
+                           			e.Cancollide = false
 						end
 					end
 until _G.autocannonplr == false or b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name
@@ -1837,7 +1837,7 @@ Choose4 = h.Name
 					for i, w in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if w.Name == "CannonBall" then
                           			w.CFrame = f.HumanoidRootPart.CFrame
-                           			w.cancollide = true
+                           			w.Cancollide = false
 						end
 					end
 until _G.autocannonplr == false or h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name
@@ -1875,7 +1875,7 @@ Choose5 = j.Name
 					for i, t in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if t.Name == "CannonBall" then
                           			t.CFrame = g.HumanoidRootPart.CFrame
-                           			t.cancollide = true
+                           			t.Cancollide = false
 						end
 					end
 until _G.autocannonplr == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name
