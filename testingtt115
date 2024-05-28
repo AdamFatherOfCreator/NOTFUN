@@ -3435,13 +3435,6 @@ end)
 local DF11Toggle = Tabs.Affinity:AddToggle("DF1Toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
     DF11Toggle:OnChanged(function(gg)
 
-if _G.targetsword == false and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == false then
-Fluent:Notify({
-    Title = "AUTO-ROLL AFFINITY (DF1) NOTIFY",
-    Content = "Choose target(s) before spin",
-    Duration = 3
-})
-end
 
 while Options.DF1Toggle.Value do wait()
 pcall(function()
@@ -3816,14 +3809,6 @@ end)
 
 local DF22Toggle = Tabs.Affinity:AddToggle("DF2Toggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
     DF22Toggle:OnChanged(function(tt)
-
-if _G.targetsword2 == false and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == false then
-Fluent:Notify({
-    Title = "AUTO-ROLL AFFINITY (DF2) NOTIFY",
-    Content = "Choose target(s) before spin",
-    Duration = 3
-})
-end
 
 while Options.DF2Toggle.Value do wait()
 pcall(function()
