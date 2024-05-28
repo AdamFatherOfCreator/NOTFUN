@@ -995,7 +995,8 @@ end)
 
     drinkamount:OnChanged(function()
 drinkff = drinkamount.Value
-print(type(drinkff))
+tretgmm = tonumber(drinkff)
+print(type(tretgmm))
 end)
 
 
