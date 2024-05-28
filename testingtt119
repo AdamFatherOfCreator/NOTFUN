@@ -995,7 +995,7 @@ end)
 
     drinkamount:OnChanged(function()
 drinkff = drinkamount.Value
-print(type.drinkff)
+print(type(drinkff))
 end
 end)
 
