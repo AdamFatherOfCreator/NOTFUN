@@ -1894,6 +1894,47 @@ end)
 end
 end)
 
+spawn(function()
+while wait() do
+pcall(function()
+if _G.autocannonplr then
+wait()
+for i,gg in pairs(game.Players:GetChildren()) do
+	if gg.Name ~= game.Players.LocalPlayer.Name and gg.Name ~= Choose2 and gg.Name ~= Choose3 and gg.Name ~= Choose4 and gg.Name ~= Choose5 then
+		for i,jj in pairs(game.Workspace:GetChildren()) do
+			if jj:IsA("Model") and jj.Name == gg.Name and jj.HumanoidRootPart.Position.Y < 211000 and jj.Humanoid.Health > 0 then
+Choose6 = jj.Name
+	pcall(function()
+		if _G.autocannonplr == true and jj.HumanoidRootPart.Position.Y < 211000 and jj.Humanoid.Health > 0 then
+    			for i,gg in pairs(game:GetService("Workspace"):GetChildren()) do
+      				if gg.Name == Choose6 then
+                repeat task.wait(0.18)
+					for i, tt in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
+                      				if tt.Name == "CannonBall" then
+                          			tt.CFrame = gg.HumanoidRootPart.CFrame
+                           			tt.CanCollide = false
+						end
+					end
+until _G.autocannonplr == false or jj.HumanoidRootPart.Position.Y > 211000 or jj.Name ~= gg.Name or jj.Humanoid.Health == 0
+Choose6 = ""
+				end
+			end
+		end
+	end)
+
+			end
+		end
+	end
+end
+
+end
+end)
+end
+end)
+
+
+
+
 local Autorj = Tabs.Automatic:AddSection("General Function")
 local AutorjToggle = Tabs.Automatic:AddToggle("Autorj1Toggle", {Title = "Auto Hop Server If Disconnect", Default = false })
     AutorjToggle:OnChanged(function()
