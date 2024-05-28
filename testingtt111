@@ -3383,12 +3383,7 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Sliderfirstfruit", {
         Default = {""},
     })
 
-    wrrrrr:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
-    })
+
 
     wrrrrr:OnChanged(function(Valuer)
         local Values = {"None"}
@@ -3424,13 +3419,7 @@ end)
         Default = {""},
     })
 
-    wwwwww:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
-    })
-
+ 
     wwwwww:OnChanged(function(Valuerr)
         local Valuess = {"None"}
 _G.targetdef = false
@@ -3463,7 +3452,6 @@ local ret = Tabs.Affinity:AddDropdown("Dropdown", {
         Default = 1,
     })
 
-    ret:SetValue("Cash")
 
     ret:OnChanged(function(Valuezx)
 _G.budget = Valuezx
@@ -3777,12 +3765,6 @@ local Lucysecond = Tabs.Affinity:AddSlider("Slidersecondfruit", {
         Default = {""},
     })
 
-    wrrrrr2:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
-    })
 
     wrrrrr2:OnChanged(function(Valuer2)
         local Values2 = {"None"}
@@ -3818,12 +3800,6 @@ end)
         Default = {""},
     })
 
-    wwwwww2:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
-    })
 
     wwwwww2:OnChanged(function(Valuerr2)
         local Valuess2 = {"None"}
@@ -3857,7 +3833,6 @@ local ret2 = Tabs.Affinity:AddDropdown("Dropdown", {
         Default = 1,
     })
 
-    ret2:SetValue("Cash")
 
     ret2:OnChanged(function(Valuezx2)
 _G.budget2 = Valuezx2
