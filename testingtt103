@@ -209,7 +209,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H14)",
+    Title = "SALUNA HUB (H15)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -3277,7 +3277,7 @@ end
         Description = "Hop to a fewer players server",
         Callback = function()
             Window:Dialog({
-                Title = "Server Hop",
+                Title = "Low-Server Hop",
                 Content = "Do you want to use?",
                 Buttons = {
                     {
