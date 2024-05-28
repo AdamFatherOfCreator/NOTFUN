@@ -973,7 +973,7 @@ local Shoo4p = Tabs.Shop:AddSection("Drinks")
 
 local drinkstype = Tabs.Shop:AddDropdown("Dropdown", {
         Title = "Select Drinks",
-        Values = {"Smoothie","Cider","Juice","Smoothie","Smoothie+","Cider+","Juice+","Smoothie+"},
+        Values = {"Smoothie","Cider","Juice","Lemonade","Smoothie+","Cider+","Juice+","Lemonade+"},
         Multi = false,
         Default = "",
     })
