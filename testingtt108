@@ -2199,8 +2199,11 @@ if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk")
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 v:Activate()
 end
-elseif v:IsA("Tool") and string.find(v.Name, "Crab") then
-v:Destroy()
+end
+for i,c in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(c.Name, "Crab") then
+c:Destroy()
+end
 end
 end)
 end
