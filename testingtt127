@@ -394,6 +394,16 @@ end
 end)
 
 Tabs.Player:AddButton({
+        Title = "Teleport To Player",
+        Description = "Teleport To Chosen Player",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame
+end
+    })
+
+
+
+Tabs.Player:AddButton({
         Title = "Fix Cam",
         Description = "Reset Camera (If Error)",
         Callback = function()
@@ -494,6 +504,12 @@ for i = 1,amountdrink do
     
 workspace.Merchants.BetterDrinkMerchant.Clickable.Retum:FireServer(unpack(args))
 end
+end
+wait()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+if game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_11"].Claim.AutoButtonColor == true then
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge12")
 end
 end
     })
