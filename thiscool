@@ -210,7 +210,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H15)",
+    Title = "SALUNA HUB (H16)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -247,7 +247,6 @@ else
 _G.quakelagmisc = false
 end
 end)
-Options.miscquaketoggle:SetValue(false)
 
 spawn(function()
 while wait() do
@@ -290,7 +289,6 @@ else
 getgenv().bgtyhn = false
 end
 end)
-Options.randomtptoggle:SetValue(false)
 
 spawn(function()
 while wait() do
@@ -324,7 +322,6 @@ else
 _G.quakerty = false
 end
 end)
-Options.quakealltoggle:SetValue(false)
 
 spawn(function()
 while wait() do
@@ -395,7 +392,16 @@ else
 getgenv().viewplrr = false
 end
 end)
-Options.viewplrtoggle:SetValue(false)
+
+Tabs.Player:AddButton({
+        Title = "Teleport To Player",
+        Description = "Teleport To Chosen Player",
+        Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame
+end
+    })
+
+
 
 Tabs.Player:AddButton({
         Title = "Fix Cam",
@@ -447,6 +453,79 @@ end
 end)
 end
 end)
+
+local Shoo4p = Tabs.Shop:AddSection("Drinks")
+
+local drinkstype = Tabs.Shop:AddDropdown("Dropdown", {
+        Title = "Select Drinks",
+        Values = {"Smoothie","Cider","Juice","Lemonade","Smoothie+","Cider+","Juice+","Lemonade+"},
+        Multi = false,
+        Default = "",
+    })
+
+
+    drinkstype:OnChanged(function(typepp)
+_G.drinktret = typepp
+end)
+
+    local drinkamount = Tabs.Shop:AddInput("drinkamount", {
+        Title = "Choose Amount:",
+        Default = "",
+        Placeholder = "Insert Here",
+        Numeric = true, -- Only allows numbers
+        Finished = true, -- Only calls callback when you press enter
+        Callback = function()
+        end
+    })
+
+    drinkamount:OnChanged(function()
+drinkff = drinkamount.Value
+tretgmm = tonumber(drinkff)
+end)
+
+Tabs.Shop:AddButton({
+        Title = "Buy Drinks",
+        Description = "Buy selected drinks",
+        Callback = function()
+amountdrink = tretgmm
+if _G.drinktret == "Smoothie" or _G.drinktret == "Cider" or _G.drinktret == "Juice" or _G.drinktret == "Lemonade" then
+for i = 1,amountdrink do
+    local args = {
+        [1] = _G.drinktret
+    }
+    
+workspace.Merchants.DrinkMerchant.Clickable.Retum:FireServer(unpack(args))
+end
+elseif _G.drinktret == "Smoothie+" or _G.drinktret == "Cider+" or _G.drinktret == "Juice+" or _G.drinktret == "Lemonade+" then
+for i = 1,amountdrink do
+    local args = {
+        [1] = _G.drinktret
+    }
+    
+workspace.Merchants.BetterDrinkMerchant.Clickable.Retum:FireServer(unpack(args))
+end
+end
+end
+    })
+
+Tabs.Shop:AddButton({
+        Title = "Instant Drink",
+        Description = "Fast Drink",
+        Callback = function()
+
+                    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
+                                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v:Activate()
+                                        end
+                    end
+end
+    })
+
+
+
+
+
 
 local Shoo1p = Tabs.Shop:AddSection("Melee Weapon")
     Tabs.Shop:AddButton({
@@ -973,8 +1052,13 @@ end
 
 
 
-local Shoo4p = Tabs.Shop:AddSection("Drinks")
-local c24 = Tabs.Shop:AddSection("                                                -----")
+
+
+
+
+
+
+
 
 
 
@@ -987,7 +1071,6 @@ else
 getgenv().pickkk = false
 end
 end)
-Options.bringfruittoggle:SetValue(false)
 
 spawn(function()
     while task.wait() do
@@ -1016,7 +1099,6 @@ else
 getgenv().claim = false
 end
 end)
-Options.getcompasstoggle:SetValue(false)
 
 spawn(function()
     while task.wait() do
@@ -1039,7 +1121,6 @@ else
 getgenv().find = false
 end
 end)
-Options.findcompasstoggle:SetValue(false)
 
 spawn(function()
     while task.wait() do
@@ -1081,7 +1162,6 @@ wait()
 game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 end
 end)
-Options.fastcannontoggle:SetValue(false)
 
 spawn(function()
     while task.wait(0) do
@@ -1156,7 +1236,6 @@ else
 _G.autocannonslow = false
 end
 end)
-Options.cannonmobtoggle:SetValue(false)
 
 local autocannonplr = Tabs.Farm:AddToggle("cannonplrtoggle", {Title = "Auto Kill All Player (Cannon)", Default = false })
 autocannonplr:OnChanged(function()
@@ -1166,7 +1245,6 @@ else
 _G.autocannonplr = false
 end
 end)
-Options.cannonplrtoggle:SetValue(false)
 
 local Cannon = Tabs.Farm:AddSection("Auto Buso (Only 1 Allowed)")
 
@@ -1178,7 +1256,6 @@ else
 _G.autohakibuso = false
 end
 end)
-Options.autobusohakitoggle:SetValue(false)
 
 local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso (Fast Regen)", Default = false })
 autoregenhaki:OnChanged(function()
@@ -1192,7 +1269,6 @@ _G.onhaki = false
 _G.offhaki = false
 end
 end)
-Options.autoregenhakitoggle:SetValue(false)
 
 
 local Fishing = Tabs.Farm:AddSection("Auto Fishing")
@@ -1205,7 +1281,6 @@ else
 getgenv().fishing = false
 end
 end)
-Options.fishytoggle:SetValue(false)
 
 
 spawn(function()
@@ -1297,7 +1372,6 @@ else
 getgenv().tret = false
 end
 end)
-Options.packagetoggle:SetValue(false)
 
 spawn(function()
 while wait() do
@@ -1830,7 +1904,6 @@ else
 _G.autorj = false
 end
 end)
-Options.Autorj1Toggle:SetValue(false)
 
 spawn(function()
 while true do wait()
@@ -1898,7 +1971,6 @@ else
 _G.autospawn = false
 end
 end)
-Options.Autospawn1Toggle:SetValue(false)
 
         spawn(function()
             while wait() do
@@ -1929,7 +2001,6 @@ else
 _G.autogetexp = false
 end
 end)
-Options.Autogetexp1Toggle:SetValue(false)
 
         spawn(function()
             while wait() do
@@ -1983,12 +2054,11 @@ local Tmrt = Tabs.Teleport:AddSection("Teleport")
 
 local MobsTP = Tabs.Teleport:AddDropdown("Dropdown", {
         Title = "NPC Teleport",
-        Values = {"nil", "Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flair Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
+        Values = {"Bartender (Sam)", "Bartender (Bar)", "Sam", "Friend", "Cannon Seller", "Krizma Seller", "Flair Seller", "Sword Seller", "Gun Seller", "Merlin", "Emotes Teacher", "Lucy (Affinity)", "Chef", "Expertise Giver"},
         Multi = false,
-        Default = 2,
+        Default = "",
     })
 
-    MobsTP:SetValue("nil")
 
     MobsTP:OnChanged(function(Mobbb)
 if Mobbb == "Bartender (Sam)" then
@@ -2131,7 +2201,6 @@ end)
 wait()
 end
 end)
-Options.MyToggle:SetValue(false)
 
 local CestusSpeed = Tabs.Main:AddSlider("Slidercestus", {
     Title = "Cestus Speed",
@@ -2167,7 +2236,6 @@ end)
 wait()
 end
 end)
-Options.CestussToggle:SetValue(false)
 
 local StatsFF = Tabs.Main:AddSection("Stats Farming")
 local statsfarm = Tabs.Main:AddToggle("statstoggle", {Title = "Auto Farm Mixer", Default = false })
@@ -2178,7 +2246,6 @@ else
 getgenv().farmstats = false
 end
 end)
-Options.statstoggle:SetValue(false)
 
 
 local statsdrink = Tabs.Main:AddToggle("statsdrinktoggle", {Title = "Auto Drink Mixer", Default = false })
@@ -2189,16 +2256,20 @@ else
 getgenv().autodrinkmixer = false
 end
 end)
-Options.statsdrinktoggle:SetValue(false)
 
 spawn(function()
-while wait() do
+while wait(0.3) do
 if getgenv().autodrinkmixer then
 pcall(function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk") or string.find(v.Name, "Cider") or string.find(v.Name, "Lemonade") or string.find(v.Name, "Smoothie") or string.find(v.Name, "Golden") then
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 v:Activate()
+end
+end
+for i,c in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if string.find(c.Name, "Crab") then
+c:Destroy()
 end
 end
 end)
@@ -2212,7 +2283,7 @@ end)
 spawn(function()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
-while wait() do
+while wait(0.3) do
 if getgenv().farmstats then
 pcall(function()
 repeat task.wait() until game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_13"].Claim.AutoButtonColor == true
@@ -2248,7 +2319,7 @@ if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFir
 game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 amongus()
 end
-wait()
+wait(0.1)
 end
 end
 for i,v in pairs(game:GetService("Workspace").Barrels:GetDescendants()) do
@@ -2257,10 +2328,10 @@ if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFir
 game.workspace[""..user].HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 5, 0)
 amongus()
 end
-wait()
+wait(0.1)
 end
 end
-if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+if getgenv().farmstats == true and not game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then wait(0.1)
 game.workspace[""..user].HumanoidRootPart.CFrame = game:GetService("Workspace")["SafeZoneOuterSpacePart"].CFrame * CFrame.new(0, 5, 0)
 end
 amongus()
@@ -2281,7 +2352,6 @@ wait(2)
 end)
 end
 end)
-Options.hakiget:SetValue(false)
 
 
 local drainhaki = Tabs.Haki:AddToggle("hakidrain", {Title = "Drain Haki", Default = false })
@@ -2911,7 +2981,6 @@ _G.concu = false
 end
 end
 end)
-Options.hakifarm:SetValue(false)
 
 local HakiSection3 = Tabs.Haki:AddSection("Advanced Haki Farming")
 
@@ -3379,12 +3448,7 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Sliderfirstfruit", {
         Default = {""},
     })
 
-    wrrrrr:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
-    })
+
 
     wrrrrr:OnChanged(function(Valuer)
         local Values = {"None"}
@@ -3420,13 +3484,7 @@ end)
         Default = {""},
     })
 
-    wwwwww:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
-    })
-
+ 
     wwwwww:OnChanged(function(Valuerr)
         local Valuess = {"None"}
 _G.targetdef = false
@@ -3456,25 +3514,17 @@ local ret = Tabs.Affinity:AddDropdown("Dropdown", {
         Title = "Budget Type",
         Values = {"Cash", "Gems"},
         Multi = false,
-        Default = 1,
+        Default = "",
     })
 
-    ret:SetValue("Cash")
 
     ret:OnChanged(function(Valuezx)
 _G.budget = Valuezx
 end)
 
 local DF11Toggle = Tabs.Affinity:AddToggle("DF1Toggle", {Title = "Auto Roll Affinity (DF1)", Default = false })
-    DF11Toggle:OnChanged(function()
+    DF11Toggle:OnChanged(function(gg)
 
-if _G.targetsword == false and _G.targetdef == false and _G.targetmelee == false and _G.targetsnip == false then
-Fluent:Notify({
-    Title = "AUTO-ROLL AFFINITY (DF1) NOTIFY",
-    Content = "Choose target(s) before spin",
-    Duration = 8
-})
-end
 
 while Options.DF1Toggle.Value do wait()
 pcall(function()
@@ -3568,7 +3618,6 @@ end
 end)
 end
 end)
-Options.DF1Toggle:SetValue(false)
 
             spawn(function()
             while wait() do
@@ -3773,12 +3822,6 @@ local Lucysecond = Tabs.Affinity:AddSlider("Slidersecondfruit", {
         Default = {""},
     })
 
-    wrrrrr2:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
-    })
 
     wrrrrr2:OnChanged(function(Valuer2)
         local Values2 = {"None"}
@@ -3806,7 +3849,8 @@ end
 end)
 
 
-    local wwwwww2 = Tabs.Affinity:AddDropdown("MultiDropdown", {
+
+    local wwrwwww2 = Tabs.Affinity:AddDropdown("MultiDropdown", {
         Title = "Target Affinity (DF2)",
         Description = "You can choose the target affinity.",
         Values = {"Defense", "Melee", "Sniper", "Sword"},
@@ -3814,14 +3858,8 @@ end)
         Default = {""},
     })
 
-    wwwwww2:SetValue({
-        Defense = false,
-        Melee = false,
-        Sniper = false,
-	Sword = false
-    })
 
-    wwwwww2:OnChanged(function(Valuerr2)
+    wwrwwww2:OnChanged(function(Valuerr2)
         local Valuess2 = {"None"}
 _G.targetdef2 = false
 _G.targetmelee2 = false
@@ -3846,29 +3884,21 @@ end
 			end
 end)
 
-local ret2 = Tabs.Affinity:AddDropdown("Dropdown", {
+
+local retw2 = Tabs.Affinity:AddDropdown("Dropdown", {
         Title = "Budget Type",
         Values = {"Cash", "Gems"},
         Multi = false,
-        Default = 1,
+        Default = "",
     })
 
-    ret2:SetValue("Cash")
 
-    ret2:OnChanged(function(Valuezx2)
+    retw2:OnChanged(function(Valuezx2)
 _G.budget2 = Valuezx2
 end)
 
 local DF22Toggle = Tabs.Affinity:AddToggle("DF2Toggle", {Title = "Auto Roll Affinity (DF2)", Default = false })
-    DF22Toggle:OnChanged(function()
-
-if _G.targetsword2 == false and _G.targetdef2 == false and _G.targetmelee2 == false and _G.targetsnip2 == false then
-Fluent:Notify({
-    Title = "AUTO-ROLL AFFINITY (DF2) NOTIFY",
-    Content = "Choose target(s) before spin",
-    Duration = 8
-})
-end
+    DF22Toggle:OnChanged(function(tt)
 
 while Options.DF2Toggle.Value do wait()
 pcall(function()
@@ -3962,7 +3992,6 @@ end
 end)
 end
 end)
-Options.DF2Toggle:SetValue(false)
 
             spawn(function()
             while wait() do
@@ -4210,6 +4239,8 @@ local c21 = Tabs.Settings:AddSection("                                          
 local c22 = Tabs.Settings:AddSection("                                                -----")
 local c23 = Tabs.Haki:AddSection("                                                -----")
 local c24 = Tabs.Haki:AddSection("                                                -----")
+local c25 = Tabs.Shop:AddSection("                                                -----")
+local c26 = Tabs.Shop:AddSection("                                                -----")
 
 Window:SelectTab(1)
 
