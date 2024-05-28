@@ -973,7 +973,7 @@ local Shoo4p = Tabs.Shop:AddSection("Drinks")
 
 local drinkstype = Tabs.Shop:AddDropdown("Dropdown", {
         Title = "Select Drinks",
-        Values = {"Defense","Melee","Sword","Sniper","Defense+","Melee+","Sword+","Sniper+"},
+        Values = {"Smoothie","Cider","Juice","Smoothie","Smoothie+","Cider+","Juice+","Smoothie+"},
         Multi = false,
         Default = "",
     })
@@ -983,7 +983,7 @@ local drinkstype = Tabs.Shop:AddDropdown("Dropdown", {
 _G.drinktret = typepp
 end)
 
-    local drinkamount = Tabs.Player:AddInput("drinkamount", {
+    local drinkamount = Tabs.Shop:AddInput("drinkamount", {
         Title = "Choose Amount:",
         Default = "",
         Placeholder = "Insert Here",
@@ -996,9 +996,32 @@ end)
     drinkamount:OnChanged(function()
 drinkff = drinkamount.Value
 tretgmm = tonumber(drinkff)
-print(type(tretgmm))
 end)
 
+Tabs.Shop:AddButton({
+        Title = "Buy Drinks",
+        Description = "Buy selected drinks",
+        Callback = function()
+amountdrink = tretgmm
+if _G.drinktret == "Smoothie" or _G.drinktret == "Cider" or _G.drinktret == "Juice" or _G.drinktret == "Smoothie" then
+for i = 1,amountdrink do
+    local args = {
+        [1] = _G.drinktret
+    }
+    
+workspace.Merchants.DrinkMerchant.Clickable.Retum:FireServer(unpack(args))
+end
+elseif _G.drinktret == "Smoothie+" or _G.drinktret == "Cider+" or _G.drinktret == "Juice+" or _G.drinktret == "Smoothie+" then
+for i = 1,amountdrink do
+    local args = {
+        [1] = _G.drinktret
+    }
+    
+workspace.Merchants.BetterDrinkMerchant.Clickable.Retum:FireServer(unpack(args))
+end
+end
+end
+    })
 
 local FruitFFt = Tabs.Fruit:AddSection("Fruit")
 local bringfruit = Tabs.Fruit:AddToggle("bringfruittoggle", {Title = "Auto Bring Fruit", Default = false })
