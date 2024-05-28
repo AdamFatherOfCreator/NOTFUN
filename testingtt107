@@ -2199,6 +2199,8 @@ if v:IsA("Tool") and string.find(v.Name, "Juice") or string.find(v.Name, "Milk")
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 v:Activate()
 end
+elseif v:IsA("Tool") and string.find(v.Name, "Crab") then
+v:Destroy()
 end
 end)
 end
