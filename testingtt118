@@ -994,9 +994,8 @@ end)
     })
 
     drinkamount:OnChanged(function()
-drinkff = tonumber(drinkamount.Value)
-for i = 1,drinkff do
-print(i)
+drinkff = drinkamount.Value
+print(type.drinkff)
 end
 end)
 
