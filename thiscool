@@ -343,7 +343,7 @@ local vptt = xr.VTCebvc
 for i = 1,quaketime do
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,vv.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 end
-until _G.quakerty == false or cc.HumanoidRootPart.Position.Y > 211000 or cc.Name ~= vv.Name
+until _G.quakerty == false or cc.HumanoidRootPart.Position.Y > 211000 or cc.Name ~= vv.Name or cc.Humanoid.Health == 0
 Choosequake = ""
 				end
 			end
@@ -1446,7 +1446,7 @@ end)
                         v.Character.HumanoidRootPart.Transparency = 0.9
                     	v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
                         v.Character.HumanoidRootPart.CanCollide = false
-                        v.Character.HumanoidRootPart.Size = Vector3.new(100, 100, 100)
+                        v.Character.HumanoidRootPart.Size = Vector3.new(1000, 1000, 1000)
                     end
                 end
             end
@@ -1750,10 +1750,10 @@ wait()
 for i,v in pairs(game.Players:GetChildren()) do
 	if v.Name ~= game.Players.LocalPlayer.Name then
 		for i,c in pairs(game.Workspace:GetChildren()) do
-			if c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 then
+			if c:IsA("Model") and c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and c.Humanoid.Health > 0 then
 Choose2 = c.Name
 	pcall(function()
-		if _G.autocannonplr == true and c.HumanoidRootPart.Position.Y < 211000 then
+		if _G.autocannonplr == true and c.HumanoidRootPart.Position.Y < 211000 and c.Humanoid.Health > 0 then
     			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
       				if v.Name == Choose2 then
                 repeat task.wait(0.3)
@@ -1763,7 +1763,7 @@ Choose2 = c.Name
                            			q.CanCollide = false
 						end
 					end
-until _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name
+until _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name or c.Humanoid.Health == 0
 Choose2 = ""
 				end
 			end
@@ -1788,10 +1788,10 @@ wait()
 for i,d in pairs(game.Players:GetChildren()) do
 	if d.Name ~= game.Players.LocalPlayer.Name and d.Name ~= Choose2 then
 		for i,b in pairs(game.Workspace:GetChildren()) do
-			if b:IsA("Model") and b.Name == d.Name and b.HumanoidRootPart.Position.Y < 211000 then
+			if b:IsA("Model") and b.Name == d.Name and b.HumanoidRootPart.Position.Y < 211000 and b.Humanoid.Health > 0 then
 Choose3 = b.Name
 	pcall(function()
-		if _G.autocannonplr == true and b.HumanoidRootPart.Position.Y < 211000 then
+		if _G.autocannonplr == true and b.HumanoidRootPart.Position.Y < 211000 and b.Humanoid.Health > 0 then
     			for i,d in pairs(game:GetService("Workspace"):GetChildren()) do
       				if d.Name == Choose3 then
                 repeat task.wait(0.32)
@@ -1801,7 +1801,7 @@ Choose3 = b.Name
                            			e.CanCollide = false
 						end
 					end
-until _G.autocannonplr == false or b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name
+until _G.autocannonplr == false or b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name or b.Humanoid.Health == 0
 Choose3 = ""
 				end
 			end
@@ -1826,10 +1826,10 @@ wait()
 for i,f in pairs(game.Players:GetChildren()) do
 	if f.Name ~= game.Players.LocalPlayer.Name and f.Name ~= Choose2 and f.Name ~= Choose3 then
 		for i,h in pairs(game.Workspace:GetChildren()) do
-			if h:IsA("Model") and h.Name == f.Name and h.HumanoidRootPart.Position.Y < 211000 then
+			if h:IsA("Model") and h.Name == f.Name and h.HumanoidRootPart.Position.Y < 211000 and h.Humanoid.Health > 0 then
 Choose4 = h.Name
 	pcall(function()
-		if _G.autocannonplr == true and h.HumanoidRootPart.Position.Y < 211000 then
+		if _G.autocannonplr == true and h.HumanoidRootPart.Position.Y < 211000 and h.Humanoid.Health > 0 then
     			for i,f in pairs(game:GetService("Workspace"):GetChildren()) do
       				if f.Name == Choose4 then
                 repeat task.wait(0.34)
@@ -1839,7 +1839,7 @@ Choose4 = h.Name
                            			w.CanCollide = false
 						end
 					end
-until _G.autocannonplr == false or h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name
+until _G.autocannonplr == false or h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name or h.Humanoid.Health == 0
 Choose4 = ""
 				end
 			end
@@ -1864,10 +1864,10 @@ wait()
 for i,g in pairs(game.Players:GetChildren()) do
 	if g.Name ~= game.Players.LocalPlayer.Name and g.Name ~= Choose2 and g.Name ~= Choose3 and g.Name ~= Choose4 then
 		for i,j in pairs(game.Workspace:GetChildren()) do
-			if j:IsA("Model") and j.Name == g.Name and j.HumanoidRootPart.Position.Y < 211000 then
+			if j:IsA("Model") and j.Name == g.Name and j.HumanoidRootPart.Position.Y < 211000 and j.Humanoid.Health > 0 then
 Choose5 = j.Name
 	pcall(function()
-		if _G.autocannonplr == true and j.HumanoidRootPart.Position.Y < 211000 then
+		if _G.autocannonplr == true and j.HumanoidRootPart.Position.Y < 211000 and j.Humanoid.Health > 0 then
     			for i,g in pairs(game:GetService("Workspace"):GetChildren()) do
       				if g.Name == Choose5 then
                 repeat task.wait(0.36)
@@ -1877,7 +1877,7 @@ Choose5 = j.Name
                            			t.CanCollide = false
 						end
 					end
-until _G.autocannonplr == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name
+until _G.autocannonplr == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name or j.Humanoid.Health == 0
 Choose5 = ""
 				end
 			end
