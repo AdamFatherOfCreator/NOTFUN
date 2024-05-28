@@ -1532,7 +1532,7 @@ _G.offhaki = true
 wait(3)
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
-local svs = slv/100*55
+local svs = slv/100*90
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss then
 _G.onhaki = true
 end
@@ -1554,7 +1554,7 @@ local x = game.Players.LocalPlayer.UserId
 pcall(function()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
-local svs = slv/100*55
+local svs = slv/100*90
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
@@ -1576,7 +1576,7 @@ local x = game.Players.LocalPlayer.UserId
 pcall(function()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
-local svs = slv/100*55
+local svs = slv/100*90
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
@@ -1596,8 +1596,8 @@ local x = game.Players.LocalPlayer.UserId
 pcall(function()
 local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local sss = slv/100*50
-local svs = slv/100*55
-if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= svs and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+local svs = slv/100*90
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= svs and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and _G.onhaki == false then
 wait()
  local Players = game:GetService("Players")
 local cache = {}
