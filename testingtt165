@@ -1348,11 +1348,10 @@ if _G.onhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.
 wait(0.5)
 game.workspace.UserData["User_" ..game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 end
-repeat wait()
-until game.Workspace.UserData["User_"..plrid].HakiBar.Value < hakiuse
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value < hakiuse then
 _G.onhaki = false
 _G.regenhaki = true
-
+end
 end)
 end
 end)
