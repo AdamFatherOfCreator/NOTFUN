@@ -1348,6 +1348,7 @@ wait(0.5)
 game.workspace.UserData["User_" ..game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 end
 _G.onhaki = false
+_G.regenhaki = true
 end)
 end
 end)
