@@ -1295,7 +1295,9 @@ local hakiuse = hakigoc/100*regentarget
 wait()
 if game.Workspace.UserData["User_"..plrid].HakiBar.Value > hakiuse then
 _G.onhaki = true
+_G.regenhaki = false
 elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value <= hakiuse then
+_G.onhaki = false
 _G.regenhaki = true
 end
 else
