@@ -1352,9 +1352,9 @@ local hakihientai = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 
 if _G.onhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
-game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+game.workspace.UserData["User_" ..game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 end
-if _G.onhaki == true and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and hakihien <= hakiuse then
+if _G.onhaki == true and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and hakihientai <= hakiuse then
 wait()
 _G.onhaki = false
 end
