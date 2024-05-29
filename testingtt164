@@ -1292,14 +1292,17 @@ local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
-local hakihientai = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 wait()
-if hakihientai > hakiuse then
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value > hakiuse then
 _G.onhaki = true
+elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value <= hakiuse then
+_G.regenhaki = true
 end
 else
 _G.autohakicannon = false
 _G.offhaki = false
+_G.onhaki = false
+_G.regenhaki = false
 end
 end)
 
@@ -1315,41 +1318,12 @@ local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
-local hakihientai = game.Workspace.UserData["User_"..plrid].HakiBar.Value
 repeat wait()
 until game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true
 
-if hakihientai > hakiuse then
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value > hakiuse then
 _G.onhaki = true
-elseif hakihien <= hakiuse then
-_G.onhaki = false
-end
-
-end)
-end
-end)
-end
-end)
-
-
-spawn(function()
-while wait() do
-pcall(function()
-if _G.autohakicannon then
-pcall(function()
-local plrid = tostring(game.Players.LocalPlayer.UserId)
-local plr = tostring(game.Players.LocalPlayer)
-local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local hakiuse = hakigoc/100*regentarget
-local hakihientai = game.Workspace.UserData["User_"..plrid].HakiBar.Value
-
-if _G.onhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-wait(0.5)
-game.workspace.UserData["User_" ..game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-end
-if _G.onhaki == true and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and hakihientai <= hakiuse then
-wait()
-_G.onhaki = false
+elseif game.Workspace.UserData["User_"..plrid].HakiBar.Value <= hakiuse then
 _G.regenhaki = true
 end
 
@@ -1359,6 +1333,7 @@ end)
 end
 end)
 
+
 spawn(function()
 while wait() do
 pcall(function()
@@ -1368,79 +1343,36 @@ local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
-local hakihientai = game.Workspace.UserData["User_"..plrid].HakiBar.Value
+
+if _G.onhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+wait(0.5)
+game.workspace.UserData["User_" ..game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+end
+repeat wait()
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value < hakiuse
+_G.onhaki = false
+_G.regenhaki = true
+
+end)
+end
+end)
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.autohakicannon then
+pcall(function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
+local hakiuse = hakigoc/100*regentarget
 
 if _G.offhaki == true and  game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
 wait()
- local Players = game:GetService("Players")
-local cache = {}
-    function lol(name)
-        if cache[name] then return cache[name] end
-        local player = Players:FindFirstChild(name)
-        if player then
-            cache[name] = player.UserId
-            return player.UserId
-        end 
-    
-        local id
-        pcall(function ()
-            id = Players:lol(name)
-        end)
-        cache[name] = id
-        return id
-    end
-    local ehh = game.Players.LocalPlayer.Name
-    local Final = lol(ehh)
-for i = 1, regenspeed do wait()
-    local args = {
-        [1] = "Off",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
-    local args = {
-        [1] = "On",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
-    end
-wait()
-local args = {
-        [1] = "Off",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
-wait()
-        local args = {
-        [1] = "Off",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
-wait()
-        local args = {
-        [1] = "Off",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
-wait()
-        local args = {
-        [1] = "Off",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
-wait()
-repeat task.wait()
-until hakihientai >= hakigoc or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
-if hakihientai >= hakigoc then wait()
-_G.onhaki = true
-end
 end
 
 end)
@@ -1458,9 +1390,8 @@ local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
-local hakihientai = game.Workspace.UserData["User_"..plrid].HakiBar.Value
-
-if _G.regenhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+repeat wait()
+until  _G.regenhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki")
 wait()
  local Players = game:GetService("Players")
 local cache = {}
@@ -1525,12 +1456,12 @@ wait()
     workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
 wait()
 repeat task.wait()
-until hakihientai >= hakigoc or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
-if hakihientai >= hakigoc then wait()
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= hakigoc or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value >= hakigoc then wait()
 _G.onhaki = true
 _G.regenhaki = false
 end
-end
+
 
 end)
 end
