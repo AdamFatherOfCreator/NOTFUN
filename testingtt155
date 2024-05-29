@@ -1258,13 +1258,13 @@ end
 end)
 
 local Cannon = Tabs.Farm:AddSection("Auto Buso (Fast Regen)")
-local regentargetslider = Tabs.Player:AddSlider("Slider", {
+local regentargetslider = Tabs.Farm:AddSlider("Slider", {
     Title = "Regen Target (%)",
     Description = "Change this for adjusting regen target",
     Default = 50,
     Min = 30,
     Max = 90,
-    Rounding = 1,
+    Rounding = 0,
     Callback = function(weqrww)
             regentarget = weqrww
         end
@@ -1276,14 +1276,14 @@ local regenspeedslider = Tabs.Farm:AddSlider("Slider", {
     Default = 20,
     Min = 5,
     Max = 50,
-    Rounding = 1,
+    Rounding = 0,
     Callback = function(weqrwwtt)
             regentarget = weqrwwtt
         end
     })
 
 
-local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso (Fast Regen)", Default = false })
+local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso Fast Regen (Fixing)", Default = false })
 autoregenhaki:OnChanged(function()
 if Options.autoregenhakitoggle.Value == true then
 _G.autohakicannon = true
