@@ -1746,6 +1746,7 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
+repeat
 wait()
 for i,v in pairs(game.Players:GetChildren()) do
 	if v.Name ~= game.Players.LocalPlayer.Name then
@@ -1763,10 +1764,11 @@ Choose2 = c.Name
                            			q.CanCollide = false
 						end
 					end
-until _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name or c.Humanoid.Health == 0
+until c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name or c.Humanoid.Health == 0
 Choose2 = ""
 				end
 			end
+
 		end
 	end)
 
@@ -1774,7 +1776,7 @@ Choose2 = ""
 		end
 	end
 end
-
+until _G.autocannonplr == false
 end
 end)
 end
@@ -1784,6 +1786,7 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
+repeat
 wait()
 for i,d in pairs(game.Players:GetChildren()) do
 	if d.Name ~= game.Players.LocalPlayer.Name and d.Name ~= Choose2 then
@@ -1801,7 +1804,7 @@ Choose3 = b.Name
                            			e.CanCollide = false
 						end
 					end
-until _G.autocannonplr == false or b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name or b.Humanoid.Health == 0
+until b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name or b.Humanoid.Health == 0
 Choose3 = ""
 				end
 			end
@@ -1812,6 +1815,7 @@ Choose3 = ""
 		end
 	end
 end
+until _G.autocannonplr == false
 
 end
 end)
@@ -1822,6 +1826,7 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
+repeat
 wait()
 for i,f in pairs(game.Players:GetChildren()) do
 	if f.Name ~= game.Players.LocalPlayer.Name and f.Name ~= Choose2 and f.Name ~= Choose3 then
@@ -1839,7 +1844,7 @@ Choose4 = h.Name
                            			w.CanCollide = false
 						end
 					end
-until _G.autocannonplr == false or h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name or h.Humanoid.Health == 0
+until h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name or h.Humanoid.Health == 0
 Choose4 = ""
 				end
 			end
@@ -1850,7 +1855,7 @@ Choose4 = ""
 		end
 	end
 end
-
+until _G.autocannonplr == false
 end
 end)
 end
@@ -1860,6 +1865,7 @@ spawn(function()
 while wait() do
 pcall(function()
 if _G.autocannonplr then
+repeat
 wait()
 for i,g in pairs(game.Players:GetChildren()) do
 	if g.Name ~= game.Players.LocalPlayer.Name and g.Name ~= Choose2 and g.Name ~= Choose3 and g.Name ~= Choose4 then
@@ -1877,7 +1883,7 @@ Choose5 = j.Name
                            			t.CanCollide = false
 						end
 					end
-until _G.autocannonplr == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name or j.Humanoid.Health == 0
+until j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name or j.Humanoid.Health == 0
 Choose5 = ""
 				end
 			end
@@ -1888,7 +1894,7 @@ Choose5 = ""
 		end
 	end
 end
-
+until _G.autocannonplr == false
 end
 end)
 end
