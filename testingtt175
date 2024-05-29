@@ -210,7 +210,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H18)",
+    Title = "SALUNA HUB (H21)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1284,7 +1284,7 @@ local regenspeedslider = Tabs.Farm:AddSlider("Slider", {
     })
 
 
-local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso Fast Regen (Fixing)", Default = false })
+local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso Fast Regen", Default = false })
 autoregenhaki:OnChanged(function()
 if Options.autoregenhakitoggle.Value == true then
 _G.autohakicannon = true
