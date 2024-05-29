@@ -2297,7 +2297,7 @@ end
 end)
 
 local Cestussec = Tabs.PVP:AddSection("Cestus Spam (Fixing)")
-local CestusSpeed = Tabs.Main:AddSlider("Slider", {
+local CestusSpeed = Tabs.PVP:AddSlider("Slider", {
     Title = "Cestus Speed",
     Description = "Change this for adjusting Seastone Cestus's speed",
     Default = 50,
@@ -2309,7 +2309,7 @@ local CestusSpeed = Tabs.Main:AddSlider("Slider", {
         end
     })
 
-local CestusToggle = Tabs.Main:AddToggle("CestussToggle", {Title = "Cestus Spamming", Default = false })
+local CestusToggle = Tabs.PVP:AddToggle("CestussToggle", {Title = "Cestus Spamming", Default = false })
     CestusToggle:OnChanged(function()
 while Options.CestussToggle.Value do
 wait()
