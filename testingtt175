@@ -222,9 +222,10 @@ local Window = Fluent:CreateWindow({
 local Tabs = {
     Main = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://8587689304" }),
     Haki = Window:AddTab({ Title = "Haki", Icon = "rbxassetid://6523858394" }),
-    Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://2294529381" }),
+    Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://16397066979" }),
     Fruit = Window:AddTab({ Title = "Fruit & Compass", Icon = "rbxassetid://13492316250" }),
     Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
+    PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://6723742952" }),
     Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16149111731" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "rbxassetid://11385419674" }),
@@ -2227,20 +2228,33 @@ end)
 
 
 
-local InstantWeapon = Tabs.Main:AddSection("Instant Weapon")
-local YoruSpeed = Tabs.Main:AddSlider("Slider", {
+local InstantWeapon = Tabs.PVP:AddSection("Instant Weapon")
+local Yorusec = Tabs.PVP:AddSection("Yoru Spam")
+local YoruSpeed = Tabs.PVP:AddSlider("Slider", {
     Title = "Yoru Speed",
     Description = "Change this for adjusting Yoru's speed",
     Default = 50,
     Min = 1,
-    Max = 200,
+    Max = 100,
     Rounding = 0,
     Callback = function(to)
             Speeds = to
         end
     })
 
-local tyoru = Tabs.Main:AddToggle("tyorutoggle", {Title = "Quake Makes Lag", Default = false })
+local YoruMulti = Tabs.PVP:AddSlider("Slider", {
+    Title = "Yoru Multi Hit",
+    Description = "Change this for adjusting Yoru's hits",
+    Default = 200,
+    Min = 1,
+    Max = 999,
+    Rounding = 0,
+    Callback = function(hitsss)
+            hitts = hitsss
+        end
+    })
+
+local tyoru = Tabs.PVP:AddToggle("tyorutoggle", {Title = "Yoru Spamming", Default = false })
 tyoru:OnChanged(function()
 if Options.tyorutoggle.Value == true then
 _G.yoruonrt = true
@@ -2268,7 +2282,7 @@ for i,v in pairs(getconnections(Yoru["RequestAnimation"].OnClientEvent)) do
     Environment = getsenv(Yoru["AnimationController"])
 end
 wait()
-for i = 1, 999 do
+for i = 1, hitts do
 Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
 end
 end)
@@ -2282,6 +2296,7 @@ end)
 end
 end)
 
+local Cestussec = Tabs.PVP:AddSection("Cestus Spam (Fixing)")
 local CestusSpeed = Tabs.Main:AddSlider("Slider", {
     Title = "Cestus Speed",
     Description = "Change this for adjusting Seastone Cestus's speed",
@@ -4321,6 +4336,8 @@ local c23 = Tabs.Haki:AddSection("                                              
 local c24 = Tabs.Haki:AddSection("                                                -----")
 local c25 = Tabs.Shop:AddSection("                                                -----")
 local c26 = Tabs.Shop:AddSection("                                                -----")
+local c27 = Tabs.PVP:AddSection("                                                -----")
+local c28 = Tabs.PVP:AddSection("                                                -----")
 
 Window:SelectTab(1)
 
