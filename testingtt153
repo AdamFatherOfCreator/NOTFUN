@@ -302,7 +302,7 @@ end)
 
 
 local quakerer = Tabs.Player:AddSection("Quake Kill All")
-local hakitargett = Tabs.Player:AddSlider("Sliderhaki", {
+local tytytyty = Tabs.Player:AddSlider("Slider", {
     Title = "Quake Multiple",
     Description = "Change this for adjusting Quake per hit",
     Default = 3,
@@ -1257,18 +1257,198 @@ _G.autohakibuso = false
 end
 end)
 
+local Cannon = Tabs.Farm:AddSection("Auto Buso (Fast Regen)")
+local regentargetslider = Tabs.Player:AddSlider("Slider", {
+    Title = "Regen Target (%)",
+    Description = "Change this for adjusting regen target",
+    Default = 50,
+    Min = 30,
+    Max = 90,
+    Rounding = 1,
+    Callback = function(weqrww)
+            regentarget = weqrww
+        end
+    })
+
+local regenspeedslider = Tabs.Player:AddSlider("Slider", {
+    Title = "Regen Speed",
+    Description = "Change this for adjusting regen speed",
+    Default = 20,
+    Min = 5,
+    Max = 50,
+    Rounding = 1,
+    Callback = function(weqrwwtt)
+            regentarget = weqrwwtt
+        end
+    })
+
+
 local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso (Fast Regen)", Default = false })
 autoregenhaki:OnChanged(function()
 if Options.autoregenhakitoggle.Value == true then
 _G.autohakicannon = true
-_G.onhaki = true
-_G.offhaki = true
 else
 _G.autohakicannon = false
-_G.onhaki = false
-_G.offhaki = false
 end
 end)
+
+spawn(function() --autohaki cannon
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+while wait() do
+if _G.autohakicannon then wait()
+pcall(function()
+if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
+wait()
+_G.onhaki = false
+_G.offhaki = true
+wait(3)
+local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
+local sss = slv/100*50
+local svs = slv/100*90
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss then
+_G.onhaki = true
+end
+end
+end)
+end
+end
+end)
+
+
+
+
+spawn(function() --autohaki cannon
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+while wait() do
+if _G.onhaki then wait()
+local x = game.Players.LocalPlayer.UserId
+pcall(function()
+local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
+local sss = slv/100*50
+local svs = slv/100*90
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+wait(0.5)
+game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+_G.onhaki = false
+wait()
+end
+end)
+end
+end
+end)
+
+
+spawn(function() --autohaki cannon
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+while wait() do
+if _G.offhaki then wait()
+local x = game.Players.LocalPlayer.UserId
+pcall(function()
+local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
+local sss = slv/100*50
+local svs = slv/100*90
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
+wait(0.5)
+game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
+wait()
+end
+end)
+end
+end
+end)
+
+spawn(function() --autohaki cannon
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+while wait() do
+if _G.autohakicannon then wait()
+local x = game.Players.LocalPlayer.UserId
+pcall(function()
+local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
+local sss = slv/100*50
+local svs = slv/100*90
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= svs and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and _G.onhaki == false then
+wait()
+ local Players = game:GetService("Players")
+local cache = {}
+    function lol(name)
+        if cache[name] then return cache[name] end
+        local player = Players:FindFirstChild(name)
+        if player then
+            cache[name] = player.UserId
+            return player.UserId
+        end 
+    
+        local id
+        pcall(function ()
+            id = Players:lol(name)
+        end)
+        cache[name] = id
+        return id
+    end
+    local ehh = game.Players.LocalPlayer.Name
+    local Final = lol(ehh)
+for i = 1, 20 do wait()
+    local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+    local args = {
+        [1] = "On",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+    end
+wait()
+local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+        local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+        local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait()
+        local args = {
+        [1] = "Off",
+        [2] = 1
+    }
+    
+    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+wait(8)
+repeat task.wait()
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv then wait()
+_G.onhaki = true
+_G.offhaki = true
+end
+end
+end)
+end
+end
+end)
+
+
+
+
 
 
 local Fishing = Tabs.Farm:AddSection("Auto Fishing")
@@ -1518,160 +1698,6 @@ spawn(function()
     end
 end)
 
-
-spawn(function() --autohaki cannon
-local plrid = tostring(game.Players.LocalPlayer.UserId)
-local plr = tostring(game.Players.LocalPlayer)
-while wait() do
-if _G.autohakicannon then wait()
-pcall(function()
-if game:GetService("Players").LocalPlayer.PlayerGui.Load.Frame.Visible == true then
-wait()
-_G.onhaki = false
-_G.offhaki = true
-wait(3)
-local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*50
-local svs = slv/100*90
-if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss then
-_G.onhaki = true
-end
-end
-end)
-end
-end
-end)
-
-
-
-
-spawn(function() --autohaki cannon
-local plrid = tostring(game.Players.LocalPlayer.UserId)
-local plr = tostring(game.Players.LocalPlayer)
-while wait() do
-if _G.onhaki then wait()
-local x = game.Players.LocalPlayer.UserId
-pcall(function()
-local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*50
-local svs = slv/100*90
-if game.Workspace.UserData["User_"..plrid].HakiBar.Value > sss and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-wait(0.5)
-game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-_G.onhaki = false
-wait()
-end
-end)
-end
-end
-end)
-
-
-spawn(function() --autohaki cannon
-local plrid = tostring(game.Players.LocalPlayer.UserId)
-local plr = tostring(game.Players.LocalPlayer)
-while wait() do
-if _G.offhaki then wait()
-local x = game.Players.LocalPlayer.UserId
-pcall(function()
-local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*50
-local svs = slv/100*90
-if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= sss and game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
-wait(0.5)
-game.workspace.UserData["User_" .. game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
-wait()
-end
-end)
-end
-end
-end)
-
-spawn(function() --autohaki cannon
-local plrid = tostring(game.Players.LocalPlayer.UserId)
-local plr = tostring(game.Players.LocalPlayer)
-while wait() do
-if _G.autohakicannon then wait()
-local x = game.Players.LocalPlayer.UserId
-pcall(function()
-local slv = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
-local sss = slv/100*50
-local svs = slv/100*90
-if game.Workspace.UserData["User_"..plrid].HakiBar.Value <= svs and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") and _G.onhaki == false then
-wait()
- local Players = game:GetService("Players")
-local cache = {}
-    function lol(name)
-        if cache[name] then return cache[name] end
-        local player = Players:FindFirstChild(name)
-        if player then
-            cache[name] = player.UserId
-            return player.UserId
-        end 
-    
-        local id
-        pcall(function ()
-            id = Players:lol(name)
-        end)
-        cache[name] = id
-        return id
-    end
-    local ehh = game.Players.LocalPlayer.Name
-    local Final = lol(ehh)
-for i = 1, 20 do wait()
-    local args = {
-        [1] = "Off",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
-    local args = {
-        [1] = "On",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
-    end
-wait()
-local args = {
-        [1] = "Off",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-        local args = {
-        [1] = "Off",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-        local args = {
-        [1] = "Off",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-        local args = {
-        [1] = "Off",
-        [2] = 1
-    }
-    
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait(8)
-repeat task.wait()
-until game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
-if game.Workspace.UserData["User_"..plrid].HakiBar.Value >= slv then wait()
-_G.onhaki = true
-_G.offhaki = true
-end
-end
-end)
-end
-end
-end)
 
 spawn(function() -- autofarm cannon
     while wait() do
@@ -2165,7 +2191,7 @@ end)
 
 
 local InstantWeapon = Tabs.Main:AddSection("Instant Weapon")
-local YoruSpeed = Tabs.Main:AddSlider("Slideryoru", {
+local YoruSpeed = Tabs.Main:AddSlider("Slider", {
     Title = "Yoru Speed",
     Description = "Change this for adjusting Yoru's speed",
     Default = 50,
@@ -2200,7 +2226,7 @@ wait()
 end
 end)
 
-local CestusSpeed = Tabs.Main:AddSlider("Slidercestus", {
+local CestusSpeed = Tabs.Main:AddSlider("Slider", {
     Title = "Cestus Speed",
     Description = "Change this for adjusting Seastone Cestus's speed",
     Default = 50,
@@ -2888,7 +2914,7 @@ function hakiauto()
 end
 end)
 local HakiSection2 = Tabs.Haki:AddSection("Auto Haki Farming")
-local hakitargett = Tabs.Haki:AddSlider("Sliderhaki", {
+local hakitargett = Tabs.Haki:AddSlider("Slider", {
     Title = "Haki Target (%)",
     Description = "Change this for adjusting haki's target",
     Default = 55,
@@ -2900,7 +2926,7 @@ local hakitargett = Tabs.Haki:AddSlider("Sliderhaki", {
         end
     })
 
-local hakispeedt = Tabs.Haki:AddSlider("Slidertargethaki", {
+local hakispeedt = Tabs.Haki:AddSlider("Slider", {
     Title = "Haki Speed",
     Description = "Change this for adjusting haki's speed",
     Default = 20,
@@ -3426,7 +3452,7 @@ end
 
 local af1 = Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
 
-local Lucyfirst = Tabs.Affinity:AddSlider("Sliderfirstfruit", {
+local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
     Title = "1st Devil Fruit Point",
     Description = "Choose the point of affinity",
     Default = 1.9,
@@ -3800,7 +3826,7 @@ wait(12)
 
 local af2 = Tabs.Affinity:AddSection("Roll Affinity 2st Devil Fruit")
 
-local Lucysecond = Tabs.Affinity:AddSlider("Slidersecondfruit", {
+local Lucysecond = Tabs.Affinity:AddSlider("Slider", {
     Title = "2nd Devil Fruit Point",
     Description = "Choose the point of affinity",
     Default = 1.9,
