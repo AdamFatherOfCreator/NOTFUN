@@ -1753,9 +1753,6 @@ for i,v in pairs(game.Players:GetChildren()) do
 			if c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and c.Humanoid.Health > 0 then
 Choose2 = c.Name
 	pcall(function()
-		if _G.autocannonplr == true then
-    			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-      				if v.Name == Choose2 then
                 repeat task.wait(0.1)
 					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if q.Name == "CannonBall" then
@@ -1765,9 +1762,6 @@ Choose2 = c.Name
 					end
 until _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name or c.Humanoid.Health == 0
 Choose2 = ""
-				end
-			end
-		end
 	end)
 
 			end
@@ -1791,9 +1785,6 @@ for i,d in pairs(game.Players:GetChildren()) do
 			if b.Name == d.Name and b.HumanoidRootPart.Position.Y < 211000 and b.Humanoid.Health > 0 and b.Name ~= Choose2 then
 Choose3 = b.Name
 	pcall(function()
-		if _G.autocannonplr == true then
-    			for i,d in pairs(game:GetService("Workspace"):GetChildren()) do
-      				if d.Name == Choose3 then
                 repeat task.wait(0.12)
 					for i, e in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if e.Name == "CannonBall" then
@@ -1803,9 +1794,6 @@ Choose3 = b.Name
 					end
 until _G.autocannonplr == false or b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name or b.Humanoid.Health == 0
 Choose3 = ""
-				end
-			end
-		end
 	end)
 
 			end
@@ -1829,9 +1817,6 @@ for i,f in pairs(game.Players:GetChildren()) do
 			if h.Name == f.Name and h.HumanoidRootPart.Position.Y < 211000 and h.Humanoid.Health > 0 and h.Name ~= Choose2 and h.Name ~= Choose3 then
 Choose4 = h.Name
 	pcall(function()
-		if _G.autocannonplr == true then
-    			for i,f in pairs(game:GetService("Workspace"):GetChildren()) do
-      				if f.Name == Choose4 then
                 repeat task.wait(0.14)
 					for i, w in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if w.Name == "CannonBall" then
@@ -1841,9 +1826,6 @@ Choose4 = h.Name
 					end
 until _G.autocannonplr == false or h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name or h.Humanoid.Health == 0
 Choose4 = ""
-				end
-			end
-		end
 	end)
 
 			end
@@ -1867,9 +1849,6 @@ for i,g in pairs(game.Players:GetChildren()) do
 			if j.Name == g.Name and j.HumanoidRootPart.Position.Y < 211000 and j.Humanoid.Health > 0 and j.Name ~= Choose2 and j.Name ~= Choose3 and j.Name ~= Choose4 then
 Choose5 = j.Name
 	pcall(function()
-		if _G.autocannonplr == true then
-    			for i,g in pairs(game:GetService("Workspace"):GetChildren()) do
-      				if g.Name == Choose5 then
                 repeat task.wait(0.16)
 					for i, t in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if t.Name == "CannonBall" then
@@ -1879,9 +1858,6 @@ Choose5 = j.Name
 					end
 until _G.autocannonplr == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name or j.Humanoid.Health == 0
 Choose5 = ""
-				end
-			end
-		end
 	end)
 
 			end
