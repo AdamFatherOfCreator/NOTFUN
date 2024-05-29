@@ -1284,7 +1284,7 @@ local regenspeedslider = Tabs.Farm:AddSlider("Slider", {
     })
 
 
-local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso Fast Regen (Fixing)", Default = false })
+local autoregenhaki = Tabs.Farm:AddToggle("autoregenhakitoggle", {Title = "Auto Buso Fast Regen", Default = false })
 autoregenhaki:OnChanged(function()
 if Options.autoregenhakitoggle.Value == true then
 _G.autohakicannon = true
