@@ -1405,13 +1405,13 @@ for i = 1, regenspeed do wait()
         [2] = 1
     }
     
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
         [2] = 1
     }
     
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
     end
 wait()
 local args = {
@@ -1419,28 +1419,28 @@ local args = {
         [2] = 1
     }
     
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
 wait()
         local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
 wait()
         local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
 wait()
         local args = {
         [1] = "Off",
         [2] = 1
     }
     
-    workspace.UserData["User_"..x].III:FireServer(unpack(args))
+    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
 wait()
 repeat task.wait()
 until hakihientai >= hakigoc or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
