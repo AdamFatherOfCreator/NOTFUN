@@ -1444,6 +1444,9 @@ wait()
 wait()
 repeat task.wait()
 until hakihientai >= hakigoc or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
+if hakihientai >= hakigoc then wait()
+_G.onhaki = true
+end
 end
 
 end)
