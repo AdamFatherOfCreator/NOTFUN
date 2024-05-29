@@ -210,7 +210,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H18)",
+    Title = "SALUNA HUB (H19)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -1505,7 +1505,7 @@ spawn(function()
     while task.wait() do
         pcall(function()
             if _G.autocannonslow then
-                repeat task.wait(0.25)
+                repeat task.wait(0.2)
                     for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                         if v.Name == "CannonBall" then
                             v.CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
@@ -1745,7 +1745,25 @@ end)
 spawn(function()
 while wait() do
 pcall(function()
-if _G.autocannonplr then
+if _G.autocannonplr then wait()
+pcall(function()
+repeat wait()
+_G.chon2 = true
+wait(5)
+_G.chon2 = false
+wait()
+until _G.autocannonplr == false
+_G.chon2 = false
+end)
+end
+end)
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.chon2 then
 wait()
 for i,v in pairs(game.Players:GetChildren()) do
 	if v.Name ~= game.Players.LocalPlayer.Name then
@@ -1753,21 +1771,15 @@ for i,v in pairs(game.Players:GetChildren()) do
 			if c.Name == v.Name and c.HumanoidRootPart.Position.Y < 211000 and c.Humanoid.Health > 0 then
 Choose2 = c.Name
 	pcall(function()
-		if _G.autocannonplr == true then
-    			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-      				if v.Name == Choose2 then
                 repeat task.wait(0.1)
 					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if q.Name == "CannonBall" then
-                          			q.CFrame = v.HumanoidRootPart.CFrame
+                          			q.CFrame = c.HumanoidRootPart.CFrame
                            			q.CanCollide = false
 						end
 					end
-until _G.autocannonplr == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name or c.Humanoid.Health == 0
+until _G.chon2 == false or c.HumanoidRootPart.Position.Y > 211000 or c.Name ~= v.Name or c.Humanoid.Health == 0
 Choose2 = ""
-				end
-			end
-		end
 	end)
 
 			end
@@ -1783,29 +1795,23 @@ end)
 spawn(function()
 while wait() do
 pcall(function()
-if _G.autocannonplr then
+if _G.chon2 then
 wait()
 for i,d in pairs(game.Players:GetChildren()) do
-	if d.Name ~= game.Players.LocalPlayer.Name and d.Name ~= Choose2 then
+	if d.Name ~= game.Players.LocalPlayer.Name then
 		for i,b in pairs(game.Workspace:GetChildren()) do
-			if b.Name == d.Name and b.HumanoidRootPart.Position.Y < 211000 and b.Humanoid.Health > 0 then
+			if b.Name == d.Name and b.HumanoidRootPart.Position.Y < 211000 and b.Humanoid.Health > 0 and b.Name ~= Choose2 then
 Choose3 = b.Name
 	pcall(function()
-		if _G.autocannonplr == true then
-    			for i,d in pairs(game:GetService("Workspace"):GetChildren()) do
-      				if d.Name == Choose3 then
                 repeat task.wait(0.12)
 					for i, e in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if e.Name == "CannonBall" then
-                          			e.CFrame = d.HumanoidRootPart.CFrame
+                          			e.CFrame = b.HumanoidRootPart.CFrame
                            			e.CanCollide = false
 						end
 					end
-until _G.autocannonplr == false or b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name or b.Humanoid.Health == 0
+until _G.chon2 == false or b.HumanoidRootPart.Position.Y > 211000 or b.Name ~= d.Name or b.Humanoid.Health == 0
 Choose3 = ""
-				end
-			end
-		end
 	end)
 
 			end
@@ -1821,29 +1827,23 @@ end)
 spawn(function()
 while wait() do
 pcall(function()
-if _G.autocannonplr then
+if _G.chon2 then
 wait()
 for i,f in pairs(game.Players:GetChildren()) do
-	if f.Name ~= game.Players.LocalPlayer.Name and f.Name ~= Choose2 and f.Name ~= Choose3 then
+	if f.Name ~= game.Players.LocalPlayer.Name then
 		for i,h in pairs(game.Workspace:GetChildren()) do
-			if h.Name == f.Name and h.HumanoidRootPart.Position.Y < 211000 and h.Humanoid.Health > 0 then
+			if h.Name == f.Name and h.HumanoidRootPart.Position.Y < 211000 and h.Humanoid.Health > 0 and h.Name ~= Choose2 and h.Name ~= Choose3 then
 Choose4 = h.Name
 	pcall(function()
-		if _G.autocannonplr == true then
-    			for i,f in pairs(game:GetService("Workspace"):GetChildren()) do
-      				if f.Name == Choose4 then
                 repeat task.wait(0.14)
 					for i, w in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if w.Name == "CannonBall" then
-                          			w.CFrame = f.HumanoidRootPart.CFrame
+                          			w.CFrame = h.HumanoidRootPart.CFrame
                            			w.CanCollide = false
 						end
 					end
-until _G.autocannonplr == false or h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name or h.Humanoid.Health == 0
+until _G.chon2 == false or h.HumanoidRootPart.Position.Y > 211000 or h.Name ~= f.Name or h.Humanoid.Health == 0
 Choose4 = ""
-				end
-			end
-		end
 	end)
 
 			end
@@ -1859,29 +1859,23 @@ end)
 spawn(function()
 while wait() do
 pcall(function()
-if _G.autocannonplr then
+if _G.chon2 then
 wait()
 for i,g in pairs(game.Players:GetChildren()) do
-	if g.Name ~= game.Players.LocalPlayer.Name and g.Name ~= Choose2 and g.Name ~= Choose3 and g.Name ~= Choose4 then
+	if g.Name ~= game.Players.LocalPlayer.Name then
 		for i,j in pairs(game.Workspace:GetChildren()) do
-			if j.Name == g.Name and j.HumanoidRootPart.Position.Y < 211000 and j.Humanoid.Health > 0 then
+			if j.Name == g.Name and j.HumanoidRootPart.Position.Y < 211000 and j.Humanoid.Health > 0 and j.Name ~= Choose2 and j.Name ~= Choose3 and j.Name ~= Choose4 then
 Choose5 = j.Name
 	pcall(function()
-		if _G.autocannonplr == true then
-    			for i,g in pairs(game:GetService("Workspace"):GetChildren()) do
-      				if g.Name == Choose5 then
                 repeat task.wait(0.16)
 					for i, t in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if t.Name == "CannonBall" then
-                          			t.CFrame = g.HumanoidRootPart.CFrame
+                          			t.CFrame = j.HumanoidRootPart.CFrame
                            			t.CanCollide = false
 						end
 					end
-until _G.autocannonplr == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name or j.Humanoid.Health == 0
+until _G.chon2 == false or j.HumanoidRootPart.Position.Y > 211000 or j.Name ~= g.Name or j.Humanoid.Health == 0
 Choose5 = ""
-				end
-			end
-		end
 	end)
 
 			end
