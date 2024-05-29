@@ -1270,7 +1270,7 @@ local regentargetslider = Tabs.Player:AddSlider("Slider", {
         end
     })
 
-local regenspeedslider = Tabs.Player:AddSlider("Slider", {
+local regenspeedslider = Tabs.Farm:AddSlider("Slider", {
     Title = "Regen Speed",
     Description = "Change this for adjusting regen speed",
     Default = 20,
