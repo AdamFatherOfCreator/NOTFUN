@@ -1505,10 +1505,10 @@ spawn(function()
     while task.wait() do
         pcall(function()
             if _G.autocannonslow then
-                repeat task.wait(0.25)
+                repeat task.wait(0.2)
                     for i, v in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                         if v.Name == "CannonBall" then
-                            v.CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
+                            v.CFrame = CFrame.new(100, 3000, 800)
                             v.CanCollide = false
                         end
                     end
@@ -1685,7 +1685,7 @@ wait()
                         v.HumanoidRootPart.CanCollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
                         if v.Humanoid.Health == 0 then
                             v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
                             v:Destroy()
@@ -1701,7 +1701,7 @@ wait()
                         --v.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
                         v.HumanoidRootPart.Transparency = 0.9
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
                         if v.Humanoid.Health == 0 then
                             v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
                             v:Destroy()
@@ -1726,7 +1726,7 @@ wait()
                         v.HumanoidRootPart.CanCollide = false
                     	v.HumanoidRootPart.Size = Vector3.new(10, 10, 10)
                         v:FindFirstChild("HumanoidRootPart").Anchored = true
-                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(-1526.0230712891, 364.99990844727, 10510.020507812)
+                        v:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(100, 3000, 800)
                         if v.Humanoid.Health == 0 then
                             v.HumanoidRootPart.Size = Vector3.new(0, 0, 0)
                             v:Destroy()
