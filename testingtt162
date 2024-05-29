@@ -1288,29 +1288,22 @@ autoregenhaki:OnChanged(function()
 if Options.autoregenhakitoggle.Value == true then
 _G.autohakicannon = true
 _G.offhaki = true
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
+local hakiuse = hakigoc/100*regentarget
+local hakihientai = game.Workspace.UserData["User_"..plrid].HakiBar.Value
+wait()
+if hakihientai > hakiuse then
+_G.onhaki = true
+end
 else
 _G.autohakicannon = false
 _G.offhaki = false
 end
 end)
 
-spawn(function()
-while wait() do
-pcall(function()
-if _G.autohakicannon then
-pcall(function()
 
-if _G.onhaki == false then 
-_G.regenhaki = true
-elseif _G.onhaki == true then
-_G.regenhaki = false
-end
-
-end)
-end
-end)
-end
-end)
 
 spawn(function()
 while wait() do
