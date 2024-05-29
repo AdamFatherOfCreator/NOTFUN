@@ -1343,7 +1343,7 @@ local plrid = tostring(game.Players.LocalPlayer.UserId)
 local plr = tostring(game.Players.LocalPlayer)
 local hakigoc = game.workspace.UserData["User_"..plrid].Data.HakiLevel.Value
 local hakiuse = hakigoc/100*regentarget
-
+repeat wait()
 if _G.onhaki == true and not game.Players.LocalPlayer.PlayerGui.HealthBar.Frame.Status:FindFirstChild("BusoHaki") then
 wait(0.5)
 game.workspace.UserData["User_" ..game.Players.LocalPlayer.UserId].UpdateHaki:FireServer()
@@ -1352,6 +1352,7 @@ if game.Workspace.UserData["User_"..plrid].HakiBar.Value < hakiuse then
 _G.onhaki = false
 _G.regenhaki = true
 end
+until game.Workspace.UserData["User_"..plrid].HakiBar.Value < hakiuse or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or _G.autohakicannon == false
 end)
 end
 end)
