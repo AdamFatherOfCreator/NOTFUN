@@ -1756,7 +1756,7 @@ Choose2 = c.Name
                 repeat task.wait(0.1)
 					for i, q in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if q.Name == "CannonBall" then
-                          			q.CFrame = v.HumanoidRootPart.CFrame
+                          			q.CFrame = c.HumanoidRootPart.CFrame
                            			q.CanCollide = false
 						end
 					end
@@ -1788,7 +1788,7 @@ Choose3 = b.Name
                 repeat task.wait(0.12)
 					for i, e in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if e.Name == "CannonBall" then
-                          			e.CFrame = d.HumanoidRootPart.CFrame
+                          			e.CFrame = b.HumanoidRootPart.CFrame
                            			e.CanCollide = false
 						end
 					end
@@ -1820,7 +1820,7 @@ Choose4 = h.Name
                 repeat task.wait(0.14)
 					for i, w in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if w.Name == "CannonBall" then
-                          			w.CFrame = f.HumanoidRootPart.CFrame
+                          			w.CFrame = h.HumanoidRootPart.CFrame
                            			w.CanCollide = false
 						end
 					end
@@ -1852,7 +1852,7 @@ Choose5 = j.Name
                 repeat task.wait(0.16)
 					for i, t in pairs(game.workspace.ResourceHolder["Resources_" .. game.Players.LocalPlayer.UserId]:GetChildren()) do
                       				if t.Name == "CannonBall" then
-                          			t.CFrame = g.HumanoidRootPart.CFrame
+                          			t.CFrame = j.HumanoidRootPart.CFrame
                            			t.CanCollide = false
 						end
 					end
