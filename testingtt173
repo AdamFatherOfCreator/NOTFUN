@@ -2240,7 +2240,7 @@ local YoruSpeed = Tabs.Main:AddSlider("Slider", {
         end
     })
 
-local tyoru = Tabs.Misc:AddToggle("tyorutoggle", {Title = "Quake Makes Lag", Default = false })
+local tyoru = Tabs.Main:AddToggle("tyorutoggle", {Title = "Quake Makes Lag", Default = false })
 tyoru:OnChanged(function()
 if Options.tyorutoggle.Value == true then
 _G.yoruonrt = true
