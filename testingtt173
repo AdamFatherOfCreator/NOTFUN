@@ -2240,26 +2240,45 @@ local YoruSpeed = Tabs.Main:AddSlider("Slider", {
         end
     })
 
-local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Yoru Spamming", Default = false })
-    Toggle:OnChanged(function()
-while Options.MyToggle.Value do
-wait()
+local tyoru = Tabs.Misc:AddToggle("tyorutoggle", {Title = "Quake Makes Lag", Default = false })
+tyoru:OnChanged(function()
+if Options.tyorutoggle.Value == true then
+_G.yoruonrt = true
+else
+_G.yoruonrt = false
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.yoruonrt then
+pcall(function()
     local Players = game:GetService("Players")
     local Plr = Players.LocalPlayer
     local Character = Plr.Character
     local Yoru = Character:FindFirstChild("Yoru")
     local Environment
-wait()
+
+for i = 1, Speeds do wait()
+if _G.yoruonrt then
+
 pcall(function()
 for i,v in pairs(getconnections(Yoru["RequestAnimation"].OnClientEvent)) do 
     Environment = getsenv(Yoru["AnimationController"])
 end
-    wait()
-for i = 1, Speeds do
+wait()
+for i = 1, 999 do
 Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
 end
 end)
-wait()
+
+end
+end
+
+end)
+end
+end)
 end
 end)
 
