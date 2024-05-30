@@ -341,11 +341,30 @@ local tytytyty = Tabs.Player:AddSlider("Slider", {
 local quakeall = Tabs.Player:AddToggle("quakealltoggle", {Title = "Quake Kill All", Default = false })
 quakeall:OnChanged(function()
 if Options.quakealltoggle.Value == true then
-_G.quakerty = true
+_G.quakeewrpowejmroi = true
 else
-_G.quakerty = false
+_G.quakeewrpowejmroi = false
 end
 end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.quakeewrpowejmroi then wait()
+pcall(function()
+repeat wait()
+_G.quakerty = true
+wait(5)
+_G.quakerty = false
+wait()
+until _G.quakeewrpowejmroi == false
+_G.quakerty = false
+end)
+end
+end)
+end
+end)
+
 
 spawn(function()
 while wait() do
