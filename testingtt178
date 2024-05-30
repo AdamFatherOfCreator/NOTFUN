@@ -4340,6 +4340,8 @@ local c25 = Tabs.Shop:AddSection("                                              
 local c26 = Tabs.Shop:AddSection("                                                -----")
 local c27 = Tabs.PVP:AddSection("                                                -----")
 local c28 = Tabs.PVP:AddSection("                                                -----")
+local c29 = Tabs.Gems:AddSection("                                                -----")
+local c30 = Tabs.Gems:AddSection("                                                -----")
 
 Window:SelectTab(1)
 
