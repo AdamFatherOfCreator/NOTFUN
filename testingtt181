@@ -3020,11 +3020,11 @@ local hakispeedt = Tabs.Haki:AddSlider("hakílider", {
     Min = 1,
     Max = 50,
     Rounding = 0,
-    Callback = function()
+    Callback = function(gttmm)
         end
     })
 
-    hakílider:OnChanged(function(gttmm)
+    hakílider:OnChanged(function()
             hakispeed = gttmm
     end)
 
