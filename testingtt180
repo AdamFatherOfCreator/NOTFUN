@@ -3013,17 +3013,20 @@ local hakitargett = Tabs.Haki:AddSlider("Slider", {
         end
     })
 
-local hakispeedt = Tabs.Haki:AddSlider("Slider", {
+local hakispeedt = Tabs.Haki:AddSlider("hakílider", {
     Title = "Haki Speed",
     Description = "Change this for adjusting haki's speed",
     Default = 20,
     Min = 1,
     Max = 50,
     Rounding = 0,
-    Callback = function(gttmm)
-            hakispeed = gttmm
+    Callback = function()
         end
     })
+
+    hakílider:OnChanged(function(gttmm)
+            hakispeed = gttmm
+    end)
 
 local farmhaki = Tabs.Haki:AddToggle("hakifarm", {Title = "Auto Farm Haki", Default = false })
 farmhaki:OnChanged(function()
