@@ -3037,7 +3037,9 @@ function hakiauto()
     
     end
 wait()
+for i = 1, 10 do
         hakiauto()
+end
 end
     })
 local HakiSection2 = Tabs.Haki:AddSection("Auto Haki Farming")
