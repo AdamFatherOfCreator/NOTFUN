@@ -3161,7 +3161,7 @@ if _G.farmadvanced then
 pcall(function()
 local x = game.Players.LocalPlayer.UserId
 local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
-wait(0.5)
+wait(1)
 for i = 1, speedyadvance do
             local args = {
                 [1] = "On",
