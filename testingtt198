@@ -3138,110 +3138,110 @@ local HakiSection3 = Tabs.Haki:AddSection("Advanced Haki Farming")
         Title = "Farming Haki (Beta)",
         Description = "Click to farm, can click multi-time",
         Callback = function()
+while wait() do
 local x = game.Players.LocalPlayer.UserId
 local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
-while wait() do
         for i = 1, 999 do
             local args = {
                 [1] = "On",
-                [2] = 1000
+                [2] = haki
             }
             task.wait(0.1)
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             local args = {
                 [1] = "Off",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "Off",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "On",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "Off",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "Off",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "On",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "Off",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "Off",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "On",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "Off",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "Off",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "On",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "Off",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
             task.wait(0.1)
             local args = {
                 [1] = "Off",
-                [2] = 1000
+                [2] = haki
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
