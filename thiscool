@@ -211,7 +211,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H22)",
+    Title = "SALUNA HUB (H23)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -2492,7 +2492,7 @@ end
 end
 end)
 
-local HakiSection = Tabs.Haki:AddSection("Haki Farming")
+local HakiSection = Tabs.Haki:AddSection("Haki Stuff")
 local gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
 gethaki:OnChanged(function()
 while Options.hakiget.Value do wait()
@@ -2503,9 +2503,10 @@ end)
 end
 end)
 
-
-local drainhaki = Tabs.Haki:AddToggle("hakidrain", {Title = "Drain Haki", Default = false })
-drainhaki:OnChanged(function()
+Tabs.Haki:AddButton({
+        Title = "Drain Haki",
+        Description = "Click To Drain Haki To 0",
+        Callback = function()
 function hakiauto()
        local Players = game:GetService("Players")
     local cache = {}
@@ -3035,10 +3036,84 @@ function hakiauto()
     
     
     end
-    while Options.hakidrain.Value do wait()
+wait()
+for i = 1, 10 do
         hakiauto()
 end
+end
+    })
+
+local hakirjoin = Tabs.Haki:AddToggle("hakirjointoggle", {Title = "Rejoin If 0% Haki", Default = false })
+hakirjoin:OnChanged(function()
+if Options.hakirjointoggle.Value == true then
+_G.rejoinifhaki0 = true
+else
+_G.rejoinifhaki0 = false
+end
 end)
+
+spawn(function()
+while true do wait()
+if _G.rejoinifhaki0 then
+pcall(function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+if game.Workspace.UserData["User_"..plrid].HakiBar.Value == 0 then
+TeleportService = game:GetService("TeleportService")
+HttpService = game:GetService("HttpService")
+PlaceId, JobId = game.PlaceId, game.JobId
+httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+	if httprequest then
+		httprequest({
+			Url = 'http://127.0.0.1:6463/rpc?v=1',
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				Origin = 'https://discord.com'
+			},
+			Body = HttpService:JSONEncode({
+				cmd = 'INVITE_BROWSER',
+				nonce = HttpService:GenerateGUID(false),
+				args = {code = 'dYHag43eeU'}
+			})
+		})
+	end   
+ if httprequest then
+        local servers = {}
+        local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", PlaceId)})
+        local body = HttpService:JSONDecode(req.Body)
+
+        if body and body.data then
+            for i, v in next, body.data do
+                if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
+                    table.insert(servers, 1, v.id)
+                end
+            end
+        end
+
+        if #servers > 0 then
+            TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
+        else
+            return notify("Serverhop", "Couldn't find a server.")
+        end
+    else
+        notify("Incompatible Exploit", "Your exploit does not support this command (missing request)")
+    end          
+
+end
+end)
+end
+end
+end)
+
+
+
+
+
+
+
+
+
+
 local HakiSection2 = Tabs.Haki:AddSection("Auto Haki Farming")
 local hakitargett = Tabs.Haki:AddSlider("Slider", {
     Title = "Haki Target (%)",
@@ -3136,7 +3211,7 @@ local HakiSection3 = Tabs.Haki:AddSection("Advanced Haki Farming")
 local hakiadvancespeed = Tabs.Haki:AddSlider("Slider", {
     Title = "Advanced Haki Speed",
     Description = "Change Advanced Haki Speed",
-    Default = 300,
+    Default = 999,
     Min = 1,
     Max = 999,
     Rounding = 0,
