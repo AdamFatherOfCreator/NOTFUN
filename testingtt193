@@ -2301,6 +2301,7 @@ wait()
 for i = 1, hitts do
 Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
 end
+wait()
 end)
 
 end
@@ -2312,7 +2313,7 @@ end)
 end
 end)
 
-local Cestussec = Tabs.PVP:AddSection("Cestus Spam (Fixing)")
+local Cestussec = Tabs.PVP:AddSection("Cestus Spam")
 local CestusSpeed = Tabs.PVP:AddSlider("Slider", {
     Title = "Cestus Speed",
     Description = "Change this for adjusting Seastone Cestus's speed",
@@ -2325,26 +2326,57 @@ local CestusSpeed = Tabs.PVP:AddSlider("Slider", {
         end
     })
 
-local CestusToggle = Tabs.PVP:AddToggle("CestussToggle", {Title = "Cestus Spamming", Default = false })
-    CestusToggle:OnChanged(function()
-while Options.CestussToggle.Value do
-wait()
+local CestusMulti = Tabs.PVP:AddSlider("Slider", {
+    Title = "Cestus Multi Hit",
+    Description = "Change this for adjusting Cestus's hits",
+    Default = 200,
+    Min = 1,
+    Max = 999,
+    Rounding = 0,
+    Callback = function(hitsssces)
+            hittsces = hitsssces
+        end
+    })
+
+local tcestus = Tabs.PVP:AddToggle("tcestustoggle", {Title = "Yoru Spamming", Default = false })
+tcestus:OnChanged(function()
+if Options.tcestustoggle.Value == true then
+_G.cestusonrt = true
+else
+_G.cestusonrt = false
+end
+end)
+
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.cestusonrt then
+pcall(function()
     local Players = game:GetService("Players")
     local Plr = Players.LocalPlayer
     local Character = Plr.Character
     local Cestus = Character:FindFirstChild("Seastone Cestus")
     local Environment
-wait()
+for i = 1, Speedss do wait()
+if _G.cestusonrt then
 pcall(function()
 for i,v in pairs(getconnections(Cestus["RequestAnimation"].OnClientEvent)) do 
     Environment = getsenv(Cestus["AnimationController"])
 end
     wait()
-for i = 1, Speedss do
+for i = 1, hittsces do
 Cestus["RequestAnimation"]:FireServer(Environment.PlaceId)
 end
-end)
 wait()
+end)
+
+end
+end
+
+end)
+end
+end)
 end
 end)
 
