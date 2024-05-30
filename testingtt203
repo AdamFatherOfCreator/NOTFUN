@@ -3145,7 +3145,7 @@ local hakiadvancespeed = Tabs.Haki:AddSlider("Slider", {
         end
     })
 
-local advaerqwe = Tabs.Haki:AddToggle("advaerqwetoggle", {Title = "Quake Makes Lag", Default = false })
+local advaerqwe = Tabs.Haki:AddToggle("advaerqwetoggle", {Title = "Advance Haki Farming", Default = false })
 advaerqwe:OnChanged(function()
 if Options.advaerqwetoggle.Value == true then
 _G.farmadvanced = true
@@ -3159,7 +3159,7 @@ while wait() do
 pcall(function()
 if _G.farmadvanced then
 pcall(function()
-for i = 1, concacadvance do wait()
+for i = 1, speedyadvance do wait()
 if _G.farmadvanced == true then
 local x = game.Players.LocalPlayer.UserId
 local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
