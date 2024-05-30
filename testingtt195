@@ -242,7 +242,7 @@ local Tabs = {
 local Options = Fluent.Options
 
 local gems1 = Tabs.Gems:AddSection("Dupe Gems (At Risk)")
-local duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Quake Makes Lag", Default = false })
+local duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Auto Dupe Gems (Save Config And Rejoin)", Default = false })
 duping:OnChanged(function()
 if Options.dupingtoggle.Value == true then
 _G.dupegem = true
