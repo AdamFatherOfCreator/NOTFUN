@@ -30,7 +30,7 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
 end)  
 
 local listed = {
-"968cc896-78a8-47d8-9c91-b4117613a859",-- SALUNA
+"eeb8b6e1-d7d6-40ba-83bc-9c748ba781a9",-- SALUNA
 "76bf8d34-a05a-4803-8c43-24656f4fd7dd", -- Khôi
 "5b7fd5ab-f007-490d-bf11-7fbed380a42b", -- Hiếu Trung
 "22952b76-fbc7-4586-8e26-bfb0c131b156", -- Khoa GK
@@ -211,7 +211,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H21)",
+    Title = "SALUNA HUB (H22)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -226,6 +226,7 @@ local Tabs = {
     Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://16397066979" }),
     Fruit = Window:AddTab({ Title = "Fruit & Compass", Icon = "rbxassetid://13492316250" }),
     Affinity = Window:AddTab({ Title = "Affinity", Icon = "rbxassetid://13321880274" }),
+    Gems = Window:AddTab({ Title = "Gems (At Risk)", Icon = "rbxassetid://6788518051" }),
     PVP =  Window:AddTab({ Title = "PVP", Icon = "rbxassetid://2294529381" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://6723742952" }),
     Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16149111731" }),
@@ -239,6 +240,27 @@ local Tabs = {
     nonet = Window:AddTab({ Title = "-------", Icon = "" })
 }
 local Options = Fluent.Options
+
+local gems1 = Tabs.Gems:AddSection("Dupe Gems (At Risk)")
+local duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Auto Dupe Gems (Save Config And Rejoin)", Default = false })
+duping:OnChanged(function()
+if Options.dupingtoggle.Value == true then
+_G.dupegem = true
+else
+_G.dupegem = false
+end
+end)
+
+
+
+
+
+
+
+local gems2 = Tabs.Gems:AddSection("Exchange Gems To Beries (At Risk)")
+
+
+
 
 local Miscc1 = Tabs.Misc:AddSection("Makes Server Lagging")
 local miscquake = Tabs.Misc:AddToggle("miscquaketoggle", {Title = "Quake Makes Lag", Default = false })
@@ -2286,6 +2308,7 @@ wait()
 for i = 1, hitts do
 Yoru["RequestAnimation"]:FireServer(Environment.PlaceId)
 end
+wait()
 end)
 
 end
@@ -2297,7 +2320,7 @@ end)
 end
 end)
 
-local Cestussec = Tabs.PVP:AddSection("Cestus Spam (Fixing)")
+local Cestussec = Tabs.PVP:AddSection("Cestus Spam")
 local CestusSpeed = Tabs.PVP:AddSlider("Slider", {
     Title = "Cestus Speed",
     Description = "Change this for adjusting Seastone Cestus's speed",
@@ -2310,26 +2333,57 @@ local CestusSpeed = Tabs.PVP:AddSlider("Slider", {
         end
     })
 
-local CestusToggle = Tabs.PVP:AddToggle("CestussToggle", {Title = "Cestus Spamming", Default = false })
-    CestusToggle:OnChanged(function()
-while Options.CestussToggle.Value do
-wait()
+local CestusMulti = Tabs.PVP:AddSlider("Slider", {
+    Title = "Cestus Multi Hit",
+    Description = "Change this for adjusting Cestus's hits",
+    Default = 200,
+    Min = 1,
+    Max = 999,
+    Rounding = 0,
+    Callback = function(hitsssces)
+            hittsces = hitsssces
+        end
+    })
+
+local tcestus = Tabs.PVP:AddToggle("tcestustoggle", {Title = "Yoru Spamming", Default = false })
+tcestus:OnChanged(function()
+if Options.tcestustoggle.Value == true then
+_G.cestusonrt = true
+else
+_G.cestusonrt = false
+end
+end)
+
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.cestusonrt then
+pcall(function()
     local Players = game:GetService("Players")
     local Plr = Players.LocalPlayer
     local Character = Plr.Character
     local Cestus = Character:FindFirstChild("Seastone Cestus")
     local Environment
-wait()
+for i = 1, Speedss do wait()
+if _G.cestusonrt then
 pcall(function()
 for i,v in pairs(getconnections(Cestus["RequestAnimation"].OnClientEvent)) do 
     Environment = getsenv(Cestus["AnimationController"])
 end
     wait()
-for i = 1, Speedss do
+for i = 1, hittsces do
 Cestus["RequestAnimation"]:FireServer(Environment.PlaceId)
 end
-end)
 wait()
+end)
+
+end
+end
+
+end)
+end
+end)
 end
 end)
 
@@ -3079,212 +3133,144 @@ end
 end)
 
 local HakiSection3 = Tabs.Haki:AddSection("Advanced Haki Farming")
-
-    Tabs.Haki:AddButton({
-        Title = "Farming Haki (Beta)",
-        Description = "Click to farm, can click multi-time",
-        Callback = function()
-local x = game.Players.LocalPlayer.UserId
-local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
-
-for i = 1,99999 do
-
-while wait() do
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-
-wait()
-
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-
-wait()
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-
-
-wait()
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-
-wait()
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-
-wait()
-
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-
-wait()
-
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-
-wait()
-
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-
-wait()
-
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait() 
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait() 
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-
-wait()
-
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "On",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-
-wait()
-
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "Off",
-    [2] = haki
-}
-
-workspace.UserData["User_"..x].III:FireServer(unpack(args))
-end
-end
+local hakiadvancespeed = Tabs.Haki:AddSlider("Slider", {
+    Title = "Advanced Haki Speed",
+    Description = "Change Advanced Haki Speed",
+    Default = 300,
+    Min = 1,
+    Max = 999,
+    Rounding = 0,
+    Callback = function(concacadvance)
+            speedyadvance = concacadvance
         end
     })
+
+local advaerqwe = Tabs.Haki:AddToggle("advaerqwetoggle", {Title = "Advance Haki Farming", Default = false })
+advaerqwe:OnChanged(function()
+if Options.advaerqwetoggle.Value == true then
+_G.farmadvanced = true
+else
+_G.farmadvanced = false
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.farmadvanced then
+pcall(function()
+local x = game.Players.LocalPlayer.UserId
+local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
+wait(1)
+for i = 1, speedyadvance do
+            local args = {
+                [1] = "On",
+                [2] = haki
+            }
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "On",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "On",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "On",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "On",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+end
+end)
+end
+end)
+end
+end)
 
 local mgfrrr = Tabs.Server:AddSection("Boost")
     Tabs.Server:AddButton({
@@ -4339,6 +4325,8 @@ local c25 = Tabs.Shop:AddSection("                                              
 local c26 = Tabs.Shop:AddSection("                                                -----")
 local c27 = Tabs.PVP:AddSection("                                                -----")
 local c28 = Tabs.PVP:AddSection("                                                -----")
+local c29 = Tabs.Gems:AddSection("                                                -----")
+local c30 = Tabs.Gems:AddSection("                                                -----")
 
 Window:SelectTab(1)
 
