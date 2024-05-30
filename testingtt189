@@ -3014,6 +3014,7 @@ local hakitargett = Tabs.Haki:AddSlider("Slider", {
 
     hakitargett:OnChanged(function(gmm)
             hakitarget = gmm
+print(hakitarget)
     end)
 
 local hakispeedt = Tabs.Haki:AddSlider("Slider", {
