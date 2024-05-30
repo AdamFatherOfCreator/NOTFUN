@@ -2503,9 +2503,10 @@ end)
 end
 end)
 
-
-local drainhaki = Tabs.Haki:AddToggle("hakidrain", {Title = "Drain Haki", Default = false })
-drainhaki:OnChanged(function()
+Tabs.Haki:AddButton({
+        Title = "Drain Haki",
+        Description = "Click To Drain Haki To 0",
+        Callback = function()
 function hakiauto()
        local Players = game:GetService("Players")
     local cache = {}
@@ -3035,10 +3036,10 @@ function hakiauto()
     
     
     end
-    while Options.hakidrain.Value do wait()
+wait()
         hakiauto()
 end
-end)
+    })
 local HakiSection2 = Tabs.Haki:AddSection("Auto Haki Farming")
 local hakitargett = Tabs.Haki:AddSlider("Slider", {
     Title = "Haki Target (%)",
