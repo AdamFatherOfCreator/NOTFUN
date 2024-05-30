@@ -1,4 +1,4 @@
-Rarefruit = [
+local Rarefruit = {
 "Candy Fruit",
 "Chilly Fruit",
 "Flare Fruit",
@@ -14,10 +14,10 @@ Rarefruit = [
 "Smoke Fruit",
 "Snow Fruit",
 "Venom Fruit"
-]
-
-for i,v in pairs(Rarefruit) do
-if game.Players.LocalPlayer.Backpack:FindFirstChild(v) then wait()
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack.v)
+}
+for _, v in pairs(Rarefruit ) do
+if game.Players.LocalPlayer.Backpack:FindFirstChild(v) then
+local x = game.Players.LocalPlayer.Backpack:FindFirstChild(v)
+x.Parent = game.Players.LocalPlayer.Character
 end
 end
