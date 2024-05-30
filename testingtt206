@@ -3159,11 +3159,7 @@ while wait() do
 pcall(function()
 if _G.farmadvanced then
 pcall(function()
-for i = 1, speedyadvance do wait()
-if _G.farmadvanced == true then
-local x = game.Players.LocalPlayer.UserId
-local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
-        for i = 1, 100 do
+        for i = 1, speedyadvance do
 if _G.farmadvanced == true then
             local args = {
                 [1] = "On",
@@ -3254,8 +3250,6 @@ if _G.farmadvanced == true then
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-end
-end
 end
 end
 end)
