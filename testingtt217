@@ -3043,7 +3043,7 @@ end
 end
     })
 
-local hakirjoin = Tabs.Fruit:AddToggle("hakirjointoggle", {Title = "Auto Bring Fruit", Default = false })
+local hakirjoin = Tabs.Haki:AddToggle("hakirjointoggle", {Title = "Rejoin If 0% Haki", Default = false })
 hakirjoin:OnChanged(function()
 if Options.hakirjointoggle.Value == true then
 _G.rejoinifhaki0 = true
