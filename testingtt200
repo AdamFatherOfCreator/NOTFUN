@@ -3133,12 +3133,32 @@ end
 end)
 
 local HakiSection3 = Tabs.Haki:AddSection("Advanced Haki Farming")
+local hakiadvancespeed = Tabs.Haki:AddSlider("Slider", {
+    Title = "Advanced Haki Speed",
+    Description = "Change Advanced Haki Speed",
+    Default = 500,
+    Min = 1,
+    Max = 999,
+    Rounding = 0,
+    Callback = function(concacadvance)
+            speedyadvance = concacadvance
+        end
+    })
 
-    Tabs.Haki:AddButton({
-        Title = "Farming Haki (Beta)",
-        Description = "Click to farm, can click multi-time",
-        Callback = function()
+local advaerqwe = Tabs.Misc:AddToggle("advaerqwetoggle", {Title = "Quake Makes Lag", Default = false })
+advaerqwe:OnChanged(function()
+if Options.advaerqwetoggle.Value == true then
+_G.farmadvanced = true
+else
+_G.farmadvanced = false
+end
+end)
+
+spawn(function()
 while wait() do
+pcall(function()
+if _G.farmadvanced then
+pcall(function()
 local x = game.Players.LocalPlayer.UserId
 local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
         for i = 1, 999 do
@@ -3245,10 +3265,12 @@ local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Va
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-        end
 end
-        end
-    })
+end)
+end
+end)
+end
+end)
 
 local mgfrrr = Tabs.Server:AddSection("Boost")
     Tabs.Server:AddButton({
