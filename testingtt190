@@ -3008,14 +3008,10 @@ local hakitargett = Tabs.Haki:AddSlider("Slider", {
     Min = 1,
     Max = 90,
     Rounding = 0,
-    Callback = function()
+    Callback = function(gmm)
+            hakitarget = gmm
         end
     })
-
-    hakitargett:OnChanged(function(gmm)
-            hakitarget = gmm
-print(hakitarget)
-    end)
 
 local hakispeedt = Tabs.Haki:AddSlider("Slider", {
     Title = "Haki Speed",
