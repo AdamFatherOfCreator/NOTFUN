@@ -3161,7 +3161,7 @@ if _G.farmadvanced then
 pcall(function()
 local x = game.Players.LocalPlayer.UserId
 local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
-wait()
+wait(0.5)
 for i = 1, speedyadvance do
             local args = {
                 [1] = "On",
@@ -3181,7 +3181,7 @@ for i = 1, speedyadvance do
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-            task.wait()
+            
             local args = {
                 [1] = "On",
                 [2] = haki
@@ -3202,7 +3202,7 @@ for i = 1, speedyadvance do
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-            task.wait()
+            
             local args = {
                 [1] = "On",
                 [2] = haki
@@ -3223,7 +3223,7 @@ for i = 1, speedyadvance do
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-            task.wait()
+            
             local args = {
                 [1] = "On",
                 [2] = haki
@@ -3244,7 +3244,7 @@ for i = 1, speedyadvance do
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-            task.wait()
+            
             local args = {
                 [1] = "On",
                 [2] = haki
