@@ -3163,7 +3163,6 @@ local x = game.Players.LocalPlayer.UserId
 local haki = game:GetService("Workspace").UserData["User_"..x].Data.HakiLevel.Value
 wait()
 for i = 1, speedyadvance do
-if _G.farmadvanced == true then
             local args = {
                 [1] = "On",
                 [2] = haki
@@ -3182,28 +3181,7 @@ if _G.farmadvanced == true then
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "On",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-            
-            local args = {
-                [1] = "Off",
-                [2] = haki
-            }
-
-            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-            
+            task.wait()
             local args = {
                 [1] = "On",
                 [2] = haki
@@ -3224,7 +3202,7 @@ if _G.farmadvanced == true then
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-            
+            task.wait()
             local args = {
                 [1] = "On",
                 [2] = haki
@@ -3245,7 +3223,7 @@ if _G.farmadvanced == true then
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-            
+            task.wait()
             local args = {
                 [1] = "On",
                 [2] = haki
@@ -3266,7 +3244,27 @@ if _G.farmadvanced == true then
             }
 
             workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
-end
+            task.wait()
+            local args = {
+                [1] = "On",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "Off",
+                [2] = haki
+            }
+
+            workspace:WaitForChild("UserData"):WaitForChild("User_" .. game.Players.LocalPlayer.UserId):WaitForChild("III"):FireServer(unpack(args))
 end
 end)
 end
