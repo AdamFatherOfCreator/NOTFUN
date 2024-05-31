@@ -263,8 +263,24 @@ Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .."\nMax P
 })
 
 local info3 = Tabs.Info:AddSection("Discord")
+Tabs.Info:AddParagraph({
+Title = "Server Information",
+Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
+})
 
-
+Tabs.Info:AddButton({
+        Title = "Discord Saluna Hub",
+        Description = "Copy Discord Invite Link",
+        Callback = function()
+everyClipboard = toclipboard
+function toClipboard(txt)
+    if everyClipboard then
+        everyClipboard(tostring(txt))
+    end
+end
+toClipboard("https://discord.gg/ecpbhm8G3w")    
+end
+    })
 
 local gems1 = Tabs.Gems:AddSection("Dupe Gems (At Risk)")
 local duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Auto Dupe Gems (Save Config And Rejoin)", Default = false })
@@ -4598,6 +4614,8 @@ local c27 = Tabs.PVP:AddSection("                                               
 local c28 = Tabs.PVP:AddSection("                                                -----")
 local c29 = Tabs.Gems:AddSection("                                                -----")
 local c30 = Tabs.Gems:AddSection("                                                -----")
+local c31 = Tabs.Info:AddSection("                                                -----")
+local c32 = Tabs.Info:AddSection("                                                -----")
 
 Window:SelectTab(1)
 
