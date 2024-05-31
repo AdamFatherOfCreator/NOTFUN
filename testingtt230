@@ -253,7 +253,7 @@ local plr = game.Players.LocalPlayer.Character.Name
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 Tabs.Info:AddParagraph({
 Title = "User Information",
-Content = "UserName: "..plr .."\nUser ID: "..plrid
+Content = "UserName: "..plr .."\nUser ID: "..plrid .."\nCombo: " ..getgenv().firstfruit .." & "..getgenv().secondfruit
 })
 
 local gems1 = Tabs.Gems:AddSection("Dupe Gems (At Risk)")
