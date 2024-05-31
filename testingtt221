@@ -1105,7 +1105,7 @@ end
 
 
 
-local FruitFFt = Tabs.Fruit:AddSection("Fruit STff")
+local FruitFFt = Tabs.Fruit:AddSection("Fruit Stuff")
 local bringfruit = Tabs.Fruit:AddToggle("bringfruittoggle", {Title = "Auto Bring Fruit", Default = false })
 bringfruit:OnChanged(function()
 if Options.bringfruittoggle.Value == true then
