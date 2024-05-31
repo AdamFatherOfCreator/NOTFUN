@@ -2506,6 +2506,16 @@ local SwordTTT = {
 "Meteorite Sword"
 }
 
+local UtilityTTT = {
+"Wood Rod",
+"Sturdy Rod",
+"Super Rod",
+"Zombie Head",
+"Tea Cup",
+"Santa Bag",
+"Tea Kettle"
+}
+
 spawn(function()
 while wait() do
 pcall(function()
@@ -2538,6 +2548,16 @@ local x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
 end
 end
+
+elseif _G.weponity == "Utility" then
+
+for _, c in pairs(UtilityTTT) do
+if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
+local x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+end
+end
+
 
 
 end
