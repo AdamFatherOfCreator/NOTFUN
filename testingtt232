@@ -264,7 +264,7 @@ Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .."\nMax P
 
 local info3 = Tabs.Info:AddSection("Discord")
 Tabs.Info:AddParagraph({
-Title = "Server Information",
+Title = "Discord Information",
 Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
 })
 
