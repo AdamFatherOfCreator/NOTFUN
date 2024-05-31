@@ -248,6 +248,14 @@ Title = "Saluna Hub",
 Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: pendragon3629 \nWe hope you will have a nice experience by using this script!"
 })
 
+local info1 = Tabs.Info:AddSection("User")
+local plr = game.Players.LocalPlayer.Character.Name
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+Tabs.Info:AddParagraph({
+Title = "Welcome, Here Is Your Information",
+Content = "UserName: "..plr .."\nUser ID: "..plrid
+})
+
 local gems1 = Tabs.Gems:AddSection("Dupe Gems (At Risk)")
 local duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Auto Dupe Gems (Save Config And Rejoin)", Default = false })
 duping:OnChanged(function()
