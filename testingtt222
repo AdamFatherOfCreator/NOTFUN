@@ -1115,6 +1115,15 @@ getgenv().pickkk = false
 end
 end)
 
+local openboxrare = Tabs.Fruit:AddToggle("openboxraretoggle", {Title = "Auto Open Rare/Ultra Box", Default = false })
+openboxrare:OnChanged(function()
+if Options.openboxraretoggle.Value == true then
+_G.openrare = true
+else
+_G.openrare = false
+end
+end)
+
 local storefruit = Tabs.Fruit:AddToggle("storefruittoggle", {Title = "Auto Store Rare/Ultra Fruit", Default = false })
 storefruit:OnChanged(function()
 if Options.storefruittoggle.Value == true then
@@ -1123,6 +1132,31 @@ else
 _G.storeffrt = false
 end
 end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.openrare then
+            pcall(function()
+                for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v:IsA("Tool") and string.find(v.Name, "Rare") then
+                                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+v:Activate()
+                                        end
+                                    end
+            end)
+end
+end)
+end
+end)
+
+
+
+
+
+
+
+
 
 function storedf()
 local plrid = tostring(game.Players.LocalPlayer.UserId)
