@@ -4617,6 +4617,8 @@ local c29 = Tabs.Gems:AddSection("                                              
 local c30 = Tabs.Gems:AddSection("                                                -----")
 local c31 = Tabs.Info:AddSection("                                                -----")
 local c32 = Tabs.Info:AddSection("                                                -----")
+local c33 = Tabs.Weapon:AddSection("                                                -----")
+local c34 = Tabs.Weapon:AddSection("                                                -----")
 
 Window:SelectTab(1)
 
