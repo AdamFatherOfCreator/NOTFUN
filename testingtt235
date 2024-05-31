@@ -2448,7 +2448,56 @@ end
 end)
 
 
+local Wep = Tabs.Weapon:AddSection("Equipment")
+local weapontype = Tabs.Weapon:AddDropdown("Dropdown", {
+        Title = "Select Type",
+        Values = {"Melee","Sniper","Sword","Utility"},
+        Multi = false,
+        Default = "",
+    })
 
+
+    weapontype:OnChanged(function(wtypea)
+_G.weponity = wtypea
+end)
+
+local equipwe = Tabs.Weapon:AddToggle("equipwetoggle", {Title = "Auto Bring Fruit", Default = false })
+equipwe:OnChanged(function()
+if Options.equipwetoggle.Value == true then
+getgenv().eqqqqq = true
+else
+getgenv().eqqqqq = false
+end
+end)
+
+local MeleeTTT = {
+"Melee",
+"Table Kick",
+"Black Leg",
+"Seastone Cestus",
+"Aqua Staff"
+}
+
+spawn(function()
+while wait() do
+pcall(function()
+if getgenv().eqqqqq then
+pcall(function()
+if _G.weponity == "Melee" then
+for _, c in pairs(MeleeTTT) do
+if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
+repeat wait()
+local x = game.Players.LocalPlayer.Backpack:FindFirstChild(v)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+until x.Parent ~= game.Players.LocalPlayer.Character
+end
+end
+end
+end)
+end
+end)
+end
+end)
 
 
 local InstantWeapon = Tabs.Weapon:AddSection("Instant Weapon")
