@@ -221,6 +221,7 @@ local Window = Fluent:CreateWindow({
 })
 --Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
 local Tabs = {
+    Info = Window:AddTab({ Title = "About", Icon = "rbxassetid://4871684504" }),
     Main = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://8587689304" }),
     Haki = Window:AddTab({ Title = "Haki", Icon = "rbxassetid://6523858394" }),
     Farm = Window:AddTab({ Title = "Farming", Icon = "rbxassetid://16397066979" }),
@@ -240,6 +241,46 @@ local Tabs = {
     nonet = Window:AddTab({ Title = "-------", Icon = "" })
 }
 local Options = Fluent.Options
+
+local info1 = Tabs.Info:AddSection("Developer/Owner")
+Tabs.Info:AddParagraph({
+Title = "Saluna Hub",
+Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: pendragon3629 \nWe hope you will have a nice experience by using this script!"
+})
+
+local info2 = Tabs.Info:AddSection("Information")
+local plr = game.Players.LocalPlayer.Character.Name
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+Tabs.Info:AddParagraph({
+Title = "User Information",
+Content = "User Name: "..plr .."\nUser ID: "..plrid .."\nCombo: " ..getgenv().firstfruit .." & "..getgenv().secondfruit
+})
+
+local Asset = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
+Tabs.Info:AddParagraph({
+Title = "Server Information",
+Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .."\nMax Players: "..game.Players.MaxPlayers
+})
+
+local info3 = Tabs.Info:AddSection("Discord")
+Tabs.Info:AddParagraph({
+Title = "Discord Information",
+Content = "Discord Invite Link: https://discord.gg/ecpbhm8G3w"
+})
+
+Tabs.Info:AddButton({
+        Title = "Discord Saluna Hub",
+        Description = "Copy Discord Invite Link",
+        Callback = function()
+everyClipboard = toclipboard
+function toClipboard(txt)
+    if everyClipboard then
+        everyClipboard(tostring(txt))
+    end
+end
+toClipboard("https://discord.gg/ecpbhm8G3w")    
+end
+    })
 
 local gems1 = Tabs.Gems:AddSection("Dupe Gems (At Risk)")
 local duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Auto Dupe Gems (Save Config And Rejoin)", Default = false })
@@ -2653,13 +2694,26 @@ end)
 local HakiSection = Tabs.Haki:AddSection("Haki Stuff")
 local gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
 gethaki:OnChanged(function()
-while Options.hakiget.Value do wait()
+if Options.hakiget.Value == true then
+_G.gethakiqwe = true
+else
+_G.gethakiqwe = false
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.gethakiqwe then
 pcall(function()
 workspace:WaitForChild("Merchants"):WaitForChild("QuestHakiMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 wait(2)
 end)
 end
 end)
+end
+end)
+
 
 Tabs.Haki:AddButton({
         Title = "Drain Haki",
@@ -4560,6 +4614,8 @@ local c27 = Tabs.PVP:AddSection("                                               
 local c28 = Tabs.PVP:AddSection("                                                -----")
 local c29 = Tabs.Gems:AddSection("                                                -----")
 local c30 = Tabs.Gems:AddSection("                                                -----")
+local c31 = Tabs.Info:AddSection("                                                -----")
+local c32 = Tabs.Info:AddSection("                                                -----")
 
 Window:SelectTab(1)
 
