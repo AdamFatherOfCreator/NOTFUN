@@ -248,7 +248,7 @@ Title = "Saluna Hub",
 Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: pendragon3629 \nWe hope you will have a nice experience by using this script!"
 })
 
-local info1 = Tabs.Info:AddSection("Information")
+local info2 = Tabs.Info:AddSection("Information")
 local plr = game.Players.LocalPlayer.Character.Name
 local plrid = tostring(game.Players.LocalPlayer.UserId)
 Tabs.Info:AddParagraph({
@@ -262,6 +262,7 @@ Title = "Server Information",
 Content = "Place Name: " ..Asset.Name .."\nPlace ID: " ..game.PlaceId .."\nMax Players: "..game.Players.MaxPlayers
 })
 
+local info3 = Tabs.Info:AddSection("Discord")
 
 
 
