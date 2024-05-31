@@ -2470,6 +2470,15 @@ getgenv().eqqqqq = false
 end
 end)
 
+local attackweapon = Tabs.Weapon:AddToggle("attackweapontoggle", {Title = "Auto Use Weapon", Default = false })
+attackweapon:OnChanged(function()
+if Options.attackweapontoggle.Value == true then
+getgenv().useweapon = true
+else
+getgenv().useweapon = false
+end
+end)
+
 local MeleeTTT = {
 "Melee",
 "Table Kick",
