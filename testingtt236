@@ -2461,7 +2461,7 @@ local weapontype = Tabs.Weapon:AddDropdown("Dropdown", {
 _G.weponity = wtypea
 end)
 
-local equipwe = Tabs.Weapon:AddToggle("equipwetoggle", {Title = "Auto Bring Fruit", Default = false })
+local equipwe = Tabs.Weapon:AddToggle("equipwetoggle", {Title = "Auto Equip Weapon", Default = false })
 equipwe:OnChanged(function()
 if Options.equipwetoggle.Value == true then
 getgenv().eqqqqq = true
@@ -2487,7 +2487,7 @@ if _G.weponity == "Melee" then
 for _, c in pairs(MeleeTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 repeat wait()
-local x = game.Players.LocalPlayer.Backpack:FindFirstChild(v)
+local x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
 until x.Parent ~= game.Players.LocalPlayer.Character
 end
