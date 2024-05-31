@@ -1620,21 +1620,7 @@ for i = 1, regenspeed do wait()
     
     workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
     end
-wait()
-local args = {
-        [1] = "Off",
-        [2] = hakigoc
-    }
-    
-    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
-wait()
-        local args = {
-        [1] = "Off",
-        [2] = hakigoc
-    }
-    
-    workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
-wait()
+wait(0.1)
         local args = {
         [1] = "Off",
         [2] = hakigoc
