@@ -2486,10 +2486,8 @@ pcall(function()
 if _G.weponity == "Melee" then
 for _, c in pairs(MeleeTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
-repeat wait()
 local x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
-until x.Parent ~= game.Players.LocalPlayer.Character
 end
 end
 end
