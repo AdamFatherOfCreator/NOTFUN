@@ -1456,13 +1456,13 @@ local cache = {}
 for i = 1, regenspeed do wait()
     local args = {
         [1] = "Off",
-        [2] = 1
+        [2] = hakigoc
     }
     
     workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
     local args = {
         [1] = "On",
-        [2] = 1
+        [2] = hakigoc
     }
     
     workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
@@ -1470,28 +1470,28 @@ for i = 1, regenspeed do wait()
 wait()
 local args = {
         [1] = "Off",
-        [2] = 1
+        [2] = hakigoc
     }
     
     workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
 wait()
         local args = {
         [1] = "Off",
-        [2] = 1
+        [2] = hakigoc
     }
     
     workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
 wait()
         local args = {
         [1] = "Off",
-        [2] = 1
+        [2] = hakigoc
     }
     
     workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
 wait()
         local args = {
         [1] = "Off",
-        [2] = 1
+        [2] = hakigoc
     }
     
     workspace.UserData["User_"..plrid].III:FireServer(unpack(args))
