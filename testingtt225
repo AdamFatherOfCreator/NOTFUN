@@ -2653,13 +2653,26 @@ end)
 local HakiSection = Tabs.Haki:AddSection("Haki Stuff")
 local gethaki = Tabs.Haki:AddToggle("hakiget", {Title = "Auto get haki (1k lvl)", Default = false })
 gethaki:OnChanged(function()
-while Options.hakiget.Value do wait()
+if Options.hakiget.Value == true then
+_G.gethakiqwe = true
+else
+_G.gethakiqwe = false
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.gethakiqwe then
 pcall(function()
 workspace:WaitForChild("Merchants"):WaitForChild("QuestHakiMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer()
 wait(2)
 end)
 end
 end)
+end
+end)
+
 
 Tabs.Haki:AddButton({
         Title = "Drain Haki",
