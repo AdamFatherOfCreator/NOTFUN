@@ -2486,6 +2486,26 @@ local SniperTTT = {
 "Cannon Ball"
 }
 
+local SwordTTT = {
+"Dagger",
+"Wakizashi",
+"Tachi",
+"Katana",
+"Flail",
+"Krizma",
+"Kogatana",
+"Yoru",
+"Golden Fish",
+"Ultra Great Sword",
+"Masamune",
+"Candy Cane Yoru",
+"Divine Axe",
+"Kanshou and Byakuya",
+"Scissor Blade",
+"Lightning Sword",
+"Meteorite Sword"
+}
+
 spawn(function()
 while wait() do
 pcall(function()
@@ -2504,6 +2524,15 @@ end
 elseif _G.weponity == "Sniper" then
 
 for _, c in pairs(SniperTTT) do
+if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
+local x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+end
+end
+
+elseif _G.weponity == "Sword" then
+
+for _, c in pairs(SwordTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 local x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
