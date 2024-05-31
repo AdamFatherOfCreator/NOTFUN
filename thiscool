@@ -39,7 +39,7 @@ local listed = {
 "a4cb5880-52e9-4da6-abc1-d512a580b0f1", -- Nguyễn Anh Tiến
 "728b57cb-e169-470c-ba99-98ff1881b7f0", -- Ka Báo
 "3d863fb5-e210-4cd1-a789-0b43d6cd1bcc", -- Lâm Quốc Bảo
-"5d253960-37cc-4f5f-930a-a8ca8d2f65d3", -- Anh Long
+"47c8ab9c-1762-48a8-b2ef-6221d7393f19", -- Anh Long
 "60502cb4-9fe8-4b24-bb88-83e299e82e3d" -- Duy Pham
 }
 _G.WhiteListed = false
