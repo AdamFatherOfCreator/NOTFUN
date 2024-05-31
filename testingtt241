@@ -2528,6 +2528,46 @@ local UtilityTTT = {
 spawn(function()
 while wait() do
 pcall(function()
+if getgenv().useweapon then
+pcall(function()
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+
+
+for i,c in pairs(MeleeTTT) do
+if v.Name == c then
+v:Activate()
+end
+end
+
+for i,d in pairs(SniperTTT) do
+if v.Name == d then
+v:Activate()
+end
+end
+
+for i,e in pairs(SwordTTT) do
+if v.Name == e then
+v:Activate()
+end
+end
+
+for i,f in pairs(UtilityTTT) do
+if v.Name == f then
+v:Activate()
+end
+end
+
+
+end
+end)
+end
+end)
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
 if getgenv().eqqqqq then
 pcall(function()
 if _G.weponity == "Melee" then
