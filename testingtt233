@@ -2451,9 +2451,9 @@ end)
 
 
 
-local InstantWeapon = Tabs.PVP:AddSection("Instant Weapon")
-local Yorusec = Tabs.PVP:AddSection("Yoru Spam")
-local YoruSpeed = Tabs.PVP:AddSlider("Slider", {
+local InstantWeapon = Tabs.Weapon:AddSection("Instant Weapon")
+local Yorusec = Tabs.Weapon:AddSection("Yoru Spam")
+local YoruSpeed = Tabs.Weapon:AddSlider("Slider", {
     Title = "Yoru Speed",
     Description = "Change this for adjusting Yoru's speed",
     Default = 50,
@@ -2465,7 +2465,7 @@ local YoruSpeed = Tabs.PVP:AddSlider("Slider", {
         end
     })
 
-local YoruMulti = Tabs.PVP:AddSlider("Slider", {
+local YoruMulti = Tabs.Weapon:AddSlider("Slider", {
     Title = "Yoru Multi Hit",
     Description = "Change this for adjusting Yoru's hits",
     Default = 200,
@@ -2477,7 +2477,7 @@ local YoruMulti = Tabs.PVP:AddSlider("Slider", {
         end
     })
 
-local tyoru = Tabs.PVP:AddToggle("tyorutoggle", {Title = "Yoru Spamming", Default = false })
+local tyoru = Tabs.Weapon:AddToggle("tyorutoggle", {Title = "Yoru Spamming", Default = false })
 tyoru:OnChanged(function()
 if Options.tyorutoggle.Value == true then
 _G.yoruonrt = true
@@ -2520,8 +2520,8 @@ end)
 end
 end)
 
-local Cestussec = Tabs.PVP:AddSection("Cestus Spam")
-local CestusSpeed = Tabs.PVP:AddSlider("Slider", {
+local Cestussec = Tabs.Weapon:AddSection("Cestus Spam")
+local CestusSpeed = Tabs.Weapon:AddSlider("Slider", {
     Title = "Cestus Speed",
     Description = "Change this for adjusting Seastone Cestus's speed",
     Default = 50,
@@ -2533,7 +2533,7 @@ local CestusSpeed = Tabs.PVP:AddSlider("Slider", {
         end
     })
 
-local CestusMulti = Tabs.PVP:AddSlider("Slider", {
+local CestusMulti = Tabs.Weapon:AddSlider("Slider", {
     Title = "Cestus Multi Hit",
     Description = "Change this for adjusting Cestus's hits",
     Default = 200,
@@ -2545,7 +2545,7 @@ local CestusMulti = Tabs.PVP:AddSlider("Slider", {
         end
     })
 
-local tcestus = Tabs.PVP:AddToggle("tcestustoggle", {Title = "Yoru Spamming", Default = false })
+local tcestus = Tabs.Weapon:AddToggle("tcestustoggle", {Title = "Yoru Spamming", Default = false })
 tcestus:OnChanged(function()
 if Options.tcestustoggle.Value == true then
 _G.cestusonrt = true
