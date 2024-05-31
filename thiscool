@@ -211,7 +211,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H24)",
+    Title = "SALUNA HUB (H25)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -2448,7 +2448,173 @@ end
 end)
 
 
+local Wep = Tabs.Weapon:AddSection("Equipment")
+local weapontype = Tabs.Weapon:AddDropdown("Dropdown", {
+        Title = "Select Weapon Type",
+        Values = {"Melee","Sniper","Sword","Utility"},
+        Multi = false,
+        Default = "",
+    })
 
+
+    weapontype:OnChanged(function(wtypea)
+_G.weponity = wtypea
+end)
+
+local equipwe = Tabs.Weapon:AddToggle("equipwetoggle", {Title = "Auto Equip Weapon", Default = false })
+equipwe:OnChanged(function()
+if Options.equipwetoggle.Value == true then
+getgenv().eqqqqq = true
+else
+getgenv().eqqqqq = false
+end
+end)
+
+local attackweapon = Tabs.Weapon:AddToggle("attackweapontoggle", {Title = "Auto Use Weapon", Default = false })
+attackweapon:OnChanged(function()
+if Options.attackweapontoggle.Value == true then
+getgenv().useweapon = true
+else
+getgenv().useweapon = false
+end
+end)
+
+local MeleeTTT = {
+"Melee",
+"Table Kick",
+"Black Leg",
+"Seastone Cestus",
+"Aqua Staff"
+}
+
+local SniperTTT = {
+"Slingshot",
+"Stars",
+"Crossbow",
+"Flintlock",
+"Cannon Ball"
+}
+
+local SwordTTT = {
+"Dagger",
+"Wakizashi",
+"Tachi",
+"Katana",
+"Flail",
+"Krizma",
+"Kogatana",
+"Yoru",
+"Golden Fish",
+"Ultra Great Sword",
+"Masamune",
+"Candy Cane Yoru",
+"Divine Axe",
+"Kanshou and Byakuya",
+"Scissor Blade",
+"Lightning Sword",
+"Meteorite Sword"
+}
+
+local UtilityTTT = {
+"Wood Rod",
+"Sturdy Rod",
+"Super Rod",
+"Zombie Head",
+"Tea Cup",
+"Santa Bag",
+"Tea Kettle"
+}
+
+spawn(function()
+while wait() do
+pcall(function()
+if getgenv().useweapon then
+pcall(function()
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+
+
+for i,c in pairs(MeleeTTT) do
+if v.Name == c then
+v:Activate()
+end
+end
+
+for i,d in pairs(SniperTTT) do
+if v.Name == d then
+v:Activate()
+end
+end
+
+for i,e in pairs(SwordTTT) do
+if v.Name == e then
+v:Activate()
+end
+end
+
+for i,f in pairs(UtilityTTT) do
+if v.Name == f then
+v:Activate()
+end
+end
+
+
+end
+end)
+end
+end)
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if getgenv().eqqqqq then
+pcall(function()
+if _G.weponity == "Melee" then
+
+
+for _, c in pairs(MeleeTTT) do
+if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
+local x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+end
+end
+
+elseif _G.weponity == "Sniper" then
+
+for _, c in pairs(SniperTTT) do
+if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
+local x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+end
+end
+
+elseif _G.weponity == "Sword" then
+
+for _, c in pairs(SwordTTT) do
+if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
+local x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+end
+end
+
+elseif _G.weponity == "Utility" then
+
+for _, c in pairs(UtilityTTT) do
+if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
+local x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+end
+end
+
+
+
+end
+end)
+end
+end)
+end
+end)
 
 
 local InstantWeapon = Tabs.Weapon:AddSection("Instant Weapon")
