@@ -2452,7 +2452,7 @@ local Wep = Tabs.Weapon:AddSection("Equipment")
 local weapontype = Tabs.Weapon:AddDropdown("Dropdown", {
         Title = "Select Type",
         Values = {"Melee","Sniper","Sword","Utility"},
-        Multi = false,
+        Multi = true,
         Default = "",
     })
 
