@@ -2478,18 +2478,39 @@ local MeleeTTT = {
 "Aqua Staff"
 }
 
+local SniperTTT = {
+"Slingshot",
+"Stars",
+"Crossbow",
+"Flintlock",
+"Cannon Ball"
+}
+
 spawn(function()
 while wait() do
 pcall(function()
 if getgenv().eqqqqq then
 pcall(function()
 if _G.weponity == "Melee" then
+
+
 for _, c in pairs(MeleeTTT) do
 if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
 local x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
 end
 end
+
+elseif _G.weponity == "Sniper" then
+
+for _, c in pairs(SniperTTT) do
+if game.Players.LocalPlayer.Backpack:FindFirstChild(c) then
+local x = game.Players.LocalPlayer.Backpack:FindFirstChild(c)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+end
+end
+
+
 end
 end)
 end
