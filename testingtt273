@@ -1539,10 +1539,12 @@ spawn(function()
                 local Plr = game:GetService("Players").LocalPlayer
                 wait(0.2)
                 if Plr.Backpack:FindFirstChild(toolname) and not Plr.Character:FindFirstChild(toolname) and not Plr.Character:FindFirstChildOfClass("Tool") then
+repeat wait()
                     local tool = Plr.Backpack:FindFirstChild(toolname)
                     Plr.Character.Humanoid:EquipTool(tool)
                     wait(0.5)
                     game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+until not game.Players.LocalPlayer.Character:FindFirstChild("Cannon Ball")
                 end
             end
         end)
