@@ -211,7 +211,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H26)",
+    Title = "SALUNA HUB (H25)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -284,7 +284,17 @@ end
     })
 
 local gems1 = Tabs.Gems:AddSection("Dupe Gems (At Risk)")
-local duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Auto Dupe Gems (Save Config And Rejoin)", Default = false })
+Tabs.Gems:AddParagraph({
+Title = "Warning When Dupe Gems: ",
+Content = [[Operation:
+When you got a bound slot in first page (1st to 12nd), 
+You will get refund 3k gems per 1 bound slot.
+When you reset stats, The refund function will reset too.
+Thus, when you reset stats and rejoin, you will get refund again.
+]]
+})
+
+local duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Auto Dupe Gems (Fixing)", Default = false })
 duping:OnChanged(function()
 if Options.dupingtoggle.Value == true then
 _G.dupegem = true
@@ -300,6 +310,11 @@ end)
 
 
 local gems2 = Tabs.Gems:AddSection("Exchange Gems To Beries (At Risk)")
+Tabs.Gems:AddParagraph({
+Title = "Warning When Exchange: ",
+Content = "Operation: Fast Reroll And Claim Challenge12 \n(500 Gems = 100.000 Beries) \nBe careful with your affinities!"
+})
+
 local wqettt = Tabs.Gems:AddDropdown("Dropdown", {
         Title = "Select Fruit To Fast Roll Affinity",
         Values = {"DFT1", "DFT2"},
