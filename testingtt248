@@ -302,14 +302,24 @@ end)
 local gems2 = Tabs.Gems:AddSection("Exchange Gems To Beries (At Risk)")
 
 local Miscc2 = Tabs.Misc:AddSection("Hide/Show UI Position")
-local tytytyty = Tabs.Player:AddSlider("Slider", {
+local tytytyty = Tabs.Misc:AddSlider("Slider", {
     Title = "UI Position X",
     Description = "Change this for adjusting X Position",
-    Default = 3,
+    Default = 5,
     Min = 1,
-    Max = 10,
+    Max = 999,
     Rounding = 0,
     Callback = function(toggle1)
+if toggle1 < 10 then
+ttt1 = "0.00"..tostring(toggle1)
+togglepositionX = tonumber(ttt1)
+elseif 10 <= toggle1 < 100 then
+ttt1 = "0.0"..tostring(toggle1)
+togglepositionX = tonumber(ttt1)
+elseif 100 <= toggle1 < 1000 then
+ttt1 = "0."..tostring(toggle1)
+togglepositionX = tonumber(ttt1)
+end
         end
     })
 
