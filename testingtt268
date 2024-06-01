@@ -284,7 +284,10 @@ end
     })
 
 local gems1 = Tabs.Gems:AddSection("Dupe Gems (At Risk)")
-
+Tabs.Gems:AddParagraph({
+Title = "Warning When Dupe Gems: ",
+Content = "Operation: \nWhen you got a bound slot in first page (1st to 12nd), \nYou will get refund 3k gems per 1 bound slot. \nWhen you reset stats, The refund function will reset too. \n Thus, when you reset stats and rejoin, you will get refund again."
+})
 
 local duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Auto Dupe Gems (Save Config And Rejoin)", Default = false })
 duping:OnChanged(function()
