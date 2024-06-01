@@ -302,7 +302,7 @@ end)
 local gems2 = Tabs.Gems:AddSection("Exchange Gems To Beries (At Risk)")
 
 local Miscc2 = Tabs.Misc:AddSection("Hide/Show UI Position")
-local tytytyty = Tabs.Misc:AddSlider("Slider", {
+local tytytytytt = Tabs.Misc:AddSlider("Slider", {
     Title = "UI Position X",
     Description = "Change this for adjusting X Position",
     Default = 5,
@@ -323,9 +323,41 @@ toqw = tostring(toggle1)
 ttt1 = "0."..toqw
 togglepositionX = tonumber(ttt1)
 end
-game.CoreGui.BBB.hideUI.Position = UDim2.new(togglepositionX, 1, 0.155, 1)
+game.CoreGui.BBB.hideUI.Position = UDim2.new(togglepositionX, 1, togglepositionY, 1)
         end
     })
+
+local tytytytytt2 = Tabs.Misc:AddSlider("Slider", {
+    Title = "UI Position Y",
+    Description = "Change this for adjusting X Position",
+    Default = 5,
+    Min = 1,
+    Max = 999,
+    Rounding = 0,
+    Callback = function(toggle2)
+if toggle2 < 10 then
+toqw2 = tostring(toggle2)
+ttt2 = "0.00"..toqw2
+togglepositionY = tonumber(ttt2)
+elseif toggle2 >= 10 and toggle2 < 100 then
+toqw2 = tostring(toggle2)
+ttt2 = "0.0"..toqw2
+togglepositionY = tonumber(ttt2)
+elseif toggle2 >= 100 and toggle2 < 1000 then
+toqw2 = tostring(toggle2)
+ttt2 = "0."..toqw2
+togglepositionY = tonumber(ttt2)
+end
+game.CoreGui.BBB.hideUI.Position = UDim2.new(togglepositionX, 1, togglepositionY, 1)
+        end
+    })
+
+
+
+
+
+
+
 
 
 local Miscc1 = Tabs.Misc:AddSection("Makes Server Lagging")
