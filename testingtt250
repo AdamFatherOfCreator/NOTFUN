@@ -311,13 +311,16 @@ local tytytyty = Tabs.Misc:AddSlider("Slider", {
     Rounding = 0,
     Callback = function(toggle1)
 if toggle1 < 10 then
-ttt1 = "0.00"..tostring(toggle1)
+toqw = tostring(toggle1)
+ttt1 = "0.00"..toqw
 togglepositionX = tonumber(ttt1)
-elseif 10 <= toggle1 < 100 then
-ttt1 = "0.0"..tostring(toggle1)
+elseif toggle1 >= 10 and toggle1 < 100 then
+toqw = tostring(toggle1)
+ttt1 = "0.0"..toqw
 togglepositionX = tonumber(ttt1)
-elseif 100 <= toggle1 < 1000 then
-ttt1 = "0."..tostring(toggle1)
+elseif toggle1 >= 100 and toggle1 < 1000 then
+toqw = tostring(toggle1)
+ttt1 = "0."..toqw
 togglepositionX = tonumber(ttt1)
 end
         end
