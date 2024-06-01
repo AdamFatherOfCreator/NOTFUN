@@ -211,7 +211,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H25)",
+    Title = "SALUNA HUB (H26)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -300,6 +300,65 @@ end)
 
 
 local gems2 = Tabs.Gems:AddSection("Exchange Gems To Beries (At Risk)")
+local wqettt = Tabs.Gems:AddDropdown("Dropdown", {
+        Title = "Select Fruit To Fast Roll Affinity",
+        Values = {"DFT1", "DFT2"},
+        Multi = false,
+        Default = "",
+    })
+
+    wqettt:OnChanged(function(koedpwqbb)
+_G.fruitexchange = koedpwqbb
+end)
+
+local exchangett = Tabs.Gems:AddToggle("exchangetttoggle", {Title = "Auto Exchange", Default = false })
+exchangett:OnChanged(function()
+if Options.exchangetttoggle.Value == true then
+_G.exchangegem = true
+else
+_G.exchangegem = false
+end
+end)
+
+spawn(function()
+while wait() do
+pcall(function()
+if _G.exchangegem then
+pcall(function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge12")
+
+repeat wait() 
+until game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == false
+wait()
+
+for i = 1,50 do
+local args = {
+    [1] = _G.fruitexchange,
+    [2] = false,
+    [3] = false,
+    [4] = false,
+    [5] = false,
+    [6] = "Gems"
+}
+
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+end
+
+repeat wait() 
+until game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true
+
+wait()
+
+end)
+end
+end)
+end
+end)
+
+
 
 local Miscc2 = Tabs.Misc:AddSection("Hide/Show UI Position")
 local tytytytytt = Tabs.Misc:AddSlider("Slider", {
