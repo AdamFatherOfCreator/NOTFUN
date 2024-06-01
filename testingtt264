@@ -302,7 +302,7 @@ end)
 local gems2 = Tabs.Gems:AddSection("Exchange Gems To Beries (At Risk)")
 Tabs.Gems:AddParagraph({
 Title = "Warning When Exchange: ",
-Content = "Operation: Fast Reroll And Claim Challenge12 \nBe careful with your affinities!"
+Content = "Operation: Fast Reroll And Claim Challenge12 (500 Gems = 100.000 Beries) \nBe careful with your affinities!"
 })
 
 local wqettt = Tabs.Gems:AddDropdown("Dropdown", {
