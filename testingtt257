@@ -311,7 +311,7 @@ local wqettt = Tabs.Gems:AddDropdown("Dropdown", {
 _G.fruitexchange = koedpwqbb
 end)
 
-local exchangett = Tabs.Gems:AddToggle("exchangetttoggle", {Title = "Auto Dupe Gems (Save Config And Rejoin)", Default = false })
+local exchangett = Tabs.Gems:AddToggle("exchangetttoggle", {Title = "Auto Exchange", Default = false })
 exchangett:OnChanged(function()
 if Options.exchangetttoggle.Value == true then
 _G.exchangegem = true
@@ -320,7 +320,34 @@ _G.exchangegem = false
 end
 end)
 
+spawn(function()
+while wait()
+pcall(function()
+if _G.exchangegem then
+pcall(function()
+local plrid = tostring(game.Players.LocalPlayer.UserId)
+local plr = tostring(game.Players.LocalPlayer)
+workspace.UserData["User_"..plrid].ChallengesRemote:FireServer("Claim","Challenge12")
+repeat wait() until game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == false
+wait()
+for i = 1,50 do
+local args = {
+    [1] = _G.fruitexchange,
+    [2] = false,
+    [3] = false,
+    [4] = false,
+    [5] = false,
+    [6] = "Gems"
+}
 
+workspace:WaitForChild("Merchants"):WaitForChild("AffinityMerchant"):WaitForChild("Clickable"):WaitForChild("Retum"):FireServer(unpack(args))
+end
+repeat wait() until game.Players[""..plr].PlayerGui.Challenges.Frame.Frame.ChallengesFrame.ScrollingFrame["Challenge_12"].Claim.AutoButtonColor == true
+wait()
+end
+end)
+end
+end)
 
 
 
