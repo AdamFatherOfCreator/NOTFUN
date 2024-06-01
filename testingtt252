@@ -323,7 +323,7 @@ toqw = tostring(toggle1)
 ttt1 = "0."..toqw
 togglepositionX = tonumber(ttt1)
 end
-hideUI.Position = UDim2.new(togglepositionX, 1, 0.155, 1)
+game.CoreGui.BBB.hideUI.Position = UDim2.new(togglepositionX, 1, 0.155, 1)
         end
     })
 
