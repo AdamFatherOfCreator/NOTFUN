@@ -301,7 +301,28 @@ end)
 
 local gems2 = Tabs.Gems:AddSection("Exchange Gems To Beries (At Risk)")
 
-
+local Miscc2 = Tabs.Misc:AddSection("Toggle Position")
+local togglemisc1 = Tabs.Misc:AddSlider("Slider", {
+    Title = "Toggle Position X",
+    Description = "Change this for adjusting Quake per hit",
+    Default = 5,
+    Min = 1,
+    Max = 999,
+    Rounding = 0,
+    Callback = function(toggle1)
+            if toggle1 < 10 then
+ttt1 = "0.00"..tostring(toggle1)
+togglepositionX = tonumber(ttt1)
+elseif 10 <= toggle1 < 100 then
+ttt1 = "0.0"..tostring(toggle1)
+togglepositionX = tonumber(ttt1)
+elseif 100 <= toggle1 < 1000 then
+ttt1 = "0."..tostring(toggle1)
+togglepositionX = tonumber(ttt1)
+end
+end
+        end
+    })
 
 
 local Miscc1 = Tabs.Misc:AddSection("Makes Server Lagging")
@@ -4806,7 +4827,7 @@ hideUI.Name = "hideUI"
 hideUI.Parent = BBB
 hideUI.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 hideUI.ClipsDescendants = true
-hideUI.Position = UDim2.new(0.005, 1, 0.155, 1)
+hideUI.Position = UDim2.new(togglepositionX, 1, 0.155, 1)
 hideUI.Size = UDim2.new(0.079, 0, 0.069, 0)
 hideUI.AutoButtonColor = false
 hideUI.TextWrapped = true
