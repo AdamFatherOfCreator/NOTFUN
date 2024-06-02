@@ -2956,7 +2956,7 @@ local CestusMulti = Tabs.Weapon:AddSlider("Slider", {
         end
     })
 
-local tcestus = Tabs.Weapon:AddToggle("tcestustoggle", {Title = "Yoru Spamming", Default = false })
+local tcestus = Tabs.Weapon:AddToggle("tcestustoggle", {Title = "Cestus Spamming", Default = false })
 tcestus:OnChanged(function()
 if Options.tcestustoggle.Value == true then
 _G.cestusonrt = true
