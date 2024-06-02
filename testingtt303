@@ -768,9 +768,9 @@ local tytytyty = Tabs.Player:AddSlider("Slider", {
         end
     })
 
-local quakeweqwetttt = Tabs.Player:AddToggle("quakeweqwettttoggle", {Title = "View Chosen Player", Default = false })
-quakeweqwetttt:OnChanged(function()
-if Options.quakeweqwettttoggle.Value == true then
+local quakecampchose = Tabs.Gems:AddToggle("quakecampchosetoggle", {Title = "Camp Quake", Default = false })
+quakecampchose:OnChanged(function()
+if Options.quakecampchosetoggle.Value == true then
 _G.AutoQuake = true
 else
 _G.AutoQuake = false
@@ -782,23 +782,19 @@ while wait() do
 pcall(function()
 if _G.AutoQuake then
 pcall(function()
-
 local xr = getsenv(game:GetService("Players").LocalPlayer.Character.Powers.Quake)
 local vptt = xr.VTCebvc
-
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == SelectedKillPlayer then
-
+repeat task.wait(0.3)
     pcall(function()
 for i = 1,quaketimet do
 game:GetService("Players").LocalPlayer.Character.Powers.Quake.RemoteEvent:FireServer(vptt,"QuakePower4", "StopCharging",workspace.IslandCaver.Stones.Stone,v.HumanoidRootPart.CFrame,100,Vector3.new(-290.4129333496094, 266.8401794433594, -103.8988037109375))
 end
-task.wait(0.3)
 end)
-
+until not _G.AutoQuake or v.Name ~= SelectedKillPlayer
 end
 end
-
 end)
 end
 end)
