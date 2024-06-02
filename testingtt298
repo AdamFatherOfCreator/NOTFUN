@@ -740,7 +740,7 @@ local bringdis = Tabs.Player:AddSlider("Slider", {
     Max = 50,
     Rounding = 0,
     Callback = function(dis1t)
-            distancebring = tonumber("-"..tostring(dis1t))
+            distancebring = tonumber(dis1t)*(-1)
         end
     })
 
