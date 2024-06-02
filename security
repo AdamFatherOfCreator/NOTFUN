@@ -1,7 +1,15 @@
+_G.none = false
+wait()
 local security = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist'))()
-        for _, v1 in pairs(security) do
+wait()
+        for _, vtt1 in pairs(security) do
 local check = game:GetService("RbxAnalyticsService"):GetClientId()
-            if check ~= v1 then
-game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Your HWID Wasn't Whitelisted")
+            if check == vtt1 then
+_G.none = true
 end
         end
+wait()
+if _G.none == false then
+game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Your HWID Wasn't Whitelisted")
+end
+wait()
