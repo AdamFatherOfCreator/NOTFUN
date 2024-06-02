@@ -4221,6 +4221,7 @@ local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
         end
     })
 
+
      local wrrrrr = Tabs.Affinity:AddDropdown("MultiDropdown", {
         Title = "Lock Affinity (DF1)",
         Description = "You can choose affinities to lock.",
