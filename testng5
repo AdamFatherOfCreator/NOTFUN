@@ -615,7 +615,7 @@ end)
 
 
 local quakerer = Tabs.PVP:AddSection("Quake Kill All")
-local tytytyty = Tabs.Player:AddSlider("Slider", {
+local tytytyty = Tabs.PVP:AddSlider("Slider", {
     Title = "Quake Multiple",
     Description = "Change this for adjusting Quake per hit",
     Default = 3,
