@@ -740,7 +740,7 @@ local bringdis = Tabs.Player:AddSlider("Slider", {
     Max = 50,
     Rounding = 0,
     Callback = function(dis1t)
-            distancebring = tonumber(dis1t)
+            distancebring = tonumber("-"..tostring(dis1t))
         end
     })
 
@@ -758,7 +758,7 @@ end)
 pcall(function()
                 if _G.BringPlayer then
                     pcall(function()
-                        game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-distancebring)
+                        game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
                     end)
                 end
 end)
