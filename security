@@ -1,5 +1,4 @@
 _G.none = false
-local security = {}
 wait(1)
 local security = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist'))()
 wait(1)
