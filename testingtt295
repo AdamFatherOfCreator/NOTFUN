@@ -732,6 +732,38 @@ Tabs.Player:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame
 end
     })
+local bringdis = Tabs.Player:AddSlider("Slider", {
+    Title = "Bring Distance",
+    Description = "Adjust bring distance",
+    Default = 4,
+    Min = -50,
+    Max = 50,
+    Rounding = 0,
+    Callback = function(dis1t)
+            _G.distancebring = tonumber(dis1t)
+        end
+    })
+
+local disbring1aa = Tabs.Player:AddToggle("disbring1aatoggle", {Title = "Advance Haki Farming", Default = false })
+disbring1aa:OnChanged(function()
+if Options.disbring1aatoggle.Value == true then
+_G.BringPlayer = true
+else
+_G.BringPlayer = false
+end
+end)
+
+        spawn(function()
+            while wait() do
+pcall(function()
+                if _G.BringPlayer then
+                    pcall(function()
+                        game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-bringdistanceplr)
+                    end)
+                end
+end)
+            end
+        end)
 
 
 
