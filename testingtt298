@@ -744,7 +744,7 @@ local bringdis = Tabs.Player:AddSlider("Slider", {
         end
     })
 
-local disbring1aa = Tabs.Player:AddToggle("disbring1aatoggle", {Title = "Bring Player", Default = false })
+local disbring1aa = Tabs.Player:AddToggle("disbring1aatoggle", {Title = "Bring Chosen Player", Default = false })
 disbring1aa:OnChanged(function()
 if Options.disbring1aatoggle.Value == true then
 _G.BringPlayer = true
