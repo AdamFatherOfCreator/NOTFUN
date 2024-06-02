@@ -740,11 +740,11 @@ local bringdis = Tabs.Player:AddSlider("Slider", {
     Max = 50,
     Rounding = 0,
     Callback = function(dis1t)
-            _G.distancebring = tonumber(dis1t)
+            distancebring = tonumber(dis1t)
         end
     })
 
-local disbring1aa = Tabs.Player:AddToggle("disbring1aatoggle", {Title = "Advance Haki Farming", Default = false })
+local disbring1aa = Tabs.Player:AddToggle("disbring1aatoggle", {Title = "Bring Player", Default = false })
 disbring1aa:OnChanged(function()
 if Options.disbring1aatoggle.Value == true then
 _G.BringPlayer = true
@@ -758,7 +758,7 @@ end)
 pcall(function()
                 if _G.BringPlayer then
                     pcall(function()
-                        game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-bringdistanceplr)
+                        game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-distancebring)
                     end)
                 end
 end)
