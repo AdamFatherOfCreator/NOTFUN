@@ -1726,6 +1726,7 @@ repeat wait()
                     Plr.Character.Humanoid:EquipTool(tool)
                     wait(0.5)
                     game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+wait(0.1)
 until not game.Players.LocalPlayer.Character:FindFirstChild("Cannon Ball")
 wait()
                 end
