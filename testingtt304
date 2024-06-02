@@ -753,16 +753,6 @@ _G.BringPlayer = false
 end
 end)
 
-
-local CONMEMAYCAMP = Tabs.Player:AddSection("Camp Player")
-
-
-
-
-
-
-
-
         spawn(function()
             while wait() do
 pcall(function()
