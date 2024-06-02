@@ -614,7 +614,7 @@ end
 end)
 
 
-local quakerer = Tabs.Player:AddSection("Quake Kill All")
+local quakerer = Tabs.PVP:AddSection("Quake Kill All")
 local tytytyty = Tabs.Player:AddSlider("Slider", {
     Title = "Quake Multiple",
     Description = "Change this for adjusting Quake per hit",
@@ -627,7 +627,7 @@ local tytytyty = Tabs.Player:AddSlider("Slider", {
         end
     })
 
-local quakeall = Tabs.Player:AddToggle("quakealltoggle", {Title = "Quake Kill All", Default = false })
+local quakeall = Tabs.PVP:AddToggle("quakealltoggle", {Title = "Quake Kill All", Default = false })
 quakeall:OnChanged(function()
 if Options.quakealltoggle.Value == true then
 _G.quakeewrpowejmroi = true
