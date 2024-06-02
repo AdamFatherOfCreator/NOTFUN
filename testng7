@@ -860,7 +860,7 @@ local drinkstype = Tabs.Shop:AddDropdown("Dropdown", {
 
 
     drinkstype:OnChanged(function(typepp)
-_G.drinktret = typepp
+_G.drinktret = tostring(typepp)
 end)
 
     local drinkamount = Tabs.Shop:AddInput("drinkamount", {
