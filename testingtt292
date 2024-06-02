@@ -2104,8 +2104,8 @@ for i,v in pairs(plr.Backpack:GetChildren()) do
 repeat task.wait()
 if v.Name == "Cannon Ball" then
 v.Parent = plr.Character
-until not _G.autocannonslow and not _G.autocannonplr
 end
+until not _G.autocannonslow and not _G.autocannonplr 
 end
 end
 end
