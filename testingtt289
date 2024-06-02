@@ -29,10 +29,7 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
     end
 end)  
 
-while wait() do
 local listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist'))()
-task.wait(5)
-end
 
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
@@ -5071,16 +5068,5 @@ toClipboard("https://discord.gg/ecpbhm8G3w")
 end
 end
 
-while wait() do
-
-        for _, vtctt in pairs(listed) do
-local gethwidtt = game:GetService("RbxAnalyticsService"):GetClientId()
-            if not string.find(vtctt, gethwidtt) then
-game.Players.LocalPlayer:Kick("KICKED      SALUNA Notify: Your HWID Wasn't Whitelisted")
-            end
-        end
-
-wait(5)
-end
 
 
