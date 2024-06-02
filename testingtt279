@@ -294,7 +294,7 @@ Thus, when you reset stats and rejoin, you will get refund again.
 ]]
 })
 
-local duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Auto Dupe Gems (Fixing)", Default = false })
+local duping = Tabs.Gems:AddToggle("dupingtoggle", {Title = "Auto Dupe Gems", Default = false })
 duping:OnChanged(function()
 if Options.dupingtoggle.Value == true then
 _G.dupegem = true
