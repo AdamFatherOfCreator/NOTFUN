@@ -1623,17 +1623,19 @@ local fastcannon = Tabs.Farm:AddToggle("fastcannontoggle", {Title = "Fast Cannon
 fastcannon:OnChanged(function()
 if Options.fastcannontoggle.Value == true then
 _G.autocannon = true
-else
-_G.autocannon = false
-end
+
 if game.Players.LocalPlayer.Character:FindFirstChild("Cannon Ball") then
 wait()
 game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 end
+
+else
+_G.autocannon = false
+end
 end)
 
 spawn(function()
-    while task.wait(0) do
+    while task.wait() do
         pcall(function()
             if _G.autocannon then
                 local toolname = "Cannon Ball"
@@ -1646,6 +1648,7 @@ repeat wait()
                     wait(0.5)
                     game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 until not game.Players.LocalPlayer.Character:FindFirstChild("Cannon Ball")
+wait()
                 end
             end
         end)
