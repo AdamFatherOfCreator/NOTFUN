@@ -1,7 +1,7 @@
 repeat wait() until game:IsLoaded()
   if game.placeId == 8569358381 or game.placeId == 3237168 then
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.TextColor3 = Color3.new(255,0,0)
-game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Irenkiss"
+game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Nametag.Text = "Saluna"
 game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.C.Frame.Header.Text = "PROTECTED BY:"
 local Pedo = {
     1135910299, -- Havelic
@@ -234,7 +234,7 @@ local Options = Fluent.Options
 local info1 = Tabs.Info:AddSection("Developer/Owner")
 Tabs.Info:AddParagraph({
 Title = "Saluna Hub",
-Content = "This script is belong to Saluna aka Irenkiss Trần. \nFacebook: IrenkissWantPeace \nDiscord: AZ-BrAg#6921 \nWe hope you will have a nice experience by using this script!"
+Content = "This script is belong to Saluna. \nFacebook: IrenkissWantPeace \nDiscord: AZ-BrAg#6921 \nWe hope you will have a nice experience by using this script!"
 })
 
 local info2 = Tabs.Info:AddSection("Information")
