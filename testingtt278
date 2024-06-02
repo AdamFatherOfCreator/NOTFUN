@@ -374,7 +374,7 @@ wait(7)
 workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Stats"):FireServer()
 wait(5)
 
-game.Players.LocalPlayer:Kick("Hoping Server For Duping. Please wait...)
+game.Players.LocalPlayer:Kick("Hoping Server For Duping. Please wait...")
 game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
 TeleportService = game:GetService("TeleportService")
 HttpService = game:GetService("HttpService")
