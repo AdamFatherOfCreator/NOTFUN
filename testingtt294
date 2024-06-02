@@ -587,6 +587,22 @@ getgenv().bgtyhn = false
 end
 end)
 
+Tabs.Misc:AddButton({
+        Title = "Fix Cam",
+        Description = "Reset Camera (If Error)",
+        Callback = function()
+	workspace.CurrentCamera:remove()
+	wait(.1)
+	repeat wait() until game.Players.LocalPlayer.Character ~= nil
+	workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
+	workspace.CurrentCamera.CameraType = "Custom"
+	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
+	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
+	game.Players.LocalPlayer.CameraMode = "Classic"
+	game.Players.LocalPlayer.Character.Head.Anchored = false       
+end
+    })
+
 spawn(function()
 while wait() do
 if getgenv().bgtyhn then
@@ -718,22 +734,6 @@ end
     })
 
 
-
-Tabs.Player:AddButton({
-        Title = "Fix Cam",
-        Description = "Reset Camera (If Error)",
-        Callback = function()
-	workspace.CurrentCamera:remove()
-	wait(.1)
-	repeat wait() until game.Players.LocalPlayer.Character ~= nil
-	workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
-	workspace.CurrentCamera.CameraType = "Custom"
-	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
-	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
-	game.Players.LocalPlayer.CameraMode = "Classic"
-	game.Players.LocalPlayer.Character.Head.Anchored = false       
-end
-    })
 
 spawn(function()
 while wait() do
