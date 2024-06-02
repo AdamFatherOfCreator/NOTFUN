@@ -768,9 +768,9 @@ local tytytyty = Tabs.Player:AddSlider("Slider", {
         end
     })
 
-local quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Camp Quake", Default = false })
-quakecampchose:OnChanged(function()
-if Options.quakecampchosetoggle.Value == true then
+local quakeweqwetttt = Tabs.Player:AddToggle("quakeweqwettttoggle", {Title = "View Chosen Player", Default = false })
+quakeweqwetttt:OnChanged(function()
+if Options.quakeweqwettttoggle.Value == true then
 _G.AutoQuake = true
 else
 _G.AutoQuake = false
