@@ -619,7 +619,7 @@ local tytytyty = Tabs.Player:AddSlider("Slider", {
     Max = 10,
     Rounding = 0,
     Callback = function(quarw)
-            quaketime = quarw
+            quaketime = tonumber(quarw)
         end
     })
 
@@ -1749,7 +1749,7 @@ local regentargetslider = Tabs.Farm:AddSlider("Slider", {
     Max = 90,
     Rounding = 0,
     Callback = function(weqrww)
-            regentarget = weqrww
+            regentarget = tonumber(weqrww)
         end
     })
 
@@ -1761,7 +1761,7 @@ local regenspeedslider = Tabs.Farm:AddSlider("Slider", {
     Max = 50,
     Rounding = 0,
     Callback = function(weqrwwtt)
-            regenspeed = weqrwwtt
+            regenspeed = tonumber(weqrwwtt)
         end
     })
 
@@ -2872,7 +2872,7 @@ local YoruSpeed = Tabs.Weapon:AddSlider("Slider", {
     Max = 100,
     Rounding = 0,
     Callback = function(to)
-            Speeds = to
+            Speeds = tonumber(to)
         end
     })
 
@@ -2884,7 +2884,7 @@ local YoruMulti = Tabs.Weapon:AddSlider("Slider", {
     Max = 999,
     Rounding = 0,
     Callback = function(hitsss)
-            hitts = hitsss
+            hitts = tonumber(hitsss)
         end
     })
 
@@ -2940,7 +2940,7 @@ local CestusSpeed = Tabs.Weapon:AddSlider("Slider", {
     Max = 200,
     Rounding = 0,
     Callback = function(too)
-            Speedss = too
+            Speedss = tonumber(too)
         end
     })
 
@@ -2952,7 +2952,7 @@ local CestusMulti = Tabs.Weapon:AddSlider("Slider", {
     Max = 999,
     Rounding = 0,
     Callback = function(hitsssces)
-            hittsces = hitsssces
+            hittsces = tonumber(hitsssces)
         end
     })
 
@@ -3747,7 +3747,7 @@ local hakitargett = Tabs.Haki:AddSlider("Slider", {
     Max = 90,
     Rounding = 0,
     Callback = function(gmm)
-            hakitarget = gmm
+            hakitarget = tonumber(gmm)
         end
     })
 
@@ -3759,7 +3759,7 @@ local hakispeedt = Tabs.Haki:AddSlider("Slider", {
     Max = 50,
     Rounding = 0,
     Callback = function(gttmm)
-            hakispeed = gttmm
+            hakispeed = tonumber(gttmm)
         end
     })
 
@@ -3840,7 +3840,7 @@ local hakiadvancespeed = Tabs.Haki:AddSlider("Slider", {
     Max = 999,
     Rounding = 0,
     Callback = function(concacadvance)
-            speedyadvance = concacadvance
+            speedyadvance = tonumber(concacadvance)
         end
     })
 
