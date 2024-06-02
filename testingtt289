@@ -29,7 +29,19 @@ game:GetService("Players").PlayerAdded:Connect(function(r)
     end
 end)  
 
-local listed = loadstring(game:HttpGet('https://raw.githubusercontent.com/AdamFatherOfCreator/NOTFUN/main/whitelist'))()
+local listed = {
+"eeb8b6e1-d7d6-40ba-83bc-9c748ba781a9",-- SALUNA
+"76bf8d34-a05a-4803-8c43-24656f4fd7dd", -- Khôi
+"5b7fd5ab-f007-490d-bf11-7fbed380a42b", -- Hiếu Trung
+"3e67a1ca-bc7e-443a-8e22-019dc4a3624c", -- Khoa GK
+"1eac697e-e753-45cf-bb54-f491e8ba1007", -- Huy Tú
+"cc7482e2-9357-40f7-a9b7-237a580f4054", -- Huy Tú 2
+"a4cb5880-52e9-4da6-abc1-d512a580b0f1", -- Nguyễn Anh Tiến
+"728b57cb-e169-470c-ba99-98ff1881b7f0", -- Ka Báo
+"3d863fb5-e210-4cd1-a789-0b43d6cd1bcc", -- Lâm Quốc Bảo
+"83eb948b-a247-4066-983c-4ec560c3963f", -- Anh Long
+"60502cb4-9fe8-4b24-bb88-83e299e82e3d" -- Duy Pham
+}
 _G.WhiteListed = false
         for _, v1 in pairs(listed) do
 local gethwid = game:GetService("RbxAnalyticsService"):GetClientId()
