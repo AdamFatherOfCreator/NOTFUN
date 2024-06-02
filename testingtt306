@@ -766,7 +766,7 @@ end)
         end)
 
 
-
+local CONMEMAYCAMP = Tabs.Player:AddSection("Camp Chosen Player")
 local CONMEMAYCAMP2 = Tabs.Player:AddSection("Quake Camp")
 local tytytyty = Tabs.Player:AddSlider("Slider", {
     Title = "Quake Multiple",
@@ -780,7 +780,6 @@ local tytytyty = Tabs.Player:AddSlider("Slider", {
         end
     })
 
-local CONMEMAYCAMP = Tabs.Player:AddSection("Camp Chosen Player")
 local quakecampchose = Tabs.Player:AddToggle("quakecampchosetoggle", {Title = "Camp Quake", Default = false })
 quakecampchose:OnChanged(function()
 if Options.quakecampchosetoggle.Value == true then
