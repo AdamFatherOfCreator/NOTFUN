@@ -2101,8 +2101,10 @@ local plr = game.Players.LocalPlayer
 if _G.autocannonslow or _G.autocannonplr then
 if _G.autocannon == false then
 for i,v in pairs(plr.Backpack:GetChildren()) do
+repeat task.wait()
 if v.Name == "Cannon Ball" then
 v.Parent = plr.Character
+until not _G.autocannonslow and not _G.autocannonplr
 end
 end
 end
