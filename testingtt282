@@ -4212,14 +4212,15 @@ local af1 = Tabs.Affinity:AddSection("Roll Affinity 1st Devil Fruit")
 local Lucyfirst = Tabs.Affinity:AddSlider("Slider", {
     Title = "1st Devil Fruit Point",
     Description = "Choose the point of affinity",
-    Default = 90,
-    Min = 10,
-    Max = 100,
-    Rounding = -1,
+    Default = 9,
+    Min = 1,
+    Max = 10,
+    Rounding = 0,
     Callback = function(treotttt)
-if treotttt < 100 then
-affty = treotttt/100
-elseif treotttt == 100 then
+sosanhwqe = tonumber(treotttt)
+if sosanhwqe < 10 then
+affty = sosanhwqe/10
+elseif sosanhwqe == 10 then
 affty = 2
 end
         end
@@ -4590,14 +4591,15 @@ local af2 = Tabs.Affinity:AddSection("Roll Affinity 2st Devil Fruit")
 local Lucysecond = Tabs.Affinity:AddSlider("Slider", {
     Title = "2nd Devil Fruit Point",
     Description = "Choose the point of affinity",
-    Default = 90,
-    Min = 10,
-    Max = 100,
-    Rounding = -1,
+    Default = 9,
+    Min = 1,
+    Max = 10,
+    Rounding = 0,
     Callback = function(treot)
-if treot < 100 then
-affty2 = treot/100
-elseif treot == 100 then
+sosanhwqetpp = tonumber(treot)
+if sosanhwqetpp < 10 then
+affty2 = sosanhwqetpp/100
+elseif sosanhwqetpp == 10 then
 affty2 = 2
 end
 
