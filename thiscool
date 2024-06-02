@@ -199,7 +199,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/AdamFatherOfCreator/UI123/main/Fluent"))()
 local Window = Fluent:CreateWindow({
-    Title = "SALUNA HUB (H31)",
+    Title = "SALUNA HUB (H32)",
     SubTitle = "Made by Irenkiss",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -587,6 +587,22 @@ getgenv().bgtyhn = false
 end
 end)
 
+Tabs.Misc:AddButton({
+        Title = "Fix Cam",
+        Description = "Reset Camera (If Error)",
+        Callback = function()
+	workspace.CurrentCamera:remove()
+	wait(.1)
+	repeat wait() until game.Players.LocalPlayer.Character ~= nil
+	workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
+	workspace.CurrentCamera.CameraType = "Custom"
+	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
+	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
+	game.Players.LocalPlayer.CameraMode = "Classic"
+	game.Players.LocalPlayer.Character.Head.Anchored = false       
+end
+    })
+
 spawn(function()
 while wait() do
 if getgenv().bgtyhn then
@@ -716,24 +732,40 @@ Tabs.Player:AddButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame
 end
     })
-
-
-
-Tabs.Player:AddButton({
-        Title = "Fix Cam",
-        Description = "Reset Camera (If Error)",
-        Callback = function()
-	workspace.CurrentCamera:remove()
-	wait(.1)
-	repeat wait() until game.Players.LocalPlayer.Character ~= nil
-	workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
-	workspace.CurrentCamera.CameraType = "Custom"
-	game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
-	game.Players.LocalPlayer.CameraMaxZoomDistance = 400
-	game.Players.LocalPlayer.CameraMode = "Classic"
-	game.Players.LocalPlayer.Character.Head.Anchored = false       
-end
+local bringdis = Tabs.Player:AddSlider("Slider", {
+    Title = "Bring Distance",
+    Description = "Adjust bring distance",
+    Default = 4,
+    Min = -50,
+    Max = 50,
+    Rounding = 0,
+    Callback = function(dis1t)
+            distancebring = tonumber(dis1t)*(-1)
+        end
     })
+
+local disbring1aa = Tabs.Player:AddToggle("disbring1aatoggle", {Title = "Bring Chosen Player", Default = false })
+disbring1aa:OnChanged(function()
+if Options.disbring1aatoggle.Value == true then
+_G.BringPlayer = true
+else
+_G.BringPlayer = false
+end
+end)
+
+        spawn(function()
+            while wait() do
+pcall(function()
+                if _G.BringPlayer then
+                    pcall(function()
+                        game.Players:FindFirstChild(SelectedKillPlayer).Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,distancebring)
+                    end)
+                end
+end)
+            end
+        end)
+
+
 
 spawn(function()
 while wait() do
@@ -1735,7 +1767,7 @@ local Cannon = Tabs.Farm:AddSection("Auto Buso (Fast Regen)")
 local regentargetslider = Tabs.Farm:AddSlider("Slider", {
     Title = "Regen Target (%)",
     Description = "Change this for adjusting regen target",
-    Default = 50,
+    Default = 70,
     Min = 30,
     Max = 90,
     Rounding = 0,
