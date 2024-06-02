@@ -812,6 +812,13 @@ end)
 end
 end)
 
+local CONMEMAYCAMP3 = Tabs.Player:AddSection("Magma Camp")
+
+
+
+
+
+
 
 
 spawn(function()
