@@ -1,6 +1,6 @@
 return {
 "eeb8b6e1-d7d6-40ba-83bc-9c748ba781a9", -- SALUNA
-"76bf8d34-a05a-4803-8c43-24656f4fd7dd", -- Khôi
+"76bf8d34-a05a-4803-8c43-24656f4fd7dd", -- Khôi ngu
 "9891adb9-a4a2-4907-be40-7db9ddae36c3", -- Hiếu Trung
 "3e67a1ca-bc7e-443a-8e22-019dc4a3624c", -- Khoa GK
 "1eac697e-e753-45cf-bb54-f491e8ba1007", -- Huy Tú
@@ -12,5 +12,6 @@ return {
 "60502cb4-9fe8-4b24-bb88-83e299e82e3d", -- Duy Pham
 "4e626557-4b70-4665-9d23-1f5626a1ca51", -- Trần Minh Đạt
 "903fab9d-d05a-4667-8b81-eae73cf4a7d4", -- Huyy Niee
-"c37e0ba8-a009-42d6-a1a4-333665d15f9d" -- Huyy Niee 2
+"c37e0ba8-a009-42d6-a1a4-333665d15f9d", -- Huyy Niee 2
+"b23a2767-bb43-4ebd-beed-a4868f33f411" -- Dương ngu 
 }
