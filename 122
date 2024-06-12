@@ -1,4 +1,0 @@
-while wait() do
-game.Players.LocalPlayer.Character.Humanoid.Health = 100
-end
-game.Players.LocalPlayer.Character:Destroy()
