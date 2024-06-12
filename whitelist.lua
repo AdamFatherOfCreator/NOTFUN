@@ -10,7 +10,7 @@ return {
 "3d863fb5-e210-4cd1-a789-0b43d6cd1bcc", -- Lâm Quốc Bảo
 "a51218be-78e6-452d-a33d-65e94a56429b", -- Anh Long
 "60502cb4-9fe8-4b24-bb88-83e299e82e3d", -- Duy Pham
-"4e626557-4b70-4665-9d23-1f5626a1ca51", -- Trần Minh Đạt
+"06b252d4-539e-4188-a6ea-45a480c9ad6b", -- Trần Minh Đạt
 "903fab9d-d05a-4667-8b81-eae73cf4a7d4", -- Huyy Niee
 "5d3460fc-c76c-45d6-bba5-d96e8c3c712f", -- Huyy Niee 2
 "b23a2767-bb43-4ebd-beed-a4868f33f411", -- Dương ngu 
