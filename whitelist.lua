@@ -15,5 +15,5 @@ return {
 "5d3460fc-c76c-45d6-bba5-d96e8c3c712f", -- Huyy Niee 2
 "b23a2767-bb43-4ebd-beed-a4868f33f411", -- Dương ngu 
 "dd727ae8-5494-498b-9739-d80f625974e2", --Cậu Ngân Hà
-"e2a04f44-1ef6-480e-8d7e-797c2fa29711" -- Quang Quý
+"32fdc3d0-d7cd-4d1f-ba97-6b038f64e4dd" -- Quang Quý
 }
