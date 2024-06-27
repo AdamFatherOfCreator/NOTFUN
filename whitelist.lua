@@ -1,6 +1,6 @@
 return {
 "c4935109-282c-447b-99cb-b24ea3946e4e", -- SALUNA
-"76bf8d34-a05a-4803-8c43-24656f4fd7dd", -- Khôi ngu
+"5e582884-7bf4-49bf-852f-e3ccda5d184f", -- Khôi ngu
 "9891adb9-a4a2-4907-be40-7db9ddae36c3", -- Hiếu Trung
 "f52bd739-eb67-4419-826e-e83fcd806ef6", -- Khoa GK
 "1eac697e-e753-45cf-bb54-f491e8ba1007", -- Huy Tú
