@@ -22,5 +22,6 @@ return {
 "645f203a-f0df-4667-9e15-34b0b5d49a88", -- Iren UG 2
 "02076234-0f0a-4801-9c84-064f91fa8972", -- Iren UG 3
 "ecaf2cb2-1e3a-46e4-b4a8-f215fb6a6352", -- Minh Phạm
-"f45fabde-0008-48c7-ac85-b4b5b9006bbf" -- Nguyên Phúc
+"f45fabde-0008-48c7-ac85-b4b5b9006bbf", -- Nguyên Phúc
+"fcd9d1c2-2026-43a1-9927-cd584a23d2e0" -- Minh Chính
 }
